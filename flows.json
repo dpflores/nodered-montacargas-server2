@@ -1,5 +1,13 @@
 [
     {
+        "id": "abf430ab9cfee905",
+        "type": "tab",
+        "label": "Flow 3",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "4d53ee97ad0311a6",
         "type": "tab",
         "label": "Flow 1",
@@ -493,6 +501,60 @@
             [
                 "51d003316aedeaf9"
             ]
+        ]
+    },
+    {
+        "id": "1461f1bdb154ff3c",
+        "type": "inject",
+        "z": "abf430ab9cfee905",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 110,
+        "y": 80,
+        "wires": [
+            [
+                "5b8cd2e793b8ff3f"
+            ]
+        ]
+    },
+    {
+        "id": "5b8cd2e793b8ff3f",
+        "type": "change",
+        "z": "abf430ab9cfee905",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "connection",
+                "pt": "global",
+                "to": "shutdown",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 300,
+        "y": 80,
+        "wires": [
+            []
         ]
     },
     {
