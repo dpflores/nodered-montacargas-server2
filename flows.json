@@ -535,7 +535,7 @@
         "z": "4d53ee97ad0311a6",
         "g": "a383835818b7681a",
         "name": "function 1",
-        "func": "\nmsg.topic = \"INSERT INTO `local_data` (`date`, `data`) VALUES ('\" + msg.timestamp + \"','\"+ msg.payload + \"');\";\nreturn msg;",
+        "func": "\nmsg.topic = \"INSERT INTO `local_data` (`date`, `data`) VALUES (\" + msg.timestamp + \",'\"+ msg.payload + \"');\";\nreturn msg;",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
