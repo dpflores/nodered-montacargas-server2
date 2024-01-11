@@ -439,8 +439,8 @@
         "type": "switch",
         "z": "63965d808ff1bb6e",
         "name": "load?",
-        "property": "filtered_data.load",
-        "propertyType": "global",
+        "property": "payload.data.load",
+        "propertyType": "msg",
         "rules": [
             {
                 "t": "gt",
@@ -470,8 +470,8 @@
         "type": "switch",
         "z": "63965d808ff1bb6e",
         "name": "load?",
-        "property": "filtered_data.load",
-        "propertyType": "global",
+        "property": "payload.data.load",
+        "propertyType": "msg",
         "rules": [
             {
                 "t": "gt",
@@ -1051,7 +1051,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 580,
+        "x": 560,
         "y": 140,
         "wires": [
             [
