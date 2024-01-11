@@ -490,6 +490,60 @@
         ]
     },
     {
+        "id": "c3d19c6f376bc860",
+        "type": "inject",
+        "z": "abf430ab9cfee905",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 110,
+        "y": 140,
+        "wires": [
+            [
+                "47aa21e090081df4"
+            ]
+        ]
+    },
+    {
+        "id": "47aa21e090081df4",
+        "type": "change",
+        "z": "abf430ab9cfee905",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "live_data",
+                "pt": "global",
+                "to": "{\"gateway_key\":\"\",\"timestamp\":0,\"data\":{\"gps\":{\"pos_valid\":0,\"latitude\":0,\"longitude\":0,\"altitude\":0,\"haccuracy\":5304419,\"speed\":0,\"course\":0},\"mantto\":\"0\",\"running\":\"0\",\"hourmeter\":0,\"battery\":{\"voltage\":0},\"pressure\":{\"current\":0},\"load\":0,\"status\":0}}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 290,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
         "id": "a5111d94f7361a1b",
         "type": "mqtt in",
         "z": "4d53ee97ad0311a6",
@@ -776,7 +830,7 @@
         "type": "debug",
         "z": "4d53ee97ad0311a6",
         "name": "debug 3",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -935,8 +989,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 760,
-        "y": 60,
+        "x": 800,
+        "y": 80,
         "wires": [
             []
         ]
@@ -993,7 +1047,8 @@
         "y": 160,
         "wires": [
             [
-                "e3472658b9dd67fe"
+                "e3472658b9dd67fe",
+                "1eb8537850904cea"
             ]
         ]
     },
@@ -1032,16 +1087,16 @@
         "id": "203c28e32ea9410f",
         "type": "function",
         "z": "4d53ee97ad0311a6",
-        "name": "function 3",
-        "func": "\nreturn msg;",
+        "name": "Get last data",
+        "func": "var data_json = global.get(\"live_data\");\n\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 740,
-        "y": 20,
+        "x": 770,
+        "y": 40,
         "wires": [
             []
         ]
@@ -1059,7 +1114,32 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 760,
-        "y": 80,
+        "y": 100,
         "wires": []
+    },
+    {
+        "id": "1eb8537850904cea",
+        "type": "change",
+        "z": "4d53ee97ad0311a6",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "live_data",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1030,
+        "y": 160,
+        "wires": [
+            []
+        ]
     }
 ]
