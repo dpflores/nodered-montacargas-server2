@@ -90,14 +90,12 @@
             "0144841910857dd0",
             "dccf3ef5f5ffab03",
             "be1b9be609783b77",
-            "43c5de282fd0927e",
-            "565d788bd2dc9d4e",
-            "088148528fb84889"
+            "78cd71d4d4914aab"
         ],
-        "x": 134,
-        "y": 439,
-        "w": 1142,
-        "h": 162
+        "x": 414,
+        "y": 459,
+        "w": 862,
+        "h": 142
     },
     {
         "id": "1b5ad41c50a916b7",
@@ -436,60 +434,6 @@
         ]
     },
     {
-        "id": "1461f1bdb154ff3c",
-        "type": "inject",
-        "z": "abf430ab9cfee905",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": true,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 110,
-        "y": 80,
-        "wires": [
-            [
-                "5b8cd2e793b8ff3f"
-            ]
-        ]
-    },
-    {
-        "id": "5b8cd2e793b8ff3f",
-        "type": "change",
-        "z": "abf430ab9cfee905",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "connection",
-                "pt": "global",
-                "to": "shutdown",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 300,
-        "y": 80,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "c3d19c6f376bc860",
         "type": "inject",
         "z": "abf430ab9cfee905",
@@ -694,72 +638,6 @@
                 "1a91beaae3b7c29f"
             ]
         ]
-    },
-    {
-        "id": "43c5de282fd0927e",
-        "type": "function",
-        "z": "4d53ee97ad0311a6",
-        "g": "a383835818b7681a",
-        "name": "get global",
-        "func": "var data_json = global.get(\"filtered_data\");\nif (data_json.valid_data){\n    msg.payload = data_json;\nreturn msg;\n}\n",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 420,
-        "y": 560,
-        "wires": [
-            [
-                "088148528fb84889"
-            ]
-        ]
-    },
-    {
-        "id": "565d788bd2dc9d4e",
-        "type": "inject",
-        "z": "4d53ee97ad0311a6",
-        "g": "a383835818b7681a",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "1",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 250,
-        "y": 560,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "088148528fb84889",
-        "type": "debug",
-        "z": "4d53ee97ad0311a6",
-        "g": "a383835818b7681a",
-        "name": "debug 2",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 570,
-        "y": 480,
-        "wires": []
     },
     {
         "id": "72985e3e1550e70a",
@@ -971,31 +849,6 @@
         ]
     },
     {
-        "id": "1d783f1f72fb9efb",
-        "type": "change",
-        "z": "4d53ee97ad0311a6",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "connection",
-                "pt": "global",
-                "to": "payload",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 800,
-        "y": 80,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "d096a76f127de332",
         "type": "timeout",
         "z": "4d53ee97ad0311a6",
@@ -1012,9 +865,8 @@
         "y": 60,
         "wires": [
             [
-                "1d783f1f72fb9efb",
-                "203c28e32ea9410f",
-                "16cb2f6ab8de4f88"
+                "16cb2f6ab8de4f88",
+                "203c28e32ea9410f"
             ]
         ]
     },
@@ -1048,7 +900,8 @@
         "wires": [
             [
                 "e3472658b9dd67fe",
-                "1eb8537850904cea"
+                "1eb8537850904cea",
+                "5bef7810bb446303"
             ]
         ]
     },
@@ -1060,7 +913,9 @@
         "x": 800,
         "y": 320,
         "wires": [
-            []
+            [
+                "0dbd5db4020576db"
+            ]
         ]
     },
     {
@@ -1084,24 +939,6 @@
         ]
     },
     {
-        "id": "203c28e32ea9410f",
-        "type": "function",
-        "z": "4d53ee97ad0311a6",
-        "name": "Get last data",
-        "func": "var data_json = global.get(\"live_data\");\n\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 770,
-        "y": 40,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "16cb2f6ab8de4f88",
         "type": "debug",
         "z": "4d53ee97ad0311a6",
@@ -1113,8 +950,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 760,
-        "y": 100,
+        "x": 780,
+        "y": 120,
         "wires": []
     },
     {
@@ -1136,10 +973,173 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1030,
-        "y": 160,
+        "x": 1050,
+        "y": 120,
         "wires": [
             []
         ]
+    },
+    {
+        "id": "c32b768a1ed92874",
+        "type": "switch",
+        "z": "4d53ee97ad0311a6",
+        "name": "mantto?",
+        "property": "payload.data.mantto",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "gt",
+                "v": "0",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 940,
+        "y": 40,
+        "wires": [
+            [
+                "b1a48dbfdde4df47"
+            ],
+            [
+                "36225553bf8cc8a3"
+            ]
+        ]
+    },
+    {
+        "id": "203c28e32ea9410f",
+        "type": "function",
+        "z": "4d53ee97ad0311a6",
+        "name": "Get last data",
+        "func": "var data_json = global.get(\"live_data\");\n\ndata_json.timestamp = Date.now();\n\nmsg.payload = data_json;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 770,
+        "y": 40,
+        "wires": [
+            [
+                "c32b768a1ed92874"
+            ]
+        ]
+    },
+    {
+        "id": "b1a48dbfdde4df47",
+        "type": "change",
+        "z": "4d53ee97ad0311a6",
+        "name": "1 - Inoperativo",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.data.status",
+                "pt": "msg",
+                "to": "1",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1140,
+        "y": 20,
+        "wires": [
+            [
+                "c8d60c4ef86f2d66"
+            ]
+        ]
+    },
+    {
+        "id": "36225553bf8cc8a3",
+        "type": "change",
+        "z": "4d53ee97ad0311a6",
+        "name": "0 - Apagado",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.data.status",
+                "pt": "msg",
+                "to": "0",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1130,
+        "y": 60,
+        "wires": [
+            [
+                "c8d60c4ef86f2d66"
+            ]
+        ]
+    },
+    {
+        "id": "78cd71d4d4914aab",
+        "type": "link in",
+        "z": "4d53ee97ad0311a6",
+        "g": "a383835818b7681a",
+        "name": "save_database",
+        "links": [
+            "0dbd5db4020576db",
+            "5bef7810bb446303",
+            "c8d60c4ef86f2d66"
+        ],
+        "x": 455,
+        "y": 560,
+        "wires": [
+            [
+                "be1b9be609783b77"
+            ]
+        ]
+    },
+    {
+        "id": "0dbd5db4020576db",
+        "type": "link out",
+        "z": "4d53ee97ad0311a6",
+        "name": "link out 1",
+        "mode": "link",
+        "links": [
+            "78cd71d4d4914aab"
+        ],
+        "x": 935,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "5bef7810bb446303",
+        "type": "link out",
+        "z": "4d53ee97ad0311a6",
+        "name": "link out 2",
+        "mode": "link",
+        "links": [
+            "78cd71d4d4914aab"
+        ],
+        "x": 955,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "c8d60c4ef86f2d66",
+        "type": "link out",
+        "z": "4d53ee97ad0311a6",
+        "name": "link out 3",
+        "mode": "link",
+        "links": [
+            "78cd71d4d4914aab"
+        ],
+        "x": 1315,
+        "y": 40,
+        "wires": []
     }
 ]
