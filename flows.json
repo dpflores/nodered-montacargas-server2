@@ -18,7 +18,7 @@
     {
         "id": "63965d808ff1bb6e",
         "type": "subflow",
-        "name": "status ",
+        "name": "system status ",
         "info": "",
         "category": "",
         "in": [
