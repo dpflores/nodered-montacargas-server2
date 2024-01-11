@@ -845,7 +845,7 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 700,
+        "x": 720,
         "y": 180,
         "wires": []
     },
@@ -1044,7 +1044,7 @@
         "type": "function",
         "z": "4d53ee97ad0311a6",
         "name": "Getting the load from current",
-        "func": "var data_json = msg.payload;\n\nvar current = data_json.data.pressure.current;\n\ndata_json.data.load = (0.524*current/1000) - 2.92;\n\n\nreturn msg;",
+        "func": "var data_json = msg.payload;\n\nvar current = data_json.data.pressure.current;\nvar est_linear_load = (0.524*current/1000) - 2.92\ndata_json.data.load = Math.max(est_linear_load,0) ;\n\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
