@@ -54,7 +54,7 @@
         "id": "20aa6fa811d70d43",
         "type": "MySQLdatabase",
         "name": "",
-        "host": "localhos",
+        "host": "localhost",
         "port": "3306",
         "db": "acme_db",
         "tz": "",
