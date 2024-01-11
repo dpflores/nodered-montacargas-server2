@@ -1,1 +1,410 @@
-[]
+[
+    {
+        "id": "4d53ee97ad0311a6",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "a383835818b7681a",
+        "type": "group",
+        "z": "4d53ee97ad0311a6",
+        "name": "Guardado de data local",
+        "style": {
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "3c0cf9d7b9fc8d32",
+            "1e54bc9422fc9d45",
+            "1a91beaae3b7c29f",
+            "0144841910857dd0",
+            "dccf3ef5f5ffab03",
+            "be1b9be609783b77",
+            "43c5de282fd0927e",
+            "565d788bd2dc9d4e",
+            "088148528fb84889"
+        ],
+        "x": 134,
+        "y": 439,
+        "w": 1142,
+        "h": 162
+    },
+    {
+        "id": "1b5ad41c50a916b7",
+        "type": "group",
+        "z": "4d53ee97ad0311a6",
+        "name": "DELETE ALL DATA MANUALLY (CAREFULL)",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "72985e3e1550e70a",
+            "0259792c6364af43",
+            "1ad32e19c0123f3c"
+        ],
+        "x": 174,
+        "y": 679,
+        "w": 572,
+        "h": 82
+    },
+    {
+        "id": "20aa6fa811d70d43",
+        "type": "MySQLdatabase",
+        "name": "",
+        "host": "localhos",
+        "port": "3306",
+        "db": "acme_db",
+        "tz": "",
+        "charset": "UTF8"
+    },
+    {
+        "id": "9bcbb125a6d88775",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "ACME_broker",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "a5111d94f7361a1b",
+        "type": "mqtt in",
+        "z": "4d53ee97ad0311a6",
+        "name": "",
+        "topic": "data/combined",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "9bcbb125a6d88775",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 220,
+        "y": 80,
+        "wires": [
+            [
+                "e3472658b9dd67fe"
+            ]
+        ]
+    },
+    {
+        "id": "7ae3fe0e8c7c7fd3",
+        "type": "mqtt in",
+        "z": "4d53ee97ad0311a6",
+        "name": "",
+        "topic": "data/offline/save",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "9bcbb125a6d88775",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 200,
+        "y": 220,
+        "wires": [
+            [
+                "d668f2b367501da1"
+            ]
+        ]
+    },
+    {
+        "id": "3c0cf9d7b9fc8d32",
+        "type": "function",
+        "z": "4d53ee97ad0311a6",
+        "g": "a383835818b7681a",
+        "name": "function 1",
+        "func": "\nmsg.topic = \"INSERT INTO `local_data` (`data`) VALUES ('\"+ msg.payload + \"');\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 970,
+        "y": 560,
+        "wires": [
+            [
+                "0144841910857dd0",
+                "1e54bc9422fc9d45"
+            ]
+        ]
+    },
+    {
+        "id": "1e54bc9422fc9d45",
+        "type": "mysql",
+        "z": "4d53ee97ad0311a6",
+        "g": "a383835818b7681a",
+        "mydb": "20aa6fa811d70d43",
+        "name": "",
+        "x": 1190,
+        "y": 560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1a91beaae3b7c29f",
+        "type": "json",
+        "z": "4d53ee97ad0311a6",
+        "g": "a383835818b7681a",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 810,
+        "y": 560,
+        "wires": [
+            [
+                "3c0cf9d7b9fc8d32"
+            ]
+        ]
+    },
+    {
+        "id": "0144841910857dd0",
+        "type": "debug",
+        "z": "4d53ee97ad0311a6",
+        "g": "a383835818b7681a",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "topic",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1120,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "dccf3ef5f5ffab03",
+        "type": "debug",
+        "z": "4d53ee97ad0311a6",
+        "g": "a383835818b7681a",
+        "name": "debug 1",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 790,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "be1b9be609783b77",
+        "type": "function",
+        "z": "4d53ee97ad0311a6",
+        "g": "a383835818b7681a",
+        "name": "Filter local data",
+        "func": "let out_data = {}\n\nout_data.timestamp = msg.payload.timestamp;\nout_data.latitude = msg.payload.latitude;\nout_data.longitude = msg.payload.longitude;\nout_data.velocidad = msg.payload.speed;\nout_data.carga = msg.payload.load;\nout_data.bateria = msg.payload.battery;\nout_data.presion_bar = msg.payload.pressure_bar;\nout_data.presion_psi = msg.payload.pressure_psi;\nout_data.state = msg.payload.state;\n// out_data.estado =\nmsg.payload = out_data;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 640,
+        "y": 560,
+        "wires": [
+            [
+                "dccf3ef5f5ffab03",
+                "1a91beaae3b7c29f"
+            ]
+        ]
+    },
+    {
+        "id": "43c5de282fd0927e",
+        "type": "function",
+        "z": "4d53ee97ad0311a6",
+        "g": "a383835818b7681a",
+        "name": "get global",
+        "func": "var data_json = global.get(\"filtered_data\");\nif (data_json.valid_data){\n    msg.payload = data_json;\nreturn msg;\n}\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 560,
+        "wires": [
+            [
+                "088148528fb84889"
+            ]
+        ]
+    },
+    {
+        "id": "565d788bd2dc9d4e",
+        "type": "inject",
+        "z": "4d53ee97ad0311a6",
+        "g": "a383835818b7681a",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 250,
+        "y": 560,
+        "wires": [
+            [
+                "43c5de282fd0927e"
+            ]
+        ]
+    },
+    {
+        "id": "088148528fb84889",
+        "type": "debug",
+        "z": "4d53ee97ad0311a6",
+        "g": "a383835818b7681a",
+        "name": "debug 2",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 570,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "72985e3e1550e70a",
+        "type": "inject",
+        "z": "4d53ee97ad0311a6",
+        "g": "1b5ad41c50a916b7",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 280,
+        "y": 720,
+        "wires": [
+            [
+                "0259792c6364af43"
+            ]
+        ]
+    },
+    {
+        "id": "0259792c6364af43",
+        "type": "function",
+        "z": "4d53ee97ad0311a6",
+        "g": "1b5ad41c50a916b7",
+        "name": "DELETE ALL",
+        "func": "\nmsg.topic = `\n  DELETE FROM local_data;\n`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 490,
+        "y": 720,
+        "wires": [
+            [
+                "1ad32e19c0123f3c"
+            ]
+        ]
+    },
+    {
+        "id": "1ad32e19c0123f3c",
+        "type": "mysql",
+        "z": "4d53ee97ad0311a6",
+        "g": "1b5ad41c50a916b7",
+        "mydb": "20aa6fa811d70d43",
+        "name": "",
+        "x": 660,
+        "y": 720,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e3472658b9dd67fe",
+        "type": "debug",
+        "z": "4d53ee97ad0311a6",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 460,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "d668f2b367501da1",
+        "type": "debug",
+        "z": "4d53ee97ad0311a6",
+        "name": "debug 4",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 440,
+        "y": 220,
+        "wires": []
+    }
+]
