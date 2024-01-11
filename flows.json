@@ -852,8 +852,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 640,
-        "y": 120,
+        "x": 720,
+        "y": 180,
         "wires": []
     },
     {
@@ -885,7 +885,7 @@
         "finalize": "",
         "libs": [],
         "x": 510,
-        "y": 160,
+        "y": 200,
         "wires": [
             []
         ]
@@ -994,7 +994,54 @@
             [],
             [],
             [
-                "61ad8801fa7fb43c"
+                "61ad8801fa7fb43c",
+                "d096a76f127de332"
+            ]
+        ]
+    },
+    {
+        "id": "1d783f1f72fb9efb",
+        "type": "change",
+        "z": "4d53ee97ad0311a6",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "connection",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 760,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d096a76f127de332",
+        "type": "timeout",
+        "z": "4d53ee97ad0311a6",
+        "name": "Connection Timeout",
+        "outtopic": "",
+        "outsafe": "connected",
+        "outwarning": "disconnected",
+        "outunsafe": "shutdown",
+        "warning": "60",
+        "timer": "120",
+        "repeat": false,
+        "again": false,
+        "x": 540,
+        "y": 60,
+        "wires": [
+            [
+                "1d783f1f72fb9efb"
             ]
         ]
     }
