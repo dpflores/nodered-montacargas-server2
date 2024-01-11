@@ -865,8 +865,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 500,
-        "y": 320,
+        "x": 600,
+        "y": 260,
         "wires": []
     },
     {
@@ -954,7 +954,8 @@
             [],
             [],
             [
-                "6b7ae4d6d10b73c4"
+                "6b7ae4d6d10b73c4",
+                "9c757b4537f3dedf"
             ]
         ]
     },
@@ -1068,11 +1069,42 @@
         "type": "subflow:63965d808ff1bb6e",
         "z": "4d53ee97ad0311a6",
         "name": "",
-        "x": 790,
+        "x": 800,
         "y": 140,
         "wires": [
             [
                 "e3472658b9dd67fe"
+            ]
+        ]
+    },
+    {
+        "id": "b9a8df8301b776a3",
+        "type": "subflow:63965d808ff1bb6e",
+        "z": "4d53ee97ad0311a6",
+        "name": "",
+        "x": 800,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9c757b4537f3dedf",
+        "type": "function",
+        "z": "4d53ee97ad0311a6",
+        "name": "Getting the load from current",
+        "func": "var data_json = msg.payload;\n\nvar current = data_json.data.pressure.current;\nvar est_linear_load = (0.524*current/1000) - 2.92\ndata_json.data.load = Math.max(est_linear_load,0) ;\n\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 320,
+        "wires": [
+            [
+                "b9a8df8301b776a3"
             ]
         ]
     }
