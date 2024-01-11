@@ -63,8 +63,8 @@
     {
         "id": "9bcbb125a6d88775",
         "type": "mqtt-broker",
-        "name": "",
-        "broker": "ACME_broker",
+        "name": "ACME_broker",
+        "broker": "161.132.39.167",
         "port": "1883",
         "clientid": "",
         "autoConnect": true,
