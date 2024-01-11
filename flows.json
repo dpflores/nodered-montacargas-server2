@@ -821,7 +821,7 @@
         "checkall": "true",
         "repair": false,
         "outputs": 3,
-        "x": 300,
+        "x": 320,
         "y": 120,
         "wires": [
             [],
