@@ -125,7 +125,7 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 200,
+        "x": 220,
         "y": 220,
         "wires": [
             [
@@ -401,7 +401,7 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 440,
+        "x": 460,
         "y": 220,
         "wires": []
     }
