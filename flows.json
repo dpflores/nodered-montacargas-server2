@@ -199,8 +199,8 @@
         "rules": [
             {
                 "t": "set",
-                "p": "filtered_data.state",
-                "pt": "global",
+                "p": "payload.data.status",
+                "pt": "msg",
                 "to": "0",
                 "tot": "num"
             }
@@ -224,17 +224,10 @@
         "rules": [
             {
                 "t": "set",
-                "p": "filtered_data.state",
-                "pt": "global",
+                "p": "payload.data.status",
+                "pt": "msg",
                 "to": "1",
                 "tot": "num"
-            },
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "",
-                "tot": "str"
             }
         ],
         "action": "",
@@ -253,8 +246,8 @@
         "type": "switch",
         "z": "63965d808ff1bb6e",
         "name": "mantto?",
-        "property": "filtered_data.mantto",
-        "propertyType": "global",
+        "property": "payload.data.mantto",
+        "propertyType": "msg",
         "rules": [
             {
                 "t": "gt",
@@ -287,8 +280,8 @@
         "rules": [
             {
                 "t": "set",
-                "p": "filtered_data.state",
-                "pt": "global",
+                "p": "payload.data.status",
+                "pt": "msg",
                 "to": "2",
                 "tot": "num"
             }
@@ -312,8 +305,8 @@
         "rules": [
             {
                 "t": "set",
-                "p": "filtered_data.state",
-                "pt": "global",
+                "p": "payload.data.status",
+                "pt": "msg",
                 "to": "3",
                 "tot": "num"
             }
@@ -337,8 +330,8 @@
         "rules": [
             {
                 "t": "set",
-                "p": "filtered_data.state",
-                "pt": "global",
+                "p": "payload.data.status",
+                "pt": "msg",
                 "to": "4",
                 "tot": "num"
             }
@@ -362,8 +355,8 @@
         "rules": [
             {
                 "t": "set",
-                "p": "filtered_data.state",
-                "pt": "global",
+                "p": "payload.data.status",
+                "pt": "msg",
                 "to": "5",
                 "tot": "num"
             }
@@ -384,8 +377,8 @@
         "type": "switch",
         "z": "63965d808ff1bb6e",
         "name": "mantto?",
-        "property": "filtered_data.mantto",
-        "propertyType": "global",
+        "property": "payload.data.mantto",
+        "propertyType": "msg",
         "rules": [
             {
                 "t": "gt",
@@ -415,8 +408,8 @@
         "type": "switch",
         "z": "63965d808ff1bb6e",
         "name": "movement?",
-        "property": "filtered_data.speed",
-        "propertyType": "global",
+        "property": "payload.data.gps.speed",
+        "propertyType": "msg",
         "rules": [
             {
                 "t": "gt",
@@ -996,7 +989,7 @@
             [
                 "61ad8801fa7fb43c",
                 "d096a76f127de332",
-                "e3472658b9dd67fe"
+                "0d808f5197888b57"
             ]
         ]
     },
@@ -1043,6 +1036,26 @@
         "wires": [
             [
                 "1d783f1f72fb9efb"
+            ]
+        ]
+    },
+    {
+        "id": "0d808f5197888b57",
+        "type": "function",
+        "z": "4d53ee97ad0311a6",
+        "name": "Getting the load from current",
+        "func": "var data_json = msg.payload;\n\nvar current = data_json.data.pressure.current;\n\ndata_json.data.load = (0.524*current/1000) - 2.92;\n\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 580,
+        "y": 140,
+        "wires": [
+            [
+                "e3472658b9dd67fe"
             ]
         ]
     }
