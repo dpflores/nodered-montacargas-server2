@@ -130,7 +130,8 @@
         "y": 220,
         "wires": [
             [
-                "d668f2b367501da1"
+                "f8474f24c89f9cf0",
+                "6b7ae4d6d10b73c4"
             ]
         ]
     },
@@ -386,8 +387,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 620,
-        "y": 140,
+        "x": 600,
+        "y": 100,
         "wires": []
     },
     {
@@ -402,8 +403,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 460,
-        "y": 220,
+        "x": 600,
+        "y": 240,
         "wires": []
     },
     {
@@ -457,6 +458,61 @@
         "libs": [],
         "x": 410,
         "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f8474f24c89f9cf0",
+        "type": "switch",
+        "z": "4d53ee97ad0311a6",
+        "name": "Filter Gateway",
+        "property": "payload.gateway_key",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "A13CHH",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "A13CF8",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "A13Q6Q",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 420,
+        "y": 220,
+        "wires": [
+            [],
+            [],
+            [
+                "d668f2b367501da1"
+            ]
+        ]
+    },
+    {
+        "id": "6b7ae4d6d10b73c4",
+        "type": "function",
+        "z": "4d53ee97ad0311a6",
+        "name": "last message",
+        "func": "\nfunction unixTimestampToHumanReadable(unixTimestamp) {\n  const date = new Date(unixTimestamp);\n  const year = date.getFullYear();\n  const month = (date.getMonth() + 1).toString().padStart(2, '0');\n  const day = date.getDate().toString().padStart(2, '0');\n  const hours = date.getHours().toString().padStart(2, '0');\n  const minutes = date.getMinutes().toString().padStart(2, '0');\n  const seconds = date.getSeconds().toString().padStart(2, '0');\n\n  return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;\n}\n\n\nnode.status({ fill: \"green\", shape: \"ring\", text: `${unixTimestampToHumanReadable(msg.payload.timestamp)}`});\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 410,
+        "y": 260,
         "wires": [
             []
         ]
