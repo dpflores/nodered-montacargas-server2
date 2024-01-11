@@ -131,7 +131,8 @@
         "wires": [
             [
                 "f8474f24c89f9cf0",
-                "6b7ae4d6d10b73c4"
+                "6b7ae4d6d10b73c4",
+                "b4b64de155e3db53"
             ]
         ]
     },
@@ -434,7 +435,7 @@
         "checkall": "true",
         "repair": false,
         "outputs": 3,
-        "x": 460,
+        "x": 420,
         "y": 100,
         "wires": [
             [],
@@ -516,5 +517,21 @@
         "wires": [
             []
         ]
+    },
+    {
+        "id": "b4b64de155e3db53",
+        "type": "debug",
+        "z": "4d53ee97ad0311a6",
+        "name": "debug 5",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 400,
+        "y": 320,
+        "wires": []
     }
 ]
