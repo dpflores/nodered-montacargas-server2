@@ -10,15 +10,50 @@
     {
         "id": "63965d808ff1bb6e",
         "type": "subflow",
-        "name": "status",
+        "name": "status online",
         "info": "",
         "category": "",
-        "in": [],
+        "in": [
+            {
+                "x": 80,
+                "y": 180,
+                "wires": [
+                    {
+                        "id": "3ad749041072c575"
+                    }
+                ]
+            }
+        ],
         "out": [
             {
-                "x": 760,
-                "y": 120,
-                "wires": []
+                "x": 1120,
+                "y": 280,
+                "wires": [
+                    {
+                        "id": "06bf9a8fac38414e",
+                        "port": 0
+                    },
+                    {
+                        "id": "bb3b35a6bfa0def5",
+                        "port": 0
+                    },
+                    {
+                        "id": "a267e43e7b0ff1fe",
+                        "port": 0
+                    },
+                    {
+                        "id": "5b625da5e955d153",
+                        "port": 0
+                    },
+                    {
+                        "id": "be18eb5899ee3bb4",
+                        "port": 0
+                    },
+                    {
+                        "id": "51d003316aedeaf9",
+                        "port": 0
+                    }
+                ]
             }
         ],
         "env": [],
@@ -110,6 +145,357 @@
         "sessionExpiry": ""
     },
     {
+        "id": "3ad749041072c575",
+        "type": "switch",
+        "z": "63965d808ff1bb6e",
+        "name": "running?",
+        "property": "connection",
+        "propertyType": "global",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "shutdown",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "disconnected",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "connected",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 240,
+        "y": 180,
+        "wires": [
+            [
+                "4caacd27ac7c72dd"
+            ],
+            [],
+            [
+                "6b7a1e2406578c48"
+            ]
+        ]
+    },
+    {
+        "id": "bb3b35a6bfa0def5",
+        "type": "change",
+        "z": "63965d808ff1bb6e",
+        "name": "0 - Apagado",
+        "rules": [
+            {
+                "t": "set",
+                "p": "filtered_data.state",
+                "pt": "global",
+                "to": "0",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 790,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "06bf9a8fac38414e",
+        "type": "change",
+        "z": "63965d808ff1bb6e",
+        "name": "1 - Inoperativo",
+        "rules": [
+            {
+                "t": "set",
+                "p": "filtered_data.state",
+                "pt": "global",
+                "to": "1",
+                "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 800,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4caacd27ac7c72dd",
+        "type": "switch",
+        "z": "63965d808ff1bb6e",
+        "name": "mantto?",
+        "property": "filtered_data.mantto",
+        "propertyType": "global",
+        "rules": [
+            {
+                "t": "gt",
+                "v": "0",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 400,
+        "y": 140,
+        "wires": [
+            [
+                "06bf9a8fac38414e"
+            ],
+            [
+                "bb3b35a6bfa0def5"
+            ]
+        ]
+    },
+    {
+        "id": "51d003316aedeaf9",
+        "type": "change",
+        "z": "63965d808ff1bb6e",
+        "name": "2 - En espera sin carga",
+        "rules": [
+            {
+                "t": "set",
+                "p": "filtered_data.state",
+                "pt": "global",
+                "to": "2",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 830,
+        "y": 560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "be18eb5899ee3bb4",
+        "type": "change",
+        "z": "63965d808ff1bb6e",
+        "name": "3 - En espera con carga",
+        "rules": [
+            {
+                "t": "set",
+                "p": "filtered_data.state",
+                "pt": "global",
+                "to": "3",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 830,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5b625da5e955d153",
+        "type": "change",
+        "z": "63965d808ff1bb6e",
+        "name": "4 - Traslado sin carga",
+        "rules": [
+            {
+                "t": "set",
+                "p": "filtered_data.state",
+                "pt": "global",
+                "to": "4",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 820,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a267e43e7b0ff1fe",
+        "type": "change",
+        "z": "63965d808ff1bb6e",
+        "name": "5 - Efectivo",
+        "rules": [
+            {
+                "t": "set",
+                "p": "filtered_data.state",
+                "pt": "global",
+                "to": "5",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 790,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6b7a1e2406578c48",
+        "type": "switch",
+        "z": "63965d808ff1bb6e",
+        "name": "mantto?",
+        "property": "filtered_data.mantto",
+        "propertyType": "global",
+        "rules": [
+            {
+                "t": "gt",
+                "v": "0",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 400,
+        "y": 220,
+        "wires": [
+            [
+                "06bf9a8fac38414e"
+            ],
+            [
+                "298f1b9461d4fa63"
+            ]
+        ]
+    },
+    {
+        "id": "298f1b9461d4fa63",
+        "type": "switch",
+        "z": "63965d808ff1bb6e",
+        "name": "movement?",
+        "property": "filtered_data.speed",
+        "propertyType": "global",
+        "rules": [
+            {
+                "t": "gt",
+                "v": "1",
+                "vt": "num"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 490,
+        "y": 360,
+        "wires": [
+            [
+                "7dd0a7fe3080f78e"
+            ],
+            [
+                "dad146a727a20f0d"
+            ]
+        ]
+    },
+    {
+        "id": "7dd0a7fe3080f78e",
+        "type": "switch",
+        "z": "63965d808ff1bb6e",
+        "name": "load?",
+        "property": "filtered_data.load",
+        "propertyType": "global",
+        "rules": [
+            {
+                "t": "gt",
+                "v": "0",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 630,
+        "y": 280,
+        "wires": [
+            [
+                "a267e43e7b0ff1fe"
+            ],
+            [
+                "5b625da5e955d153"
+            ]
+        ]
+    },
+    {
+        "id": "dad146a727a20f0d",
+        "type": "switch",
+        "z": "63965d808ff1bb6e",
+        "name": "load?",
+        "property": "filtered_data.load",
+        "propertyType": "global",
+        "rules": [
+            {
+                "t": "gt",
+                "v": "0",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 630,
+        "y": 500,
+        "wires": [
+            [
+                "be18eb5899ee3bb4"
+            ],
+            [
+                "51d003316aedeaf9"
+            ]
+        ]
+    },
+    {
         "id": "a5111d94f7361a1b",
         "type": "mqtt in",
         "z": "4d53ee97ad0311a6",
@@ -122,8 +508,8 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 140,
-        "y": 80,
+        "x": 120,
+        "y": 120,
         "wires": [
             [
                 "3ce50b04078d067d"
@@ -404,8 +790,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 660,
-        "y": 80,
+        "x": 640,
+        "y": 120,
         "wires": []
     },
     {
@@ -436,8 +822,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 530,
-        "y": 120,
+        "x": 510,
+        "y": 160,
         "wires": [
             []
         ]
@@ -540,8 +926,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 3,
-        "x": 320,
-        "y": 80,
+        "x": 300,
+        "y": 120,
         "wires": [
             [],
             [],
