@@ -850,7 +850,7 @@
         "wires": [
             [
                 "16cb2f6ab8de4f88",
-                "203c28e32ea9410f"
+                "d613537e97ea8c01"
             ]
         ]
     },
@@ -983,8 +983,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 940,
-        "y": 40,
+        "x": 1080,
+        "y": 20,
         "wires": [
             [
                 "b1a48dbfdde4df47"
@@ -1006,8 +1006,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 770,
-        "y": 40,
+        "x": 910,
+        "y": 20,
         "wires": [
             [
                 "c32b768a1ed92874"
@@ -1033,7 +1033,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1140,
+        "x": 1260,
         "y": 20,
         "wires": [
             [
@@ -1060,7 +1060,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1130,
+        "x": 1250,
         "y": 60,
         "wires": [
             [
@@ -1125,5 +1125,42 @@
         "x": 1315,
         "y": 40,
         "wires": []
+    },
+    {
+        "id": "d613537e97ea8c01",
+        "type": "switch",
+        "z": "4d53ee97ad0311a6",
+        "name": "running?",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "shutdown",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "disconnected",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "connected",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 740,
+        "y": 40,
+        "wires": [
+            [
+                "203c28e32ea9410f"
+            ],
+            [],
+            []
+        ]
     }
 ]
