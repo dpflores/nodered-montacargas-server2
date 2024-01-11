@@ -23,11 +23,14 @@
         "category": "",
         "in": [
             {
-                "x": 80,
+                "x": 220,
                 "y": 180,
                 "wires": [
                     {
-                        "id": "3ad749041072c575"
+                        "id": "4caacd27ac7c72dd"
+                    },
+                    {
+                        "id": "6b7a1e2406578c48"
                     }
                 ]
             }
@@ -161,45 +164,6 @@
         "willMsg": {},
         "userProps": "",
         "sessionExpiry": ""
-    },
-    {
-        "id": "3ad749041072c575",
-        "type": "switch",
-        "z": "63965d808ff1bb6e",
-        "name": "running?",
-        "property": "connection",
-        "propertyType": "global",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "shutdown",
-                "vt": "str"
-            },
-            {
-                "t": "eq",
-                "v": "disconnected",
-                "vt": "str"
-            },
-            {
-                "t": "eq",
-                "v": "connected",
-                "vt": "str"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 3,
-        "x": 240,
-        "y": 180,
-        "wires": [
-            [
-                "4caacd27ac7c72dd"
-            ],
-            [],
-            [
-                "6b7a1e2406578c48"
-            ]
-        ]
     },
     {
         "id": "bb3b35a6bfa0def5",
@@ -885,7 +849,7 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 940,
+        "x": 980,
         "y": 200,
         "wires": []
     },
@@ -1104,8 +1068,8 @@
         "type": "subflow:63965d808ff1bb6e",
         "z": "4d53ee97ad0311a6",
         "name": "",
-        "x": 770,
-        "y": 160,
+        "x": 790,
+        "y": 140,
         "wires": [
             [
                 "e3472658b9dd67fe"
