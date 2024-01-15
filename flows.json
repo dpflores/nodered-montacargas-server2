@@ -615,7 +615,7 @@
         "z": "4d53ee97ad0311a6",
         "g": "a383835818b7681a",
         "name": "debug 1",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -781,12 +781,12 @@
             },
             {
                 "t": "eq",
-                "v": "A13CF8",
+                "v": "A13CHH",
                 "vt": "str"
             },
             {
                 "t": "eq",
-                "v": "A13CHH",
+                "v": "A13CF8",
                 "vt": "str"
             }
         ],
@@ -814,7 +814,7 @@
         "rules": [
             {
                 "t": "eq",
-                "v": "A13CF8",
+                "v": "A13CHH",
                 "vt": "str"
             },
             {
@@ -824,7 +824,7 @@
             },
             {
                 "t": "eq",
-                "v": "A13CHH",
+                "v": "A13CF8",
                 "vt": "str"
             }
         ],
