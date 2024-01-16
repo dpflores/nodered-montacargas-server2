@@ -1106,6 +1106,13 @@
                 "pt": "msg",
                 "to": "0",
                 "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "payload.data.status",
+                "pt": "msg",
+                "to": "0",
+                "tot": "str"
             }
         ],
         "action": "",
