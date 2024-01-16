@@ -176,6 +176,13 @@
                 "pt": "msg",
                 "to": "1",
                 "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "payload.data.general_status",
+                "pt": "msg",
+                "to": "0",
+                "tot": "str"
             }
         ],
         "action": "",
@@ -203,6 +210,13 @@
                 "pt": "msg",
                 "to": "2",
                 "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "payload.data.general_status",
+                "pt": "msg",
+                "to": "0",
+                "tot": "str"
             }
         ],
         "action": "",
@@ -230,6 +244,13 @@
                 "pt": "msg",
                 "to": "3",
                 "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "payload.data.general_status",
+                "pt": "msg",
+                "to": "1",
+                "tot": "str"
             }
         ],
         "action": "",
@@ -257,6 +278,13 @@
                 "pt": "msg",
                 "to": "4",
                 "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "payload.data_general_status",
+                "pt": "msg",
+                "to": "1",
+                "tot": "str"
             }
         ],
         "action": "",
@@ -284,6 +312,13 @@
                 "pt": "msg",
                 "to": "5",
                 "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "payload.data.general_status",
+                "pt": "msg",
+                "to": "1",
+                "tot": "str"
             }
         ],
         "action": "",
@@ -1037,6 +1072,13 @@
                 "pt": "msg",
                 "to": "1",
                 "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "payload.data.general_status",
+                "pt": "msg",
+                "to": "0",
+                "tot": "str"
             }
         ],
         "action": "",
@@ -1060,7 +1102,7 @@
         "rules": [
             {
                 "t": "set",
-                "p": "payload.data.status",
+                "p": "payload.data.general_status",
                 "pt": "msg",
                 "to": "0",
                 "tot": "num"
