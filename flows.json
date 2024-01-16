@@ -794,7 +794,7 @@
         "repair": false,
         "outputs": 3,
         "x": 300,
-        "y": 260,
+        "y": 320,
         "wires": [
             [],
             [],
