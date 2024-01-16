@@ -281,7 +281,7 @@
             },
             {
                 "t": "set",
-                "p": "payload.data_general_status",
+                "p": "payload.data.general_status",
                 "pt": "msg",
                 "to": "1",
                 "tot": "str"
