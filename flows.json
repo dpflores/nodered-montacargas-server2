@@ -668,7 +668,7 @@
         "z": "4d53ee97ad0311a6",
         "g": "a383835818b7681a",
         "name": "Filter local data",
-        "func": "let out_data = {}\n\nmsg.timestamp = msg.payload.timestamp;\nout_data.timestamp = msg.payload.timestamp;\nout_data.latitude = msg.payload.data.gps.latitude;\nout_data.longitude = msg.payload.data.gps.longitude;\nout_data.velocidad = msg.payload.data.gps.speed;\nout_data.carga = msg.payload.data.load;\nout_data.bateria = msg.payload.data.battery.voltage;\n// out_data.presion_bar = msg.payload.pressure_bar;\n// out_data.presion_psi = msg.payload.pressure_psi;\nout_data.state = msg.payload.data.status;\n// out_data.estado =\nmsg.payload = out_data;\nreturn msg;",
+        "func": "let out_data = {}\n\nmsg.timestamp = msg.payload.timestamp;\nout_data.timestamp = msg.payload.timestamp;\nout_data.latitude = msg.payload.data.gps.latitude;\nout_data.longitude = msg.payload.data.gps.longitude;\nout_data.velocidad = msg.payload.data.gps.speed;\nout_data.carga = msg.payload.data.load;\nout_data.bateria = msg.payload.data.battery.voltage;\n// out_data.presion_bar = msg.payload.pressure_bar;\n// out_data.presion_psi = msg.payload.pressure_psi;\nout_data.state = msg.payload.data.status;\nout_data.gstate = msg.payload.data.general_status;\n\n// out_data.estado =\nmsg.payload = out_data;\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
