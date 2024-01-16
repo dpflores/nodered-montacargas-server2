@@ -535,7 +535,7 @@
         "wires": [
             [
                 "07f477896215c16f",
-                "6b7ae4d6d10b73c4"
+                "f8474f24c89f9cf0"
             ]
         ]
     },
@@ -794,7 +794,7 @@
         "repair": false,
         "outputs": 3,
         "x": 300,
-        "y": 320,
+        "y": 260,
         "wires": [
             [],
             [],
@@ -853,7 +853,7 @@
         "outwarning": "disconnected",
         "outunsafe": "shutdown",
         "warning": "60",
-        "timer": "120",
+        "timer": "600",
         "repeat": false,
         "again": false,
         "x": 540,
