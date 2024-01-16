@@ -534,7 +534,8 @@
         "y": 320,
         "wires": [
             [
-                "07f477896215c16f"
+                "07f477896215c16f",
+                "6b7ae4d6d10b73c4"
             ]
         ]
     },
@@ -1178,7 +1179,7 @@
         "type": "debug",
         "z": "4d53ee97ad0311a6",
         "name": "debug 6",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
