@@ -1275,11 +1275,11 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 120,
+        "x": 100,
         "y": 460,
         "wires": [
             [
-                "0806b170500583b1"
+                "2883638417a58af4"
             ]
         ]
     },
@@ -1295,9 +1295,29 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 300,
+        "x": 380,
         "y": 460,
         "wires": []
+    },
+    {
+        "id": "2883638417a58af4",
+        "type": "function",
+        "z": "4d53ee97ad0311a6",
+        "name": "function 3",
+        "func": "msg.payload = Date.now();\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 240,
+        "y": 460,
+        "wires": [
+            [
+                "0806b170500583b1"
+            ]
+        ]
     },
     {
         "id": "5778748aaab07c8a",
