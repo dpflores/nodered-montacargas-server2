@@ -1607,5 +1607,62 @@
         "x": 580,
         "y": 420,
         "wires": []
+    },
+    {
+        "id": "e6469f51e99c2c89",
+        "type": "http in",
+        "z": "c767b22b0c185339",
+        "name": "",
+        "url": "/status",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 170,
+        "y": 500,
+        "wires": [
+            [
+                "d57aca71b724effe"
+            ]
+        ]
+    },
+    {
+        "id": "d57aca71b724effe",
+        "type": "change",
+        "z": "c767b22b0c185339",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "data.general_status",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 360,
+        "y": 500,
+        "wires": [
+            [
+                "79ebab6c9940c5cc"
+            ]
+        ]
+    },
+    {
+        "id": "79ebab6c9940c5cc",
+        "type": "http response",
+        "z": "c767b22b0c185339",
+        "name": "",
+        "statusCode": "200",
+        "headers": {
+            "content-type": "application/json"
+        },
+        "x": 540,
+        "y": 500,
+        "wires": []
     }
 ]
