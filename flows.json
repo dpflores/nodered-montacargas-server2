@@ -1495,7 +1495,7 @@
         "headers": {
             "content-type": "application/json"
         },
-        "x": 800,
+        "x": 880,
         "y": 420,
         "wires": []
     },
@@ -1602,7 +1602,7 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 740,
+        "x": 840,
         "y": 360,
         "wires": []
     },
@@ -1611,7 +1611,7 @@
         "type": "function",
         "z": "c767b22b0c185339",
         "name": "function 4",
-        "func": "var array_in = msg.payload.map((row) => JSON.parse(row.data).gstate);\n\n// Filtrar elementos con gstate igual a \"1\"\nvar array_filtered = array_in.filter((gstate) => gstate === \"1\");\n\nconst hours = array_filtered.length*5/3600;\n\nmsg.payload = hours;\nreturn msg;",
+        "func": "var array_in = msg.payload.map((row) => JSON.parse(row.data).gstate);\nvar json = {}\n// Filtrar elementos con gstate igual a \"1\"\nvar array_filtered = array_in.filter((gstate) => gstate === \"1\");\n\nconst hours_total = array_filtered.length*5/3600;\n\nconst hours = Math.round(hours_total);\nconst minutes = 60*(hours_total - hours);\n\njson.hours = hours;\njson.minutes = minutes;\nmsg.payload = json;\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
