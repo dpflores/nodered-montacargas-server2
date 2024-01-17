@@ -1495,7 +1495,7 @@
         "headers": {
             "content-type": "application/json"
         },
-        "x": 780,
+        "x": 800,
         "y": 420,
         "wires": []
     },
@@ -1566,8 +1566,7 @@
         "y": 420,
         "wires": [
             [
-                "b8bd4eb52eb10387",
-                "20bbad8995c7f077"
+                "b8bd4eb52eb10387"
             ]
         ]
     },
@@ -1628,7 +1627,7 @@
         ]
     },
     {
-        "id": "20bbad8995c7f077",
+        "id": "feb87afd0455d0ef",
         "type": "debug",
         "z": "c767b22b0c185339",
         "name": "debug 12",
@@ -1639,8 +1638,37 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 640,
-        "y": 380,
+        "x": 620,
+        "y": 460,
         "wires": []
+    },
+    {
+        "id": "fd284fbddd909a8a",
+        "type": "inject",
+        "z": "c767b22b0c185339",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 160,
+        "y": 460,
+        "wires": [
+            [
+                "5860ff6181353df8"
+            ]
+        ]
     }
 ]
