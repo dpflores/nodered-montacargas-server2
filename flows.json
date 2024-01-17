@@ -345,7 +345,7 @@
             {
                 "t": "gt",
                 "v": "0",
-                "vt": "str"
+                "vt": "num"
             },
             {
                 "t": "else"
@@ -407,7 +407,7 @@
             {
                 "t": "gt",
                 "v": "0",
-                "vt": "str"
+                "vt": "num"
             },
             {
                 "t": "else"
@@ -438,7 +438,7 @@
             {
                 "t": "gt",
                 "v": "0",
-                "vt": "str"
+                "vt": "num"
             },
             {
                 "t": "else"
@@ -1018,7 +1018,7 @@
             {
                 "t": "gt",
                 "v": "0",
-                "vt": "str"
+                "vt": "num"
             },
             {
                 "t": "else"
@@ -1243,7 +1243,7 @@
         "type": "debug",
         "z": "4d53ee97ad0311a6",
         "name": "debug 10",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
