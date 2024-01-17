@@ -127,7 +127,7 @@
         "id": "20aa6fa811d70d43",
         "type": "MySQLdatabase",
         "name": "",
-        "host": "localhost",
+        "host": "127.0.0.1",
         "port": "3306",
         "db": "acme_db",
         "tz": "",
