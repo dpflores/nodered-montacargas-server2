@@ -1635,7 +1635,7 @@
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "data.general_status",
+                "to": "live_data.data.general_status",
                 "tot": "global"
             }
         ],
