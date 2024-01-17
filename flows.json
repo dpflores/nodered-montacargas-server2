@@ -1495,7 +1495,7 @@
         "headers": {
             "content-type": "application/json"
         },
-        "x": 640,
+        "x": 780,
         "y": 420,
         "wires": []
     },
@@ -1566,7 +1566,7 @@
         "y": 420,
         "wires": [
             [
-                "69005e857c115cbc"
+                "b8bd4eb52eb10387"
             ]
         ]
     },
@@ -1602,8 +1602,28 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 640,
+        "x": 740,
         "y": 360,
         "wires": []
+    },
+    {
+        "id": "b8bd4eb52eb10387",
+        "type": "function",
+        "z": "c767b22b0c185339",
+        "name": "function 4",
+        "func": "var array_in = msg.payload.map((row) => JSON.parse(row.data));\n\nmsg.payload = array_in;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 620,
+        "y": 420,
+        "wires": [
+            [
+                "69005e857c115cbc"
+            ]
+        ]
     }
 ]
