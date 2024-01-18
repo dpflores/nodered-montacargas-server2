@@ -213,7 +213,7 @@
                 "p": "payload.data.general_status",
                 "pt": "msg",
                 "to": "0",
-                "tot": "str"
+                "tot": "num"
             }
         ],
         "action": "",
@@ -247,7 +247,7 @@
                 "p": "payload.data.general_status",
                 "pt": "msg",
                 "to": "0",
-                "tot": "str"
+                "tot": "num"
             }
         ],
         "action": "",
@@ -281,7 +281,7 @@
                 "p": "payload.data.general_status",
                 "pt": "msg",
                 "to": "1",
-                "tot": "str"
+                "tot": "num"
             }
         ],
         "action": "",
@@ -315,7 +315,7 @@
                 "p": "payload.data.general_status",
                 "pt": "msg",
                 "to": "1",
-                "tot": "str"
+                "tot": "num"
             }
         ],
         "action": "",
@@ -349,7 +349,7 @@
                 "p": "payload.data.general_status",
                 "pt": "msg",
                 "to": "1",
-                "tot": "str"
+                "tot": "num"
             }
         ],
         "action": "",
@@ -1100,14 +1100,14 @@
                 "p": "payload.data.status",
                 "pt": "msg",
                 "to": "1",
-                "tot": "str"
+                "tot": "num"
             },
             {
                 "t": "set",
                 "p": "payload.data.general_status",
                 "pt": "msg",
                 "to": "0",
-                "tot": "str"
+                "tot": "num"
             }
         ],
         "action": "",
@@ -1134,14 +1134,14 @@
                 "p": "payload.data.general_status",
                 "pt": "msg",
                 "to": "0",
-                "tot": "str"
+                "tot": "num"
             },
             {
                 "t": "set",
                 "p": "payload.data.status",
                 "pt": "msg",
                 "to": "0",
-                "tot": "str"
+                "tot": "num"
             }
         ],
         "action": "",
