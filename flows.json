@@ -1100,7 +1100,7 @@
                 "p": "payload.data.status",
                 "pt": "msg",
                 "to": "1",
-                "tot": "num"
+                "tot": "str"
             },
             {
                 "t": "set",
@@ -1134,7 +1134,7 @@
                 "p": "payload.data.general_status",
                 "pt": "msg",
                 "to": "0",
-                "tot": "num"
+                "tot": "str"
             },
             {
                 "t": "set",
