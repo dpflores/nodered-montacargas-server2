@@ -83,6 +83,70 @@
         }
     },
     {
+        "id": "dc275690.07356",
+        "type": "subflow",
+        "name": "scheduler",
+        "info": "A scheduler that repeatedly executes\nschedules put in as an array of objects\nas a ```msg.payload``` in the format of:\n```\n[\n  {\n    \"item\": \"test\",\n    \"command\": \"ON\",\n    \"time\": \"08:30\"\n  },\n  {\n    \"item\": \"test\",\n    \"command\": \"OFF\",\n    \"time\": \"19:45\"\n  }\n]\n```\nEach schedule object can also contain an optional ```days``` property:\n```\n  {\n    \"item\": \"test\",\n    \"command\": \"ON\",\n    \"days\": [1,2,6,7],\n    \"time\": \"08:30\"\n  }\n```\nthe ```days property``` has the format of\nan array. Each day that the schedule object \nshould be executed on has to be in the array.\nThe week starts with monday(1) and ends with\nsunday(7). So the example above would only be\nexecuted on monday, tuesday, saturday and\nsunday.\nYou can mix objects with and without a\ndays property in one schedule array.\n\nSending an **empty array** as a\n```msg.payload``` to the subflow will\nreset it.\nThe second output is a debug.\nSending a ```msg.payload``` string of **\"debug\"**\nwill send an object of the schedule and the\ncorresponding timers that are scheduled\nto this output.\nAt schedule time a ```msg``` object will be send\nfrom the first output. The command will be\npassed as the ```msg.payload```, the item in\n```msg.item``` and the original schedule object\nin ```msg.original```.\nThe subflows status will show the next item to \nbe executed once a schedule is set.",
+        "category": "",
+        "in": [
+            {
+                "x": 80,
+                "y": 180,
+                "wires": [
+                    {
+                        "id": "be194cd9.78b218"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 1720,
+                "y": 180,
+                "wires": [
+                    {
+                        "id": "8eb795c0.24899",
+                        "port": 0
+                    }
+                ]
+            },
+            {
+                "x": 560,
+                "y": 120,
+                "wires": [
+                    {
+                        "id": "6680ab33.f83b5c",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [],
+        "color": "#FFAAAA",
+        "inputLabels": [
+            "schedule input"
+        ],
+        "outputLabels": [
+            "command output",
+            ""
+        ],
+        "icon": "node-red/timer.svg",
+        "status": {
+            "x": 1320,
+            "y": 360,
+            "wires": [
+                {
+                    "id": "a0ba0058.4cf528",
+                    "port": 0
+                },
+                {
+                    "id": "3bf2be21.9401aa",
+                    "port": 1
+                }
+            ]
+        }
+    },
+    {
         "id": "a383835818b7681a",
         "type": "group",
         "z": "4d53ee97ad0311a6",
@@ -508,6 +572,374 @@
         ]
     },
     {
+        "id": "f476595.aa436a8",
+        "type": "function",
+        "z": "dc275690.07356",
+        "name": "schedule function",
+        "func": "const schedule = msg.payload;\nif(typeof msg.payload === \"undefined\") return null;\nlet scheduled = context.scheduled || [];\nlet todelete = [];\nscheduled.forEach((item,index) => {\n    if(!schedule.some(element => JSON.stringify(element) == JSON.stringify(item.schedule))){\n        clearTimeout(item.timer);\n        todelete.push(index);\n    }\n})\nscheduled = scheduled.filter((item,index) => !todelete.includes(index));\ncontext.scheduled = scheduled;\nschedule.forEach(element => {\n    const execute = element;\n    const time = new Date();\n    const timestamp = time.getTime();\n    const hour = time.getHours();\n    const minute = time.getMinutes();\n    const year = time.getFullYear();\n    const month = time.getMonth();\n    const day = time.getDate();\n    const inputS = execute.time.split(\":\");\n    const hourS = parseInt(inputS[0]);\n    const minuteS = parseInt(inputS[1]);\n    if(typeof hourS != \"number\" || typeof minuteS != \"number\") return null;\n    const timeS = new Date(year, month, day, hourS, minuteS);\n    const timestampS = timeS.getTime();\n    let timestampD = 0;\n    if(timestampS >= timestamp){\n        timestampD = timestampS - timestamp;\n    } else {\n        timestampD = (timestampS + 86400000) - timestamp;\n    }\n    let oldscheduled = context.scheduled;\n    if(!oldscheduled.some(element => JSON.stringify(element.schedule) == JSON.stringify(execute))){\n        const newtimer = setTimeout(()=>{\n            let newscheduled = context.scheduled;\n            const deleteindex = newscheduled.indexOf(newschedule);\n            newscheduled.splice(deleteindex,1);\n            node.send({payload:newschedule.schedule});\n            context.scheduled = newscheduled;\n        },timestampD);\n        const newschedule = {\n            runtime: timestampD,\n            timer: newtimer,\n            schedule: execute\n        };\n        oldscheduled.push(newschedule);\n        context.scheduled = oldscheduled;\n    }\n});\nconst sendscheduled = context.scheduled;\nmsg.topic = \"scheduled\";\nconst newmsg = sendscheduled.map(item => {\n    return {schedule:item.schedule,runtime:item.runtime}\n});\nmsg.payload = newmsg;\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 970,
+        "y": 180,
+        "wires": [
+            [
+                "cd6382ee.28d1c8"
+            ]
+        ]
+    },
+    {
+        "id": "a0ba0058.4cf528",
+        "type": "function",
+        "z": "dc275690.07356",
+        "name": "get next schedule item",
+        "func": "const schedule = flow.get(\"schedule\") || [];\nif(schedule.length === 0){\n    msg.payload = \"no schedule yet\";\n    return msg;\n}\nconst time = new Date();\nconst dayNames = [\"Monday\",\"Tuesday\",\"Wednesday\",\"Thursday\",\"Friday\",\"Saturday\",\"Sunday\"];\nlet day = time.getDay();\nif (day === 0) { day = 7; }\nlet hour = String(time.getHours());\nlet minute = String(time.getMinutes());\nif(hour.length == 1) hour = \"0\" + hour;\nif(minute.length == 1) minute = \"0\" + minute;\nlet hmtime = hour + \":\" + minute;\nlet found = false;\nlet nextindex = 0;\nfor(let a=0; a<7; a++){\n    for(i=0;i<schedule.length;i++){\n        if(hmtime < schedule[i].time){\n            if(schedule[i].hasOwnProperty(\"days\")){\n                if(schedule[i].days.includes(day)){\n                    nextindex = i;\n                    found = true;\n                    break;\n                } else {\n                    continue;\n                }\n            } else {\n                nextindex = i;\n                found = true;\n                break;\n            }\n        } else {\n            continue;\n        }\n    }\n    if(found){break;}\n    if(a === 0){ hmtime = \"\"; }\n    if (day < 7) {\n        day += 1;\n    } else {\n        day = 1;\n    }\n}\nmsg.payload = schedule[nextindex].item + \", \" + schedule[nextindex].command + \", \" + dayNames[day-1] + \", \" + schedule[nextindex].time;\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 8,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1140,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7f1ec532.7fc8bc",
+        "type": "function",
+        "z": "dc275690.07356",
+        "name": "sort schedule and save to flow",
+        "func": "const oldschedule = msg.payload;\nlet newschedule = [];\noldschedule.forEach(element => {\n    let newindex = null;\n    if(newschedule.length > 0){\n        for(i=0;i<newschedule.length-1;i++){\n            if(element.time >= newschedule[i].time && element.time < newschedule[i+1].time){\n                newindex = i+1;\n            }\n        }\n        if(newindex !== null){\n            newschedule.splice(newindex,0,element);\n        } else if (element.time < newschedule[0].time){\n            newschedule.splice(0,0,element);\n        } else {\n            newschedule.push(element);\n        }\n    } else {\n        newschedule.push(element);\n    }\n});\nflow.set(\"schedule\",newschedule);\nmsg.payload = newschedule;\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 7,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 670,
+        "y": 180,
+        "wires": [
+            [
+                "a0ba0058.4cf528",
+                "f476595.aa436a8"
+            ]
+        ]
+    },
+    {
+        "id": "694a5ae3.e4714c",
+        "type": "inject",
+        "z": "dc275690.07356",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 410,
+        "y": 360,
+        "wires": [
+            [
+                "a0ba0058.4cf528",
+                "cf9ed7a2.81f21"
+            ]
+        ]
+    },
+    {
+        "id": "be194cd9.78b218",
+        "type": "switch",
+        "z": "dc275690.07356",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "debug",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 210,
+        "y": 180,
+        "wires": [
+            [
+                "6680ab33.f83b5c"
+            ],
+            [
+                "3bf2be21.9401aa"
+            ]
+        ]
+    },
+    {
+        "id": "8eb795c0.24899",
+        "type": "change",
+        "z": "dc275690.07356",
+        "name": "",
+        "rules": [
+            {
+                "t": "move",
+                "p": "payload",
+                "pt": "msg",
+                "to": "original",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "original.command",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "item",
+                "pt": "msg",
+                "to": "original.item",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1560,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "cd6382ee.28d1c8",
+        "type": "switch",
+        "z": "dc275690.07356",
+        "name": "",
+        "property": "topic",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "scheduled",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1150,
+        "y": 180,
+        "wires": [
+            [
+                "7e108ed9.acbd88"
+            ],
+            [
+                "a0ba0058.4cf528",
+                "280402d5.27b2f6",
+                "ab8f82a4.0079b"
+            ]
+        ]
+    },
+    {
+        "id": "6680ab33.f83b5c",
+        "type": "change",
+        "z": "dc275690.07356",
+        "name": "",
+        "rules": [
+            {
+                "t": "delete",
+                "p": "payload",
+                "pt": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload.schedule",
+                "pt": "msg",
+                "to": "schedule",
+                "tot": "flow"
+            },
+            {
+                "t": "set",
+                "p": "payload.scheduled",
+                "pt": "msg",
+                "to": "scheduled",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 400,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "cf9ed7a2.81f21",
+        "type": "trigger",
+        "z": "dc275690.07356",
+        "name": "",
+        "op1": "[]",
+        "op2": "schedule",
+        "op1type": "json",
+        "op2type": "flow",
+        "duration": "1",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 760,
+        "y": 240,
+        "wires": [
+            [
+                "f476595.aa436a8"
+            ]
+        ]
+    },
+    {
+        "id": "7e108ed9.acbd88",
+        "type": "change",
+        "z": "dc275690.07356",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "scheduled",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1330,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "280402d5.27b2f6",
+        "type": "trigger",
+        "z": "dc275690.07356",
+        "name": "",
+        "op1": "",
+        "op2": "schedule",
+        "op1type": "nul",
+        "op2type": "flow",
+        "duration": "1",
+        "extend": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "outputs": 1,
+        "x": 960,
+        "y": 120,
+        "wires": [
+            [
+                "f476595.aa436a8"
+            ]
+        ]
+    },
+    {
+        "id": "ab8f82a4.0079b",
+        "type": "function",
+        "z": "dc275690.07356",
+        "name": "today?",
+        "func": "if (msg.payload.hasOwnProperty(\"days\")) {\n    const date = new Date();\n    let day = date.getDay();\n    if (day === 0) { day = 7; }\n    if (msg.payload.days.includes(day)) {\n        return msg;\n    } else {\n        return null;\n    }\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1350,
+        "y": 180,
+        "wires": [
+            [
+                "8eb795c0.24899"
+            ]
+        ]
+    },
+    {
+        "id": "3bf2be21.9401aa",
+        "type": "function",
+        "z": "dc275690.07356",
+        "name": "validate input",
+        "func": "let errorMsg = \"\";\nif(!Array.isArray(msg.payload)) {\n    errorMsg = \"msg.payload should be an array of schedule items\";\n    node.warn(errorMsg)\n    msg.payload = errorMsg;\n    return [null, msg];\n}\nfor(i=0;i<msg.payload.length;i++){\n    if(typeof msg.payload[i] !== \"object\") {\n        errorMsg = \"each array item should be an object\";\n        node.warn(errorMsg)\n        msg.payload = errorMsg;\n        return [null, msg];\n    }\n    if(!msg.payload[i].hasOwnProperty(\"item\") || !msg.payload[i].hasOwnProperty(\"command\") || !msg.payload[i].hasOwnProperty(\"time\")) {\n        errorMsg = \"each array item should contain a item, a command and time property\";\n        node.warn(errorMsg)\n        msg.payload = errorMsg;\n        return [null, msg];\n    }\n    if(typeof msg.payload[i].item !== \"string\") {\n        errorMsg = \"the items in each schedule should be given as a string\";\n        node.warn(errorMsg)\n        msg.payload = errorMsg;\n        return [null, msg];\n    }\n    if(typeof msg.payload[i].command !== \"string\" && typeof msg.payload[i].command !== \"number\" && typeof msg.payload[i].command !== \"boolean\") {\n        errorMsg = \"the commands in each schedule should be given as a string or a number\";\n        node.warn(errorMsg)\n        msg.payload = errorMsg;\n        return [null, msg];\n    }\n    if(!msg.payload[i].time.match(/[0-2]\\d\\:[0-5]\\d/g)) {\n        errorMsg = \"the time should be in hh:mm 24 hour format\";\n        node.warn(errorMsg)\n        msg.payload = errorMsg;\n        return [null, msg];\n    }\n    if(msg.payload[i].hasOwnProperty(\"days\")) {\n        if(!Array.isArray(msg.payload[i].days)) {\n            errorMsg = \"days should be given as an array of integers\";\n            node.warn(errorMsg)\n            msg.payload = errorMsg;\n            return [null, msg];\n        }\n        for(let c=0; c<msg.payload[i].days.length; c++){\n            if(typeof msg.payload[i].days[c] !== \"number\"){\n                errorMsg = \"days should be given as integers of type number\";\n                node.warn(errorMsg)\n                msg.payload = errorMsg;\n                return [null, msg];\n            }\n            if(msg.payload[i].days[c] < 1 || msg.payload[i].days[c] > 7){\n                errorMsg = \"days should be in the range of 1-7\";\n                node.warn(errorMsg)\n                msg.payload = errorMsg;\n                return [null, msg];\n            }\n        }\n    }\n}\nreturn [msg, null];",
+        "outputs": 2,
+        "timeout": "",
+        "noerr": 18,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 180,
+        "wires": [
+            [
+                "7f1ec532.7fc8bc"
+            ],
+            [
+                "ead6c623.14ffd"
+            ]
+        ]
+    },
+    {
+        "id": "ead6c623.14ffd",
+        "type": "trigger",
+        "z": "dc275690.07356",
+        "name": "",
+        "op1": "",
+        "op2": "1",
+        "op1type": "nul",
+        "op2type": "str",
+        "duration": "2",
+        "extend": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "outputs": 1,
+        "x": 760,
+        "y": 300,
+        "wires": [
+            [
+                "a0ba0058.4cf528"
+            ]
+        ]
+    },
+    {
         "id": "c3d19c6f376bc860",
         "type": "inject",
         "z": "abf430ab9cfee905",
@@ -555,6 +987,58 @@
         "reg": false,
         "x": 350,
         "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e7dbfe52c5a56dda",
+        "type": "change",
+        "z": "abf430ab9cfee905",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "time_limits",
+                "pt": "global",
+                "to": "{\"gateway_key\":\"\",\"timestamp\":0,\"data\":{\"gps\":{\"pos_valid\":0,\"latitude\":0,\"longitude\":0,\"altitude\":0,\"haccuracy\":5304419,\"speed\":0,\"course\":0},\"mantto\":\"0\",\"running\":\"0\",\"hourmeter\":0,\"battery\":{\"voltage\":0},\"pressure\":{\"current\":0},\"load\":0,\"status\":0}}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 460,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c9ba55fba965e6e8",
+        "type": "inject",
+        "z": "abf430ab9cfee905",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 110,
+        "y": 220,
         "wires": [
             []
         ]
