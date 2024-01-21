@@ -2090,7 +2090,7 @@
         "type": "function",
         "z": "c767b22b0c185339",
         "name": "function 3",
-        "func": "\nmsg.topic = `\n  SELECT * FROM local_data \n`;\nreturn msg;",
+        "func": "\nmsg.topic = `\n  SELECT * FROM local_data \n  WHERE YEAR(date) = YEAR(CURDATE())\n  ORDER BY date;\n  `;\nreturn msg;",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
