@@ -1882,6 +1882,26 @@
         "wires": []
     },
     {
+        "id": "85a26b29df8bdf63",
+        "type": "comment",
+        "z": "4d53ee97ad0311a6",
+        "name": "Invalid time (fuera de horario)",
+        "info": "",
+        "x": 320,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "54f6c9a70d08c7d0",
+        "type": "comment",
+        "z": "4d53ee97ad0311a6",
+        "name": "Starting time (inicio de horario)",
+        "info": "",
+        "x": 310,
+        "y": 1000,
+        "wires": []
+    },
+    {
         "id": "5778748aaab07c8a",
         "type": "http in",
         "z": "c767b22b0c185339",
