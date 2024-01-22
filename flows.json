@@ -846,7 +846,7 @@
         "type": "function",
         "z": "abf430ab9cfee905",
         "name": "Parse",
-        "func": "msg.payload = JSON.parse(msg.payload[0].json)\nreturn msg;",
+        "func": "msg.payload = JSON.parse(msg.payload[0].json)\nreturn msg;\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
