@@ -1764,7 +1764,8 @@
             "0dbd5db4020576db",
             "5bef7810bb446303",
             "c8d60c4ef86f2d66",
-            "b840f2b36dafec2c"
+            "b840f2b36dafec2c",
+            "d886d36ba3d3f976"
         ],
         "x": 455,
         "y": 560,
@@ -2030,35 +2031,18 @@
         ],
         "repeat": "300",
         "crontab": "",
-        "once": false,
+        "once": true,
         "onceDelay": 0.1,
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 290,
-        "y": 1140,
+        "x": 230,
+        "y": 1180,
         "wires": [
             [
-                "e3fbd298a12a1490"
+                "e3fbd298a12a1490",
+                "dabb21e592d235e5"
             ]
-        ]
-    },
-    {
-        "id": "978294c71ea7229a",
-        "type": "function",
-        "z": "4d53ee97ad0311a6",
-        "name": "Get last data",
-        "func": "var data_json = global.get(\"live_data\");\n\ndata_json.timestamp = Date.now();\ndata_json.data.status = -1;\ndata_json.data.general_status = -1;\n\nmsg.payload = data_json;\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 790,
-        "y": 1140,
-        "wires": [
-            []
         ]
     },
     {
@@ -2076,7 +2060,7 @@
         "type": "function",
         "z": "4d53ee97ad0311a6",
         "name": "Verificamos si terminó el horario",
-        "func": "var currentDate = new Date(msg.payload);\n\nconst hours = currentDate.getHours();\nmsg.payload = hours\nreturn msg;",
+        "func": "var currentDate = new Date(msg.payload);\nconst endHour = global.get(\"end_hour\");\n\nconst hours = currentDate.getHours();\n\nif (hours >= endHour) {\n    msg.payload = hours\n    return msg;\n}\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -2087,8 +2071,8 @@
         "y": 1140,
         "wires": [
             [
-                "978294c71ea7229a",
-                "c41ff624c18e7b14"
+                "c41ff624c18e7b14",
+                "af10acfd9ddae22e"
             ]
         ]
     },
@@ -2107,6 +2091,79 @@
         "x": 780,
         "y": 1100,
         "wires": []
+    },
+    {
+        "id": "af10acfd9ddae22e",
+        "type": "function",
+        "z": "4d53ee97ad0311a6",
+        "name": "Get last data and set status -1",
+        "func": "var data_json = global.get(\"live_data\");\n\ndata_json.timestamp = Date.now();\ndata_json.data.status = -1;\ndata_json.data.general_status = -1;\n\nmsg.payload = data_json;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 830,
+        "y": 1140,
+        "wires": [
+            [
+                "d886d36ba3d3f976"
+            ]
+        ]
+    },
+    {
+        "id": "d886d36ba3d3f976",
+        "type": "link out",
+        "z": "4d53ee97ad0311a6",
+        "name": "link out 5",
+        "mode": "link",
+        "links": [
+            "78cd71d4d4914aab"
+        ],
+        "x": 1035,
+        "y": 1200,
+        "wires": []
+    },
+    {
+        "id": "a8f32d6eee3e5c59",
+        "type": "function",
+        "z": "4d53ee97ad0311a6",
+        "name": "Get last data and set status 0",
+        "func": "var data_json = global.get(\"live_data\");\n\ndata_json.timestamp = Date.now();\ndata_json.data.status = 0;\ndata_json.data.general_status = 0;\n\nmsg.payload = data_json;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 820,
+        "y": 1240,
+        "wires": [
+            [
+                "d886d36ba3d3f976"
+            ]
+        ]
+    },
+    {
+        "id": "dabb21e592d235e5",
+        "type": "function",
+        "z": "4d53ee97ad0311a6",
+        "name": "Verificamos si inició el horario",
+        "func": "var currentDate = new Date(msg.payload);\nconst initHour = global.get(\"init_hour\");\n\nconst hours = currentDate.getHours();\n\nif (hours >= initHour) {\n    msg.payload = hours\n    return msg;\n}\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 510,
+        "y": 1240,
+        "wires": [
+            [
+                "a8f32d6eee3e5c59"
+            ]
+        ]
     },
     {
         "id": "5778748aaab07c8a",
