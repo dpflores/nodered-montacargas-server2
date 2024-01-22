@@ -1096,7 +1096,7 @@
                 "t": "set",
                 "p": "end_hour",
                 "pt": "global",
-                "to": "payload",
+                "to": "payload[0].json",
                 "tot": "msg"
             }
         ],
@@ -1105,7 +1105,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 630,
+        "x": 670,
         "y": 280,
         "wires": [
             []
