@@ -1635,7 +1635,8 @@
         "wires": [
             [
                 "e3fbd298a12a1490",
-                "dabb21e592d235e5"
+                "dabb21e592d235e5",
+                "2979f2c5fa89d36e"
             ]
         ]
     },
@@ -1758,6 +1759,42 @@
                 "a8f32d6eee3e5c59"
             ]
         ]
+    },
+    {
+        "id": "2979f2c5fa89d36e",
+        "type": "function",
+        "z": "4d53ee97ad0311a6",
+        "name": "Verificamos si inició el horario",
+        "func": "var currentDate = new Date(msg.payload);\nconst initHour = global.get(\"init_hour\");\n\nconst day = currentDate.getDate();\n\nmsg.payload = day;\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 510,
+        "y": 1340,
+        "wires": [
+            [
+                "7019960c0195487f"
+            ]
+        ]
+    },
+    {
+        "id": "7019960c0195487f",
+        "type": "debug",
+        "z": "4d53ee97ad0311a6",
+        "name": "debug 14",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 800,
+        "y": 1340,
+        "wires": []
     },
     {
         "id": "5778748aaab07c8a",
