@@ -1042,7 +1042,8 @@
         "wires": [
             [
                 "3a95b8e928820723",
-                "4eb2630149384011"
+                "4eb2630149384011",
+                "6f404c25a44b27dc"
             ]
         ]
     },
@@ -1155,6 +1156,31 @@
         "x": 640,
         "y": 140,
         "wires": []
+    },
+    {
+        "id": "6f404c25a44b27dc",
+        "type": "change",
+        "z": "abf430ab9cfee905",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "schedule_state",
+                "pt": "global",
+                "to": "0",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 350,
+        "y": 380,
+        "wires": [
+            []
+        ]
     },
     {
         "id": "a5111d94f7361a1b",
@@ -2060,7 +2086,7 @@
         "type": "function",
         "z": "4d53ee97ad0311a6",
         "name": "Verificamos si terminó el horario",
-        "func": "var currentDate = new Date(msg.payload);\nconst endHour = global.get(\"end_hour\");\n\nconst hours = currentDate.getHours();\n\nif (hours >= Number(endHour)) {\n    msg.flag = 1;\n    msg.payload = hours\n    return msg;\n}\n",
+        "func": "var currentDate = new Date(msg.payload);\nconst endHour = global.get(\"end_hour\");\n\nconst hours = currentDate.getHours();\n\nif (hours >= Number(endHour)) {\n    msg.payload = hours\n    return msg;\n}\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -2097,7 +2123,7 @@
         "type": "function",
         "z": "4d53ee97ad0311a6",
         "name": "Get last data and set status -1",
-        "func": "var data_json = global.get(\"live_data\");\n\nif (msg.flag == 1){\ndata_json.timestamp = Date.now();\ndata_json.data.status = -1;\ndata_json.data.general_status = -1;\n\nmsg.payload = data_json;\nmsg.flag = 0;\nreturn msg;\n}",
+        "func": "var data_json = global.get(\"live_data\");\nvar scheduleState = global.get(\"schedule_state\");\n\n\nif(scheduleState){\nglobal.set(\"schedule_state\",0)\n\ndata_json.timestamp = Date.now();\ndata_json.data.status = -1;\ndata_json.data.general_status = -1;\n\nmsg.payload = data_json;\nmsg.flag = 0;\nreturn msg;\n}\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -2130,7 +2156,7 @@
         "type": "function",
         "z": "4d53ee97ad0311a6",
         "name": "Get last data and set status 0",
-        "func": "var data_json = global.get(\"live_data\");\n\nif (msg.flag == 1) {\n\ndata_json.timestamp = Date.now();\ndata_json.data.status = 0;\ndata_json.data.general_status = 0;\n\nmsg.payload = data_json;\nmsg.flag=0;\nreturn msg;\n}",
+        "func": "var data_json = global.get(\"live_data\");\nvar scheduleState = global.get(\"schedule_state\");\n\nif(!scheduleState){\nvar scheduleState = global.get(\"schedule_state\");\n\ndata_json.timestamp = Date.now();\ndata_json.data.status = 0;\ndata_json.data.general_status = 0;\n\nmsg.payload = data_json;\nmsg.flag=0;\nreturn msg;\n}",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -2150,14 +2176,14 @@
         "type": "function",
         "z": "4d53ee97ad0311a6",
         "name": "Verificamos si inició el horario",
-        "func": "var currentDate = new Date(msg.payload);\nconst initHour = global.get(\"init_hour\");\n\nconst hours = currentDate.getHours();\n\nif (hours >= Number(initHour) && hours < (Number(initHour)+1)) {\n    msg.flag = 1;\n\n    msg.payload = hours\n    return msg;\n}\n",
+        "func": "var currentDate = new Date(msg.payload);\nconst initHour = global.get(\"init_hour\");\n\nconst hours = currentDate.getHours();\n\nif (hours >= Number(initHour) && hours < (Number(initHour)+1)) {\n    msg.payload = hours\n    return msg;\n}\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 510,
+        "x": 490,
         "y": 1240,
         "wires": [
             [
