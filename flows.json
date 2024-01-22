@@ -1916,7 +1916,7 @@
         "id": "975744eea9044e04",
         "type": "function",
         "z": "4d53ee97ad0311a6",
-        "name": "Get last data",
+        "name": "Get last data and set status -1",
         "func": "var data_json = global.get(\"live_data\");\n\ndata_json.timestamp = Date.now();\ndata_json.data.status = -1;\ndata_json.data.general_status = -1;\n\nmsg.payload = data_json;\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
@@ -1924,7 +1924,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 450,
+        "x": 510,
         "y": 880,
         "wires": [
             [
@@ -1965,7 +1965,7 @@
         "id": "3e6cc1f176ea51f1",
         "type": "function",
         "z": "4d53ee97ad0311a6",
-        "name": "Get last data",
+        "name": "Get last data and set status 0",
         "func": "var data_json = global.get(\"live_data\");\n\ndata_json.timestamp = Date.now();\ndata_json.data.status = 0;\ndata_json.data.general_status = 0;\n\nmsg.payload = data_json;\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
@@ -1973,7 +1973,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 450,
+        "x": 500,
         "y": 960,
         "wires": [
             [
@@ -1990,7 +1990,7 @@
         "links": [
             "78cd71d4d4914aab"
         ],
-        "x": 605,
+        "x": 725,
         "y": 920,
         "wires": []
     },
@@ -2012,6 +2012,100 @@
         "info": "",
         "x": 310,
         "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "6fd8e239048a712e",
+        "type": "inject",
+        "z": "4d53ee97ad0311a6",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "300",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 290,
+        "y": 1140,
+        "wires": [
+            [
+                "e3fbd298a12a1490"
+            ]
+        ]
+    },
+    {
+        "id": "978294c71ea7229a",
+        "type": "function",
+        "z": "4d53ee97ad0311a6",
+        "name": "Get last data",
+        "func": "var data_json = global.get(\"live_data\");\n\ndata_json.timestamp = Date.now();\ndata_json.data.status = -1;\ndata_json.data.general_status = -1;\n\nmsg.payload = data_json;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 790,
+        "y": 1140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4cc7986f1c218a3d",
+        "type": "comment",
+        "z": "4d53ee97ad0311a6",
+        "name": "Repetidamente verificamos si ha terminado o empezado el horario",
+        "info": "",
+        "x": 380,
+        "y": 1100,
+        "wires": []
+    },
+    {
+        "id": "e3fbd298a12a1490",
+        "type": "function",
+        "z": "4d53ee97ad0311a6",
+        "name": "Verificamos si terminó el horario",
+        "func": "var currentDate = new Date(msg.payload);\n\nconst hours = currentDate.getHours();\nmsg.payload = hours\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 510,
+        "y": 1140,
+        "wires": [
+            [
+                "978294c71ea7229a",
+                "c41ff624c18e7b14"
+            ]
+        ]
+    },
+    {
+        "id": "c41ff624c18e7b14",
+        "type": "debug",
+        "z": "4d53ee97ad0311a6",
+        "name": "debug 13",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 780,
+        "y": 1100,
         "wires": []
     },
     {
