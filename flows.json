@@ -578,7 +578,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 670,
+        "x": 770,
         "y": 220,
         "wires": [
             []
@@ -610,7 +610,6 @@
         "wires": [
             [
                 "3a95b8e928820723",
-                "4eb2630149384011",
                 "6f404c25a44b27dc"
             ]
         ]
@@ -620,38 +619,18 @@
         "type": "function",
         "z": "abf430ab9cfee905",
         "name": "function 5",
-        "func": "msg.topic = 'SELECT * FROM `persistent_data` WHERE `tag`= \"init_hour\";';\nreturn msg;",
+        "func": "msg.topic = 'SELECT * FROM `persistent_data` WHERE `tag`= \"schedule\";';\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 300,
-        "y": 220,
+        "x": 280,
+        "y": 240,
         "wires": [
             [
                 "187f4d75698b331b"
-            ]
-        ]
-    },
-    {
-        "id": "4eb2630149384011",
-        "type": "function",
-        "z": "abf430ab9cfee905",
-        "name": "function 6",
-        "func": "msg.topic = 'SELECT * FROM `persistent_data` WHERE `tag`= \"end_hour\";';\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 300,
-        "y": 280,
-        "wires": [
-            [
-                "26a3d75bbb7c8650"
             ]
         ]
     },
@@ -674,7 +653,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 670,
+        "x": 790,
         "y": 280,
         "wires": [
             []
@@ -687,25 +666,10 @@
         "mydb": "20aa6fa811d70d43",
         "name": "",
         "x": 440,
-        "y": 220,
+        "y": 240,
         "wires": [
             [
-                "e7dbfe52c5a56dda",
-                "f3bfb38cca3f4fe9"
-            ]
-        ]
-    },
-    {
-        "id": "26a3d75bbb7c8650",
-        "type": "mysql",
-        "z": "abf430ab9cfee905",
-        "mydb": "20aa6fa811d70d43",
-        "name": "",
-        "x": 440,
-        "y": 280,
-        "wires": [
-            [
-                "51b7029a3f84e81b"
+                "d77d7b0452183412"
             ]
         ]
     },
@@ -721,7 +685,7 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 640,
+        "x": 740,
         "y": 140,
         "wires": []
     },
@@ -873,6 +837,27 @@
         "wires": [
             [
                 "53261bb7d0273933"
+            ]
+        ]
+    },
+    {
+        "id": "d77d7b0452183412",
+        "type": "function",
+        "z": "abf430ab9cfee905",
+        "name": "Parse",
+        "func": "msg.payload = JSON.parse(msg.payload[0].json)\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 590,
+        "y": 240,
+        "wires": [
+            [
+                "e7dbfe52c5a56dda",
+                "f3bfb38cca3f4fe9"
             ]
         ]
     },
