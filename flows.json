@@ -809,7 +809,7 @@
         "y": 420,
         "wires": [
             [
-                "53261bb7d0273933"
+                "fe36c210aa3c6daf"
             ]
         ]
     },
@@ -825,9 +825,29 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 580,
+        "x": 720,
         "y": 420,
         "wires": []
+    },
+    {
+        "id": "fe36c210aa3c6daf",
+        "type": "function",
+        "z": "abf430ab9cfee905",
+        "name": "function 8",
+        "func": "msg.payload = msg.payload[0].json\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 420,
+        "wires": [
+            [
+                "53261bb7d0273933"
+            ]
+        ]
     },
     {
         "id": "a5111d94f7361a1b",
