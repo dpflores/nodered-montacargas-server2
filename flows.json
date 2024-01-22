@@ -1010,12 +1010,10 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 510,
+        "x": 610,
         "y": 220,
         "wires": [
-            [
-                "113e11b6c5f0cc2e"
-            ]
+            []
         ]
     },
     {
@@ -1064,7 +1062,7 @@
         "y": 220,
         "wires": [
             [
-                "e7dbfe52c5a56dda"
+                "187f4d75698b331b"
             ]
         ]
     },
@@ -1084,7 +1082,7 @@
         "y": 280,
         "wires": [
             [
-                "51b7029a3f84e81b"
+                "26a3d75bbb7c8650"
             ]
         ]
     },
@@ -1107,14 +1105,43 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 510,
+        "x": 630,
         "y": 280,
         "wires": [
             []
         ]
     },
     {
-        "id": "113e11b6c5f0cc2e",
+        "id": "187f4d75698b331b",
+        "type": "mysql",
+        "z": "abf430ab9cfee905",
+        "mydb": "20aa6fa811d70d43",
+        "name": "",
+        "x": 440,
+        "y": 220,
+        "wires": [
+            [
+                "e7dbfe52c5a56dda",
+                "f3bfb38cca3f4fe9"
+            ]
+        ]
+    },
+    {
+        "id": "26a3d75bbb7c8650",
+        "type": "mysql",
+        "z": "abf430ab9cfee905",
+        "mydb": "20aa6fa811d70d43",
+        "name": "",
+        "x": 440,
+        "y": 280,
+        "wires": [
+            [
+                "51b7029a3f84e81b"
+            ]
+        ]
+    },
+    {
+        "id": "f3bfb38cca3f4fe9",
         "type": "debug",
         "z": "abf430ab9cfee905",
         "name": "debug 12",
@@ -1125,8 +1152,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 740,
-        "y": 220,
+        "x": 640,
+        "y": 140,
         "wires": []
     },
     {
