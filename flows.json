@@ -569,7 +569,7 @@
                 "t": "set",
                 "p": "init_hour",
                 "pt": "global",
-                "to": "payload[0].json",
+                "to": "payload.initHour",
                 "tot": "msg"
             }
         ],
@@ -578,7 +578,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 770,
+        "x": 790,
         "y": 220,
         "wires": [
             []
@@ -644,7 +644,7 @@
                 "t": "set",
                 "p": "end_hour",
                 "pt": "global",
-                "to": "payload[0].json",
+                "to": "payload.endHour",
                 "tot": "msg"
             }
         ],
@@ -809,36 +809,7 @@
         "x": 570,
         "y": 420,
         "wires": [
-            [
-                "52656a94ddd148a2"
-            ]
-        ]
-    },
-    {
-        "id": "52656a94ddd148a2",
-        "type": "change",
-        "z": "abf430ab9cfee905",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "weekdays",
-                "pt": "global",
-                "to": "payload",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 740,
-        "y": 420,
-        "wires": [
-            [
-                "53261bb7d0273933"
-            ]
+            []
         ]
     },
     {
@@ -858,7 +829,9 @@
         "wires": [
             [
                 "e7dbfe52c5a56dda",
-                "f3bfb38cca3f4fe9"
+                "f3bfb38cca3f4fe9",
+                "51b7029a3f84e81b",
+                "52656a94ddd148a2"
             ]
         ]
     },
@@ -877,6 +850,31 @@
         "x": 580,
         "y": 160,
         "wires": []
+    },
+    {
+        "id": "52656a94ddd148a2",
+        "type": "change",
+        "z": "abf430ab9cfee905",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "weekdays",
+                "pt": "global",
+                "to": "payload.weekdays",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 800,
+        "y": 340,
+        "wires": [
+            []
+        ]
     },
     {
         "id": "a5111d94f7361a1b",
