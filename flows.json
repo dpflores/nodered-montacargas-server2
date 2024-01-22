@@ -1635,8 +1635,7 @@
         "wires": [
             [
                 "e3fbd298a12a1490",
-                "dabb21e592d235e5",
-                "2979f2c5fa89d36e"
+                "dabb21e592d235e5"
             ]
         ]
     },
@@ -1765,7 +1764,7 @@
         "type": "function",
         "z": "4d53ee97ad0311a6",
         "name": "Verificamos si inició el horario",
-        "func": "var currentDate = new Date(msg.payload);\nconst initHour = global.get(\"init_hour\");\n\nconst day = currentDate.getDate();\n\nmsg.payload = day;\n\nreturn msg;\n\n",
+        "func": "var currentDate = new Date(msg.payload);\nconst initHour = global.get(\"init_hour\");\n\nconst day = currentDate.getDay();\n\nmsg.payload = day;\n\nreturn msg;\n\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -1795,6 +1794,35 @@
         "x": 800,
         "y": 1340,
         "wires": []
+    },
+    {
+        "id": "81be7d10941ca9d4",
+        "type": "inject",
+        "z": "4d53ee97ad0311a6",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 240,
+        "y": 1340,
+        "wires": [
+            [
+                "2979f2c5fa89d36e"
+            ]
+        ]
     },
     {
         "id": "5778748aaab07c8a",
