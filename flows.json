@@ -1167,7 +1167,7 @@
                 "t": "set",
                 "p": "schedule_state",
                 "pt": "global",
-                "to": "1",
+                "to": "0",
                 "tot": "num"
             }
         ],
