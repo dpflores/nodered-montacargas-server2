@@ -834,7 +834,7 @@
         "type": "function",
         "z": "abf430ab9cfee905",
         "name": "function 8",
-        "func": "msg.payload = msg.payload[0].json\nreturn msg;",
+        "func": "msg.payload = JSON.parse(msg.payload[0].json)\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
