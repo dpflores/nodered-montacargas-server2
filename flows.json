@@ -999,10 +999,10 @@
         "rules": [
             {
                 "t": "set",
-                "p": "time_limits",
+                "p": "init_hour",
                 "pt": "global",
-                "to": "{\"gateway_key\":\"\",\"timestamp\":0,\"data\":{\"gps\":{\"pos_valid\":0,\"latitude\":0,\"longitude\":0,\"altitude\":0,\"haccuracy\":5304419,\"speed\":0,\"course\":0},\"mantto\":\"0\",\"running\":\"0\",\"hourmeter\":0,\"battery\":{\"voltage\":0},\"pressure\":{\"current\":0},\"load\":0,\"status\":0}}",
-                "tot": "json"
+                "to": "payload",
+                "tot": "msg"
             }
         ],
         "action": "",
@@ -1010,7 +1010,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 460,
+        "x": 510,
         "y": 220,
         "wires": [
             []
@@ -1038,7 +1038,75 @@
         "payload": "",
         "payloadType": "date",
         "x": 110,
+        "y": 240,
+        "wires": [
+            [
+                "3a95b8e928820723",
+                "4eb2630149384011"
+            ]
+        ]
+    },
+    {
+        "id": "3a95b8e928820723",
+        "type": "function",
+        "z": "abf430ab9cfee905",
+        "name": "function 5",
+        "func": "msg.topic = 'SELECT * FROM `persistent_data` WHERE `tag`= \"init_hour\";';\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
         "y": 220,
+        "wires": [
+            [
+                "e7dbfe52c5a56dda"
+            ]
+        ]
+    },
+    {
+        "id": "4eb2630149384011",
+        "type": "function",
+        "z": "abf430ab9cfee905",
+        "name": "function 6",
+        "func": "msg.topic = 'SELECT * FROM `persistent_data` WHERE `tag`= \"end_hour\";';\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 280,
+        "wires": [
+            [
+                "51b7029a3f84e81b"
+            ]
+        ]
+    },
+    {
+        "id": "51b7029a3f84e81b",
+        "type": "change",
+        "z": "abf430ab9cfee905",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "end_hour",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 510,
+        "y": 280,
         "wires": [
             []
         ]
