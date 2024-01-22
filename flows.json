@@ -1650,7 +1650,8 @@
         "links": [
             "0dbd5db4020576db",
             "5bef7810bb446303",
-            "c8d60c4ef86f2d66"
+            "c8d60c4ef86f2d66",
+            "b840f2b36dafec2c"
         ],
         "x": 455,
         "y": 560,
@@ -1767,6 +1768,117 @@
         "statusType": "auto",
         "x": 340,
         "y": 220,
+        "wires": []
+    },
+    {
+        "id": "7e6eb8ec88016ca7",
+        "type": "inject",
+        "z": "4d53ee97ad0311a6",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 280,
+        "y": 880,
+        "wires": [
+            [
+                "975744eea9044e04"
+            ]
+        ]
+    },
+    {
+        "id": "975744eea9044e04",
+        "type": "function",
+        "z": "4d53ee97ad0311a6",
+        "name": "Get last data",
+        "func": "var data_json = global.get(\"live_data\");\n\ndata_json.timestamp = Date.now();\ndata_json.data.status = -1;\ndata_json.data.general_status = -1;\n\nmsg.payload = data_json;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 450,
+        "y": 880,
+        "wires": [
+            [
+                "b840f2b36dafec2c"
+            ]
+        ]
+    },
+    {
+        "id": "b5a72c23a58af244",
+        "type": "inject",
+        "z": "4d53ee97ad0311a6",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 280,
+        "y": 960,
+        "wires": [
+            [
+                "3e6cc1f176ea51f1"
+            ]
+        ]
+    },
+    {
+        "id": "3e6cc1f176ea51f1",
+        "type": "function",
+        "z": "4d53ee97ad0311a6",
+        "name": "Get last data",
+        "func": "var data_json = global.get(\"live_data\");\n\ndata_json.timestamp = Date.now();\ndata_json.data.status = 0;\ndata_json.data.general_status = 0;\n\nmsg.payload = data_json;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 450,
+        "y": 960,
+        "wires": [
+            [
+                "b840f2b36dafec2c"
+            ]
+        ]
+    },
+    {
+        "id": "b840f2b36dafec2c",
+        "type": "link out",
+        "z": "4d53ee97ad0311a6",
+        "name": "link out 4",
+        "mode": "link",
+        "links": [
+            "78cd71d4d4914aab"
+        ],
+        "x": 605,
+        "y": 920,
         "wires": []
     },
     {
