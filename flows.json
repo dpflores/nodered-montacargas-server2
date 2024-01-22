@@ -745,10 +745,89 @@
         "to": "",
         "reg": false,
         "x": 350,
-        "y": 380,
+        "y": 180,
         "wires": [
             []
         ]
+    },
+    {
+        "id": "0c2a2c4a953bf5de",
+        "type": "inject",
+        "z": "abf430ab9cfee905",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 90,
+        "y": 420,
+        "wires": [
+            [
+                "f1fd09702814e066"
+            ]
+        ]
+    },
+    {
+        "id": "f1fd09702814e066",
+        "type": "function",
+        "z": "abf430ab9cfee905",
+        "name": "function 7",
+        "func": "msg.topic = 'SELECT * FROM `persistent_data` WHERE `tag`= \"weekdays\";';\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 260,
+        "y": 420,
+        "wires": [
+            [
+                "a18afc4a54644123"
+            ]
+        ]
+    },
+    {
+        "id": "a18afc4a54644123",
+        "type": "mysql",
+        "z": "abf430ab9cfee905",
+        "mydb": "20aa6fa811d70d43",
+        "name": "",
+        "x": 420,
+        "y": 420,
+        "wires": [
+            [
+                "53261bb7d0273933"
+            ]
+        ]
+    },
+    {
+        "id": "53261bb7d0273933",
+        "type": "debug",
+        "z": "abf430ab9cfee905",
+        "name": "debug 15",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 580,
+        "y": 420,
+        "wires": []
     },
     {
         "id": "a5111d94f7361a1b",
