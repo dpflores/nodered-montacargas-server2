@@ -825,7 +825,7 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 720,
+        "x": 920,
         "y": 420,
         "wires": []
     },
@@ -833,7 +833,7 @@
         "id": "fe36c210aa3c6daf",
         "type": "function",
         "z": "abf430ab9cfee905",
-        "name": "function 8",
+        "name": "Parse",
         "func": "msg.payload = JSON.parse(msg.payload[0].json)\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
@@ -841,7 +841,34 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 560,
+        "x": 570,
+        "y": 420,
+        "wires": [
+            [
+                "52656a94ddd148a2"
+            ]
+        ]
+    },
+    {
+        "id": "52656a94ddd148a2",
+        "type": "change",
+        "z": "abf430ab9cfee905",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "weekdays",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 740,
         "y": 420,
         "wires": [
             [
