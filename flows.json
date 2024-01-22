@@ -2029,7 +2029,7 @@
                 "vt": "str"
             }
         ],
-        "repeat": "300",
+        "repeat": "1",
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
