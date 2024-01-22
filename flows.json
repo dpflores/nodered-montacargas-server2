@@ -598,7 +598,7 @@
                 "vt": "str"
             }
         ],
-        "repeat": "",
+        "repeat": "3600",
         "crontab": "",
         "once": true,
         "onceDelay": 0.1,
@@ -764,7 +764,7 @@
                 "vt": "str"
             }
         ],
-        "repeat": "",
+        "repeat": "3600",
         "crontab": "",
         "once": true,
         "onceDelay": 0.1,
