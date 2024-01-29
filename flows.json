@@ -1628,7 +1628,7 @@
             }
         ],
         "repeat": "",
-        "crontab": "*/1 0-22 * * *",
+        "crontab": "0 0-22 * * *",
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
@@ -2054,6 +2054,34 @@
             [
                 "e3fbd298a12a1490"
             ]
+        ]
+    },
+    {
+        "id": "18bda93f3e328359",
+        "type": "inject",
+        "z": "4d53ee97ad0311a6",
+        "name": "6:00 am",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "timestamp",
+                "v": "1706266800000",
+                "vt": "num"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "1706266800000",
+        "payloadType": "num",
+        "x": 180,
+        "y": 1480,
+        "wires": [
+            []
         ]
     },
     {
