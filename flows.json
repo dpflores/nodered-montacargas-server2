@@ -2117,6 +2117,126 @@
         ]
     },
     {
+        "id": "ec661e77e5d0fc37",
+        "type": "inject",
+        "z": "4d53ee97ad0311a6",
+        "name": "6:00 am",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "timestamp",
+                "v": "1706113600000",
+                "vt": "num"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "1706113600000",
+        "payloadType": "num",
+        "x": 180,
+        "y": 1520,
+        "wires": [
+            [
+                "dabb21e592d235e5"
+            ]
+        ]
+    },
+    {
+        "id": "e271a185f6d1641d",
+        "type": "inject",
+        "z": "4d53ee97ad0311a6",
+        "name": "7pm 26 jan",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "timestamp",
+                "v": "1706140800000",
+                "vt": "num"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "1706140800000",
+        "payloadType": "num",
+        "x": 180,
+        "y": 1880,
+        "wires": [
+            [
+                "e3fbd298a12a1490"
+            ]
+        ]
+    },
+    {
+        "id": "b13dd09a5a238ae8",
+        "type": "inject",
+        "z": "4d53ee97ad0311a6",
+        "name": "6:00 am",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "timestamp",
+                "v": "1706027200000",
+                "vt": "num"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "1706027200000",
+        "payloadType": "num",
+        "x": 180,
+        "y": 1560,
+        "wires": [
+            [
+                "dabb21e592d235e5"
+            ]
+        ]
+    },
+    {
+        "id": "e600f4cee1b9fc0a",
+        "type": "inject",
+        "z": "4d53ee97ad0311a6",
+        "name": "7pm 26 jan",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "timestamp",
+                "v": "1706054400000",
+                "vt": "num"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "1706054400000",
+        "payloadType": "num",
+        "x": 180,
+        "y": 1920,
+        "wires": [
+            [
+                "e3fbd298a12a1490"
+            ]
+        ]
+    },
+    {
         "id": "5778748aaab07c8a",
         "type": "http in",
         "z": "c767b22b0c185339",
