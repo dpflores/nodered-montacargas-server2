@@ -1684,7 +1684,7 @@
         "type": "function",
         "z": "4d53ee97ad0311a6",
         "name": "Verificamos si terminó el horario",
-        "func": "var currentDate = new Date(msg.payload);\nconst endHour = global.get(\"end_hour\");\nconst weekdays = global.get(\"weekdays\");\n\nconst hours = currentDate.getHours();\nnode.log(hours)\nconst day = currentDate.getDay();\nif (weekdays[day]){\n    if (hours >= Number(endHour)) {\n        msg.payload = hours\n        return msg;\n    }\n}\n",
+        "func": "var currentDate = new Date(msg.payload);\nconst endHour = global.get(\"end_hour\");\nconst weekdays = global.get(\"weekdays\");\n\nconst hours = currentDate.getHours();\nnode.warn({hours})\nconst day = currentDate.getDay();\nif (weekdays[day]){\n    if (hours >= Number(endHour)) {\n        msg.payload = hours\n        return msg;\n    }\n}\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
