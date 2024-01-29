@@ -1809,45 +1809,17 @@
         "wires": []
     },
     {
-        "id": "2e894d77184273de",
-        "type": "inject",
-        "z": "4d53ee97ad0311a6",
-        "name": "7:13 pm",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "1642292000",
-        "payloadType": "num",
-        "x": 200,
-        "y": 1420,
-        "wires": [
-            [
-                "e3fbd298a12a1490"
-            ]
-        ]
-    },
-    {
         "id": "e880a80bdb1592d5",
         "type": "inject",
         "z": "4d53ee97ad0311a6",
-        "name": "6:07 am",
+        "name": "6:00 am",
         "props": [
             {
                 "p": "payload"
             },
             {
-                "p": "topic",
+                "p": "timestamp",
+                "v": "1706526000000",
                 "vt": "str"
             }
         ],
@@ -1856,10 +1828,10 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "1706526448292",
+        "payload": "1706526000000",
         "payloadType": "num",
-        "x": 200,
-        "y": 1340,
+        "x": 180,
+        "y": 1440,
         "wires": [
             [
                 "dabb21e592d235e5",
@@ -1910,8 +1882,9 @@
                 "p": "payload"
             },
             {
-                "p": "topic",
-                "vt": "str"
+                "p": "timestamp",
+                "v": "1706572800000",
+                "vt": "num"
             }
         ],
         "repeat": "",
