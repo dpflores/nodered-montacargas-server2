@@ -1774,7 +1774,7 @@
         "type": "function",
         "z": "4d53ee97ad0311a6",
         "name": "Verificamos si inició el horario",
-        "func": "var currentDate = new Date(msg.payload);\nconst initHour = global.get(\"init_hour\");\nconst weekdays = global.get(\"weekdays\");\n\nconst hours = currentDate.getHours();\nconst day = currentDate.getDay();\nif (weekdays[day]){\nif (hours >= Number(initHour) && hours < (Number(initHour)+1)) {\n    msg.payload = hours\n    return msg;\n}\n\n}\n",
+        "func": "var currentDate = new Date(msg.payload);\nconst initHour = global.get(\"init_hour\");\nconst weekdays = global.get(\"weekdays\");\n\nconst hours = currentDate.getHours();\nconst day = currentDate.getDay();\nmsg.payload = hours;\nreturn msg;\nif (weekdays[day]){\nif (hours >= Number(initHour) && hours < (Number(initHour)+1)) {\n    msg.payload = hours\n    return msg;\n}\n\n}\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
