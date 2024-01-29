@@ -2010,6 +2010,36 @@
         ]
     },
     {
+        "id": "e03049795f8cdd8e",
+        "type": "inject",
+        "z": "4d53ee97ad0311a6",
+        "name": "6:00 am",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "timestamp",
+                "v": "1706353200000",
+                "vt": "num"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "1706353200000",
+        "payloadType": "num",
+        "x": 180,
+        "y": 1440,
+        "wires": [
+            [
+                "dabb21e592d235e5"
+            ]
+        ]
+    },
+    {
         "id": "5778748aaab07c8a",
         "type": "http in",
         "z": "c767b22b0c185339",
