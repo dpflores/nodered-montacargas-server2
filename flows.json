@@ -1861,7 +1861,8 @@
         "wires": [
             [
                 "dabb21e592d235e5",
-                "675cef68f2288316"
+                "675cef68f2288316",
+                "e3fbd298a12a1490"
             ]
         ]
     },
@@ -1874,7 +1875,8 @@
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "false",
+        "complete": "payload",
+        "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
         "x": 760,
