@@ -1806,6 +1806,64 @@
         "wires": []
     },
     {
+        "id": "2e894d77184273de",
+        "type": "inject",
+        "z": "4d53ee97ad0311a6",
+        "name": "7:13 pm",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "1642292000",
+        "payloadType": "num",
+        "x": 200,
+        "y": 1420,
+        "wires": [
+            [
+                "e3fbd298a12a1490"
+            ]
+        ]
+    },
+    {
+        "id": "e880a80bdb1592d5",
+        "type": "inject",
+        "z": "4d53ee97ad0311a6",
+        "name": "6:20 am",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "1642245600",
+        "payloadType": "num",
+        "x": 200,
+        "y": 1360,
+        "wires": [
+            [
+                "dabb21e592d235e5"
+            ]
+        ]
+    },
+    {
         "id": "5778748aaab07c8a",
         "type": "http in",
         "z": "c767b22b0c185339",
