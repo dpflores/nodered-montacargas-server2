@@ -1895,29 +1895,12 @@
         "payload": "1706572800000",
         "payloadType": "num",
         "x": 180,
-        "y": 1540,
+        "y": 1680,
         "wires": [
             [
-                "e3fbd298a12a1490",
-                "9d9ec9dda5876763"
+                "e3fbd298a12a1490"
             ]
         ]
-    },
-    {
-        "id": "9d9ec9dda5876763",
-        "type": "debug",
-        "z": "4d53ee97ad0311a6",
-        "name": "debug 20",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 340,
-        "y": 1560,
-        "wires": []
     },
     {
         "id": "fa16f9eca3c14150",
@@ -1942,7 +1925,7 @@
         "payload": "1706486400000",
         "payloadType": "num",
         "x": 180,
-        "y": 1640,
+        "y": 1720,
         "wires": [
             [
                 "e3fbd298a12a1490"
@@ -1972,7 +1955,7 @@
         "payload": "1706400000000",
         "payloadType": "num",
         "x": 180,
-        "y": 1720,
+        "y": 1760,
         "wires": [
             [
                 "e3fbd298a12a1490"
@@ -2002,7 +1985,7 @@
         "payload": "1706439600000",
         "payloadType": "num",
         "x": 180,
-        "y": 1380,
+        "y": 1360,
         "wires": [
             [
                 "dabb21e592d235e5"
@@ -2030,6 +2013,36 @@
         "onceDelay": 0.1,
         "topic": "",
         "payload": "1706353200000",
+        "payloadType": "num",
+        "x": 180,
+        "y": 1400,
+        "wires": [
+            [
+                "dabb21e592d235e5"
+            ]
+        ]
+    },
+    {
+        "id": "3f67ea4af8669385",
+        "type": "inject",
+        "z": "4d53ee97ad0311a6",
+        "name": "6:00 am",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "timestamp",
+                "v": "1706266800000",
+                "vt": "num"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "1706266800000",
         "payloadType": "num",
         "x": 180,
         "y": 1440,
