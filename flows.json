@@ -1648,8 +1648,9 @@
                 "p": "payload"
             },
             {
-                "p": "topic",
-                "vt": "str"
+                "p": "timestamp",
+                "v": "",
+                "vt": "date"
             }
         ],
         "repeat": "300",
@@ -1722,7 +1723,7 @@
         "type": "function",
         "z": "4d53ee97ad0311a6",
         "name": "Get last data and set status -1",
-        "func": "var data_json = global.get(\"live_data\");\nvar scheduleState = global.get(\"schedule_state\");\n\n\nif(scheduleState){\nglobal.set(\"schedule_state\",0)\n\ndata_json.timestamp = Date.now();\ndata_json.data.status = -1;\ndata_json.data.general_status = -1;\n\nmsg.payload = data_json;\nmsg.flag = 0;\nreturn msg;\n}\n",
+        "func": "var data_json = global.get(\"live_data\");\nvar scheduleState = global.get(\"schedule_state\");\n\n\nif(scheduleState){\nglobal.set(\"schedule_state\",0)\n\ndata_json.timestamp = msg.timestamp;\ndata_json.data.status = -1;\ndata_json.data.general_status = -1;\n\nmsg.payload = data_json;\nmsg.flag = 0;\nreturn msg;\n}\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -1755,7 +1756,7 @@
         "type": "function",
         "z": "4d53ee97ad0311a6",
         "name": "Get last data and set status 0",
-        "func": "var data_json = global.get(\"live_data\");\nvar scheduleState = global.get(\"schedule_state\");\n\nif(!scheduleState){\nglobal.set(\"schedule_state\",1)\ndata_json.timestamp = Date.now();\ndata_json.data.status = 0;\ndata_json.data.general_status = 0;\n\nmsg.payload = data_json;\nmsg.flag=0;\nreturn msg;\n}",
+        "func": "var data_json = global.get(\"live_data\");\nvar scheduleState = global.get(\"schedule_state\");\n\nif(!scheduleState){\nglobal.set(\"schedule_state\",1)\ndata_json.timestamp = msg.timestamp;\ndata_json.data.status = 0;\ndata_json.data.general_status = 0;\n\nmsg.payload = data_json;\nmsg.flag=0;\nreturn msg;\n}",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -1955,7 +1956,8 @@
                 "p": "payload"
             },
             {
-                "p": "topic",
+                "p": "timestamp",
+                "v": "1706486400000",
                 "vt": "str"
             }
         ],
