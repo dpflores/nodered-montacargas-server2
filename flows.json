@@ -1482,137 +1482,6 @@
         "wires": []
     },
     {
-        "id": "7e6eb8ec88016ca7",
-        "type": "inject",
-        "z": "4d53ee97ad0311a6",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 280,
-        "y": 880,
-        "wires": [
-            [
-                "975744eea9044e04"
-            ]
-        ]
-    },
-    {
-        "id": "975744eea9044e04",
-        "type": "function",
-        "z": "4d53ee97ad0311a6",
-        "name": "Get last data and set status -1",
-        "func": "var data_json = global.get(\"live_data\");\n\ndata_json.timestamp = Date.now();\ndata_json.data.status = -1;\ndata_json.data.general_status = -1;\n\nmsg.payload = data_json;\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 510,
-        "y": 880,
-        "wires": [
-            [
-                "b840f2b36dafec2c"
-            ]
-        ]
-    },
-    {
-        "id": "b5a72c23a58af244",
-        "type": "inject",
-        "z": "4d53ee97ad0311a6",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 280,
-        "y": 960,
-        "wires": [
-            [
-                "3e6cc1f176ea51f1"
-            ]
-        ]
-    },
-    {
-        "id": "3e6cc1f176ea51f1",
-        "type": "function",
-        "z": "4d53ee97ad0311a6",
-        "name": "Get last data and set status 0",
-        "func": "var data_json = global.get(\"live_data\");\n\ndata_json.timestamp = Date.now();\ndata_json.data.status = 0;\ndata_json.data.general_status = 0;\n\nmsg.payload = data_json;\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 500,
-        "y": 960,
-        "wires": [
-            [
-                "b840f2b36dafec2c"
-            ]
-        ]
-    },
-    {
-        "id": "b840f2b36dafec2c",
-        "type": "link out",
-        "z": "4d53ee97ad0311a6",
-        "name": "link out 4",
-        "mode": "link",
-        "links": [
-            "78cd71d4d4914aab"
-        ],
-        "x": 725,
-        "y": 920,
-        "wires": []
-    },
-    {
-        "id": "85a26b29df8bdf63",
-        "type": "comment",
-        "z": "4d53ee97ad0311a6",
-        "name": "Invalid time (fuera de horario)",
-        "info": "",
-        "x": 320,
-        "y": 840,
-        "wires": []
-    },
-    {
-        "id": "54f6c9a70d08c7d0",
-        "type": "comment",
-        "z": "4d53ee97ad0311a6",
-        "name": "Starting time (inicio de horario)",
-        "info": "",
-        "x": 310,
-        "y": 1000,
-        "wires": []
-    },
-    {
         "id": "6fd8e239048a712e",
         "type": "inject",
         "z": "4d53ee97ad0311a6",
@@ -1868,12 +1737,10 @@
         "topic": "",
         "payload": "1706572800000",
         "payloadType": "num",
-        "x": 180,
-        "y": 2020,
+        "x": 160,
+        "y": 2000,
         "wires": [
-            [
-                "e3fbd298a12a1490"
-            ]
+            []
         ]
     },
     {
