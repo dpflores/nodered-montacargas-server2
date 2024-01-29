@@ -2067,7 +2067,7 @@
             },
             {
                 "p": "timestamp",
-                "v": "1706266800000",
+                "v": "1706200000000",
                 "vt": "num"
             }
         ],
@@ -2076,12 +2076,44 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "1706266800000",
+        "payload": "1706200000000",
         "payloadType": "num",
         "x": 180,
         "y": 1480,
         "wires": [
-            []
+            [
+                "dabb21e592d235e5"
+            ]
+        ]
+    },
+    {
+        "id": "6810a80daa939901",
+        "type": "inject",
+        "z": "4d53ee97ad0311a6",
+        "name": "7pm 26 jan",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "timestamp",
+                "v": "1706227200000",
+                "vt": "num"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "1706227200000",
+        "payloadType": "num",
+        "x": 180,
+        "y": 1840,
+        "wires": [
+            [
+                "e3fbd298a12a1490"
+            ]
         ]
     },
     {
