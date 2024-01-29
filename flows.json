@@ -1709,7 +1709,8 @@
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "false",
+        "complete": "payload",
+        "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
         "x": 780,
@@ -1839,7 +1840,7 @@
         "id": "e880a80bdb1592d5",
         "type": "inject",
         "z": "4d53ee97ad0311a6",
-        "name": "6:20 am",
+        "name": "6:07 am",
         "props": [
             {
                 "p": "payload"
@@ -1854,15 +1855,14 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "1642245600",
+        "payload": "1706526448292",
         "payloadType": "num",
         "x": 200,
-        "y": 1360,
+        "y": 1340,
         "wires": [
             [
                 "dabb21e592d235e5",
-                "675cef68f2288316",
-                "e3fbd298a12a1490"
+                "675cef68f2288316"
             ]
         ]
     },
