@@ -1653,8 +1653,8 @@
                 "vt": "date"
             }
         ],
-        "repeat": "300",
-        "crontab": "",
+        "repeat": "",
+        "crontab": "*/1 0-22 * * *",
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
