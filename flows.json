@@ -91,6 +91,28 @@
         }
     },
     {
+        "id": "f168446540142aa7",
+        "type": "subflow",
+        "name": "Send Alert Mail",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 120,
+                "y": 140,
+                "wires": [
+                    {
+                        "id": "2cefa2833ade14aa"
+                    }
+                ]
+            }
+        ],
+        "out": [],
+        "env": [],
+        "meta": {},
+        "color": "#DDAA99"
+    },
+    {
         "id": "a383835818b7681a",
         "type": "group",
         "z": "4d53ee97ad0311a6",
@@ -513,6 +535,97 @@
         "y": 40,
         "wires": [
             []
+        ]
+    },
+    {
+        "id": "14dfc1031580eebd",
+        "type": "e-mail",
+        "z": "f168446540142aa7",
+        "server": "mail.acmecia.com",
+        "port": "587",
+        "authtype": "BASIC",
+        "saslformat": true,
+        "token": "oauth2Response.access_token",
+        "secure": false,
+        "tls": false,
+        "name": "",
+        "dname": "",
+        "x": 950,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "d364dedfd6228a7c",
+        "type": "mysql",
+        "z": "f168446540142aa7",
+        "mydb": "20aa6fa811d70d43",
+        "name": "",
+        "x": 380,
+        "y": 140,
+        "wires": [
+            [
+                "edf15e92dcba8819"
+            ]
+        ]
+    },
+    {
+        "id": "2cefa2833ade14aa",
+        "type": "function",
+        "z": "f168446540142aa7",
+        "name": "function 6",
+        "func": "msg.topic = \"SELECT `email` FROM `users` WHERE `rol`='client';\"\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 240,
+        "y": 140,
+        "wires": [
+            [
+                "d364dedfd6228a7c"
+            ]
+        ]
+    },
+    {
+        "id": "edf15e92dcba8819",
+        "type": "function",
+        "z": "f168446540142aa7",
+        "name": "getting mails",
+        "func": "const emails = msg.payload.map((item) => item.email);\nmsg.payload = emails;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 570,
+        "y": 140,
+        "wires": [
+            [
+                "6fdb1da3e366f9f0"
+            ]
+        ]
+    },
+    {
+        "id": "6fdb1da3e366f9f0",
+        "type": "function",
+        "z": "f168446540142aa7",
+        "name": "armar el mensaje",
+        "func": "msg.topic = \"Alerta de Mantenimiento\";\nmsg.to = msg.payload;\nmsg.from = \"Montacarga 4.0 <noreply@acmecia.com>\"\nmsg.payload = msg.alert;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 790,
+        "y": 140,
+        "wires": [
+            [
+                "14dfc1031580eebd"
+            ]
         ]
     },
     {
@@ -2920,123 +3033,15 @@
         "y": 120,
         "wires": [
             [
-                "2cefa2833ade14aa"
+                "bb536c1c315511c1"
             ]
         ]
-    },
-    {
-        "id": "14dfc1031580eebd",
-        "type": "e-mail",
-        "z": "3b4e3447579da6e6",
-        "server": "mail.acmecia.com",
-        "port": "587",
-        "authtype": "BASIC",
-        "saslformat": true,
-        "token": "oauth2Response.access_token",
-        "secure": false,
-        "tls": false,
-        "name": "",
-        "dname": "",
-        "x": 1030,
-        "y": 120,
-        "wires": []
-    },
-    {
-        "id": "d364dedfd6228a7c",
-        "type": "mysql",
-        "z": "3b4e3447579da6e6",
-        "mydb": "20aa6fa811d70d43",
-        "name": "",
-        "x": 460,
-        "y": 120,
-        "wires": [
-            [
-                "edf15e92dcba8819"
-            ]
-        ]
-    },
-    {
-        "id": "2cefa2833ade14aa",
-        "type": "function",
-        "z": "3b4e3447579da6e6",
-        "name": "function 6",
-        "func": "msg.topic = \"SELECT `email` FROM `users` WHERE `rol`='client';\"\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 320,
-        "y": 120,
-        "wires": [
-            [
-                "d364dedfd6228a7c"
-            ]
-        ]
-    },
-    {
-        "id": "edf15e92dcba8819",
-        "type": "function",
-        "z": "3b4e3447579da6e6",
-        "name": "getting mails",
-        "func": "const emails = msg.payload.map((item) => item.email);\nmsg.payload = emails;\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 650,
-        "y": 120,
-        "wires": [
-            [
-                "6fdb1da3e366f9f0",
-                "e8c2eff70ec5bbd7"
-            ]
-        ]
-    },
-    {
-        "id": "6fdb1da3e366f9f0",
-        "type": "function",
-        "z": "3b4e3447579da6e6",
-        "name": "armar el mensaje",
-        "func": "msg.topic = \"Alerta de Mantenimiento\";\nmsg.to = msg.payload;\nmsg.from = \"Montacarga 4.0 <noreply@acmecia.com>\"\nmsg.payload = \"Hols\";\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 870,
-        "y": 120,
-        "wires": [
-            [
-                "14dfc1031580eebd"
-            ]
-        ]
-    },
-    {
-        "id": "e8c2eff70ec5bbd7",
-        "type": "debug",
-        "z": "3b4e3447579da6e6",
-        "name": "debug 21",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 840,
-        "y": 180,
-        "wires": []
     },
     {
         "id": "2a0c71d007e138d8",
         "type": "inject",
         "z": "3b4e3447579da6e6",
-        "name": "",
+        "name": "Alert Batería Baja",
         "props": [
             {
                 "p": "payload"
@@ -3054,120 +3059,69 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 140,
+        "x": 160,
         "y": 320,
         "wires": [
             [
-                "a9eaac80622135f5"
+                "b9d2b75b87edf072"
             ]
         ]
     },
     {
-        "id": "471764128e8b64e8",
-        "type": "e-mail",
+        "id": "174d66f228f25f31",
+        "type": "inject",
         "z": "3b4e3447579da6e6",
-        "server": "mail.acmecia.com",
-        "port": "587",
-        "authtype": "BASIC",
-        "saslformat": true,
-        "token": "oauth2Response.access_token",
-        "secure": false,
-        "tls": false,
+        "name": "Inicio de mantenimiento",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "alert",
+                "v": "Inicio de manetenimiento",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 180,
+        "y": 420,
+        "wires": [
+            [
+                "44ee078acef10d49"
+            ]
+        ]
+    },
+    {
+        "id": "bb536c1c315511c1",
+        "type": "subflow:f168446540142aa7",
+        "z": "3b4e3447579da6e6",
         "name": "",
-        "dname": "",
-        "x": 1030,
+        "x": 440,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "b9d2b75b87edf072",
+        "type": "subflow:f168446540142aa7",
+        "z": "3b4e3447579da6e6",
+        "name": "",
+        "x": 380,
         "y": 320,
         "wires": []
     },
     {
-        "id": "3a16edcf34117e0c",
-        "type": "mysql",
+        "id": "44ee078acef10d49",
+        "type": "subflow:f168446540142aa7",
         "z": "3b4e3447579da6e6",
-        "mydb": "20aa6fa811d70d43",
         "name": "",
-        "x": 460,
-        "y": 320,
-        "wires": [
-            [
-                "b0d1faac17d1b2fb"
-            ]
-        ]
-    },
-    {
-        "id": "a9eaac80622135f5",
-        "type": "function",
-        "z": "3b4e3447579da6e6",
-        "name": "function 7",
-        "func": "msg.topic = \"SELECT `email` FROM `users` WHERE `rol`='client';\"\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 320,
-        "y": 320,
-        "wires": [
-            [
-                "3a16edcf34117e0c"
-            ]
-        ]
-    },
-    {
-        "id": "b0d1faac17d1b2fb",
-        "type": "function",
-        "z": "3b4e3447579da6e6",
-        "name": "getting mails",
-        "func": "const emails = msg.payload.map((item) => item.email);\nmsg.payload = emails;\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 650,
-        "y": 320,
-        "wires": [
-            [
-                "f450bab08be9a59a",
-                "fc108588489f7b85"
-            ]
-        ]
-    },
-    {
-        "id": "f450bab08be9a59a",
-        "type": "function",
-        "z": "3b4e3447579da6e6",
-        "name": "armar el mensaje",
-        "func": "msg.topic = \"Alerta de Mantenimiento\";\nmsg.to = msg.payload;\nmsg.from = \"Montacarga 4.0 <noreply@acmecia.com>\"\nmsg.payload = msg.alert;\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 870,
-        "y": 320,
-        "wires": [
-            [
-                "471764128e8b64e8"
-            ]
-        ]
-    },
-    {
-        "id": "fc108588489f7b85",
-        "type": "debug",
-        "z": "3b4e3447579da6e6",
-        "name": "debug 22",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 840,
-        "y": 380,
+        "x": 440,
+        "y": 420,
         "wires": []
     }
 ]
