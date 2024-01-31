@@ -2912,10 +2912,77 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 200,
+        "x": 180,
         "y": 120,
+        "wires": [
+            [
+                "2cefa2833ade14aa"
+            ]
+        ]
+    },
+    {
+        "id": "14dfc1031580eebd",
+        "type": "e-mail",
+        "z": "3b4e3447579da6e6",
+        "server": "smtp.gmail.com",
+        "port": "465",
+        "authtype": "BASIC",
+        "saslformat": true,
+        "token": "oauth2Response.access_token",
+        "secure": true,
+        "tls": true,
+        "name": "",
+        "dname": "",
+        "x": 590,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "d364dedfd6228a7c",
+        "type": "mysql",
+        "z": "3b4e3447579da6e6",
+        "mydb": "20aa6fa811d70d43",
+        "name": "",
+        "x": 500,
+        "y": 80,
         "wires": [
             []
         ]
+    },
+    {
+        "id": "2cefa2833ade14aa",
+        "type": "function",
+        "z": "3b4e3447579da6e6",
+        "name": "function 6",
+        "func": "let query = `SELECT FROM users WHERE rol=client`\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 120,
+        "wires": [
+            [
+                "07bb75debc18409d"
+            ]
+        ]
+    },
+    {
+        "id": "07bb75debc18409d",
+        "type": "debug",
+        "z": "3b4e3447579da6e6",
+        "name": "debug 21",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 480,
+        "y": 180,
+        "wires": []
     }
 ]
