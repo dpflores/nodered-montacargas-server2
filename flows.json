@@ -3131,7 +3131,8 @@
         "y": 240,
         "wires": [
             [
-                "b9d2b75b87edf072"
+                "b9d2b75b87edf072",
+                "485b0fc7d1597f7f"
             ]
         ]
     },
@@ -3191,5 +3192,23 @@
         "x": 440,
         "y": 540,
         "wires": []
+    },
+    {
+        "id": "485b0fc7d1597f7f",
+        "type": "function",
+        "z": "3b4e3447579da6e6",
+        "name": "function 9",
+        "func": "const hourmeter = global.get(\"hourmeter\");\n\n\nmsg.topic = \"INSERT INTO `alerts` (`alert_type`, `hourmeter`, `mant_type`, `checklist`, `comments`) VALUES (\"+ 0 +\", \"+ hourmeter+\", 'battery')\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 300,
+        "wires": [
+            []
+        ]
     }
 ]
