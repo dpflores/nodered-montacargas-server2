@@ -154,6 +154,24 @@
         "h": 82
     },
     {
+        "id": "5c2896b2dfe6eae8",
+        "type": "group",
+        "z": "3b4e3447579da6e6",
+        "name": "Eliminar la última fila",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "a6693f48b1fe3511",
+            "a28aa19c6b483b73",
+            "8d0255f41c13f305"
+        ],
+        "x": 154,
+        "y": 1519,
+        "w": 572,
+        "h": 82
+    },
+    {
         "id": "20aa6fa811d70d43",
         "type": "MySQLdatabase",
         "name": "",
@@ -3656,6 +3674,70 @@
         "wires": [
             [
                 "ab7121c64ef39329"
+            ]
+        ]
+    },
+    {
+        "id": "a6693f48b1fe3511",
+        "type": "inject",
+        "z": "3b4e3447579da6e6",
+        "g": "5c2896b2dfe6eae8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 260,
+        "y": 1560,
+        "wires": [
+            [
+                "8d0255f41c13f305"
+            ]
+        ]
+    },
+    {
+        "id": "a28aa19c6b483b73",
+        "type": "mysql",
+        "z": "3b4e3447579da6e6",
+        "g": "5c2896b2dfe6eae8",
+        "mydb": "20aa6fa811d70d43",
+        "name": "",
+        "x": 640,
+        "y": 1560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8d0255f41c13f305",
+        "type": "function",
+        "z": "3b4e3447579da6e6",
+        "g": "5c2896b2dfe6eae8",
+        "name": "function 15",
+        "func": "msg.topic = `DELETE FROM alerts\nORDER BY id DESC\nLIMIT 1;`;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 450,
+        "y": 1560,
+        "wires": [
+            [
+                "a28aa19c6b483b73"
             ]
         ]
     }
