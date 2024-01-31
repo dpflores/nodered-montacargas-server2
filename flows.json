@@ -2928,17 +2928,17 @@
         "id": "14dfc1031580eebd",
         "type": "e-mail",
         "z": "3b4e3447579da6e6",
-        "server": "smtp.gmail.com",
+        "server": "mail.acmecia.com",
         "port": "465",
         "authtype": "BASIC",
         "saslformat": true,
         "token": "oauth2Response.access_token",
         "secure": true,
         "tls": true,
-        "name": "",
+        "name": "delpiero22.flores@gmail.com",
         "dname": "",
-        "x": 590,
-        "y": 100,
+        "x": 720,
+        "y": 340,
         "wires": []
     },
     {
@@ -2951,7 +2951,7 @@
         "y": 120,
         "wires": [
             [
-                "07bb75debc18409d"
+                "edf15e92dcba8819"
             ]
         ]
     },
@@ -2987,8 +2987,57 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 660,
-        "y": 180,
+        "x": 920,
+        "y": 140,
         "wires": []
+    },
+    {
+        "id": "edf15e92dcba8819",
+        "type": "function",
+        "z": "3b4e3447579da6e6",
+        "name": "function 7",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 640,
+        "y": 120,
+        "wires": [
+            [
+                "07bb75debc18409d"
+            ]
+        ]
+    },
+    {
+        "id": "d42293f751156ad8",
+        "type": "inject",
+        "z": "3b4e3447579da6e6",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 380,
+        "y": 340,
+        "wires": [
+            [
+                "14dfc1031580eebd"
+            ]
+        ]
     }
 ]
