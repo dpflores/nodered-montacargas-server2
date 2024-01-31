@@ -2956,7 +2956,7 @@
         "type": "function",
         "z": "3b4e3447579da6e6",
         "name": "function 6",
-        "func": "msg.topic = `SELECT FROM users WHERE rol=client`\nreturn msg;",
+        "func": "msg.topic = `SELECT FROM users WHERE rol=\"client\"`\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
