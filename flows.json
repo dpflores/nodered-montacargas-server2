@@ -3131,37 +3131,8 @@
         "y": 240,
         "wires": [
             [
-                "485b0fc7d1597f7f"
-            ]
-        ]
-    },
-    {
-        "id": "174d66f228f25f31",
-        "type": "inject",
-        "z": "3b4e3447579da6e6",
-        "name": "Inicio de mantenimiento",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "alert",
-                "v": "Inicio de manetenimiento",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 180,
-        "y": 540,
-        "wires": [
-            [
-                "44ee078acef10d49"
+                "485b0fc7d1597f7f",
+                "b9d2b75b87edf072"
             ]
         ]
     },
@@ -3181,15 +3152,6 @@
         "name": "",
         "x": 460,
         "y": 240,
-        "wires": []
-    },
-    {
-        "id": "44ee078acef10d49",
-        "type": "subflow:f168446540142aa7",
-        "z": "3b4e3447579da6e6",
-        "name": "",
-        "x": 440,
-        "y": 540,
         "wires": []
     },
     {
@@ -3240,6 +3202,278 @@
         "wires": [
             [
                 "39c70c14c1524ae1"
+            ]
+        ]
+    },
+    {
+        "id": "116ab7fc441741df",
+        "type": "inject",
+        "z": "3b4e3447579da6e6",
+        "name": "Inicio de matenimiento",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "alert",
+                "v": "Inicio de mantenimiento detectado",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 180,
+        "y": 480,
+        "wires": [
+            [
+                "d6da7333a0f08043",
+                "354889054731bce7"
+            ]
+        ]
+    },
+    {
+        "id": "354889054731bce7",
+        "type": "subflow:f168446540142aa7",
+        "z": "3b4e3447579da6e6",
+        "name": "",
+        "x": 440,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "d6da7333a0f08043",
+        "type": "function",
+        "z": "3b4e3447579da6e6",
+        "name": "function 10",
+        "func": "const hourmeter = global.get(\"hourmeter\").hours;\n\n\nmsg.topic = \"INSERT INTO `alerts` (`alert_type`, `hourmeter`, `mant_type`) VALUES (\"+ 1 +\", \"+ hourmeter+\", 'correctivo')\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 540,
+        "wires": [
+            [
+                "108c22764b8a5109"
+            ]
+        ]
+    },
+    {
+        "id": "3784c1e26e305b6a",
+        "type": "debug",
+        "z": "3b4e3447579da6e6",
+        "name": "debug 23",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "topic",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 800,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "108c22764b8a5109",
+        "type": "mysql",
+        "z": "3b4e3447579da6e6",
+        "mydb": "20aa6fa811d70d43",
+        "name": "",
+        "x": 560,
+        "y": 540,
+        "wires": [
+            [
+                "3784c1e26e305b6a"
+            ]
+        ]
+    },
+    {
+        "id": "1dd6bc3aaab5c7ae",
+        "type": "inject",
+        "z": "3b4e3447579da6e6",
+        "name": "Fin de matenimiento",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "alert",
+                "v": "Fin de mantenimiento detectado",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 190,
+        "y": 740,
+        "wires": [
+            [
+                "8c1e3d03d983e058"
+            ]
+        ]
+    },
+    {
+        "id": "5ed9d62de94771bd",
+        "type": "subflow:f168446540142aa7",
+        "z": "3b4e3447579da6e6",
+        "name": "",
+        "x": 460,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "8c1e3d03d983e058",
+        "type": "function",
+        "z": "3b4e3447579da6e6",
+        "name": "function 11",
+        "func": "const hourmeter = global.get(\"hourmeter\").hours;\n\n\nmsg.topic = \"INSERT INTO `alerts` (`alert_type`, `hourmeter`, `mant_type`) VALUES (\"+ 2 +\", \"+ hourmeter+\", 'mant-end')\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 390,
+        "y": 800,
+        "wires": [
+            [
+                "70de6a15584dc94f"
+            ]
+        ]
+    },
+    {
+        "id": "d9325fd4257db40e",
+        "type": "debug",
+        "z": "3b4e3447579da6e6",
+        "name": "debug 24",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "topic",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 820,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "70de6a15584dc94f",
+        "type": "mysql",
+        "z": "3b4e3447579da6e6",
+        "mydb": "20aa6fa811d70d43",
+        "name": "",
+        "x": 580,
+        "y": 800,
+        "wires": [
+            [
+                "d9325fd4257db40e"
+            ]
+        ]
+    },
+    {
+        "id": "f18398c591ef7b18",
+        "type": "inject",
+        "z": "3b4e3447579da6e6",
+        "name": "Mantenimiento Preventivo 1",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "alert",
+                "v": "Fin de mantenimiento detectado",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 180,
+        "y": 960,
+        "wires": [
+            [
+                "7a77eb5aaa9c7a43",
+                "9c3e7c0f7060ea7c"
+            ]
+        ]
+    },
+    {
+        "id": "9c3e7c0f7060ea7c",
+        "type": "subflow:f168446540142aa7",
+        "z": "3b4e3447579da6e6",
+        "name": "",
+        "x": 460,
+        "y": 960,
+        "wires": []
+    },
+    {
+        "id": "7a77eb5aaa9c7a43",
+        "type": "function",
+        "z": "3b4e3447579da6e6",
+        "name": "function 12",
+        "func": "const hourmeter = global.get(\"hourmeter\").hours;\n\n\nmsg.topic = \"INSERT INTO `alerts` (`alert_type`, `hourmeter`, `mant_type`) VALUES (\"+ 3 +\", \"+ hourmeter+\", 'preventivo')\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 390,
+        "y": 1020,
+        "wires": [
+            [
+                "f422073956e2fb92"
+            ]
+        ]
+    },
+    {
+        "id": "2c3f9e0109d5213a",
+        "type": "debug",
+        "z": "3b4e3447579da6e6",
+        "name": "debug 25",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "topic",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 820,
+        "y": 1020,
+        "wires": []
+    },
+    {
+        "id": "f422073956e2fb92",
+        "type": "mysql",
+        "z": "3b4e3447579da6e6",
+        "mydb": "20aa6fa811d70d43",
+        "name": "",
+        "x": 580,
+        "y": 1020,
+        "wires": [
+            [
+                "2c3f9e0109d5213a"
             ]
         ]
     }
