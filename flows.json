@@ -3045,7 +3045,7 @@
         "type": "function",
         "z": "3b4e3447579da6e6",
         "name": "function 8",
-        "func": "msg.topic = \"Alerta Montacarga 4.0\";\nmsg.to = [\"delpiero22.flores@gmail.com\", \"cristopher.salazar@acmecia.com\"]\nmsg.payload = \"Hols\";\nreturn msg;",
+        "func": "msg.topic = \"Alerta Montacarga 4.0\";\nmsg.to = [\"delpiero22.flores@gmail.com\", \"cristopher.salazar@acmecia.com\"]\nmsg.from = \"Acme&CIA <noreply@acmecia.com>\"\nmsg.payload = \"Hols\";\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
