@@ -2996,7 +2996,7 @@
         "type": "function",
         "z": "3b4e3447579da6e6",
         "name": "function 7",
-        "func": "let mails = msg.payload.map()\nreturn msg;",
+        "func": "\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
