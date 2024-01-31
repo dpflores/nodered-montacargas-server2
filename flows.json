@@ -2834,7 +2834,7 @@
         "y": 420,
         "wires": [
             [
-                "5860ff6181353df8"
+                "7aba7d69f860b22f"
             ]
         ]
     },
@@ -2847,7 +2847,7 @@
         "headers": {
             "content-type": "application/json"
         },
-        "x": 880,
+        "x": 680,
         "y": 420,
         "wires": []
     },
@@ -2909,24 +2909,6 @@
         "wires": []
     },
     {
-        "id": "5860ff6181353df8",
-        "type": "function",
-        "z": "c767b22b0c185339",
-        "name": "function 3",
-        "func": "\nmsg.topic = `\n  SELECT * FROM local_data \n  WHERE YEAR(date) = YEAR(CURDATE())\n  ORDER BY date;\n  `;\nreturn msg;",
-        "outputs": 1,
-        "timeout": "",
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 340,
-        "y": 420,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "69005e857c115cbc",
         "type": "debug",
         "z": "c767b22b0c185339",
@@ -2982,13 +2964,13 @@
             }
         ],
         "repeat": "",
-        "crontab": "",
+        "crontab": "*/1 5-21 * * *",
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 180,
+        "x": 190,
         "y": 620,
         "wires": [
             [
@@ -3066,6 +3048,33 @@
         "x": 840,
         "y": 700,
         "wires": []
+    },
+    {
+        "id": "7aba7d69f860b22f",
+        "type": "change",
+        "z": "c767b22b0c185339",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "hourmeter",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 400,
+        "y": 420,
+        "wires": [
+            [
+                "3fad90b85ce23aa4"
+            ]
+        ]
     },
     {
         "id": "e0272e0b0c0c7ecd",
