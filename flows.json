@@ -3431,7 +3431,7 @@
         "type": "function",
         "z": "3b4e3447579da6e6",
         "name": "function 12",
-        "func": "const hourmeter = global.get(\"hourmeter\").hours;\n\n\nmsg.topic = \"INSERT INTO `alerts` (`alert_type`, `hourmeter`, `mant_type`) VALUES (\"+ 3 +\", \"+ hourmeter+\", 'preventivo')\";\nreturn msg;",
+        "func": "const hourmeter = global.get(\"hourmeter\").hours;\n\n\nmsg.topic = \"INSERT INTO `alerts` (`alert_type`, `hourmeter`, `mant_type`) VALUES (\"+ 3 +\", \"+ hourmeter+\", 'prev-alert')\";\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
