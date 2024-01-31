@@ -2943,10 +2943,12 @@
         "z": "3b4e3447579da6e6",
         "mydb": "20aa6fa811d70d43",
         "name": "",
-        "x": 500,
-        "y": 80,
+        "x": 460,
+        "y": 120,
         "wires": [
-            []
+            [
+                "07bb75debc18409d"
+            ]
         ]
     },
     {
@@ -2954,7 +2956,7 @@
         "type": "function",
         "z": "3b4e3447579da6e6",
         "name": "function 6",
-        "func": "let query = `SELECT FROM users WHERE rol=client`\nreturn msg;",
+        "func": "msg.topic = `SELECT FROM users WHERE rol=client`\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -2965,7 +2967,7 @@
         "y": 120,
         "wires": [
             [
-                "07bb75debc18409d"
+                "d364dedfd6228a7c"
             ]
         ]
     },
@@ -2981,7 +2983,7 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 480,
+        "x": 660,
         "y": 180,
         "wires": []
     }
