@@ -3036,6 +3036,26 @@
         "y": 340,
         "wires": [
             [
+                "6fdb1da3e366f9f0"
+            ]
+        ]
+    },
+    {
+        "id": "6fdb1da3e366f9f0",
+        "type": "function",
+        "z": "3b4e3447579da6e6",
+        "name": "function 8",
+        "func": "msg.topic = \"Nodered\";\nmsg.payload = \"Hols\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 340,
+        "wires": [
+            [
                 "14dfc1031580eebd"
             ]
         ]
