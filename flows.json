@@ -2996,7 +2996,7 @@
         "type": "function",
         "z": "3b4e3447579da6e6",
         "name": "function 7",
-        "func": "\nreturn msg;",
+        "func": "const emails = msg.payload.map((item) => item.email);\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
