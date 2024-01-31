@@ -2929,7 +2929,7 @@
         "type": "e-mail",
         "z": "3b4e3447579da6e6",
         "server": "mail.acmecia.com",
-        "port": "465",
+        "port": "587",
         "authtype": "BASIC",
         "saslformat": true,
         "token": "oauth2Response.access_token",
