@@ -383,7 +383,7 @@
         "id": "a267e43e7b0ff1fe",
         "type": "change",
         "z": "63965d808ff1bb6e",
-        "name": "5 - Efectivo",
+        "name": "5 - Traslado con carga",
         "rules": [
             {
                 "t": "set",
@@ -405,7 +405,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 790,
+        "x": 820,
         "y": 240,
         "wires": [
             [
