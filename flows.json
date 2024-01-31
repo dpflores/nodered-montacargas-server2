@@ -2933,7 +2933,7 @@
         "authtype": "BASIC",
         "saslformat": true,
         "token": "oauth2Response.access_token",
-        "secure": true,
+        "secure": false,
         "tls": true,
         "name": "delpiero22.flores@gmail.com",
         "dname": "",
