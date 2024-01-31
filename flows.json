@@ -3208,7 +3208,26 @@
         "x": 380,
         "y": 300,
         "wires": [
-            []
+            [
+                "39c70c14c1524ae1"
+            ]
         ]
+    },
+    {
+        "id": "39c70c14c1524ae1",
+        "type": "debug",
+        "z": "3b4e3447579da6e6",
+        "name": "debug 22",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "topic",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 540,
+        "y": 320,
+        "wires": []
     }
 ]
