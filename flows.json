@@ -24,6 +24,14 @@
         "env": []
     },
     {
+        "id": "3b4e3447579da6e6",
+        "type": "tab",
+        "label": "ALERTS",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "63965d808ff1bb6e",
         "type": "subflow",
         "name": "system status ",
@@ -101,9 +109,7 @@
             "78cd71d4d4914aab"
         ],
         "x": 414,
-        "y": 459,
-        "w": 862,
-        "h": 142
+        "y": 459
     },
     {
         "id": "1b5ad41c50a916b7",
@@ -119,9 +125,7 @@
             "1ad32e19c0123f3c"
         ],
         "x": 174,
-        "y": 679,
-        "w": 572,
-        "h": 82
+        "y": 679
     },
     {
         "id": "20aa6fa811d70d43",
@@ -2885,6 +2889,33 @@
             [
                 "5860ff6181353df8"
             ]
+        ]
+    },
+    {
+        "id": "e0272e0b0c0c7ecd",
+        "type": "inject",
+        "z": "3b4e3447579da6e6",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 200,
+        "y": 120,
+        "wires": [
+            []
         ]
     }
 ]
