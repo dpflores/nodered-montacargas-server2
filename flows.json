@@ -3208,7 +3208,7 @@
         "y": 300,
         "wires": [
             [
-                "39c70c14c1524ae1"
+                "8b590b0d8ab7fa95"
             ]
         ]
     },
@@ -3225,8 +3225,22 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 540,
-        "y": 320,
+        "x": 820,
+        "y": 300,
         "wires": []
+    },
+    {
+        "id": "8b590b0d8ab7fa95",
+        "type": "mysql",
+        "z": "3b4e3447579da6e6",
+        "mydb": "20aa6fa811d70d43",
+        "name": "",
+        "x": 580,
+        "y": 300,
+        "wires": [
+            [
+                "39c70c14c1524ae1"
+            ]
+        ]
     }
 ]
