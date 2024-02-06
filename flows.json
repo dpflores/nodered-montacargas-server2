@@ -172,6 +172,24 @@
         "h": 82
     },
     {
+        "id": "11676a117d696ad7",
+        "type": "group",
+        "z": "4d53ee97ad0311a6",
+        "name": "DELETE ALL DATA MANUALLY (CAREFULL)",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "7147509423dca685",
+            "e8d74cb250c8420a",
+            "d96db93b8fdafded"
+        ],
+        "x": 234,
+        "y": 799,
+        "w": 572,
+        "h": 82
+    },
+    {
         "id": "20aa6fa811d70d43",
         "type": "MySQLdatabase",
         "name": "",
@@ -2623,6 +2641,70 @@
         "x": 420,
         "y": 2260,
         "wires": []
+    },
+    {
+        "id": "7147509423dca685",
+        "type": "inject",
+        "z": "4d53ee97ad0311a6",
+        "g": "11676a117d696ad7",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 340,
+        "y": 840,
+        "wires": [
+            [
+                "e8d74cb250c8420a"
+            ]
+        ]
+    },
+    {
+        "id": "e8d74cb250c8420a",
+        "type": "function",
+        "z": "4d53ee97ad0311a6",
+        "g": "11676a117d696ad7",
+        "name": "DELETE ALL",
+        "func": "\nmsg.topic = `\n  DELETE FROM local_data\nWHERE DATE(date) = CURDATE();;\n`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 550,
+        "y": 840,
+        "wires": [
+            [
+                "d96db93b8fdafded"
+            ]
+        ]
+    },
+    {
+        "id": "d96db93b8fdafded",
+        "type": "mysql",
+        "z": "4d53ee97ad0311a6",
+        "g": "11676a117d696ad7",
+        "mydb": "20aa6fa811d70d43",
+        "name": "",
+        "x": 720,
+        "y": 840,
+        "wires": [
+            []
+        ]
     },
     {
         "id": "5778748aaab07c8a",
