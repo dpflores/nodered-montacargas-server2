@@ -2415,7 +2415,7 @@
         "wires": [
             [
                 "485b0fc7d1597f7f",
-                "b9d2b75b87edf072"
+                "38c87ace5bd5e323"
             ]
         ]
     },
@@ -2514,8 +2514,7 @@
         "y": 480,
         "wires": [
             [
-                "d6da7333a0f08043",
-                "354889054731bce7"
+                "d6da7333a0f08043"
             ]
         ]
     },
@@ -2695,8 +2694,7 @@
         "y": 960,
         "wires": [
             [
-                "7a77eb5aaa9c7a43",
-                "9c3e7c0f7060ea7c"
+                "7a77eb5aaa9c7a43"
             ]
         ]
     },
@@ -2786,8 +2784,7 @@
         "y": 1160,
         "wires": [
             [
-                "cf5866e916a5494e",
-                "a9c8344afb1b0563"
+                "cf5866e916a5494e"
             ]
         ]
     },
@@ -2877,8 +2874,7 @@
         "y": 1320,
         "wires": [
             [
-                "009ab18e8fc54453",
-                "bdf1909ab7f7c476"
+                "009ab18e8fc54453"
             ]
         ]
     },
@@ -3028,7 +3024,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 760,
-        "y": 60,
+        "y": 80,
         "wires": [
             [
                 "b92aa9193a6c083b"
@@ -3048,7 +3044,7 @@
         "finalize": "",
         "libs": [],
         "x": 930,
-        "y": 60,
+        "y": 80,
         "wires": [
             [
                 "c80dbf0a49349bc4"
@@ -3062,7 +3058,7 @@
         "mydb": "20aa6fa811d70d43",
         "name": "",
         "x": 1100,
-        "y": 60,
+        "y": 80,
         "wires": [
             []
         ]
@@ -3126,6 +3122,67 @@
         "y": 120,
         "wires": [
             []
+        ]
+    },
+    {
+        "id": "c3941554da79642a",
+        "type": "mysql",
+        "z": "3b4e3447579da6e6",
+        "mydb": "20aa6fa811d70d43",
+        "name": "",
+        "x": 560,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c22a29eaf5853603",
+        "type": "inject",
+        "z": "3b4e3447579da6e6",
+        "name": "Alert flag 1",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 220,
+        "y": 360,
+        "wires": [
+            [
+                "38c87ace5bd5e323"
+            ]
+        ]
+    },
+    {
+        "id": "38c87ace5bd5e323",
+        "type": "function",
+        "z": "3b4e3447579da6e6",
+        "name": "function 18",
+        "func": "\nmsg.topic = \"UPDATE `persistent_data` SET `json` = '1' WHERE `persistent_data`.`tag` = 'alert_flag'\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 390,
+        "y": 360,
+        "wires": [
+            [
+                "c3941554da79642a"
+            ]
         ]
     }
 ]
