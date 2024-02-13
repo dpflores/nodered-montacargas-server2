@@ -167,7 +167,9 @@
             "8d0255f41c13f305"
         ],
         "x": 154,
-        "y": 1519
+        "y": 1519,
+        "w": 572,
+        "h": 82
     },
     {
         "id": "11676a117d696ad7",
@@ -3002,6 +3004,128 @@
             [
                 "a28aa19c6b483b73"
             ]
+        ]
+    },
+    {
+        "id": "e807d98eb6923ec8",
+        "type": "inject",
+        "z": "3b4e3447579da6e6",
+        "name": "Alert flag 1",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 760,
+        "y": 60,
+        "wires": [
+            [
+                "b92aa9193a6c083b"
+            ]
+        ]
+    },
+    {
+        "id": "b92aa9193a6c083b",
+        "type": "function",
+        "z": "3b4e3447579da6e6",
+        "name": "function 16",
+        "func": "\nmsg.topic = \"UPDATE `persistent_data` SET `json` = '1' WHERE `persistent_data`.`tag` = 'alert_flag'\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 930,
+        "y": 60,
+        "wires": [
+            [
+                "c80dbf0a49349bc4"
+            ]
+        ]
+    },
+    {
+        "id": "c80dbf0a49349bc4",
+        "type": "mysql",
+        "z": "3b4e3447579da6e6",
+        "mydb": "20aa6fa811d70d43",
+        "name": "",
+        "x": 1100,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7d4705f622cdcf87",
+        "type": "inject",
+        "z": "3b4e3447579da6e6",
+        "name": "Alert flag 0",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 760,
+        "y": 100,
+        "wires": [
+            [
+                "37ff57fb7f915843"
+            ]
+        ]
+    },
+    {
+        "id": "37ff57fb7f915843",
+        "type": "function",
+        "z": "3b4e3447579da6e6",
+        "name": "function 17",
+        "func": "\nmsg.topic = \"UPDATE `persistent_data` SET `json` = '0' WHERE `persistent_data`.`tag` = 'alert_flag'\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 930,
+        "y": 100,
+        "wires": [
+            [
+                "13d132e6f26d3e18"
+            ]
+        ]
+    },
+    {
+        "id": "13d132e6f26d3e18",
+        "type": "mysql",
+        "z": "3b4e3447579da6e6",
+        "mydb": "20aa6fa811d70d43",
+        "name": "",
+        "x": 1100,
+        "y": 100,
+        "wires": [
+            []
         ]
     }
 ]
