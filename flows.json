@@ -1915,7 +1915,7 @@
         "wires": [
             [
                 "77ab32fdce9d958a",
-                "9b5f1a928de24b6a"
+                "b27974d395553b20"
             ]
         ]
     },
@@ -1970,9 +1970,29 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 400,
-        "y": 1320,
+        "x": 600,
+        "y": 1440,
         "wires": []
+    },
+    {
+        "id": "b27974d395553b20",
+        "type": "function",
+        "z": "4d53ee97ad0311a6",
+        "name": "function 19",
+        "func": "function obtenerTimestampLima(year, month, day, hours, minutes) {\n  // Crear un objeto Date con la fecha y hora proporcionadas en la zona horaria UTC\n  const fechaHoraUTC = new Date(Date.UTC(year, month - 1, day, hours, minutes));\n\n  // Ajustar la diferencia de huso horario para Lima, Perú (UTC-5)\n  fechaHoraUTC.setUTCHours(fechaHoraUTC.getUTCHours() - 5);\n\n  // Obtener el timestamp en milisegundos\n  const timestampMilisegundos = fechaHoraUTC.getTime();\n\n  return timestampMilisegundos;\n}\n\n// Ejemplo de uso\nconst year = 2024;\nconst month = 1; // Ten en cuenta que en JavaScript los meses van de 0 a 11 (enero es 0, febrero es 1, etc.)\nconst day = 26;\nconst hours = 6;\nconst minutes = 0;\n\nconst timestamp = obtenerTimestampLima(year, month, day, hours, minutes);\n\nmsg.payload = timestamp;\n\nreturn msg.payload;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 410,
+        "y": 1440,
+        "wires": [
+            [
+                "9b5f1a928de24b6a"
+            ]
+        ]
     },
     {
         "id": "5778748aaab07c8a",
