@@ -1914,9 +1914,26 @@
         "wires": [
             [
                 "e3fbd298a12a1490",
-                "dabb21e592d235e5"
+                "dabb21e592d235e5",
+                "51321b2101abddbc"
             ]
         ]
+    },
+    {
+        "id": "51321b2101abddbc",
+        "type": "debug",
+        "z": "4d53ee97ad0311a6",
+        "name": "debug 28",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 400,
+        "y": 1360,
+        "wires": []
     },
     {
         "id": "5778748aaab07c8a",
