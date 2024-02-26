@@ -1938,7 +1938,7 @@
         "type": "function",
         "z": "4d53ee97ad0311a6",
         "name": "get hours and minutes",
-        "func": "var currentDate = new Date(msg.payload);\n\nconst hours = currentDate.getHours();\nconst minutes = currentDate.getMinutes();\nconst day = currentDate.getDay();\n\nmsg.payload = {\n    \"day\": day,\n    \"hours\": hours,\n    \"minutes\": minutes,\n}",
+        "func": "var currentDate = new Date(msg.payload);\n\nconst hours = currentDate.getHours();\nconst minutes = currentDate.getMinutes();\nconst day = currentDate.getDay();\n\nmsg.payload = {\n    \"day\": day,\n    \"hours\": hours,\n    \"minutes\": minutes,\n}\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
