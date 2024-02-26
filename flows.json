@@ -1774,7 +1774,7 @@
         "type": "function",
         "z": "4d53ee97ad0311a6",
         "name": "Inició el horario",
-        "func": "var currentDate = new Date(msg.payload);\nconst initHour = global.get(\"init_hour\");\nconst initMinutes = Math.floor(60*(initHour-Math.floor(initHour)))\nconst weekdays = global.get(\"weekdays\");\n\nconst hours = currentDate.getHours();\nconst minutes = currentDate.getMinutes();\nconst day = currentDate.getDay();\n\nif (weekdays[day]){\nif (hours >= Number(initHour) && minutes>=initMinutes && hours < (Number(initHour)+1)) {\n    msg.payload = hours\n    return msg;\n}\n\n}\n",
+        "func": "var currentDate = new Date(msg.payload);\nconst initHour = global.get(\"init_hour\");\nconst initMinutes = Math.floor(60*(initHour-Math.floor(initHour)))\nconst weekdays = global.get(\"weekdays\");\n\nconst hours = currentDate.getHours();\nconst minutes = currentDate.getMinutes();\nconst day = currentDate.getDay();\n\nif (weekdays[day]){\nif (hours >= Number(initHour) && minutes>=initMinutes && hours < (Number(initHour)+1)) {\n    msg.payload = {\"hours\": hours,\n    \"minutes\": minutes}\n    return msg;\n}\n\n}\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
