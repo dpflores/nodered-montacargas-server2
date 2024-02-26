@@ -1683,7 +1683,7 @@
         "type": "function",
         "z": "4d53ee97ad0311a6",
         "name": "Terminó el horario",
-        "func": "var currentDate = new Date(msg.payload);\nconst endHour = global.get(\"end_hour\");\nconst endMinutes = Math.floor(60*(endHour-Math.floor(endHour)))\nnode.warn({endMinutes});\n\nconst weekdays = global.get(\"weekdays\");\n\nconst hours = msg.payload.hours;\nconst minutes = msg.payload.minutes;\nconst day = msg.payload.day;\n\n\nif (weekdays[day]){\n    if (hours >= Number(endHour) && minutes >= Number(endMinutes)) {\n        msg.payload = \"Terminó el horario\"\n        return msg;\n    }\n}\n",
+        "func": "var currentDate = new Date(msg.payload);\nconst endHour = global.get(\"end_hour\");\nconst endMinutes = Math.floor(60*(endHour-Math.floor(endHour)))\nnode.warn({endHour});\n\nnode.warn({endMinutes});\n\nconst weekdays = global.get(\"weekdays\");\n\nconst hours = msg.payload.hours;\nconst minutes = msg.payload.minutes;\nconst day = msg.payload.day;\n\n\nif (weekdays[day]){\n    if (hours >= Number(endHour) && minutes >= Number(endMinutes)) {\n        msg.payload = \"Terminó el horario\"\n        return msg;\n    }\n}\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
