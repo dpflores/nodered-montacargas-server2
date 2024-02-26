@@ -1682,7 +1682,7 @@
         "id": "e3fbd298a12a1490",
         "type": "function",
         "z": "4d53ee97ad0311a6",
-        "name": "Verificamos si terminó el horario",
+        "name": "Terminó el horario",
         "func": "var currentDate = new Date(msg.payload);\nconst endHour = global.get(\"end_hour\");\nconst endMinutes = Math.floor(60*(endHour-Math.floor(endHour)))\n\nconst weekdays = global.get(\"weekdays\");\nconst hours = currentDate.getHours();\nconst minutes = currentDate.getMinutes();\n\n\nnode.warn({hours})\nconst day = currentDate.getDay();\nif (weekdays[day]){\n    if (hours >= Number(endHour) && minutes >= Number(endMinutes)) {\n        msg.payload = hours\n        return msg;\n    }\n}\n",
         "outputs": 1,
         "timeout": 0,
@@ -1690,7 +1690,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 490,
+        "x": 450,
         "y": 1140,
         "wires": [
             [
@@ -1773,7 +1773,7 @@
         "id": "dabb21e592d235e5",
         "type": "function",
         "z": "4d53ee97ad0311a6",
-        "name": "Verificamos si inició el horario",
+        "name": "Inició el horario",
         "func": "var currentDate = new Date(msg.payload);\nconst initHour = global.get(\"init_hour\");\nconst initMinutes = Math.floor(60*(initHour-Math.floor(initHour)))\nconst weekdays = global.get(\"weekdays\");\n\nconst hours = currentDate.getHours();\nconst minutes = currentDate.getMinutes();\nconst day = currentDate.getDay();\n\nif (weekdays[day]){\nif (hours >= Number(initHour) && minutes>=initMinutes && hours < (Number(initHour)+1)) {\n    msg.payload = hours\n    return msg;\n}\n\n}\n",
         "outputs": 1,
         "timeout": 0,
@@ -1781,7 +1781,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 490,
+        "x": 440,
         "y": 1240,
         "wires": [
             [
