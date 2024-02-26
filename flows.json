@@ -1931,7 +1931,7 @@
         "type": "function",
         "z": "4d53ee97ad0311a6",
         "name": "Date to timestamp",
-        "func": "\n// Indique la fecha\nconst year = 2024;\nconst month = 2; // (Enero 1 to Diciembre 12)\nconst day = 12;\nconst hours = 18; // \nconst minutes = 30;\n\nconst timestamp = obtenerTimestampLima(year, month, day, hours, minutes);\n\nmsg.payload = timestamp;\nmsg.timestamp = timestamp;\n\nreturn msg;\n\n\n\n\n\nfunction obtenerTimestampLima(year, month, day, hours, minutes) {\n  // Crear un objeto Date con la fecha y hora proporcionadas en la zona horaria de Lima, Perú (UTC-5)\n  const fechaHoraLima = new Date(year, month - 1, day, hours, minutes);\n\n  // Obtener el timestamp en milisegundos\n  const timestampMilisegundos = fechaHoraLima.getTime();\n\n  return timestampMilisegundos;\n}\n",
+        "func": "\n// Indique la fecha\nconst year = 2024;\nconst month = 2; // (Enero 1 to Diciembre 12)\nconst day = 12;\nconst hours = 18; // \nconst minutes = 40;\n\nconst timestamp = obtenerTimestampLima(year, month, day, hours, minutes);\n\nmsg.payload = timestamp;\nmsg.timestamp = timestamp;\n\nreturn msg;\n\n\n\n\n\nfunction obtenerTimestampLima(year, month, day, hours, minutes) {\n  // Crear un objeto Date con la fecha y hora proporcionadas en la zona horaria de Lima, Perú (UTC-5)\n  const fechaHoraLima = new Date(year, month - 1, day, hours, minutes);\n\n  // Obtener el timestamp en milisegundos\n  const timestampMilisegundos = fechaHoraLima.getTime();\n\n  return timestampMilisegundos;\n}\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
