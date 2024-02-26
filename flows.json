@@ -686,7 +686,9 @@
         "x": 110,
         "y": 140,
         "wires": [
-            []
+            [
+                "47aa21e090081df4"
+            ]
         ]
     },
     {
@@ -699,7 +701,7 @@
                 "t": "set",
                 "p": "live_data",
                 "pt": "global",
-                "to": "{\"gateway_key\":\"\",\"timestamp\":0,\"data\":{\"gps\":{\"pos_valid\":0,\"latitude\":0,\"longitude\":0,\"altitude\":0,\"haccuracy\":5304419,\"speed\":0,\"course\":0},\"mantto\":\"0\",\"running\":\"0\",\"hourmeter\":0,\"battery\":{\"voltage\":0},\"pressure\":{\"current\":0},\"load\":0,\"status\":0}}",
+                "to": "{\"gateway_key\":\"\",\"timestamp\":0,\"data\":{\"gps\":{\"pos_valid\":0,\"latitude\":0,\"longitude\":0,\"altitude\":0,\"haccuracy\":5304419,\"speed\":0,\"course\":0},\"mantto\":\"0\",\"running\":\"0\",\"hourmeter\":0,\"battery\":{\"voltage\":0},\"pressure\":{\"current\":0},\"load\":0,\"status\":-1,\"general_status\":-1}}",
                 "tot": "json"
             }
         ],
@@ -1711,7 +1713,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 900,
-        "y": 1120,
+        "y": 1060,
         "wires": []
     },
     {
@@ -1727,7 +1729,7 @@
         "finalize": "",
         "libs": [],
         "x": 970,
-        "y": 1160,
+        "y": 1140,
         "wires": [
             [
                 "d886d36ba3d3f976"
@@ -1743,8 +1745,8 @@
         "links": [
             "78cd71d4d4914aab"
         ],
-        "x": 1255,
-        "y": 1220,
+        "x": 1225,
+        "y": 1200,
         "wires": []
     },
     {
