@@ -1889,54 +1889,6 @@
         ]
     },
     {
-        "id": "0455b4c80f8c707d",
-        "type": "inject",
-        "z": "4d53ee97ad0311a6",
-        "name": "12 Feb 6AM",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "timestamp",
-                "v": "1707735600000",
-                "vt": "num"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "1707735600000",
-        "payloadType": "num",
-        "x": 110,
-        "y": 1300,
-        "wires": [
-            [
-                "b27974d395553b20",
-                "51321b2101abddbc"
-            ]
-        ]
-    },
-    {
-        "id": "51321b2101abddbc",
-        "type": "debug",
-        "z": "4d53ee97ad0311a6",
-        "name": "debug 28",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 560,
-        "y": 1380,
-        "wires": []
-    },
-    {
         "id": "77ab32fdce9d958a",
         "type": "function",
         "z": "4d53ee97ad0311a6",
@@ -1970,27 +1922,57 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 600,
-        "y": 1440,
+        "x": 520,
+        "y": 1340,
         "wires": []
     },
     {
         "id": "b27974d395553b20",
         "type": "function",
         "z": "4d53ee97ad0311a6",
-        "name": "function 19",
-        "func": "function obtenerTimestampLima(year, month, day, hours, minutes) {\n  // Crear un objeto Date con la fecha y hora proporcionadas en la zona horaria de Lima, Perú (UTC-5)\n  const fechaHoraLima = new Date(year, month - 1, day, hours, minutes);\n\n  // Obtener el timestamp en milisegundos\n  const timestampMilisegundos = fechaHoraLima.getTime();\n\n  return timestampMilisegundos;\n}\n\n// Ejemplo de uso\nconst year = 2024;\nconst month = 2; // (Enero 1 to Diciembre 12)\nconst day = 12;\nconst hours = 6; // \nconst minutes = 0;\n\nconst timestamp = obtenerTimestampLima(year, month, day, hours, minutes);\n\nmsg.payload = timestamp;\n\nreturn msg;",
+        "name": "Date to timestamp",
+        "func": "\n// Indique la fecha\nconst year = 2024;\nconst month = 2; // (Enero 1 to Diciembre 12)\nconst day = 12;\nconst hours = 6; // \nconst minutes = 0;\n\nconst timestamp = obtenerTimestampLima(year, month, day, hours, minutes);\n\nmsg.payload = timestamp;\n\nreturn msg;\n\nfunction obtenerTimestampLima(year, month, day, hours, minutes) {\n  // Crear un objeto Date con la fecha y hora proporcionadas en la zona horaria de Lima, Perú (UTC-5)\n  const fechaHoraLima = new Date(year, month - 1, day, hours, minutes);\n\n  // Obtener el timestamp en milisegundos\n  const timestampMilisegundos = fechaHoraLima.getTime();\n\n  return timestampMilisegundos;\n}\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 410,
-        "y": 1440,
+        "x": 290,
+        "y": 1340,
         "wires": [
             [
-                "9b5f1a928de24b6a"
+                "9b5f1a928de24b6a",
+                "77ab32fdce9d958a"
+            ]
+        ]
+    },
+    {
+        "id": "81933a895c32d8ce",
+        "type": "inject",
+        "z": "4d53ee97ad0311a6",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 100,
+        "y": 1340,
+        "wires": [
+            [
+                "b27974d395553b20"
             ]
         ]
     },
