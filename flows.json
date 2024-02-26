@@ -1898,8 +1898,9 @@
                 "p": "payload"
             },
             {
-                "p": "topic",
-                "vt": "str"
+                "p": "timestamp",
+                "v": "1707735600000",
+                "vt": "num"
             }
         ],
         "repeat": "",
