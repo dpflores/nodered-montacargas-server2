@@ -649,7 +649,7 @@
         "type": "function",
         "z": "f168446540142aa7",
         "name": "armar el mensaje",
-        "func": "msg.topic = \"Alerta de Mantenimiento\";\nmsg.to = msg.payload;\nmsg.from = \"Montacarga 4.0 <noreply@acmecia.com>\"\nmsg.payload = msg.alert;\nreturn msg;",
+        "func": "msg.topic = \"Alerta de Mantenimiento\";\nmsg.to = msg.payload;\nmsg.from = \"Montacarga 4.0 <notify_krcp_4.0@kmmp.com.pe>\"\nmsg.payload = msg.alert;\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
