@@ -167,7 +167,9 @@
             "8d0255f41c13f305"
         ],
         "x": 154,
-        "y": 1519
+        "y": 1519,
+        "w": 572,
+        "h": 82
     },
     {
         "id": "11676a117d696ad7",
@@ -575,7 +577,7 @@
         "id": "14dfc1031580eebd",
         "type": "e-mail",
         "z": "f168446540142aa7",
-        "server": "mail.acmecia.com",
+        "server": "smtp.office365.com",
         "port": "587",
         "authtype": "BASIC",
         "saslformat": true,
