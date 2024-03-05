@@ -32,6 +32,14 @@
         "env": []
     },
     {
+        "id": "cdb670b9eaa04bce",
+        "type": "tab",
+        "label": "SAMPLE PDF EMAIL",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "63965d808ff1bb6e",
         "type": "subflow",
         "name": "system status ",
@@ -107,6 +115,18 @@
                 ]
             }
         ],
+        "out": [],
+        "env": [],
+        "meta": {},
+        "color": "#DDAA99"
+    },
+    {
+        "id": "29a4e15245fd28cd",
+        "type": "subflow",
+        "name": "Send Monthly Report",
+        "info": "",
+        "category": "",
+        "in": [],
         "out": [],
         "env": [],
         "meta": {},
@@ -661,6 +681,97 @@
         "wires": [
             [
                 "14dfc1031580eebd"
+            ]
+        ]
+    },
+    {
+        "id": "c166330932de9a38",
+        "type": "e-mail",
+        "z": "29a4e15245fd28cd",
+        "server": "smtp.office365.com",
+        "port": "587",
+        "authtype": "BASIC",
+        "saslformat": true,
+        "token": "oauth2Response.access_token",
+        "secure": false,
+        "tls": false,
+        "name": "",
+        "dname": "",
+        "x": 910,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "0e8b7b1f24ea0f34",
+        "type": "mysql",
+        "z": "29a4e15245fd28cd",
+        "mydb": "20aa6fa811d70d43",
+        "name": "",
+        "x": 340,
+        "y": 160,
+        "wires": [
+            [
+                "463be54ccea42acf"
+            ]
+        ]
+    },
+    {
+        "id": "628c2fd3a8be560c",
+        "type": "function",
+        "z": "29a4e15245fd28cd",
+        "name": "function 19",
+        "func": "msg.topic = \"SELECT `email` FROM `users` WHERE `rol`='client';\"\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 200,
+        "y": 160,
+        "wires": [
+            [
+                "0e8b7b1f24ea0f34"
+            ]
+        ]
+    },
+    {
+        "id": "463be54ccea42acf",
+        "type": "function",
+        "z": "29a4e15245fd28cd",
+        "name": "getting mails",
+        "func": "const emails = msg.payload.map((item) => item.email);\nmsg.payload = emails;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 530,
+        "y": 160,
+        "wires": [
+            [
+                "db02bc6f4c025e82"
+            ]
+        ]
+    },
+    {
+        "id": "db02bc6f4c025e82",
+        "type": "function",
+        "z": "29a4e15245fd28cd",
+        "name": "armar el mensaje",
+        "func": "msg.topic = \"Alerta de Mantenimiento\";\nmsg.to = msg.payload;\nmsg.from = \"Montacarga 4.0 <notify_krcp_4.0@kmmp.com.pe>\"\nmsg.payload = msg.alert;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 750,
+        "y": 160,
+        "wires": [
+            [
+                "c166330932de9a38"
             ]
         ]
     },
@@ -3441,5 +3552,81 @@
                 "c3941554da79642a"
             ]
         ]
+    },
+    {
+        "id": "7097cd6ffe951032",
+        "type": "function",
+        "z": "cdb670b9eaa04bce",
+        "name": "PDF Email",
+        "func": "const month = [\n  \"January\",\n  \"February\",\n  \"March\",\n  \"April\",\n  \"May\",\n  \"June\",\n  \"July\",\n  \"August\",\n  \"September\",\n  \"October\",\n  \"November\",\n  \"December\",\n]\nconst d = new Date()\nconst year = d.getFullYear()\nlet name_of_month = month[d.getMonth()]\nmsg.topic = \"Sample Email \" + name_of_month + \" \" + year\nmsg.filename = \"Sample PDF\" + name_of_month + \".pdf\"\nmsg.description =\n  `Attached is the 'PDF report' for ` +\n  name_of_month +\n  ` ` +\n  year +\n  `.\n  \n  Best,\n  Team Prescient\n  `\n\nvar fonts = {\n  Roboto: {\n    normal: \"Courier\",\n    bold: \"Courier-Bold\",\n    italics: \"Courier-Oblique\",\n    bolditalics: \"Courier-BoldOblique\",\n  },\n  Helvetica: {\n    normal: \"Helvetica\",\n    bold: \"Helvetica-Bold\",\n    italics: \"Helvetica-Oblique\",\n    bolditalics: \"Helvetica-BoldOblique\",\n  },\n  Times: {\n    normal: \"Times-Roman\",\n    bold: \"Times-Bold\",\n    italics: \"Times-Italic\",\n    bolditalics: \"Times-BoldItalic\",\n  },\n  Symbol: {\n    normal: \"Symbol\",\n  },\n  ZapfDingbats: {\n    normal: \"ZapfDingbats\",\n  },\n}\n\nconst { Base64Encode } = base64Encode\n\nasync function getPDFBase64Text(pdfDoc) {\n  return new Promise((resolve) => {\n    var base64String = \"\"\n    const stream = pdfDoc.pipe(new Base64Encode())\n    pdfDoc.end()\n\n    stream.on(\"data\", (chunk) => {\n      base64String += chunk\n    })\n\n    stream.on(\"end\", () => resolve(base64String))\n  })\n}\n\nlet printer = new pdfmake(fonts)\n\nvar dd = {\n  content: [\n    {\n      image:\n        \"BASE64 image\",\n      width: 100,\n    },\n    {\n      text: \"Same PDF table for \" + name_of_month + \" \" + year,\n      style: \"subheader\",\n    },\n      \t{\n      style: 'tableExample',\n      table: {\n        body: [\n          ['Column 1', 'Column 2', 'Column 3'],\n          ['One value goes here', 'Another one here', 'OK?']\n        ]\n      }\n    },\n    ],\n  styles: {\n    header: {\n      fontSize: 18,\n      bold: true,\n      margin: [0, 0, 0, 10],\n    },\n    subheader: {\n      fontSize: 16,\n      bold: true,\n      margin: [0, 10, 0, 5],\n    },\n    tableExample: {\n      margin: [0, 5, 0, 15],\n    },\n    tableHeader: {\n      bold: true,\n      fontSize: 13,\n      color: \"black\",\n    },\n    countryHeader: {\n      bold: true,\n      fontSize: 12,\n      color: \"black\",\n    },\n  },\n  defaultStyle: {},\n}\n\nlet pdfDoc = printer.createPdfKitDocument(dd)\nconst base64Text = await getPDFBase64Text(pdfDoc)\nmsg.payload = Buffer.from(base64Text, \"base64\")\nreturn msg\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "base64Encode",
+                "module": "base64-stream"
+            },
+            {
+                "var": "pdfmake",
+                "module": "pdfmake"
+            }
+        ],
+        "x": 530,
+        "y": 280,
+        "wires": [
+            [
+                "e9168390b1d67fab"
+            ]
+        ]
+    },
+    {
+        "id": "25485a470c4da007",
+        "type": "inject",
+        "z": "cdb670b9eaa04bce",
+        "name": "trigger",
+        "props": [
+            {
+                "p": "to",
+                "v": "",
+                "vt": "str"
+            },
+            {
+                "p": "from",
+                "v": "",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 290,
+        "y": 280,
+        "wires": [
+            [
+                "7097cd6ffe951032"
+            ]
+        ]
+    },
+    {
+        "id": "e9168390b1d67fab",
+        "type": "e-mail",
+        "z": "cdb670b9eaa04bce",
+        "server": "smtp.office365.com",
+        "port": "587",
+        "authtype": "BASIC",
+        "saslformat": true,
+        "token": "oauth2Response.access_token",
+        "secure": false,
+        "tls": false,
+        "name": "delpiero22.flores@gmail.com",
+        "dname": "",
+        "x": 820,
+        "y": 280,
+        "wires": []
     }
 ]
