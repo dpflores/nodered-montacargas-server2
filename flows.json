@@ -151,9 +151,7 @@
             "78cd71d4d4914aab"
         ],
         "x": 414,
-        "y": 459,
-        "w": 862,
-        "h": 142
+        "y": 459
     },
     {
         "id": "1b5ad41c50a916b7",
@@ -169,9 +167,7 @@
             "1ad32e19c0123f3c"
         ],
         "x": 174,
-        "y": 679,
-        "w": 572,
-        "h": 82
+        "y": 679
     },
     {
         "id": "5c2896b2dfe6eae8",
@@ -186,9 +182,9 @@
             "a28aa19c6b483b73",
             "8d0255f41c13f305"
         ],
-        "x": 214,
-        "y": 2659,
-        "w": 572,
+        "x": 194,
+        "y": 3039,
+        "w": 592,
         "h": 82
     },
     {
@@ -205,9 +201,7 @@
             "d96db93b8fdafded"
         ],
         "x": 834,
-        "y": 699,
-        "w": 572,
-        "h": 82
+        "y": 699
     },
     {
         "id": "20aa6fa811d70d43",
@@ -2922,8 +2916,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 240,
-        "y": 1260,
+        "x": 200,
+        "y": 1780,
         "wires": [
             [
                 "bb536c1c315511c1"
@@ -2952,8 +2946,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 240,
-        "y": 1380,
+        "x": 200,
+        "y": 1900,
         "wires": [
             [
                 "38c87ace5bd5e323"
@@ -2965,8 +2959,8 @@
         "type": "subflow:f168446540142aa7",
         "z": "3b4e3447579da6e6",
         "name": "",
-        "x": 500,
-        "y": 1260,
+        "x": 460,
+        "y": 1780,
         "wires": []
     },
     {
@@ -2974,8 +2968,8 @@
         "type": "subflow:f168446540142aa7",
         "z": "3b4e3447579da6e6",
         "name": "",
-        "x": 520,
-        "y": 1380,
+        "x": 480,
+        "y": 1900,
         "wires": []
     },
     {
@@ -3000,8 +2994,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 240,
-        "y": 1620,
+        "x": 200,
+        "y": 2140,
         "wires": [
             [
                 "d6da7333a0f08043"
@@ -3013,8 +3007,8 @@
         "type": "subflow:f168446540142aa7",
         "z": "3b4e3447579da6e6",
         "name": "",
-        "x": 500,
-        "y": 1620,
+        "x": 460,
+        "y": 2140,
         "wires": []
     },
     {
@@ -3029,8 +3023,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 420,
-        "y": 1680,
+        "x": 380,
+        "y": 2200,
         "wires": [
             [
                 "108c22764b8a5109"
@@ -3050,8 +3044,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 860,
-        "y": 1680,
+        "x": 820,
+        "y": 2200,
         "wires": []
     },
     {
@@ -3060,8 +3054,8 @@
         "z": "3b4e3447579da6e6",
         "mydb": "20aa6fa811d70d43",
         "name": "",
-        "x": 620,
-        "y": 1680,
+        "x": 580,
+        "y": 2200,
         "wires": [
             [
                 "3784c1e26e305b6a"
@@ -3090,8 +3084,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 250,
-        "y": 1880,
+        "x": 230,
+        "y": 2260,
         "wires": [
             [
                 "8c1e3d03d983e058"
@@ -3103,8 +3097,8 @@
         "type": "subflow:f168446540142aa7",
         "z": "3b4e3447579da6e6",
         "name": "",
-        "x": 520,
-        "y": 1880,
+        "x": 500,
+        "y": 2260,
         "wires": []
     },
     {
@@ -3119,8 +3113,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 450,
-        "y": 1940,
+        "x": 430,
+        "y": 2320,
         "wires": [
             [
                 "70de6a15584dc94f"
@@ -3140,8 +3134,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 880,
-        "y": 1940,
+        "x": 860,
+        "y": 2320,
         "wires": []
     },
     {
@@ -3150,8 +3144,8 @@
         "z": "3b4e3447579da6e6",
         "mydb": "20aa6fa811d70d43",
         "name": "",
-        "x": 640,
-        "y": 1940,
+        "x": 620,
+        "y": 2320,
         "wires": [
             [
                 "d9325fd4257db40e"
@@ -3180,8 +3174,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 240,
-        "y": 2100,
+        "x": 220,
+        "y": 2480,
         "wires": [
             [
                 "7a77eb5aaa9c7a43"
@@ -3193,8 +3187,8 @@
         "type": "subflow:f168446540142aa7",
         "z": "3b4e3447579da6e6",
         "name": "",
-        "x": 520,
-        "y": 2100,
+        "x": 500,
+        "y": 2480,
         "wires": []
     },
     {
@@ -3209,8 +3203,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 450,
-        "y": 2160,
+        "x": 430,
+        "y": 2540,
         "wires": [
             [
                 "f422073956e2fb92"
@@ -3230,8 +3224,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 880,
-        "y": 2160,
+        "x": 860,
+        "y": 2540,
         "wires": []
     },
     {
@@ -3240,8 +3234,8 @@
         "z": "3b4e3447579da6e6",
         "mydb": "20aa6fa811d70d43",
         "name": "",
-        "x": 640,
-        "y": 2160,
+        "x": 620,
+        "y": 2540,
         "wires": [
             [
                 "2c3f9e0109d5213a"
@@ -3270,8 +3264,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 240,
-        "y": 2300,
+        "x": 220,
+        "y": 2680,
         "wires": [
             [
                 "cf5866e916a5494e"
@@ -3283,8 +3277,8 @@
         "type": "subflow:f168446540142aa7",
         "z": "3b4e3447579da6e6",
         "name": "",
-        "x": 520,
-        "y": 2300,
+        "x": 500,
+        "y": 2680,
         "wires": []
     },
     {
@@ -3299,8 +3293,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 450,
-        "y": 2360,
+        "x": 430,
+        "y": 2740,
         "wires": [
             [
                 "d248ef0169518ca6"
@@ -3320,8 +3314,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 880,
-        "y": 2360,
+        "x": 860,
+        "y": 2740,
         "wires": []
     },
     {
@@ -3330,8 +3324,8 @@
         "z": "3b4e3447579da6e6",
         "mydb": "20aa6fa811d70d43",
         "name": "",
-        "x": 640,
-        "y": 2360,
+        "x": 620,
+        "y": 2740,
         "wires": [
             [
                 "79e0e75dfc7b4d95"
@@ -3360,8 +3354,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 220,
-        "y": 2460,
+        "x": 200,
+        "y": 2840,
         "wires": [
             [
                 "009ab18e8fc54453"
@@ -3373,8 +3367,8 @@
         "type": "subflow:f168446540142aa7",
         "z": "3b4e3447579da6e6",
         "name": "",
-        "x": 500,
-        "y": 2460,
+        "x": 480,
+        "y": 2840,
         "wires": []
     },
     {
@@ -3389,8 +3383,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 430,
-        "y": 2520,
+        "x": 410,
+        "y": 2900,
         "wires": [
             [
                 "a0a120fce288f53a"
@@ -3410,8 +3404,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 860,
-        "y": 2520,
+        "x": 840,
+        "y": 2900,
         "wires": []
     },
     {
@@ -3420,8 +3414,8 @@
         "z": "3b4e3447579da6e6",
         "mydb": "20aa6fa811d70d43",
         "name": "",
-        "x": 620,
-        "y": 2520,
+        "x": 600,
+        "y": 2900,
         "wires": [
             [
                 "ab7121c64ef39329"
@@ -3450,8 +3444,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 320,
-        "y": 2700,
+        "x": 300,
+        "y": 3080,
         "wires": [
             [
                 "8d0255f41c13f305"
@@ -3466,7 +3460,7 @@
         "mydb": "20aa6fa811d70d43",
         "name": "",
         "x": 700,
-        "y": 2700,
+        "y": 3080,
         "wires": [
             []
         ]
@@ -3484,8 +3478,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 510,
-        "y": 2700,
+        "x": 490,
+        "y": 3080,
         "wires": [
             [
                 "a28aa19c6b483b73"
@@ -3513,8 +3507,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 820,
-        "y": 1320,
+        "x": 780,
+        "y": 1840,
         "wires": [
             [
                 "b92aa9193a6c083b"
@@ -3533,8 +3527,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 990,
-        "y": 1320,
+        "x": 950,
+        "y": 1840,
         "wires": [
             [
                 "c80dbf0a49349bc4"
@@ -3547,8 +3541,8 @@
         "z": "3b4e3447579da6e6",
         "mydb": "20aa6fa811d70d43",
         "name": "",
-        "x": 1160,
-        "y": 1320,
+        "x": 1120,
+        "y": 1840,
         "wires": [
             []
         ]
@@ -3574,8 +3568,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 820,
-        "y": 1380,
+        "x": 780,
+        "y": 1900,
         "wires": [
             [
                 "37ff57fb7f915843"
@@ -3594,8 +3588,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 990,
-        "y": 1380,
+        "x": 950,
+        "y": 1900,
         "wires": [
             [
                 "13d132e6f26d3e18"
@@ -3608,8 +3602,8 @@
         "z": "3b4e3447579da6e6",
         "mydb": "20aa6fa811d70d43",
         "name": "",
-        "x": 1160,
-        "y": 1380,
+        "x": 1120,
+        "y": 1900,
         "wires": [
             []
         ]
@@ -3620,8 +3614,8 @@
         "z": "3b4e3447579da6e6",
         "mydb": "20aa6fa811d70d43",
         "name": "",
-        "x": 620,
-        "y": 1500,
+        "x": 580,
+        "y": 2020,
         "wires": [
             []
         ]
@@ -3647,8 +3641,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 280,
-        "y": 1500,
+        "x": 240,
+        "y": 2020,
         "wires": [
             [
                 "38c87ace5bd5e323"
@@ -3667,8 +3661,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 450,
-        "y": 1500,
+        "x": 410,
+        "y": 2020,
         "wires": [
             [
                 "c3941554da79642a"
@@ -4127,7 +4121,8 @@
             [
                 "313d3484260210e8",
                 "3c377ba0c8a4b636",
-                "ed3216c37fb5e668"
+                "ed3216c37fb5e668",
+                "5efa8713a3fa0df5"
             ]
         ]
     },
@@ -4285,7 +4280,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 110,
-        "y": 820,
+        "y": 900,
         "wires": [
             [
                 "200bb2325e33d0d8"
@@ -4305,12 +4300,13 @@
         "finalize": "",
         "libs": [],
         "x": 540,
-        "y": 820,
+        "y": 900,
         "wires": [
             [
                 "1ff7d26c947a2241",
                 "12819860de596d71",
-                "5d569bfd9bc9ce99"
+                "5d569bfd9bc9ce99",
+                "abadcf9c1557aeb6"
             ]
         ]
     },
@@ -4327,7 +4323,7 @@
         "finalize": "",
         "libs": [],
         "x": 790,
-        "y": 820,
+        "y": 900,
         "wires": [
             [
                 "b59c0c6a6278cbe7"
@@ -4341,7 +4337,7 @@
         "mydb": "20aa6fa811d70d43",
         "name": "",
         "x": 980,
-        "y": 820,
+        "y": 900,
         "wires": [
             []
         ]
@@ -4353,7 +4349,7 @@
         "mydb": "20aa6fa811d70d43",
         "name": "",
         "x": 960,
-        "y": 880,
+        "y": 960,
         "wires": [
             []
         ]
@@ -4371,7 +4367,7 @@
         "finalize": "",
         "libs": [],
         "x": 790,
-        "y": 880,
+        "y": 960,
         "wires": [
             [
                 "fb30b7ef1887336c"
@@ -4396,7 +4392,7 @@
         "repair": false,
         "outputs": 1,
         "x": 300,
-        "y": 820,
+        "y": 900,
         "wires": [
             [
                 "7710be5101e265e5"
@@ -4430,7 +4426,7 @@
         "to": "",
         "reg": false,
         "x": 790,
-        "y": 740,
+        "y": 820,
         "wires": [
             [
                 "1d31bd657e626544"
@@ -4443,7 +4439,7 @@
         "z": "3b4e3447579da6e6",
         "name": "",
         "x": 1000,
-        "y": 740,
+        "y": 820,
         "wires": []
     },
     {
@@ -4468,7 +4464,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 130,
-        "y": 1040,
+        "y": 1260,
         "wires": [
             [
                 "f622bf9f1e300096"
@@ -4488,7 +4484,7 @@
         "finalize": "",
         "libs": [],
         "x": 580,
-        "y": 1040,
+        "y": 1260,
         "wires": [
             [
                 "3d46deab76f37cec",
@@ -4512,7 +4508,7 @@
         "finalize": "",
         "libs": [],
         "x": 810,
-        "y": 1040,
+        "y": 1260,
         "wires": [
             [
                 "e6371e5ec4d364ca"
@@ -4526,7 +4522,7 @@
         "mydb": "20aa6fa811d70d43",
         "name": "",
         "x": 1000,
-        "y": 1040,
+        "y": 1260,
         "wires": [
             []
         ]
@@ -4538,7 +4534,7 @@
         "mydb": "20aa6fa811d70d43",
         "name": "",
         "x": 980,
-        "y": 1100,
+        "y": 1320,
         "wires": [
             []
         ]
@@ -4556,7 +4552,7 @@
         "finalize": "",
         "libs": [],
         "x": 810,
-        "y": 1100,
+        "y": 1320,
         "wires": [
             [
                 "8c34c01dc6dbc30a"
@@ -4581,7 +4577,7 @@
         "repair": false,
         "outputs": 1,
         "x": 320,
-        "y": 1040,
+        "y": 1260,
         "wires": [
             [
                 "d1971e0b1d6078cf"
@@ -4615,7 +4611,7 @@
         "to": "",
         "reg": false,
         "x": 810,
-        "y": 960,
+        "y": 1180,
         "wires": [
             [
                 "316054441e47488e"
@@ -4628,7 +4624,7 @@
         "z": "3b4e3447579da6e6",
         "name": "",
         "x": 1020,
-        "y": 960,
+        "y": 1180,
         "wires": []
     },
     {
@@ -4645,7 +4641,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 560,
-        "y": 1140,
+        "y": 1360,
         "wires": []
     },
     {
@@ -4668,7 +4664,7 @@
         "to": "",
         "reg": false,
         "x": 830,
-        "y": 1160,
+        "y": 1380,
         "wires": [
             [
                 "4f789a69595440f7"
@@ -4688,7 +4684,7 @@
         "finalize": "",
         "libs": [],
         "x": 1030,
-        "y": 1160,
+        "y": 1380,
         "wires": [
             [
                 "951d84990846c7ba"
@@ -4702,7 +4698,125 @@
         "mydb": "20aa6fa811d70d43",
         "name": "",
         "x": 1200,
-        "y": 1160,
+        "y": 1380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "abadcf9c1557aeb6",
+        "type": "change",
+        "z": "3b4e3447579da6e6",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "last_alert_hour",
+                "pt": "global",
+                "to": "hourmeter.hours",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 810,
+        "y": 1020,
+        "wires": [
+            [
+                "09e010550167ac5e"
+            ]
+        ]
+    },
+    {
+        "id": "09e010550167ac5e",
+        "type": "function",
+        "z": "3b4e3447579da6e6",
+        "name": "function 31",
+        "func": "const last_hour_alert = global.get(\"last_alert_hour\");\nmsg.topic = \"UPDATE `persistent_data` SET `json` = \"+ last_hour_alert +\" WHERE `persistent_data`.`tag` = 'last_alert_hour'\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1010,
+        "y": 1020,
+        "wires": [
+            [
+                "40cdb5b4d17cb1d9"
+            ]
+        ]
+    },
+    {
+        "id": "40cdb5b4d17cb1d9",
+        "type": "mysql",
+        "z": "3b4e3447579da6e6",
+        "mydb": "20aa6fa811d70d43",
+        "name": "",
+        "x": 1180,
+        "y": 1020,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5efa8713a3fa0df5",
+        "type": "change",
+        "z": "3b4e3447579da6e6",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "last_alert_hour",
+                "pt": "global",
+                "to": "hourmeter.hours",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 790,
+        "y": 700,
+        "wires": [
+            [
+                "63895085fbae2ee9"
+            ]
+        ]
+    },
+    {
+        "id": "63895085fbae2ee9",
+        "type": "function",
+        "z": "3b4e3447579da6e6",
+        "name": "function 32",
+        "func": "const last_hour_alert = global.get(\"last_alert_hour\");\nmsg.topic = \"UPDATE `persistent_data` SET `json` = \"+ last_hour_alert +\" WHERE `persistent_data`.`tag` = 'last_alert_hour'\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 990,
+        "y": 700,
+        "wires": [
+            [
+                "38d183fc32b6c2d0"
+            ]
+        ]
+    },
+    {
+        "id": "38d183fc32b6c2d0",
+        "type": "mysql",
+        "z": "3b4e3447579da6e6",
+        "mydb": "20aa6fa811d70d43",
+        "name": "",
+        "x": 1160,
+        "y": 700,
         "wires": [
             []
         ]
