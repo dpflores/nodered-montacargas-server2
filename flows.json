@@ -880,7 +880,8 @@
         "wires": [
             [
                 "3a95b8e928820723",
-                "882e46bfbbab60a8"
+                "882e46bfbbab60a8",
+                "cd2565342a4a4ff6"
             ]
         ]
     },
@@ -1099,6 +1100,65 @@
         "reg": false,
         "x": 800,
         "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "cd2565342a4a4ff6",
+        "type": "function",
+        "z": "abf430ab9cfee905",
+        "name": "function 23",
+        "func": "msg.topic = 'SELECT * FROM `persistent_data` WHERE `tag`= \"last_alert_hour\";';\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 310,
+        "y": 520,
+        "wires": [
+            [
+                "32d2bc3da3b7a151"
+            ]
+        ]
+    },
+    {
+        "id": "32d2bc3da3b7a151",
+        "type": "mysql",
+        "z": "abf430ab9cfee905",
+        "mydb": "20aa6fa811d70d43",
+        "name": "",
+        "x": 480,
+        "y": 520,
+        "wires": [
+            [
+                "fe23b5bb22781802"
+            ]
+        ]
+    },
+    {
+        "id": "fe23b5bb22781802",
+        "type": "change",
+        "z": "abf430ab9cfee905",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "last_alert_hour",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 790,
+        "y": 520,
         "wires": [
             []
         ]
@@ -4033,15 +4093,15 @@
         "id": "99ecd3c30af130b8",
         "type": "function",
         "z": "3b4e3447579da6e6",
-        "name": "function 23",
-        "func": "const hour_repetition = global.get(\"mant_prevs\").prev1;\nconst current_hour = global.get(\"hourmeter\").hours;\n\nif (!(current_hour%hour_repetition)){\n    return msg;\n}\n\nmsg.payload = current_hour%hour_repetition;\n\nreturn msg;\n",
+        "name": "Mantenimiento Preventivo 1",
+        "func": "const hour_repetition = global.get(\"mant_prevs\").prev1;\nconst current_hour = global.get(\"hourmeter\").hours;\n\nif ((current_hour%hour_repetition)===0){\n    return msg;\n}\n\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 350,
+        "x": 400,
         "y": 600,
         "wires": [
             [
@@ -4061,9 +4121,27 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 540,
+        "x": 660,
         "y": 600,
         "wires": []
+    },
+    {
+        "id": "faf3bec146c25c8d",
+        "type": "function",
+        "z": "3b4e3447579da6e6",
+        "name": "Mantenimiento Preventivo 1",
+        "func": "const hour_repetition = global.get(\"mant_prevs\").prev1;\nconst current_hour = global.get(\"hourmeter\").hours;\n\nif ((current_hour%hour_repetition)===0){\n    msg.payload = \"Preventivo 1\";\n    return msg;\n}\n\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 660,
+        "wires": [
+            []
+        ]
     },
     {
         "id": "7097cd6ffe951032",
