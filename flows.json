@@ -1134,7 +1134,7 @@
         "y": 520,
         "wires": [
             [
-                "fe23b5bb22781802"
+                "e9f058ed420e58f6"
             ]
         ]
     },
@@ -1161,6 +1161,26 @@
         "y": 520,
         "wires": [
             []
+        ]
+    },
+    {
+        "id": "e9f058ed420e58f6",
+        "type": "function",
+        "z": "abf430ab9cfee905",
+        "name": "Parse",
+        "func": "msg.payload = JSON.parse(msg.payload[0].json)\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 610,
+        "y": 520,
+        "wires": [
+            [
+                "fe23b5bb22781802"
+            ]
         ]
     },
     {
