@@ -4643,9 +4643,27 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 840,
-        "y": 1160,
+        "x": 660,
+        "y": 1180,
         "wires": []
+    },
+    {
+        "id": "4f789a69595440f7",
+        "type": "function",
+        "z": "3b4e3447579da6e6",
+        "name": "function 30",
+        "func": "\nmsg.topic = \"UPDATE `persistent_data` SET `json` = '1' WHERE `persistent_data`.`tag` = 'last_alert_hour'\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 830,
+        "y": 1140,
+        "wires": [
+            []
+        ]
     },
     {
         "id": "7097cd6ffe951032",
