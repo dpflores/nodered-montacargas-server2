@@ -2796,7 +2796,6 @@
         "y": 660,
         "wires": [
             [
-                "485b0fc7d1597f7f",
                 "38c87ace5bd5e323"
             ]
         ]
@@ -2818,57 +2817,6 @@
         "x": 520,
         "y": 660,
         "wires": []
-    },
-    {
-        "id": "485b0fc7d1597f7f",
-        "type": "function",
-        "z": "3b4e3447579da6e6",
-        "name": "function 9",
-        "func": "const hourmeter = global.get(\"hourmeter\").hours;\n\n\nmsg.topic = \"INSERT INTO `alerts` (`alert_type`, `hourmeter`, `mant_type`) VALUES (\"+ 0 +\", \"+ hourmeter+\", 'battery')\";\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 440,
-        "y": 720,
-        "wires": [
-            [
-                "8b590b0d8ab7fa95"
-            ]
-        ]
-    },
-    {
-        "id": "39c70c14c1524ae1",
-        "type": "debug",
-        "z": "3b4e3447579da6e6",
-        "name": "debug 22",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "topic",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 880,
-        "y": 720,
-        "wires": []
-    },
-    {
-        "id": "8b590b0d8ab7fa95",
-        "type": "mysql",
-        "z": "3b4e3447579da6e6",
-        "mydb": "20aa6fa811d70d43",
-        "name": "",
-        "x": 640,
-        "y": 720,
-        "wires": [
-            [
-                "39c70c14c1524ae1"
-            ]
-        ]
     },
     {
         "id": "116ab7fc441741df",
@@ -3658,7 +3606,8 @@
         "y": 240,
         "wires": [
             [
-                "01e05cb63373fd29"
+                "01e05cb63373fd29",
+                "485b0fc7d1597f7f"
             ]
         ]
     },
@@ -3689,7 +3638,7 @@
         "to": "",
         "reg": false,
         "x": 690,
-        "y": 180,
+        "y": 140,
         "wires": [
             [
                 "27e54f15b04931d6"
@@ -3701,8 +3650,8 @@
         "type": "subflow:f168446540142aa7",
         "z": "3b4e3447579da6e6",
         "name": "",
-        "x": 900,
-        "y": 180,
+        "x": 920,
+        "y": 140,
         "wires": []
     },
     {
@@ -3854,6 +3803,57 @@
         "x": 620,
         "y": 300,
         "wires": []
+    },
+    {
+        "id": "485b0fc7d1597f7f",
+        "type": "function",
+        "z": "3b4e3447579da6e6",
+        "name": "function 9",
+        "func": "const hourmeter = global.get(\"hourmeter\").hours;\n\n\nmsg.topic = \"INSERT INTO `alerts` (`alert_type`, `hourmeter`, `mant_type`) VALUES (\"+ 0 +\", \"+ hourmeter+\", 'battery')\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 680,
+        "y": 180,
+        "wires": [
+            [
+                "8b590b0d8ab7fa95"
+            ]
+        ]
+    },
+    {
+        "id": "39c70c14c1524ae1",
+        "type": "debug",
+        "z": "3b4e3447579da6e6",
+        "name": "debug 22",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "topic",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1060,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "8b590b0d8ab7fa95",
+        "type": "mysql",
+        "z": "3b4e3447579da6e6",
+        "mydb": "20aa6fa811d70d43",
+        "name": "",
+        "x": 880,
+        "y": 180,
+        "wires": [
+            [
+                "39c70c14c1524ae1"
+            ]
+        ]
     },
     {
         "id": "7097cd6ffe951032",
