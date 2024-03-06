@@ -3647,7 +3647,7 @@
         "rules": [
             {
                 "t": "lt",
-                "v": "100000",
+                "v": "10000",
                 "vt": "num"
             }
         ],
@@ -3754,7 +3754,7 @@
         "to": "",
         "reg": false,
         "x": 400,
-        "y": 300,
+        "y": 380,
         "wires": [
             []
         ]
@@ -3780,7 +3780,8 @@
         "y": 240,
         "wires": [
             [
-                "13782c1b8c3b124f"
+                "13782c1b8c3b124f",
+                "6b51c2cd2eeb2cd2"
             ]
         ]
     },
@@ -3837,6 +3838,22 @@
         "wires": [
             []
         ]
+    },
+    {
+        "id": "6b51c2cd2eeb2cd2",
+        "type": "debug",
+        "z": "3b4e3447579da6e6",
+        "name": "debug 34",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 620,
+        "y": 300,
+        "wires": []
     },
     {
         "id": "7097cd6ffe951032",
