@@ -3679,7 +3679,7 @@
                 "t": "set",
                 "p": "alert",
                 "pt": "msg",
-                "to": "Batería baja",
+                "to": "Batería baja\\n",
                 "tot": "str"
             }
         ],
