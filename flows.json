@@ -4495,7 +4495,6 @@
                 "a419b2a2f083aec9",
                 "a318e2d164ef81e4",
                 "dd34ce892ca45a77",
-                "4f789a69595440f7",
                 "34b2d96fdb61559b"
             ]
         ]
@@ -4650,38 +4649,6 @@
         "wires": []
     },
     {
-        "id": "4f789a69595440f7",
-        "type": "function",
-        "z": "3b4e3447579da6e6",
-        "name": "function 30",
-        "func": "const last_hour_alert = global.get(\"last_alert_hour\");\nmsg.topic = \"UPDATE `persistent_data` SET `json` = \"+ last_hour_alert +\" WHERE `persistent_data`.`tag` = 'last_alert_hour'\";\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 830,
-        "y": 1140,
-        "wires": [
-            [
-                "951d84990846c7ba"
-            ]
-        ]
-    },
-    {
-        "id": "951d84990846c7ba",
-        "type": "mysql",
-        "z": "3b4e3447579da6e6",
-        "mydb": "20aa6fa811d70d43",
-        "name": "",
-        "x": 1000,
-        "y": 1140,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "34b2d96fdb61559b",
         "type": "change",
         "z": "3b4e3447579da6e6",
@@ -4700,8 +4667,42 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 890,
-        "y": 1200,
+        "x": 830,
+        "y": 1160,
+        "wires": [
+            [
+                "4f789a69595440f7"
+            ]
+        ]
+    },
+    {
+        "id": "4f789a69595440f7",
+        "type": "function",
+        "z": "3b4e3447579da6e6",
+        "name": "function 30",
+        "func": "const last_hour_alert = global.get(\"last_alert_hour\");\nmsg.topic = \"UPDATE `persistent_data` SET `json` = \"+ last_hour_alert +\" WHERE `persistent_data`.`tag` = 'last_alert_hour'\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1030,
+        "y": 1160,
+        "wires": [
+            [
+                "951d84990846c7ba"
+            ]
+        ]
+    },
+    {
+        "id": "951d84990846c7ba",
+        "type": "mysql",
+        "z": "3b4e3447579da6e6",
+        "mydb": "20aa6fa811d70d43",
+        "name": "",
+        "x": 1200,
+        "y": 1160,
         "wires": [
             []
         ]
