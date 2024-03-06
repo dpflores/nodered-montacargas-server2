@@ -4480,7 +4480,7 @@
         "type": "function",
         "z": "3b4e3447579da6e6",
         "name": "Mantenimiento Preventivo 3",
-        "func": "const hour_repetition = global.get(\"mant_prevs\").prev3;\nconst current_hour = global.get(\"hourmeter\").hours;\nconst last_alert_hour = global.get(\"last_alert_hour\");\n\nif (((current_hour%hour_repetition)===0) && (current_hour>last_alert_hour)){\n    return msg;\n}\n\n",
+        "func": "const hour_repetition = global.get(\"mant_prevs\").prev3;\nconst current_hour = global.get(\"hourmeter\").hours;\nconst last_alert_hour = global.get(\"last_alert_hour\");\n\nif (((current_hour%hour_repetition)===0) && (current_hour>last_alert_hour)){\n    return msg;\n}\n\nmsg.payload = {\"1\": current_hour,\n\"2\": hour_repetition, \"3\":last_alert_hour}\nreturn msg;\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -4493,7 +4493,8 @@
             [
                 "3d46deab76f37cec",
                 "a419b2a2f083aec9",
-                "a318e2d164ef81e4"
+                "a318e2d164ef81e4",
+                "dd34ce892ca45a77"
             ]
         ]
     },
@@ -4627,6 +4628,22 @@
         "name": "",
         "x": 1020,
         "y": 960,
+        "wires": []
+    },
+    {
+        "id": "dd34ce892ca45a77",
+        "type": "debug",
+        "z": "3b4e3447579da6e6",
+        "name": "debug 35",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 840,
+        "y": 1160,
         "wires": []
     },
     {
