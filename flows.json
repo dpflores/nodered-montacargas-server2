@@ -4114,7 +4114,7 @@
         "type": "function",
         "z": "3b4e3447579da6e6",
         "name": "Mantenimiento Preventivo 1",
-        "func": "const hour_repetition = global.get(\"mant_prevs\").prev1;\nconst current_hour = global.get(\"hourmeter\").hours;\n\nif ((current_hour%hour_repetition)===0){\n    return msg;\n}\n\n",
+        "func": "const hour_repetition = global.get(\"mant_prevs\").prev1;\nconst current_hour = global.get(\"hourmeter\").hours;\nconst last_alert_hour = global.get(\"last_alert_hour\");\n\nif (((current_hour%hour_repetition)===0) && (current_hour>last_alert_hour)){\n    return msg;\n}\n\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
