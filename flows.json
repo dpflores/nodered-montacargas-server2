@@ -3757,7 +3757,7 @@
         "payload": "{\"gateway_key\":\"A13CF8\",\"timestamp\":1709735858816,\"data\":{\"gps\":{\"pos_valid\":1,\"latitude\":-12.0482761,\"longitude\":-77.1011795,\"altitude\":63.382,\"haccuracy\":3.9,\"speed\":0.664,\"course\":118.68},\"mantto\":\"0\",\"running\":\"1\",\"hourmeter\":0,\"battery\":{\"voltage\":9638},\"pressure\":{\"current\":6199},\"load\":0.32827600000000023,\"status\":0,\"general_status\":0}}",
         "payloadType": "json",
         "x": 150,
-        "y": 480,
+        "y": 460,
         "wires": [
             [
                 "ea33fff85d76e410"
@@ -4024,8 +4024,46 @@
         "x": 150,
         "y": 600,
         "wires": [
-            []
+            [
+                "99ecd3c30af130b8"
+            ]
         ]
+    },
+    {
+        "id": "99ecd3c30af130b8",
+        "type": "function",
+        "z": "3b4e3447579da6e6",
+        "name": "function 23",
+        "func": "const hour_repetition = global.get(\"mant_prevs\").prev1;\nconst current_hour = global.get(\"hourmeter\").hours;\n\nif (!(current_hour%hour_repetition)){\n    return msg;\n}\n\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 350,
+        "y": 600,
+        "wires": [
+            [
+                "3f2302079a558b9d"
+            ]
+        ]
+    },
+    {
+        "id": "3f2302079a558b9d",
+        "type": "debug",
+        "z": "3b4e3447579da6e6",
+        "name": "debug 35",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 540,
+        "y": 600,
+        "wires": []
     },
     {
         "id": "7097cd6ffe951032",
