@@ -5200,7 +5200,7 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "{\"gateway_key\":\"A13CF8\",\"timestamp\":1709735858816,\"data\":{\"gps\":{\"pos_valid\":1,\"latitude\":-12.0482761,\"longitude\":-77.1011795,\"altitude\":63.382,\"haccuracy\":3.9,\"speed\":0.664,\"course\":118.68},\"mantto\":\"1\",\"running\":\"1\",\"hourmeter\":0,\"battery\":{\"voltage\":14038},\"pressure\":{\"current\":6199},\"load\":0.32827600000000023,\"status\":0,\"general_status\":0}}",
+        "payload": "{\"gateway_key\":\"A13CF8\",\"timestamp\":1709735858816,\"data\":{\"gps\":{\"pos_valid\":1,\"latitude\":-12.0482761,\"longitude\":-77.1011795,\"altitude\":63.382,\"haccuracy\":3.9,\"speed\":0.664,\"course\":118.68},\"mantto\":\"0\",\"running\":\"1\",\"hourmeter\":0,\"battery\":{\"voltage\":14038},\"pressure\":{\"current\":6199},\"load\":0.32827600000000023,\"status\":0,\"general_status\":0}}",
         "payloadType": "json",
         "x": 190,
         "y": 1920,
