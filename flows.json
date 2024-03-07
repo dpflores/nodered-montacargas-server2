@@ -4072,11 +4072,11 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 130,
+        "x": 290,
         "y": 600,
         "wires": [
             [
-                "778764ab7ef397b0"
+                "99ecd3c30af130b8"
             ]
         ]
     },
@@ -4168,31 +4168,6 @@
         ]
     },
     {
-        "id": "778764ab7ef397b0",
-        "type": "switch",
-        "z": "3b4e3447579da6e6",
-        "name": "Alert flag == 0?",
-        "property": "alert_flag",
-        "propertyType": "global",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "0",
-                "vt": "num"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 320,
-        "y": 600,
-        "wires": [
-            [
-                "99ecd3c30af130b8"
-            ]
-        ]
-    },
-    {
         "id": "ed3216c37fb5e668",
         "type": "change",
         "z": "3b4e3447579da6e6",
@@ -4256,11 +4231,11 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 110,
+        "x": 290,
         "y": 900,
         "wires": [
             [
-                "200bb2325e33d0d8"
+                "7710be5101e265e5"
             ]
         ]
     },
@@ -4352,31 +4327,6 @@
         ]
     },
     {
-        "id": "200bb2325e33d0d8",
-        "type": "switch",
-        "z": "3b4e3447579da6e6",
-        "name": "Alert flag == 0?",
-        "property": "alert_flag",
-        "propertyType": "global",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "0",
-                "vt": "num"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 300,
-        "y": 900,
-        "wires": [
-            [
-                "7710be5101e265e5"
-            ]
-        ]
-    },
-    {
         "id": "5d569bfd9bc9ce99",
         "type": "change",
         "z": "3b4e3447579da6e6",
@@ -4440,11 +4390,11 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 130,
+        "x": 290,
         "y": 1260,
         "wires": [
             [
-                "f622bf9f1e300096"
+                "d1971e0b1d6078cf"
             ]
         ]
     },
@@ -4533,31 +4483,6 @@
         "wires": [
             [
                 "8c34c01dc6dbc30a"
-            ]
-        ]
-    },
-    {
-        "id": "f622bf9f1e300096",
-        "type": "switch",
-        "z": "3b4e3447579da6e6",
-        "name": "Alert flag == 0?",
-        "property": "alert_flag",
-        "propertyType": "global",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "0",
-                "vt": "num"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 320,
-        "y": 1260,
-        "wires": [
-            [
-                "d1971e0b1d6078cf"
             ]
         ]
     },
