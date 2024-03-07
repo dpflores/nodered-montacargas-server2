@@ -2133,7 +2133,7 @@
                 "e3472658b9dd67fe",
                 "5bef7810bb446303",
                 "03b3e3af982a6cc5",
-                "3f922f8b19a53589"
+                "9e7d10c5065b1471"
             ]
         ]
     },
@@ -2386,7 +2386,7 @@
         "type": "debug",
         "z": "4d53ee97ad0311a6",
         "name": "debug 6",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -2403,7 +2403,7 @@
         "type": "debug",
         "z": "4d53ee97ad0311a6",
         "name": "debug 10",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -2958,38 +2958,6 @@
         "wires": []
     },
     {
-        "id": "29a26e4d1f386e7e",
-        "type": "switch",
-        "z": "4d53ee97ad0311a6",
-        "name": "",
-        "property": "payload.data.status",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "lt",
-                "v": "live_data.data.status",
-                "vt": "global"
-            },
-            {
-                "t": "else"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 2,
-        "x": 1210,
-        "y": 180,
-        "wires": [
-            [
-                "1eb8537850904cea",
-                "6765f0408aaa146f"
-            ],
-            [
-                "efbe815cb9551861"
-            ]
-        ]
-    },
-    {
         "id": "1eb8537850904cea",
         "type": "change",
         "z": "4d53ee97ad0311a6",
@@ -3040,31 +3008,6 @@
         ]
     },
     {
-        "id": "3f922f8b19a53589",
-        "type": "switch",
-        "z": "4d53ee97ad0311a6",
-        "name": "",
-        "property": "payload.data.status",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "cont",
-                "v": "0",
-                "vt": "str"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 1090,
-        "y": 180,
-        "wires": [
-            [
-                "29a26e4d1f386e7e"
-            ]
-        ]
-    },
-    {
         "id": "6765f0408aaa146f",
         "type": "link out",
         "z": "4d53ee97ad0311a6",
@@ -3073,9 +3016,31 @@
         "links": [
             "bd86ae06a782a408"
         ],
-        "x": 1365,
-        "y": 220,
+        "x": 1415,
+        "y": 200,
         "wires": []
+    },
+    {
+        "id": "9e7d10c5065b1471",
+        "type": "function",
+        "z": "4d53ee97ad0311a6",
+        "name": "detect falling edge (acabo el mantenimiento)",
+        "func": "const prev_data = global.get(\"live_data\");\nconst current_data = msg.payload;\n\n\nif ((Number(current_data.data.mantto)==0) && (Number(prev_data.data.mantto) >=1) )\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1150,
+        "y": 200,
+        "wires": [
+            [
+                "1eb8537850904cea",
+                "6765f0408aaa146f",
+                "efbe815cb9551861"
+            ]
+        ]
     },
     {
         "id": "e0272e0b0c0c7ecd",
