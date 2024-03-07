@@ -4001,12 +4001,12 @@
         "type": "http in",
         "z": "3b4e3447579da6e6",
         "name": "",
-        "url": "/alertflag",
+        "url": "/alertflagoff",
         "method": "get",
         "upload": false,
         "swaggerDoc": "",
-        "x": 250,
-        "y": 120,
+        "x": 280,
+        "y": 80,
         "wires": [
             [
                 "628da924c86e1914"
@@ -4032,8 +4032,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 450,
-        "y": 120,
+        "x": 470,
+        "y": 80,
         "wires": [
             [
                 "6522b41c6d117d0a"
@@ -4049,8 +4049,8 @@
         "headers": {
             "content-type": "application/json"
         },
-        "x": 620,
-        "y": 120,
+        "x": 640,
+        "y": 80,
         "wires": []
     },
     {
@@ -5039,6 +5039,63 @@
                 "9fa41cf8023b6c15"
             ]
         ]
+    },
+    {
+        "id": "6b16b223437b2845",
+        "type": "http in",
+        "z": "3b4e3447579da6e6",
+        "name": "",
+        "url": "/alertflagon",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 280,
+        "y": 140,
+        "wires": [
+            [
+                "d580bf80bdb6b4c2"
+            ]
+        ]
+    },
+    {
+        "id": "d580bf80bdb6b4c2",
+        "type": "change",
+        "z": "3b4e3447579da6e6",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "alert_flag",
+                "pt": "global",
+                "to": "1",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 470,
+        "y": 140,
+        "wires": [
+            [
+                "69a0e5670166ec12"
+            ]
+        ]
+    },
+    {
+        "id": "69a0e5670166ec12",
+        "type": "http response",
+        "z": "3b4e3447579da6e6",
+        "name": "",
+        "statusCode": "200",
+        "headers": {
+            "content-type": "application/json"
+        },
+        "x": 640,
+        "y": 140,
+        "wires": []
     },
     {
         "id": "7097cd6ffe951032",
