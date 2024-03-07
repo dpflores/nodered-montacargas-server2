@@ -3757,60 +3757,6 @@
         ]
     },
     {
-        "id": "a64845bde5b95c1c",
-        "type": "inject",
-        "z": "3b4e3447579da6e6",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": true,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 230,
-        "y": 40,
-        "wires": [
-            [
-                "0ca0aa2b4828d4ed"
-            ]
-        ]
-    },
-    {
-        "id": "0ca0aa2b4828d4ed",
-        "type": "change",
-        "z": "3b4e3447579da6e6",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "alert_flag",
-                "pt": "global",
-                "to": "0",
-                "tot": "num"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 410,
-        "y": 40,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "2023895ec642de9d",
         "type": "link in",
         "z": "3b4e3447579da6e6",
@@ -3949,60 +3895,6 @@
                 "13782c1b8c3b124f",
                 "6b51c2cd2eeb2cd2"
             ]
-        ]
-    },
-    {
-        "id": "77dd15b84d71af0e",
-        "type": "inject",
-        "z": "3b4e3447579da6e6",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 640,
-        "y": 40,
-        "wires": [
-            [
-                "4368a90e7e3c04a0"
-            ]
-        ]
-    },
-    {
-        "id": "4368a90e7e3c04a0",
-        "type": "change",
-        "z": "3b4e3447579da6e6",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "alert_flag",
-                "pt": "global",
-                "to": "1",
-                "tot": "num"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 850,
-        "y": 40,
-        "wires": [
-            []
         ]
     },
     {
