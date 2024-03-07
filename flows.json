@@ -2958,56 +2958,6 @@
         "wires": []
     },
     {
-        "id": "1eb8537850904cea",
-        "type": "change",
-        "z": "4d53ee97ad0311a6",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "live_data",
-                "pt": "global",
-                "to": "payload",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 1370,
-        "y": 160,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "efbe815cb9551861",
-        "type": "change",
-        "z": "4d53ee97ad0311a6",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "live_data",
-                "pt": "global",
-                "to": "payload",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 1370,
-        "y": 260,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "6765f0408aaa146f",
         "type": "link out",
         "z": "4d53ee97ad0311a6",
@@ -3036,9 +2986,7 @@
         "y": 200,
         "wires": [
             [
-                "1eb8537850904cea",
                 "6765f0408aaa146f",
-                "efbe815cb9551861",
                 "975473f531dbc505"
             ]
         ]
