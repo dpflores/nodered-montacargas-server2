@@ -4812,7 +4812,7 @@
                 "t": "set",
                 "p": "alert",
                 "pt": "msg",
-                "to": "Llave de mantenimiento activado",
+                "to": "Llave de mantenimiento activada",
                 "tot": "str"
             }
         ],
@@ -5085,7 +5085,7 @@
                 "t": "set",
                 "p": "alert",
                 "pt": "msg",
-                "to": "Llave de mantenimiento desacitvado",
+                "to": "Llave de mantenimiento desactivada",
                 "tot": "str"
             }
         ],
