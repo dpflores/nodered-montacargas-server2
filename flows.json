@@ -3058,7 +3058,7 @@
         "type": "function",
         "z": "4d53ee97ad0311a6",
         "name": "detect falling edge (acabo el mantenimiento)",
-        "func": "const prev_data = global.get(\"live_data\");\nconst current_data = msg.payload;\n\n\nif ((Number(current_data.data.mantto)==0) && (Number(prev_data.data.mantto) >=1) ){\n    msg.payload = current_data;\n    global.set(\"live_data\", current_data);\n\n    return [msg];\n}\nelse {\n        global.set(\"live_data\", current_data);\n\n}",
+        "func": "const prev_data = global.get(\"live_data\");\nconst current_data = msg.payload;\n\n\nif ((Number(current_data.data.mantto)==0) && (Number(prev_data.data.mantto) >=1) ){\n    msg.payload = current_data;\n    global.set(\"live_data\", current_data);\n\n    return msg;\n}\nelse {\n    global.set(\"live_data\", current_data);\n\n}",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
