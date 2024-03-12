@@ -151,7 +151,9 @@
             "78cd71d4d4914aab"
         ],
         "x": 414,
-        "y": 459
+        "y": 459,
+        "w": 862,
+        "h": 142
     },
     {
         "id": "1b5ad41c50a916b7",
@@ -167,7 +169,9 @@
             "1ad32e19c0123f3c"
         ],
         "x": 174,
-        "y": 679
+        "y": 679,
+        "w": 572,
+        "h": 82
     },
     {
         "id": "5c2896b2dfe6eae8",
@@ -183,7 +187,9 @@
             "8d0255f41c13f305"
         ],
         "x": 234,
-        "y": 3499
+        "y": 3499,
+        "w": 592,
+        "h": 82
     },
     {
         "id": "11676a117d696ad7",
@@ -199,7 +205,9 @@
             "d96db93b8fdafded"
         ],
         "x": 834,
-        "y": 699
+        "y": 699,
+        "w": 572,
+        "h": 82
     },
     {
         "id": "20aa6fa811d70d43",
@@ -1793,7 +1801,7 @@
         "type": "function",
         "z": "c767b22b0c185339",
         "name": "function 38",
-        "func": "const data = msg.payload;\nconst horarioInicio = global.get(\"init_hour\"); // Hora de inicio del horario de trabajo (por ejemplo, 8:30 AM)\nconst horarioFin = global.get(\"end_hour\");    // Hora de fin del horario de trabajo (por ejemplo, 5:00 PM)\n\n// Función para calcular la diferencia de horas entre dos timestamps\nfunction calcularDiferenciaHoras(timestampInicio, timestampFin) {\n    const inicio = new Date(timestampInicio);\n    const fin = new Date(timestampFin);\n    const diferenciaMs = fin - inicio;\n    return diferenciaMs / (1000 * 60 * 60); // Convertir de milisegundos a horas\n}\n\n// Inicializar variables para almacenar las horas acumuladas\nlet horasCorrectivo = 0;\nlet horasPreventivo = 0;\n\n// Iterar sobre los datos y acumular las horas para cada tipo de mantenimiento\nfor (let i = 0; i < data.length; i++) {\n    const entry = data[i];\n    if (entry.mant_type === \"correctivo\") {\n        if (i + 1 < data.length && data[i + 1].mant_type === \"mant-end\") {\n            horasCorrectivo += calcularDiferenciaHoras(entry.date, data[i + 1].date);\n        }\n    } else if (entry.mant_type === \"mant-end\") {\n        if (i - 1 >= 0 && data[i - 1].mant_type === \"correctivo\") {\n            // Ya hemos contabilizado estas horas al calcular el correctivo\n        } else {\n            horasPreventivo += calcularDiferenciaHoras(data[i - 1].date, entry.date);\n        }\n    }\n}\n\n\nmsg.payload = {\n    \"correctivo\": horasCorrectivo,\n    \"preventivo\": horasPreventivo\n}\n\nreturn msg;",
+        "func": "const data = msg.payload;\nconst horarioInicio = global.get(\"init_hour\"); // Hora de inicio del horario de trabajo (por ejemplo, 8:30 AM)\nconst horarioFin = global.get(\"end_hour\");    // Hora de fin del horario de trabajo (por ejemplo, 5:00 PM)\n\n// Función para calcular la diferencia de horas entre dos timestamps\nfunction calcularDiferenciaHoras(timestampInicio, timestampFin) {\n    const inicio = new Date(timestampInicio);\n    const fin = new Date(timestampFin);\n    const diferenciaMs = fin - inicio;\n    const horas = diferenciaMs / (1000 * 60 * 60); // Convertir de milisegundos a horas\n    const minutos = (horas - Math.floor(horas)) * 60; // Extraer los minutos\n    const horasDecimal = Math.floor(horas) + minutos / 60; // Convertir los minutos a fracción de hora y sumarlos a las horas enteras\n    return horasDecimal;\n}\n\n// Inicializar variables para almacenar las horas acumuladas\nlet horasCorrectivo = 0;\nlet horasPreventivo = 0;\n\n// Iterar sobre los datos y acumular las horas para cada tipo de mantenimiento\nfor (let i = 0; i < data.length; i++) {\n    const entry = data[i];\n    if (entry.mant_type === \"correctivo\") {\n        if (i + 1 < data.length && data[i + 1].mant_type === \"mant-end\") {\n            horasCorrectivo += calcularDiferenciaHoras(entry.date, data[i + 1].date);\n        }\n    } else if (entry.mant_type === \"mant-end\") {\n        if (i - 1 >= 0 && data[i - 1].mant_type === \"correctivo\") {\n            // Ya hemos contabilizado estas horas al calcular el correctivo\n        } else {\n            horasPreventivo += calcularDiferenciaHoras(data[i - 1].date, entry.date);\n        }\n    }\n}\n\n\nmsg.payload = {\n    \"correctivo\": horasCorrectivo,\n    \"preventivo\": horasPreventivo\n}\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 4,
