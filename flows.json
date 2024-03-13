@@ -814,7 +814,7 @@
                 "t": "set",
                 "p": "live_data",
                 "pt": "global",
-                "to": "{\"gateway_key\":\"\",\"timestamp\":0,\"data\":{\"mantto\":\"0\",\"running\":\"0\",\"hourmeter\":0,\"battery\":{\"voltage\":0},\"pressure\":{\"current\":0},\"load\":0}}",
+                "to": "{\"gateway_key\":\"\",\"timestamp\":0,\"data\":{\"gps\":{\"pos_valid\":1,\"latitude\":0,\"longitude\":0,\"altitude\":63.382,\"haccuracy\":3.9,\"speed\":0,\"course\":118.68},\"mantto\":\"0\",\"running\":\"0\",\"hourmeter\":0,\"battery\":{\"voltage\":0},\"pressure\":{\"current\":0},\"load\":0}}",
                 "tot": "json"
             }
         ],
