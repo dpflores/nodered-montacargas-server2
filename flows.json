@@ -5384,15 +5384,11 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 250,
-        "y": 80,
+        "x": 90,
+        "y": 220,
         "wires": [
             [
-                "449f225fe3430426",
-                "cfaba645255d4a58",
-                "9a80a53da22ad545",
-                "506bfe4f037d70b3",
-                "9abade606111b3ef"
+                "059ff4fe539216ba"
             ]
         ]
     },
@@ -5675,5 +5671,47 @@
                 "4a511b01b6f888eb"
             ]
         ]
+    },
+    {
+        "id": "059ff4fe539216ba",
+        "type": "function",
+        "z": "cdb670b9eaa04bce",
+        "name": "Get month",
+        "func": "const current_date = new Date(msg.payload);\nconst current_month = current_date.getMonth();\nconst target_month = current_month==0? current_month-1:11;\nmsg.target_month=target_month;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 270,
+        "y": 220,
+        "wires": [
+            [
+                "449f225fe3430426",
+                "cfaba645255d4a58",
+                "9a80a53da22ad545",
+                "506bfe4f037d70b3",
+                "9abade606111b3ef",
+                "436f8b3bf6d2ac30"
+            ]
+        ]
+    },
+    {
+        "id": "436f8b3bf6d2ac30",
+        "type": "debug",
+        "z": "cdb670b9eaa04bce",
+        "name": "debug 47",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 420,
+        "y": 380,
+        "wires": []
     }
 ]
