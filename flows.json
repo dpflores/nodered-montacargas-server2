@@ -5588,8 +5588,7 @@
         "y": 220,
         "wires": [
             [
-                "51c98b911d8bb6e9",
-                "257c0a693feaf9a0"
+                "51c98b911d8bb6e9"
             ]
         ]
     },
@@ -5621,8 +5620,7 @@
         "y": 280,
         "wires": [
             [
-                "49c8a83f4f3c3541",
-                "05690b83902a4eb2"
+                "49c8a83f4f3c3541"
             ]
         ]
     },
@@ -5654,8 +5652,7 @@
         "y": 340,
         "wires": [
             [
-                "46db0b4b61ee8e37",
-                "939fe8bcdfed835a"
+                "46db0b4b61ee8e37"
             ]
         ]
     },
@@ -5836,7 +5833,7 @@
         "type": "function",
         "z": "cdb670b9eaa04bce",
         "name": "function 41",
-        "func": "const target_month = msg.target_month;\n\n\nconst {array1} = msg.payload.payload;\n\n// Obteniendo los valores correspondientes al mes objetivo y redondeándolos a dos decimales\nconst detenciones = {array1}[target_month].toFixed(2);\n\n\n// Construyendo el array con los valores redondeados\nmsg.payload = detenciones;\n\nreturn msg;",
+        "func": "const target_month = msg.target_month;\n\n\nconst {array1} = msg.payload.payload;\n\n// Obteniendo los valores correspondientes al mes objetivo y redondeándolos a dos decimales\nconst detenciones = array1[target_month].toFixed(2);\n\n\n// Construyendo el array con los valores redondeados\nmsg.payload = detenciones;\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -5850,56 +5847,5 @@
                 "4a511b01b6f888eb"
             ]
         ]
-    },
-    {
-        "id": "257c0a693feaf9a0",
-        "type": "debug",
-        "z": "cdb670b9eaa04bce",
-        "name": "debug 48",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 920,
-        "y": 260,
-        "wires": []
-    },
-    {
-        "id": "05690b83902a4eb2",
-        "type": "debug",
-        "z": "cdb670b9eaa04bce",
-        "name": "debug 49",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 880,
-        "y": 320,
-        "wires": []
-    },
-    {
-        "id": "939fe8bcdfed835a",
-        "type": "debug",
-        "z": "cdb670b9eaa04bce",
-        "name": "debug 50",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 860,
-        "y": 380,
-        "wires": []
     }
 ]
