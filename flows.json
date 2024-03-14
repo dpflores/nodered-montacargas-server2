@@ -5331,7 +5331,7 @@
         "method": "GET",
         "ret": "txt",
         "paytoqs": "ignore",
-        "url": "127.0.0.1:9000/alerts/status",
+        "url": "127.0.0.1:9000/api/alerts/status",
         "tls": "",
         "persist": false,
         "proxy": "",
