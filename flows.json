@@ -5731,7 +5731,7 @@
         "type": "function",
         "z": "cdb670b9eaa04bce",
         "name": "function 38",
-        "func": "const target_month = msg.target_month;\n\n// Recordar \n// Array1 es frecuencia de uso\n// Array2 es frecuencia efectiva de uso\n// Array3 es porcentaje efectivo\n\nconst {array1, array2, array3} = msg.payload.payload;\n\n\nmsg.payload = [array1[target_month], array2[target_month], array3[target_month]];\n\nreturn msg;",
+        "func": "const target_month = msg.target_month;\n\n// Recordar \n// Array1 es frecuencia de uso\n// Array2 es frecuencia efectiva de uso\n// Array3 es porcentaje efectivo\n\nconst { array1, array2, array3 } = msg.payload.payload;\n\n// Obteniendo los valores correspondientes al mes objetivo y redondeándolos a dos decimales\nconst valor1 = array1[target_month].toFixed(2);\nconst valor2 = array2[target_month].toFixed(2);\nconst valor3 = array3[target_month].toFixed(2);\n\n// Construyendo el array con los valores redondeados\nmsg.payload = [valor1, valor2, valor3];\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
