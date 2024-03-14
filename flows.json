@@ -5396,7 +5396,7 @@
         "id": "449f225fe3430426",
         "type": "http request",
         "z": "cdb670b9eaa04bce",
-        "name": "",
+        "name": "/api/charts/stacked",
         "method": "GET",
         "ret": "txt",
         "paytoqs": "ignore",
@@ -5408,7 +5408,7 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 450,
+        "x": 470,
         "y": 80,
         "wires": [
             [
@@ -5428,7 +5428,7 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 740,
+        "x": 820,
         "y": 80,
         "wires": []
     },
@@ -5465,7 +5465,7 @@
         "id": "cfaba645255d4a58",
         "type": "http request",
         "z": "cdb670b9eaa04bce",
-        "name": "",
+        "name": "/api/charts/cfrequency",
         "method": "GET",
         "ret": "txt",
         "paytoqs": "ignore",
@@ -5477,7 +5477,7 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 450,
+        "x": 480,
         "y": 140,
         "wires": [
             [
@@ -5518,7 +5518,7 @@
         "id": "9a80a53da22ad545",
         "type": "http request",
         "z": "cdb670b9eaa04bce",
-        "name": "",
+        "name": "/api/charts/disponibilidad",
         "method": "GET",
         "ret": "txt",
         "paytoqs": "ignore",
@@ -5530,7 +5530,7 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 450,
+        "x": 490,
         "y": 200,
         "wires": [
             [
@@ -5571,7 +5571,7 @@
         "id": "506bfe4f037d70b3",
         "type": "http request",
         "z": "cdb670b9eaa04bce",
-        "name": "",
+        "name": "/api/charts/confiabilidad",
         "method": "GET",
         "ret": "txt",
         "paytoqs": "ignore",
@@ -5583,7 +5583,7 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 450,
+        "x": 490,
         "y": 260,
         "wires": [
             [
@@ -5624,7 +5624,7 @@
         "id": "9abade606111b3ef",
         "type": "http request",
         "z": "cdb670b9eaa04bce",
-        "name": "",
+        "name": "/api/charts/detenciones",
         "method": "GET",
         "ret": "txt",
         "paytoqs": "ignore",
@@ -5636,7 +5636,7 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 450,
+        "x": 490,
         "y": 320,
         "wires": [
             [
@@ -5652,7 +5652,7 @@
         "property": "payload",
         "action": "",
         "pretty": false,
-        "x": 610,
+        "x": 690,
         "y": 80,
         "wires": [
             [
@@ -5672,7 +5672,7 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 740,
+        "x": 820,
         "y": 140,
         "wires": []
     },
@@ -5684,7 +5684,7 @@
         "property": "payload",
         "action": "",
         "pretty": false,
-        "x": 610,
+        "x": 690,
         "y": 140,
         "wires": [
             [
@@ -5704,7 +5704,7 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 740,
+        "x": 820,
         "y": 200,
         "wires": []
     },
@@ -5716,7 +5716,7 @@
         "property": "payload",
         "action": "",
         "pretty": false,
-        "x": 610,
+        "x": 690,
         "y": 200,
         "wires": [
             [
@@ -5736,7 +5736,7 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 740,
+        "x": 820,
         "y": 260,
         "wires": []
     },
@@ -5748,7 +5748,7 @@
         "property": "payload",
         "action": "",
         "pretty": false,
-        "x": 610,
+        "x": 690,
         "y": 260,
         "wires": [
             [
@@ -5768,7 +5768,7 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 740,
+        "x": 820,
         "y": 320,
         "wires": []
     },
@@ -5780,7 +5780,7 @@
         "property": "payload",
         "action": "",
         "pretty": false,
-        "x": 610,
+        "x": 690,
         "y": 320,
         "wires": [
             [
