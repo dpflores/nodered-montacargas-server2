@@ -5793,7 +5793,7 @@
         "type": "function",
         "z": "cdb670b9eaa04bce",
         "name": "function 39",
-        "func": "const target_month = msg.target_month;\n\n\nconst array = msg.payload.payload;\n\n// Obteniendo los valores correspondientes al mes objetivo y redondeándolos a dos decimales\nconst disponibilidad = array[target_month].toFixed(2);\n\n\n// Construyendo el array con los valores redondeados\nmsg.payload = disponibilidad;\n\nreturn msg;",
+        "func": "const target_month = msg.target_month;\n\n\nconst {array1} = msg.payload.payload;\n\n// Obteniendo los valores correspondientes al mes objetivo y redondeándolos a dos decimales\nconst disponibilidad = array1[target_month].toFixed(2);\n\n\n// Construyendo el array con los valores redondeados\nmsg.payload = disponibilidad;\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
