@@ -5702,7 +5702,7 @@
         "type": "function",
         "z": "cdb670b9eaa04bce",
         "name": "function 37",
-        "func": "const target_month = msg.target_month;\n\n// Recordar \n// 0 - Apagado\n// 1 - Inoperativo\n// 2 - Espera sin carga\n// 3 - Espera con carga\n// 4 - Traslado sin carga\n// 5 - Traslado con carga\n// 6 - Efectivo\n\n\nconst apagado = getPercentageArray(msg.payload.array1, target_month);\n\n\nmsg.payload = apagado;\nreturn msg;\n\nfunction getPercentageArray(array, target_month){\n    let sum = 0;\n    // calculate sum using forEach() method\n    for (let i = 0; i < array.length; i++) {\n        sum += array[i];\n    }\n\n    const monthHoursPercentage = 100*array[target_month]/sum;\n\n    return monthHoursPercentage;\n}\n",
+        "func": "const target_month = msg.target_month;\n\n// Recordar \n// 0 - Apagado\n// 1 - Inoperativo\n// 2 - Espera sin carga\n// 3 - Espera con carga\n// 4 - Traslado sin carga\n// 5 - Traslado con carga\n// 6 - Efectivo\n\n\nconst apagado = getPercentageArray(msg.payload.payload.array1, target_month);\n\n\nmsg.payload = apagado;\nreturn msg;\n\nfunction getPercentageArray(array, target_month){\n    let sum = 0;\n    // calculate sum using forEach() method\n    for (let i = 0; i < array.length; i++) {\n        sum += array[i];\n    }\n\n    const monthHoursPercentage = 100*array[target_month]/sum;\n\n    return monthHoursPercentage;\n}\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
