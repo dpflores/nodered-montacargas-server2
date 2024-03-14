@@ -5428,8 +5428,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1020,
-        "y": 80,
+        "x": 1080,
+        "y": 40,
         "wires": []
     },
     {
@@ -5712,8 +5712,34 @@
         "y": 80,
         "wires": [
             [
-                "72994b36940ff9c9"
+                "72994b36940ff9c9",
+                "af9498c01658f132"
             ]
+        ]
+    },
+    {
+        "id": "af9498c01658f132",
+        "type": "change",
+        "z": "cdb670b9eaa04bce",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "detalle_mensual",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1100,
+        "y": 80,
+        "wires": [
+            []
         ]
     }
 ]
