@@ -5545,22 +5545,6 @@
         ]
     },
     {
-        "id": "86e6ba9ecbc5a4c5",
-        "type": "debug",
-        "z": "cdb670b9eaa04bce",
-        "name": "debug 43",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1060,
-        "y": 160,
-        "wires": []
-    },
-    {
         "id": "b3bbd3f857d2aeb4",
         "type": "json",
         "z": "cdb670b9eaa04bce",
@@ -5572,7 +5556,7 @@
         "y": 160,
         "wires": [
             [
-                "86e6ba9ecbc5a4c5"
+                "6e5290eca12b8ee6"
             ]
         ]
     },
@@ -5741,5 +5725,67 @@
         "wires": [
             []
         ]
+    },
+    {
+        "id": "6e5290eca12b8ee6",
+        "type": "function",
+        "z": "cdb670b9eaa04bce",
+        "name": "function 38",
+        "func": "const target_month = msg.target_month;\n\n// Recordar \n// Array1 es frecuencia de uso\n// Array2 es frecuencia efectiva de uso\n// Array3 es porcentaje efectivo\n\nconst {array1, array2, array3} = msg.payload.payload;\n\n\nmsg.payload = [array1[target_month], array2[target_month], array3[target_month]];\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 850,
+        "y": 160,
+        "wires": [
+            [
+                "380f7414ba3c8461",
+                "fea86b142a191ca2"
+            ]
+        ]
+    },
+    {
+        "id": "380f7414ba3c8461",
+        "type": "change",
+        "z": "cdb670b9eaa04bce",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "detalle_mensual",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1100,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fea86b142a191ca2",
+        "type": "debug",
+        "z": "cdb670b9eaa04bce",
+        "name": "debug 47",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1040,
+        "y": 120,
+        "wires": []
     }
 ]
