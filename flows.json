@@ -5540,8 +5540,7 @@
         "y": 80,
         "wires": [
             [
-                "1ae3dfa797da7387",
-                "f975507192b19a28"
+                "1ae3dfa797da7387"
             ]
         ]
     },
@@ -5702,7 +5701,7 @@
         "type": "function",
         "z": "cdb670b9eaa04bce",
         "name": "function 37",
-        "func": "const target_month = msg.target_month;\n\n// Recordar \n// 0 - Apagado\n// 1 - Inoperativo\n// 2 - Espera sin carga\n// 3 - Espera con carga\n// 4 - Traslado sin carga\n// 5 - Traslado con carga\n// 6 - Efectivo\n\n\nconst apagado = getPercentageArray(msg.payload.payload.array1, target_month);\n\n\nmsg.payload = apagado;\nreturn msg;\n\nfunction getPercentageArray(array, target_month){\n    let sum = 0;\n    // calculate sum using forEach() method\n    for (let i = 0; i < array.length; i++) {\n        sum += array[i];\n    }\n\n    const monthHoursPercentage = 100*array[target_month]/sum;\n\n    return monthHoursPercentage;\n}\n",
+        "func": "const target_month = msg.target_month;\n\n// Recordar \n// 0 - Apagado\n// 1 - Inoperativo\n// 2 - Espera sin carga\n// 3 - Espera con carga\n// 4 - Traslado sin carga\n// 5 - Traslado con carga\n// 6 - Efectivo\n\n\nconst apagado = getPercentageArray(msg.payload.payload.array1, target_month);\nconst inoperativo = getPercentageArray(msg.payload.payload.array2, target_month);\nconst espera = getPercentageArray(msg.payload.payload.array3, target_month);\nconst esperaCarga = getPercentageArray(msg.payload.payload.array4, target_month);\nconst traslado = getPercentageArray(msg.payload.payload.array5, target_month);\nconst trasladoCarga = getPercentageArray(msg.payload.payload.array6, target_month);\n\nconst monthly_details = [apagado, inoperativo, espera, esperaCarga, traslado, trasladoCarga];\n\n\nmsg.payload = monthly_details;\n\nreturn msg;\n\nfunction getPercentageArray(array, target_month){\n    let sum = 0;\n    // calculate sum using forEach() method\n    for (let i = 0; i < array.length; i++) {\n        sum += array[i];\n    }\n\n    const monthHoursPercentage = 100*array[target_month]/sum;\n\n    return monthHoursPercentage;\n}\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -5716,21 +5715,5 @@
                 "72994b36940ff9c9"
             ]
         ]
-    },
-    {
-        "id": "f975507192b19a28",
-        "type": "debug",
-        "z": "cdb670b9eaa04bce",
-        "name": "debug 47",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 820,
-        "y": 120,
-        "wires": []
     }
 ]
