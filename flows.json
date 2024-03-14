@@ -151,7 +151,9 @@
             "78cd71d4d4914aab"
         ],
         "x": 414,
-        "y": 459
+        "y": 459,
+        "w": 862,
+        "h": 142
     },
     {
         "id": "1b5ad41c50a916b7",
@@ -167,7 +169,9 @@
             "1ad32e19c0123f3c"
         ],
         "x": 174,
-        "y": 679
+        "y": 679,
+        "w": 572,
+        "h": 82
     },
     {
         "id": "5c2896b2dfe6eae8",
@@ -183,7 +187,9 @@
             "8d0255f41c13f305"
         ],
         "x": 234,
-        "y": 3499
+        "y": 3499,
+        "w": 592,
+        "h": 82
     },
     {
         "id": "11676a117d696ad7",
@@ -199,7 +205,9 @@
             "d96db93b8fdafded"
         ],
         "x": 834,
-        "y": 699
+        "y": 699,
+        "w": 572,
+        "h": 82
     },
     {
         "id": "20aa6fa811d70d43",
@@ -5285,5 +5293,74 @@
                 "e9168390b1d67fab"
             ]
         ]
+    },
+    {
+        "id": "3243b3526bc02a5a",
+        "type": "inject",
+        "z": "cdb670b9eaa04bce",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 220,
+        "y": 560,
+        "wires": [
+            [
+                "82accfc7349ec6b8"
+            ]
+        ]
+    },
+    {
+        "id": "82accfc7349ec6b8",
+        "type": "http request",
+        "z": "cdb670b9eaa04bce",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "127.0.0.1:9000/alerts/status",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 470,
+        "y": 580,
+        "wires": [
+            [
+                "94d5a073ddd50957"
+            ]
+        ]
+    },
+    {
+        "id": "94d5a073ddd50957",
+        "type": "debug",
+        "z": "cdb670b9eaa04bce",
+        "name": "debug 41",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 660,
+        "y": 600,
+        "wires": []
     }
 ]
