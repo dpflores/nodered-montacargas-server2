@@ -5677,7 +5677,7 @@
         "type": "function",
         "z": "cdb670b9eaa04bce",
         "name": "Get month",
-        "func": "const current_date = new Date(msg.payload);\nconst current_month = current_date.getMonth();\nconst target_month = current_month==0? current_month-1:11;\nmsg.target_month=target_month;\nreturn msg;",
+        "func": "const current_date = new Date(msg.payload);\nconst current_month = current_date.getMonth();\nconst target_month = current_month>0? current_month-1:11;\nmsg.target_month=target_month;\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
