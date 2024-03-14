@@ -5834,7 +5834,7 @@
         "type": "function",
         "z": "cdb670b9eaa04bce",
         "name": "function 41",
-        "func": "const target_month = msg.target_month;\n\n\nconst {array1} = msg.payload.payload;\n\n// Obteniendo los valores correspondientes al mes objetivo y redondeándolos a dos decimales\nconst detenciones = array1[target_month].toFixed(2);\n\n\n// Construyendo el array con los valores redondeados\nmsg.payload = detenciones;\n\nreturn msg;",
+        "func": "const target_month = msg.target_month;\n\n\nconst {array1, array2} = msg.payload.payload;\n\n// Obteniendo los valores correspondientes al mes objetivo y redondeándolos a dos decimales\nconst detenciones_correctivas = array1[target_month].toFixed(2);\nconst detenciones_preventivas = array2[target_month].toFixed(2);\n\n\n// Construyendo el array con los valores redondeados\nmsg.payload = [detenciones_correctivas, detenciones_preventivas];\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
