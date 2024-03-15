@@ -6328,7 +6328,9 @@
         "x": 830,
         "y": 1100,
         "wires": [
-            []
+            [
+                "efee544db92c5f4c"
+            ]
         ]
     },
     {
@@ -6344,5 +6346,21 @@
                 "425707e8500eb579"
             ]
         ]
+    },
+    {
+        "id": "efee544db92c5f4c",
+        "type": "debug",
+        "z": "cdb670b9eaa04bce",
+        "name": "debug 54",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1000,
+        "y": 1100,
+        "wires": []
     }
 ]
