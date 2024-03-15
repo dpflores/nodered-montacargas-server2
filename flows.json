@@ -6040,7 +6040,7 @@
         "y": 460,
         "wires": [
             [
-                "fb48c2116edf34ba"
+                "250ebbb2940caaa1"
             ]
         ]
     },
@@ -6059,5 +6059,25 @@
         "x": 1160,
         "y": 460,
         "wires": []
+    },
+    {
+        "id": "250ebbb2940caaa1",
+        "type": "function",
+        "z": "cdb670b9eaa04bce",
+        "name": "function 43",
+        "func": "const current_hours = JSON.parse(msg.payload[0].data);\n\nmsg.payload = current_hours;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 830,
+        "y": 460,
+        "wires": [
+            [
+                "fb48c2116edf34ba"
+            ]
+        ]
     }
 ]
