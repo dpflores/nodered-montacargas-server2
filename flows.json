@@ -6076,8 +6076,34 @@
         "y": 460,
         "wires": [
             [
-                "fb48c2116edf34ba"
+                "fb48c2116edf34ba",
+                "1928f7067ee1eb60"
             ]
+        ]
+    },
+    {
+        "id": "1928f7067ee1eb60",
+        "type": "change",
+        "z": "cdb670b9eaa04bce",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "cambios",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1050,
+        "y": 520,
+        "wires": [
+            []
         ]
     }
 ]
