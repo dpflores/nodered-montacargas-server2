@@ -6065,7 +6065,7 @@
         "type": "function",
         "z": "cdb670b9eaa04bce",
         "name": "function 43",
-        "func": "const current_hours = JSON.parse(msg.payload[0].data);\n\nmsg.payload = current_hours;\n\nreturn msg;",
+        "func": "const current_month_hours = JSON.parse(msg.payload[0].data);\nconst prev_month_hours = JSON.parse(msg.payload[1].data);\n\n\nconst current_use_hours =  getUso(current_month_hours);\nconst prev_use_hours = getUso(prev_month_hours);\n\nconst current_efective_hours = current_month_hours[6];\nconst prev_efective_hours = prev_month_hours[6];\n\nconst use_change = 100*(current_use_hours - prev_use_hours)/prev_use_hours;\n\nconst efective_change = 100*(current_efective_hours-prev_efective_hours)/prev_efective_hours;\n\nmsg.payload = {\n    use_change, efective_change\n}\n\nreturn msg;\n\n\nfunction getUso(array){\n    let suma = 0;\n    for (let i = 3; i < array.length; i++) {\n        suma += array[i];\n    }\n    return suma\n}\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
