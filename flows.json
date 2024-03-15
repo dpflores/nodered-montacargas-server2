@@ -6285,7 +6285,7 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 260,
+        "x": 100,
         "y": 1100,
         "wires": [
             [
@@ -6305,7 +6305,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 470,
+        "x": 310,
         "y": 1100,
         "wires": [
             [
@@ -6325,7 +6325,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 830,
+        "x": 670,
         "y": 1100,
         "wires": [
             [
@@ -6340,7 +6340,7 @@
         "z": "cdb670b9eaa04bce",
         "mydb": "20aa6fa811d70d43",
         "name": "",
-        "x": 660,
+        "x": 500,
         "y": 1100,
         "wires": [
             [
@@ -6360,7 +6360,7 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1140,
+        "x": 1240,
         "y": 1100,
         "wires": []
     },
@@ -6385,14 +6385,34 @@
         "type": "function",
         "z": "cdb670b9eaa04bce",
         "name": "function 50",
-        "func": "const array_in = msg.payload;\n\nconst mesLimite = 2; // Cambiar este valor según el mes límite deseado\nconst estadosPorMes = obtenerEstadosPorMes(array_in, mesLimite);\n\nmsg.payload = estadosPorMes;\n\nreturn msg;\n\n\nfunction obtenerEstadosPorMes(arrayDatos, mesLimite) {\n    const estadosPorMes = Array.from({ length: 12 }, () => []);\n\n    for (let i = 0; i <= mesLimite; i++) {\n        for (let j = 0; j < arrayDatos.length; j++) {\n            estadosPorMes[i].push(arrayDatos[j][i]);\n        }\n    }\n\n    return estadosPorMes;\n}",
+        "func": "const array_in = msg.payload;\n\nconst mesLimite = 2; // Cambiar este valor según el mes límite deseado\nconst estadosPorMes = obtenerEstadosPorMes(array_in, mesLimite);\n\nmsg.payload = estadosPorMes;\n\nestadosPorMes.map((array) => {\n    \n} )\n\nreturn msg;\n\n\nfunction obtenerEstadosPorMes(arrayDatos, mesLimite) {\n    const estadosPorMes = Array.from({ length: 12 }, () => []);\n\n    for (let i = 0; i <= mesLimite; i++) {\n        for (let j = 0; j < arrayDatos.length; j++) {\n            estadosPorMes[i].push(arrayDatos[j][i]);\n        }\n    }\n\n    return estadosPorMes;\n}",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 990,
+        "x": 850,
+        "y": 1100,
+        "wires": [
+            [
+                "301af84903c10aaf"
+            ]
+        ]
+    },
+    {
+        "id": "301af84903c10aaf",
+        "type": "function",
+        "z": "cdb670b9eaa04bce",
+        "name": "function 51",
+        "func": "const array_in = msg.payload;\n\nconst mesLimite = 2; // Cambiar este valor según el mes límite deseado\nconst estadosPorMes = obtenerEstadosPorMes(array_in, mesLimite);\n\nmsg.payload = estadosPorMes;\n\n\n\nreturn msg;\n\n\nfunction obtenerEstadosPorMes(arrayDatos, mesLimite) {\n    const estadosPorMes = Array.from({ length: 12 }, () => []);\n\n    for (let i = 0; i <= mesLimite; i++) {\n        for (let j = 0; j < arrayDatos.length; j++) {\n            estadosPorMes[i].push(arrayDatos[j][i]);\n        }\n    }\n\n    return estadosPorMes;\n}\n\n\nfunction insertMonthlyData(){\n    var query = \"INSERT INTO `monthly_data` (`id`, `month`, `year`, `tag`, `description`, `data`) VALUES (NULL, '0', '2024', 'total_hours', '', '[0,0,0,0,0,0]')\";\n\n    return query\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1030,
         "y": 1100,
         "wires": [
             [
