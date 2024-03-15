@@ -6160,6 +6160,26 @@
         "y": 560,
         "wires": [
             [
+                "b80a8ec90af4badd"
+            ]
+        ]
+    },
+    {
+        "id": "b80a8ec90af4badd",
+        "type": "function",
+        "z": "cdb670b9eaa04bce",
+        "name": "function 45",
+        "func": "msg.payload = JSON.parse(msg.payload[0].data);\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 790,
+        "y": 580,
+        "wires": [
+            [
                 "568801f35834684f"
             ]
         ]
@@ -6176,8 +6196,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 780,
-        "y": 600,
+        "x": 940,
+        "y": 580,
         "wires": []
     }
 ]
