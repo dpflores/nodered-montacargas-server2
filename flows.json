@@ -183,7 +183,9 @@
             "8d0255f41c13f305"
         ],
         "x": 234,
-        "y": 3499
+        "y": 3499,
+        "w": 592,
+        "h": 82
     },
     {
         "id": "11676a117d696ad7",
@@ -808,6 +810,13 @@
                 "pt": "global",
                 "to": "{\"gateway_key\":\"\",\"timestamp\":0,\"data\":{\"gps\":{\"pos_valid\":1,\"latitude\":0,\"longitude\":0,\"altitude\":63.382,\"haccuracy\":3.9,\"speed\":0,\"course\":118.68},\"mantto\":\"0\",\"running\":\"0\",\"hourmeter\":0,\"battery\":{\"voltage\":0},\"pressure\":{\"current\":0},\"load\":0}}",
                 "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "end_mant",
+                "pt": "global",
+                "to": "1",
+                "tot": "num"
             }
         ],
         "action": "",
@@ -815,7 +824,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 350,
+        "x": 340,
         "y": 140,
         "wires": [
             []
@@ -4737,7 +4746,7 @@
             "03b3e3af982a6cc5",
             "bc42315bb66e81d3"
         ],
-        "x": 155,
+        "x": 145,
         "y": 1640,
         "wires": [
             [
@@ -4762,7 +4771,7 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 520,
+        "x": 700,
         "y": 1640,
         "wires": [
             [
@@ -4791,6 +4800,13 @@
                 "pt": "msg",
                 "to": "Llave de mantenimiento activada",
                 "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "end_mant",
+                "pt": "global",
+                "to": "0",
+                "tot": "num"
             }
         ],
         "action": "",
@@ -4798,7 +4814,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 760,
+        "x": 940,
         "y": 1560,
         "wires": [
             [
@@ -4811,7 +4827,7 @@
         "type": "subflow:f168446540142aa7",
         "z": "3b4e3447579da6e6",
         "name": "",
-        "x": 990,
+        "x": 1170,
         "y": 1560,
         "wires": []
     },
@@ -4836,7 +4852,7 @@
         "topic": "",
         "payload": "{\"gateway_key\":\"A13CF8\",\"timestamp\":1709735858816,\"data\":{\"gps\":{\"pos_valid\":1,\"latitude\":-12.0482761,\"longitude\":-77.1011795,\"altitude\":63.382,\"haccuracy\":3.9,\"speed\":0.664,\"course\":118.68},\"mantto\":\"1\",\"running\":\"1\",\"hourmeter\":0,\"battery\":{\"voltage\":14038},\"pressure\":{\"current\":6199},\"load\":0.32827600000000023,\"status\":0,\"general_status\":0}}",
         "payloadType": "json",
-        "x": 160,
+        "x": 150,
         "y": 1700,
         "wires": [
             [
@@ -4861,12 +4877,12 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 310,
+        "x": 300,
         "y": 1640,
         "wires": [
             [
-                "cff33b459d38937d",
-                "214efd2d2c400799"
+                "214efd2d2c400799",
+                "de813004aff48e54"
             ]
         ]
     },
@@ -4882,7 +4898,7 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 490,
+        "x": 670,
         "y": 1700,
         "wires": []
     },
@@ -4898,7 +4914,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 750,
+        "x": 930,
         "y": 1620,
         "wires": [
             [
@@ -4919,7 +4935,7 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1070,
+        "x": 1250,
         "y": 1600,
         "wires": []
     },
@@ -4929,7 +4945,7 @@
         "z": "3b4e3447579da6e6",
         "mydb": "20aa6fa811d70d43",
         "name": "",
-        "x": 930,
+        "x": 1110,
         "y": 1600,
         "wires": [
             [
@@ -4943,7 +4959,7 @@
         "z": "3b4e3447579da6e6",
         "mydb": "20aa6fa811d70d43",
         "name": "",
-        "x": 930,
+        "x": 1110,
         "y": 1660,
         "wires": [
             []
@@ -4961,7 +4977,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 760,
+        "x": 940,
         "y": 1660,
         "wires": [
             [
@@ -5064,6 +5080,13 @@
                 "pt": "msg",
                 "to": "Llave de mantenimiento desactivada",
                 "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "end_mant",
+                "pt": "global",
+                "to": "1",
+                "tot": "num"
             }
         ],
         "action": "",
@@ -5181,6 +5204,31 @@
         "wires": [
             [
                 "9a50f64d64597aaa"
+            ]
+        ]
+    },
+    {
+        "id": "de813004aff48e54",
+        "type": "switch",
+        "z": "3b4e3447579da6e6",
+        "name": "end mant == 1?",
+        "property": "end_mant",
+        "propertyType": "global",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 500,
+        "y": 1640,
+        "wires": [
+            [
+                "cff33b459d38937d"
             ]
         ]
     },
