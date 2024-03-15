@@ -6015,7 +6015,7 @@
         "type": "function",
         "z": "cdb670b9eaa04bce",
         "name": "function 42",
-        "func": "msg.topic = 'SELECT * FROM `monthly_data` WHERE year = YEAR(CURDATE()) AND tag = \"total_hours\";';\nreturn msg;",
+        "func": "msg.topic = `SELECT * \nFROM \"monthly_data\" \nWHERE (year = YEAR(CURDATE()) AND month = MONTH(CURDATE()) - 1) OR\n      (year = YEAR(CURDATE()) - 1 AND month = 12 AND MONTH(CURDATE()) = 1) AND\n      tag = \"total_hours\";`;\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -6056,8 +6056,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 960,
-        "y": 480,
+        "x": 1160,
+        "y": 460,
         "wires": []
     }
 ]
