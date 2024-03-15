@@ -6040,22 +6040,6 @@
         "y": 460,
         "wires": [
             [
-                "30ee74e53d9147b2"
-            ]
-        ]
-    },
-    {
-        "id": "30ee74e53d9147b2",
-        "type": "json",
-        "z": "cdb670b9eaa04bce",
-        "name": "",
-        "property": "payload",
-        "action": "",
-        "pretty": false,
-        "x": 790,
-        "y": 460,
-        "wires": [
-            [
                 "fb48c2116edf34ba"
             ]
         ]
