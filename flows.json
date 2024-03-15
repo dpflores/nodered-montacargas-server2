@@ -5954,7 +5954,7 @@
         "type": "function",
         "z": "cdb670b9eaa04bce",
         "name": "function 42",
-        "func": "msg.topic = `SELECT * FROM monthly_data ORDER BY id DESC LIMIT 3;\n`;\nreturn msg;",
+        "func": "msg.topic = `SELECT * FROM monthly_data WHERE tag = \"total_hours\" ORDER BY id DESC LIMIT 3;\n`;\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
