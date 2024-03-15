@@ -5341,75 +5341,6 @@
         ]
     },
     {
-        "id": "3243b3526bc02a5a",
-        "type": "inject",
-        "z": "cdb670b9eaa04bce",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 260,
-        "y": 1060,
-        "wires": [
-            [
-                "82accfc7349ec6b8"
-            ]
-        ]
-    },
-    {
-        "id": "82accfc7349ec6b8",
-        "type": "http request",
-        "z": "cdb670b9eaa04bce",
-        "name": "",
-        "method": "GET",
-        "ret": "txt",
-        "paytoqs": "ignore",
-        "url": "127.0.0.1:9000/api/alerts/status",
-        "tls": "",
-        "persist": false,
-        "proxy": "",
-        "insecureHTTPParser": false,
-        "authType": "",
-        "senderr": false,
-        "headers": [],
-        "x": 450,
-        "y": 1060,
-        "wires": [
-            [
-                "94d5a073ddd50957"
-            ]
-        ]
-    },
-    {
-        "id": "94d5a073ddd50957",
-        "type": "debug",
-        "z": "cdb670b9eaa04bce",
-        "name": "debug 41",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 700,
-        "y": 1100,
-        "wires": []
-    },
-    {
         "id": "0c538c81e9887996",
         "type": "inject",
         "z": "cdb670b9eaa04bce",
@@ -6058,7 +5989,7 @@
         "type": "debug",
         "z": "cdb670b9eaa04bce",
         "name": "debug 49",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -6120,7 +6051,7 @@
         "type": "debug",
         "z": "cdb670b9eaa04bce",
         "name": "debug 50",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -6332,5 +6263,52 @@
         "x": 510,
         "y": 700,
         "wires": []
+    },
+    {
+        "id": "ed1f41cf461c14c6",
+        "type": "inject",
+        "z": "cdb670b9eaa04bce",
+        "name": "Set the monthly values",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 260,
+        "y": 1100,
+        "wires": [
+            [
+                "8358b2a53b46c9ef"
+            ]
+        ]
+    },
+    {
+        "id": "8358b2a53b46c9ef",
+        "type": "function",
+        "z": "cdb670b9eaa04bce",
+        "name": "function 48",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 490,
+        "y": 1100,
+        "wires": [
+            []
+        ]
     }
 ]
