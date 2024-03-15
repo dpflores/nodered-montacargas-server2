@@ -6232,7 +6232,7 @@
         "type": "function",
         "z": "cdb670b9eaa04bce",
         "name": "function 46",
-        "func": "msg.topic = `SELECT * FROM alerts \nWHERE YEAR(date) = YEAR(CURDATE()) \nAND MONTH(date) = ${msg.target_month+1}\nORDER BY date DESC\n`;\nreturn msg;",
+        "func": "msg.topic = `SELECT * FROM alerts \nWHERE YEAR(date) = YEAR(CURDATE()) \nAND MONTH(date) = ${msg.target_month+1+1}\nORDER BY date DESC\n`;\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
