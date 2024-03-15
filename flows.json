@@ -151,7 +151,9 @@
             "78cd71d4d4914aab"
         ],
         "x": 414,
-        "y": 459
+        "y": 459,
+        "w": 862,
+        "h": 142
     },
     {
         "id": "1b5ad41c50a916b7",
@@ -167,7 +169,9 @@
             "1ad32e19c0123f3c"
         ],
         "x": 174,
-        "y": 679
+        "y": 679,
+        "w": 572,
+        "h": 82
     },
     {
         "id": "5c2896b2dfe6eae8",
@@ -201,7 +205,9 @@
             "d96db93b8fdafded"
         ],
         "x": 834,
-        "y": 699
+        "y": 699,
+        "w": 572,
+        "h": 82
     },
     {
         "id": "20aa6fa811d70d43",
@@ -5245,8 +5251,8 @@
         "tls": false,
         "name": "delpiero22.flores@gmail.com",
         "dname": "",
-        "x": 960,
-        "y": 620,
+        "x": 980,
+        "y": 880,
         "wires": []
     },
     {
@@ -5270,8 +5276,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 300,
-        "y": 620,
+        "x": 320,
+        "y": 880,
         "wires": [
             [
                 "1bb67d940ff22a63"
@@ -5299,8 +5305,8 @@
                 "module": "pdfmake"
             }
         ],
-        "x": 610,
-        "y": 720,
+        "x": 630,
+        "y": 980,
         "wires": [
             [
                 "e9168390b1d67fab"
@@ -5328,8 +5334,8 @@
                 "module": "pdfmake"
             }
         ],
-        "x": 600,
-        "y": 620,
+        "x": 620,
+        "y": 880,
         "wires": [
             []
         ]
@@ -5355,8 +5361,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 240,
-        "y": 880,
+        "x": 260,
+        "y": 1060,
         "wires": [
             [
                 "82accfc7349ec6b8"
@@ -5379,8 +5385,8 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 430,
-        "y": 880,
+        "x": 450,
+        "y": 1060,
         "wires": [
             [
                 "94d5a073ddd50957"
@@ -5399,8 +5405,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 680,
-        "y": 920,
+        "x": 700,
+        "y": 1100,
         "wires": []
     },
     {
@@ -5718,7 +5724,8 @@
                 "9a80a53da22ad545",
                 "506bfe4f037d70b3",
                 "9abade606111b3ef",
-                "c179eaeb3e3b0a56"
+                "c179eaeb3e3b0a56",
+                "1d74a1a3352a3419"
             ]
         ]
     },
@@ -6050,7 +6057,7 @@
         "type": "debug",
         "z": "cdb670b9eaa04bce",
         "name": "debug 49",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -6121,6 +6128,56 @@
         "statusType": "auto",
         "x": 800,
         "y": 540,
+        "wires": []
+    },
+    {
+        "id": "1d74a1a3352a3419",
+        "type": "function",
+        "z": "cdb670b9eaa04bce",
+        "name": "function 44",
+        "func": "msg.topic = `SELECT * FROM monthly_data WHERE month=${msg.target_month};`;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 430,
+        "y": 560,
+        "wires": [
+            [
+                "727a0301dadc8008"
+            ]
+        ]
+    },
+    {
+        "id": "727a0301dadc8008",
+        "type": "mysql",
+        "z": "cdb670b9eaa04bce",
+        "mydb": "20aa6fa811d70d43",
+        "name": "",
+        "x": 600,
+        "y": 560,
+        "wires": [
+            [
+                "568801f35834684f"
+            ]
+        ]
+    },
+    {
+        "id": "568801f35834684f",
+        "type": "debug",
+        "z": "cdb670b9eaa04bce",
+        "name": "debug 51",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 780,
+        "y": 600,
         "wires": []
     }
 ]
