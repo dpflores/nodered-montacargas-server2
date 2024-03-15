@@ -5246,7 +5246,7 @@
         "name": "delpiero22.flores@gmail.com",
         "dname": "",
         "x": 960,
-        "y": 480,
+        "y": 620,
         "wires": []
     },
     {
@@ -5271,7 +5271,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 300,
-        "y": 480,
+        "y": 620,
         "wires": [
             [
                 "1bb67d940ff22a63"
@@ -5300,7 +5300,7 @@
             }
         ],
         "x": 610,
-        "y": 580,
+        "y": 720,
         "wires": [
             [
                 "e9168390b1d67fab"
@@ -5329,7 +5329,7 @@
             }
         ],
         "x": 600,
-        "y": 480,
+        "y": 620,
         "wires": [
             []
         ]
@@ -5356,7 +5356,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 240,
-        "y": 740,
+        "y": 880,
         "wires": [
             [
                 "82accfc7349ec6b8"
@@ -5380,7 +5380,7 @@
         "senderr": false,
         "headers": [],
         "x": 430,
-        "y": 740,
+        "y": 880,
         "wires": [
             [
                 "94d5a073ddd50957"
@@ -5400,7 +5400,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 680,
-        "y": 780,
+        "y": 920,
         "wires": []
     },
     {
@@ -5717,7 +5717,8 @@
                 "cfaba645255d4a58",
                 "9a80a53da22ad545",
                 "506bfe4f037d70b3",
-                "9abade606111b3ef"
+                "9abade606111b3ef",
+                "c179eaeb3e3b0a56"
             ]
         ]
     },
@@ -6008,5 +6009,71 @@
         "wires": [
             []
         ]
+    },
+    {
+        "id": "c179eaeb3e3b0a56",
+        "type": "function",
+        "z": "cdb670b9eaa04bce",
+        "name": "function 42",
+        "func": "msg.topic = 'SELECT * FROM `monthly_data` WHERE year = YEAR(CURDATE()) AND tag = \"total_hours\";';\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 450,
+        "y": 460,
+        "wires": [
+            [
+                "8ebd75ef3b6a08fc"
+            ]
+        ]
+    },
+    {
+        "id": "8ebd75ef3b6a08fc",
+        "type": "mysql",
+        "z": "cdb670b9eaa04bce",
+        "mydb": "20aa6fa811d70d43",
+        "name": "",
+        "x": 620,
+        "y": 460,
+        "wires": [
+            [
+                "30ee74e53d9147b2"
+            ]
+        ]
+    },
+    {
+        "id": "30ee74e53d9147b2",
+        "type": "json",
+        "z": "cdb670b9eaa04bce",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 790,
+        "y": 460,
+        "wires": [
+            [
+                "fb48c2116edf34ba"
+            ]
+        ]
+    },
+    {
+        "id": "fb48c2116edf34ba",
+        "type": "debug",
+        "z": "cdb670b9eaa04bce",
+        "name": "debug 49",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 960,
+        "y": 480,
+        "wires": []
     }
 ]
