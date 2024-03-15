@@ -6257,7 +6257,6 @@
         "y": 640,
         "wires": [
             [
-                "f528cbbead1a3aae",
                 "d3124c7c2eb3f514"
             ]
         ]
@@ -6286,22 +6285,6 @@
         "wires": [
             []
         ]
-    },
-    {
-        "id": "f528cbbead1a3aae",
-        "type": "debug",
-        "z": "cdb670b9eaa04bce",
-        "name": "debug 52",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 800,
-        "y": 780,
-        "wires": []
     },
     {
         "id": "d3124c7c2eb3f514",
@@ -6338,6 +6321,16 @@
         "statusType": "auto",
         "x": 1000,
         "y": 720,
+        "wires": []
+    },
+    {
+        "id": "668bbe68f12b7cc3",
+        "type": "comment",
+        "z": "cdb670b9eaa04bce",
+        "name": "RESTAR UNO AL MES PARA OBTENER DEL MES ANTERIOR",
+        "info": "",
+        "x": 510,
+        "y": 700,
         "wires": []
     }
 ]
