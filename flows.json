@@ -6329,7 +6329,7 @@
         "y": 1100,
         "wires": [
             [
-                "efee544db92c5f4c"
+                "e3521ca29df70216"
             ]
         ]
     },
@@ -6360,7 +6360,7 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1000,
+        "x": 1140,
         "y": 1100,
         "wires": []
     },
@@ -6379,5 +6379,25 @@
         "x": 780,
         "y": 1180,
         "wires": []
+    },
+    {
+        "id": "e3521ca29df70216",
+        "type": "function",
+        "z": "cdb670b9eaa04bce",
+        "name": "function 50",
+        "func": "const array_in = msg.payload;\n\nconst mesLimite = 2; // Cambiar este valor según el mes límite deseado\nconst estadosPorMes = obtenerEstadosPorMes(array_in, mesLimite);\n\nmsg.payload = estadosPorMes;\n\nreturn msg;\n\n\nfunction obtenerEstadosPorMes(arrayDatos, mesLimite) {\n    const estadosPorMes = Array.from({ length: 12 }, () => []);\n\n    for (let i = 0; i <= mesLimite; i++) {\n        for (let j = 0; j < arrayDatos.length; j++) {\n            estadosPorMes[i].push(arrayDatos[j][i]);\n        }\n    }\n\n    return estadosPorMes;\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 990,
+        "y": 1100,
+        "wires": [
+            [
+                "efee544db92c5f4c"
+            ]
+        ]
     }
 ]
