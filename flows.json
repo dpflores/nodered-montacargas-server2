@@ -5725,7 +5725,8 @@
                 "506bfe4f037d70b3",
                 "9abade606111b3ef",
                 "c179eaeb3e3b0a56",
-                "1d74a1a3352a3419"
+                "1d74a1a3352a3419",
+                "9176a79f0a4ab6f7"
             ]
         ]
     },
@@ -6225,5 +6226,100 @@
         "wires": [
             []
         ]
+    },
+    {
+        "id": "9176a79f0a4ab6f7",
+        "type": "function",
+        "z": "cdb670b9eaa04bce",
+        "name": "function 46",
+        "func": "msg.topic = \"SELECT * FROM `alerts` ORDER BY `id` DESC\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 430,
+        "y": 640,
+        "wires": [
+            [
+                "578f1e0f3ad2632b"
+            ]
+        ]
+    },
+    {
+        "id": "578f1e0f3ad2632b",
+        "type": "mysql",
+        "z": "cdb670b9eaa04bce",
+        "mydb": "20aa6fa811d70d43",
+        "name": "",
+        "x": 600,
+        "y": 640,
+        "wires": [
+            [
+                "f528cbbead1a3aae"
+            ]
+        ]
+    },
+    {
+        "id": "67b008e31f334c65",
+        "type": "function",
+        "z": "cdb670b9eaa04bce",
+        "name": "function 47",
+        "func": "msg.payload = JSON.parse(msg.payload[0].data);\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 790,
+        "y": 660,
+        "wires": [
+            [
+                "aafe3d57c3a43045"
+            ]
+        ]
+    },
+    {
+        "id": "aafe3d57c3a43045",
+        "type": "change",
+        "z": "cdb670b9eaa04bce",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "mantenimiento",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1010,
+        "y": 700,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f528cbbead1a3aae",
+        "type": "debug",
+        "z": "cdb670b9eaa04bce",
+        "name": "debug 52",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 800,
+        "y": 780,
+        "wires": []
     }
 ]
