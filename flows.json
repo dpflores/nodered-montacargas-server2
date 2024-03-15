@@ -6135,7 +6135,7 @@
         "type": "function",
         "z": "cdb670b9eaa04bce",
         "name": "function 44",
-        "func": "msg.topic = `SELECT * FROM monthly_data WHERE month=${msg.target_month} AND tag=\"efective_loads_average\";`;\nreturn msg;",
+        "func": "msg.topic = `SELECT * FROM monthly_data WHERE year = YEAR(CURDATE()) AND month=${msg.target_month} AND tag=\"efective_loads_average\";`;\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
