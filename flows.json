@@ -6015,7 +6015,7 @@
         "type": "function",
         "z": "cdb670b9eaa04bce",
         "name": "function 42",
-        "func": "msg.topic = `SELECT * FROM monthly_data WHERE year = YEAR(CURDATE()) ORDER BY id DESC LIMIT 2;\n`;\nreturn msg;",
+        "func": "msg.topic = `SELECT * FROM monthly_data ORDER BY id DESC LIMIT 3;\n`;\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -6040,7 +6040,8 @@
         "y": 460,
         "wires": [
             [
-                "250ebbb2940caaa1"
+                "250ebbb2940caaa1",
+                "aa270bc241377d09"
             ]
         ]
     },
@@ -6105,5 +6106,21 @@
         "wires": [
             []
         ]
+    },
+    {
+        "id": "aa270bc241377d09",
+        "type": "debug",
+        "z": "cdb670b9eaa04bce",
+        "name": "debug 50",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 800,
+        "y": 540,
+        "wires": []
     }
 ]
