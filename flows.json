@@ -5252,7 +5252,7 @@
         "name": "delpiero22.flores@gmail.com",
         "dname": "",
         "x": 980,
-        "y": 880,
+        "y": 960,
         "wires": []
     },
     {
@@ -5277,7 +5277,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 320,
-        "y": 880,
+        "y": 960,
         "wires": [
             [
                 "1bb67d940ff22a63"
@@ -5306,7 +5306,7 @@
             }
         ],
         "x": 630,
-        "y": 980,
+        "y": 1060,
         "wires": [
             [
                 "e9168390b1d67fab"
@@ -5335,7 +5335,7 @@
             }
         ],
         "x": 620,
-        "y": 880,
+        "y": 960,
         "wires": [
             []
         ]
@@ -5655,7 +5655,6 @@
                 "9a80a53da22ad545",
                 "506bfe4f037d70b3",
                 "9abade606111b3ef",
-                "c179eaeb3e3b0a56",
                 "1d74a1a3352a3419",
                 "9176a79f0a4ab6f7"
             ]
@@ -5950,102 +5949,6 @@
         ]
     },
     {
-        "id": "c179eaeb3e3b0a56",
-        "type": "function",
-        "z": "cdb670b9eaa04bce",
-        "name": "function 42",
-        "func": "msg.topic = `SELECT * FROM monthly_reports ORDER BY id DESC LIMIT 3;\n`;\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 450,
-        "y": 460,
-        "wires": [
-            [
-                "8ebd75ef3b6a08fc"
-            ]
-        ]
-    },
-    {
-        "id": "8ebd75ef3b6a08fc",
-        "type": "mysql",
-        "z": "cdb670b9eaa04bce",
-        "mydb": "20aa6fa811d70d43",
-        "name": "",
-        "x": 640,
-        "y": 460,
-        "wires": [
-            [
-                "aa270bc241377d09"
-            ]
-        ]
-    },
-    {
-        "id": "fb48c2116edf34ba",
-        "type": "debug",
-        "z": "cdb670b9eaa04bce",
-        "name": "debug 49",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1160,
-        "y": 460,
-        "wires": []
-    },
-    {
-        "id": "250ebbb2940caaa1",
-        "type": "function",
-        "z": "cdb670b9eaa04bce",
-        "name": "function 43",
-        "func": "const current_month_hours = JSON.parse(msg.payload[1].data);\nconst prev_month_hours = JSON.parse(msg.payload[2].data);\n\n\nconst current_use_hours =  getUso(current_month_hours);\nconst prev_use_hours = getUso(prev_month_hours);\n\nconst current_efective_hours = current_month_hours[6];\nconst prev_efective_hours = prev_month_hours[6];\n\nconst use_change = 100*(current_use_hours - prev_use_hours)/prev_use_hours;\n\nconst efective_change = 100*(current_efective_hours-prev_efective_hours)/prev_efective_hours;\n\nmsg.payload = [\n    use_change.toFixed(2), efective_change.toFixed(2)\n]\n\nreturn msg;\n\n\nfunction getUso(array){\n    let suma = 0;\n    for (let i = 3; i < array.length; i++) {\n        suma += array[i];\n    }\n    return suma\n}\n",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 830,
-        "y": 460,
-        "wires": [
-            [
-                "fb48c2116edf34ba",
-                "1928f7067ee1eb60"
-            ]
-        ]
-    },
-    {
-        "id": "1928f7067ee1eb60",
-        "type": "change",
-        "z": "cdb670b9eaa04bce",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "cambios",
-                "pt": "global",
-                "to": "payload",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 1110,
-        "y": 500,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "aa270bc241377d09",
         "type": "debug",
         "z": "cdb670b9eaa04bce",
@@ -6057,8 +5960,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 800,
-        "y": 540,
+        "x": 1180,
+        "y": 460,
         "wires": []
     },
     {
@@ -6073,8 +5976,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 430,
-        "y": 600,
+        "x": 410,
+        "y": 500,
         "wires": [
             [
                 "727a0301dadc8008"
@@ -6087,11 +5990,12 @@
         "z": "cdb670b9eaa04bce",
         "mydb": "20aa6fa811d70d43",
         "name": "",
-        "x": 600,
-        "y": 600,
+        "x": 580,
+        "y": 500,
         "wires": [
             [
-                "b80a8ec90af4badd"
+                "b80a8ec90af4badd",
+                "5bae74895fb30d4e"
             ]
         ]
     },
@@ -6108,53 +6012,11 @@
         "finalize": "",
         "libs": [],
         "x": 770,
-        "y": 600,
+        "y": 520,
         "wires": [
             [
-                "568801f35834684f",
                 "9eda7539189880eb"
             ]
-        ]
-    },
-    {
-        "id": "568801f35834684f",
-        "type": "debug",
-        "z": "cdb670b9eaa04bce",
-        "name": "debug 51",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 980,
-        "y": 580,
-        "wires": []
-    },
-    {
-        "id": "9eda7539189880eb",
-        "type": "change",
-        "z": "cdb670b9eaa04bce",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "peso_efectivo_promedio",
-                "pt": "global",
-                "to": "payload.promedioPeso",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 1040,
-        "y": 620,
-        "wires": [
-            []
         ]
     },
     {
@@ -6421,6 +6283,170 @@
         "y": 1180,
         "wires": [
             []
+        ]
+    },
+    {
+        "id": "fad6a5b1e0bc300c",
+        "type": "change",
+        "z": "cdb670b9eaa04bce",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "total_hours",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1000,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9eda7539189880eb",
+        "type": "change",
+        "z": "cdb670b9eaa04bce",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "effective",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 990,
+        "y": 520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c179eaeb3e3b0a56",
+        "type": "function",
+        "z": "cdb670b9eaa04bce",
+        "name": "function 42",
+        "func": "msg.topic = `SELECT * FROM monthly_reports ORDER BY id DESC LIMIT 3;\n`;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 450,
+        "y": 800,
+        "wires": [
+            [
+                "8ebd75ef3b6a08fc"
+            ]
+        ]
+    },
+    {
+        "id": "8ebd75ef3b6a08fc",
+        "type": "mysql",
+        "z": "cdb670b9eaa04bce",
+        "mydb": "20aa6fa811d70d43",
+        "name": "",
+        "x": 640,
+        "y": 800,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fb48c2116edf34ba",
+        "type": "debug",
+        "z": "cdb670b9eaa04bce",
+        "name": "debug 49",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1160,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "250ebbb2940caaa1",
+        "type": "function",
+        "z": "cdb670b9eaa04bce",
+        "name": "function 43",
+        "func": "const current_month_hours = JSON.parse(msg.payload[1].data);\nconst prev_month_hours = JSON.parse(msg.payload[2].data);\n\n\nconst current_use_hours =  getUso(current_month_hours);\nconst prev_use_hours = getUso(prev_month_hours);\n\nconst current_efective_hours = current_month_hours[6];\nconst prev_efective_hours = prev_month_hours[6];\n\nconst use_change = 100*(current_use_hours - prev_use_hours)/prev_use_hours;\n\nconst efective_change = 100*(current_efective_hours-prev_efective_hours)/prev_efective_hours;\n\nmsg.payload = [\n    use_change.toFixed(2), efective_change.toFixed(2)\n]\n\nreturn msg;\n\n\nfunction getUso(array){\n    let suma = 0;\n    for (let i = 3; i < array.length; i++) {\n        suma += array[i];\n    }\n    return suma\n}\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 830,
+        "y": 800,
+        "wires": [
+            [
+                "fb48c2116edf34ba",
+                "1928f7067ee1eb60"
+            ]
+        ]
+    },
+    {
+        "id": "1928f7067ee1eb60",
+        "type": "change",
+        "z": "cdb670b9eaa04bce",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "cambios",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1110,
+        "y": 840,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5bae74895fb30d4e",
+        "type": "function",
+        "z": "cdb670b9eaa04bce",
+        "name": "function 57",
+        "func": "msg.payload = JSON.parse(msg.payload[0].total_hours);\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 770,
+        "y": 480,
+        "wires": [
+            [
+                "fad6a5b1e0bc300c"
+            ]
         ]
     }
 ]
