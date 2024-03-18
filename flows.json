@@ -6415,7 +6415,7 @@
         "type": "function",
         "z": "cdb670b9eaa04bce",
         "name": "Set monthly data",
-        "func": "const target_month = msg.payload + 1;\n\nmsg.topic = `SELECT * FROM local_data \n    WHERE YEAR(date) = YEAR(CURDATE()) AND MONTH(date) = ${target_month}\n    order by date;`\n\n\nreturn msg;",
+        "func": "const target_month = msg.month + 1;\nconst target_year = msg.year;\n\nmsg.topic = `SELECT * FROM local_data \n    WHERE YEAR(date) = ${target_year} AND MONTH(date) = ${target_month}\n    order by date;`\n\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -6437,11 +6437,14 @@
         "name": "",
         "props": [
             {
-                "p": "payload"
+                "p": "month",
+                "v": "0",
+                "vt": "num"
             },
             {
-                "p": "topic",
-                "vt": "str"
+                "p": "year",
+                "v": "2024",
+                "vt": "num"
             }
         ],
         "repeat": "",
@@ -6449,8 +6452,6 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "0",
-        "payloadType": "num",
         "x": 170,
         "y": 1320,
         "wires": [
@@ -6485,7 +6486,7 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 900,
+        "x": 980,
         "y": 1320,
         "wires": []
     },
