@@ -6255,162 +6255,6 @@
         "wires": []
     },
     {
-        "id": "ed1f41cf461c14c6",
-        "type": "inject",
-        "z": "cdb670b9eaa04bce",
-        "name": "Set the monthly values",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 160,
-        "y": 1100,
-        "wires": [
-            [
-                "8358b2a53b46c9ef"
-            ]
-        ]
-    },
-    {
-        "id": "8358b2a53b46c9ef",
-        "type": "function",
-        "z": "cdb670b9eaa04bce",
-        "name": "function 48",
-        "func": "msg.topic = `SELECT * FROM local_data \n    WHERE YEAR(date) = YEAR(CURDATE())\n    order by date;`\n\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 350,
-        "y": 1100,
-        "wires": [
-            [
-                "0640ed5506fd29dc"
-            ]
-        ]
-    },
-    {
-        "id": "425707e8500eb579",
-        "type": "function",
-        "z": "cdb670b9eaa04bce",
-        "name": "function 49",
-        "func": "var array_in = msg.payload.map((row) => JSON.parse(row.data));\nconst data_out = cumulatedMonthly(array_in);\nmsg.payload = data_out;\nreturn msg;\n\n\n\n\n\nfunction cumulatedMonthly(arr) {\n    // declara un array con 7 arrays dentro, uno para cada estado, con valores iniciales de 0\n    // el 7 es para efectivo\n    let horasPorMes = new Array(7).fill(0).map(() => new Array(12).fill(0));\n    // let horasEfectivas = new Array(12).fill(0);\n    let resultado = [];\n    let rindex = 0;\n\n    let resultado2 = [];\n    let rindex2 = 0;\n\n    if (arr[0].carga >= 2 && arr[0].state >= 3) {\n        arr[0][\"efecstate\"] = 6;\n    } else {\n        arr[0][\"efecstate\"] = 0;\n    }\n    // Declaramos el primer valor de resultado\n    resultado[rindex] = {\n        fInit: new Date(arr[0].timestamp),\n        fEnd: new Date(arr[0].timestamp),\n        state: arr[0].state,\n        efecstate: arr[0][\"efecstate\"],\n        hours: 0,\n        month: new Date(arr[0].timestamp).getMonth(),\n    };\n    rindex++;\n\n    resultado2[rindex2] = {\n    fInit: new Date(arr[0].timestamp),\n    fEnd: new Date(arr[0].timestamp),\n    efecstate: arr[0][\"efecstate\"],\n    hours: 0,\n    month: new Date(arr[0].timestamp).getMonth(),\n  };\n  rindex2++;\n  \n    for (let i = 1; i < arr.length; i++) {\n        // if (arr[i].state == -1) {\n        //   continue; // Ignorar intervalos con state igual a -1\n        // }\n        // Obtenemos el efectivo\n        if (arr[i].carga >= 2 && arr[i].state >= 3) {\n            arr[i][\"efecstate\"] = 6;\n        } else {\n            arr[i][\"efecstate\"] = 0;\n        }\n        if (arr[i].state !== arr[i - 1].state) {\n            // Cada que hay un cambio declaramos el nuevo item\n            resultado[rindex] = {\n                fInit: new Date(arr[i].timestamp),\n                fEnd: new Date(arr[i].timestamp),\n                state: arr[i].state,\n                efecstate: arr[i][\"efecstate\"],\n                hours: 0,\n                month: new Date(arr[i].timestamp).getMonth(),\n            };\n\n            // Y con ello actualizamos el item anterior\n            resultado[rindex - 1].fEnd = new Date(arr[i].timestamp);\n            resultado[rindex - 1].hours =\n                (resultado[rindex - 1].fEnd.getTime() -\n                    resultado[rindex - 1].fInit.getTime()) /\n                (60 * 60 * 1000);\n\n            // Actualizamos las horas acumuladas\n            if (resultado[rindex - 1].state !== -1) {\n                horasPorMes[resultado[rindex - 1].state][resultado[rindex - 1].month] +=\n                    resultado[rindex - 1].hours;\n            }\n\n            // console.log(horasPorMes);\n            rindex++;\n        }\n    }\n    for (let i = 1; i < arr.length; i++) {\n        // if (arr[i].state == -1) {\n        //   continue; // Ignorar intervalos con state igual a -1\n        // }\n        // Obtenemos el efectivo\n        if (arr[i].carga >= 2 && arr[i].state >= 3) {\n            arr[i][\"efecstate\"] = 6;\n        } else {\n            arr[i][\"efecstate\"] = -1;\n        }\n        if (arr[i].efecstate !== arr[i - 1].efecstate) {\n            // Cada que hay un cambio declaramos el nuevo item\n            resultado2[rindex2] = {\n                fInit: new Date(arr[i].timestamp),\n                fEnd: new Date(arr[i].timestamp),\n                efecstate: arr[i][\"efecstate\"],\n                hours: 0,\n                month: new Date(arr[i].timestamp).getMonth(),\n            };\n\n            // Y con ello actualizamos el item anterior\n            resultado2[rindex2 - 1].fEnd = new Date(arr[i].timestamp);\n            resultado2[rindex2 - 1].hours =\n                (resultado2[rindex2 - 1].fEnd.getTime() -\n                    resultado2[rindex2 - 1].fInit.getTime()) /\n                (60 * 60 * 1000);\n\n            // Actualizamos las horas acumuladas\n            if (resultado2[rindex2 - 1].efecstate !== -1) {\n                horasPorMes[resultado2[rindex2 - 1].efecstate][\n                    resultado2[rindex2 - 1].month\n                ] += resultado2[rindex2 - 1].hours;\n            }\n\n            // console.log(horasPorMes);\n            rindex2++;\n        }\n    }\n    // Get the sum of hours of the 6 states\n\n    return horasPorMes;\n}",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 670,
-        "y": 1100,
-        "wires": [
-            [
-                "e3521ca29df70216",
-                "0916e4f094145280"
-            ]
-        ]
-    },
-    {
-        "id": "0640ed5506fd29dc",
-        "type": "mysql",
-        "z": "cdb670b9eaa04bce",
-        "mydb": "20aa6fa811d70d43",
-        "name": "",
-        "x": 520,
-        "y": 1100,
-        "wires": [
-            [
-                "425707e8500eb579"
-            ]
-        ]
-    },
-    {
-        "id": "efee544db92c5f4c",
-        "type": "debug",
-        "z": "cdb670b9eaa04bce",
-        "name": "debug 54",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1200,
-        "y": 1100,
-        "wires": []
-    },
-    {
-        "id": "0916e4f094145280",
-        "type": "debug",
-        "z": "cdb670b9eaa04bce",
-        "name": "debug 55",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1000,
-        "y": 1180,
-        "wires": []
-    },
-    {
-        "id": "e3521ca29df70216",
-        "type": "function",
-        "z": "cdb670b9eaa04bce",
-        "name": "function 50",
-        "func": "const array_in = msg.payload;\n\nconst mesLimite = 2; // Cambiar este valor según el mes límite deseado\nconst estadosPorMes = obtenerEstadosPorMes(array_in, mesLimite);\n\nmsg.payload = estadosPorMes;\n\nestadosPorMes.map((array) => {\n    \n} )\n\nreturn msg;\n\n\nfunction obtenerEstadosPorMes(arrayDatos, mesLimite) {\n    const estadosPorMes = Array.from({ length: 12 }, () => []);\n\n    for (let i = 0; i <= mesLimite; i++) {\n        for (let j = 0; j < arrayDatos.length; j++) {\n            estadosPorMes[i].push(arrayDatos[j][i]);\n        }\n    }\n\n    return estadosPorMes;\n}",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 850,
-        "y": 1100,
-        "wires": [
-            [
-                "301af84903c10aaf"
-            ]
-        ]
-    },
-    {
-        "id": "301af84903c10aaf",
-        "type": "function",
-        "z": "cdb670b9eaa04bce",
-        "name": "function 51",
-        "func": "const array_in = msg.payload;\n\nconst mesLimite = 2; // Cambiar este valor según el mes límite deseado\nconst estadosPorMes = obtenerEstadosPorMes(array_in, mesLimite);\n\nmsg.payload = estadosPorMes;\n\n\n\nreturn msg;\n\n\nfunction obtenerEstadosPorMes(arrayDatos, mesLimite) {\n    const estadosPorMes = Array.from({ length: 12 }, () => []);\n\n    for (let i = 0; i <= mesLimite; i++) {\n        for (let j = 0; j < arrayDatos.length; j++) {\n            estadosPorMes[i].push(arrayDatos[j][i]);\n        }\n    }\n\n    return estadosPorMes;\n}\n\n\nfunction insertMonthlyData(){\n    var query = \"INSERT INTO `monthly_data` (`id`, `month`, `year`, `tag`, `description`, `data`) VALUES (NULL, '0', '2024', 'total_hours', '', '[0,0,0,0,0,0]')\";\n\n    return query\n}",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1030,
-        "y": 1100,
-        "wires": [
-            [
-                "efee544db92c5f4c"
-            ]
-        ]
-    },
-    {
         "id": "c6a55c23d481d0e3",
         "type": "function",
         "z": "cdb670b9eaa04bce",
@@ -6422,8 +6266,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 330,
-        "y": 1320,
+        "x": 270,
+        "y": 1140,
         "wires": [
             [
                 "51aae526d19e36e9"
@@ -6452,8 +6296,8 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 130,
-        "y": 1320,
+        "x": 70,
+        "y": 1140,
         "wires": [
             [
                 "c6a55c23d481d0e3"
@@ -6466,8 +6310,8 @@
         "z": "cdb670b9eaa04bce",
         "mydb": "20aa6fa811d70d43",
         "name": "",
-        "x": 520,
-        "y": 1320,
+        "x": 460,
+        "y": 1140,
         "wires": [
             [
                 "311c7e7e3db05496"
@@ -6486,8 +6330,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 710,
-        "y": 1320,
+        "x": 650,
+        "y": 1140,
         "wires": [
             [
                 "349141522be5b44b"
@@ -6507,8 +6351,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1280,
-        "y": 1320,
+        "x": 1220,
+        "y": 1140,
         "wires": []
     },
     {
@@ -6523,8 +6367,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1020,
-        "y": 1420,
+        "x": 960,
+        "y": 1240,
         "wires": []
     },
     {
@@ -6539,8 +6383,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1050,
-        "y": 1320,
+        "x": 990,
+        "y": 1140,
         "wires": [
             [
                 "63dda7d61147383f",
@@ -6560,8 +6404,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 870,
-        "y": 1320,
+        "x": 810,
+        "y": 1140,
         "wires": [
             [
                 "c9451bec65da855c"
@@ -6574,8 +6418,8 @@
         "z": "cdb670b9eaa04bce",
         "mydb": "20aa6fa811d70d43",
         "name": "",
-        "x": 1240,
-        "y": 1360,
+        "x": 1180,
+        "y": 1180,
         "wires": [
             []
         ]
