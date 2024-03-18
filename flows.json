@@ -6255,16 +6255,6 @@
         "wires": []
     },
     {
-        "id": "668bbe68f12b7cc3",
-        "type": "comment",
-        "z": "cdb670b9eaa04bce",
-        "name": "RESTAR UNO AL MES PARA OBTENER DEL MES ANTERIOR",
-        "info": "",
-        "x": 510,
-        "y": 700,
-        "wires": []
-    },
-    {
         "id": "ed1f41cf461c14c6",
         "type": "inject",
         "z": "cdb670b9eaa04bce",
