@@ -5954,7 +5954,7 @@
         "type": "function",
         "z": "cdb670b9eaa04bce",
         "name": "function 42",
-        "func": "msg.topic = `SELECT * FROM monthly_data WHERE tag = \"total_hours\" ORDER BY id DESC LIMIT 3;\n`;\nreturn msg;",
+        "func": "msg.topic = `SELECT * FROM monthly_reports ORDER BY id DESC LIMIT 3;\n`;\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -5975,7 +5975,7 @@
         "z": "cdb670b9eaa04bce",
         "mydb": "20aa6fa811d70d43",
         "name": "",
-        "x": 620,
+        "x": 640,
         "y": 460,
         "wires": [
             [
@@ -6040,8 +6040,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1050,
-        "y": 520,
+        "x": 1110,
+        "y": 500,
         "wires": [
             []
         ]
@@ -6075,7 +6075,7 @@
         "finalize": "",
         "libs": [],
         "x": 430,
-        "y": 560,
+        "y": 600,
         "wires": [
             [
                 "727a0301dadc8008"
@@ -6089,11 +6089,10 @@
         "mydb": "20aa6fa811d70d43",
         "name": "",
         "x": 600,
-        "y": 560,
+        "y": 600,
         "wires": [
             [
-                "b80a8ec90af4badd",
-                "f6fdc09c48fe05b8"
+                "b80a8ec90af4badd"
             ]
         ]
     },
@@ -6102,15 +6101,15 @@
         "type": "function",
         "z": "cdb670b9eaa04bce",
         "name": "function 45",
-        "func": "msg.payload = JSON.parse(msg.payload[0].data);\n\nreturn msg;\n",
+        "func": "msg.payload = JSON.parse(msg.payload[0].effective);\n\nreturn msg;\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 790,
-        "y": 580,
+        "x": 770,
+        "y": 600,
         "wires": [
             [
                 "568801f35834684f",
@@ -6123,7 +6122,7 @@
         "type": "debug",
         "z": "cdb670b9eaa04bce",
         "name": "debug 51",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -6424,21 +6423,5 @@
         "wires": [
             []
         ]
-    },
-    {
-        "id": "f6fdc09c48fe05b8",
-        "type": "debug",
-        "z": "cdb670b9eaa04bce",
-        "name": "debug 59",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 760,
-        "y": 620,
-        "wires": []
     }
 ]
