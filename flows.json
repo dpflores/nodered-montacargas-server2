@@ -6532,7 +6532,7 @@
         "type": "function",
         "z": "cdb670b9eaa04bce",
         "name": "function 56",
-        "func": "msg.topic = `INSERT INTO monthly_reports \n(month, year, total_hours, effective) \nVALUES (${msg.month}, ${msg.year}, [${msg.total_hours}], [${msg.effective}])`\nreturn msg;",
+        "func": "msg.topic = `INSERT INTO monthly_reports \n(month, year, total_hours, effective) \nVALUES (${msg.month}, ${msg.year}, '[${msg.total_hours}]', '[${msg.effective}]')`\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
