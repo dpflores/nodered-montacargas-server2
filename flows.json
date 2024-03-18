@@ -6415,7 +6415,7 @@
         "type": "function",
         "z": "cdb670b9eaa04bce",
         "name": "Set monthly data",
-        "func": "const target_month = msg.month + 1;\nconst target_year = msg.year;\n\nmsg.topic = `SELECT * FROM local_data \n    WHERE YEAR(date) = ${target_year} \n    order by date;`\n\n\nreturn msg;",
+        "func": "const target_month = msg.month + 1;\nconst target_year = msg.year;\n\nmsg.topic = `SELECT * FROM local_data \n    WHERE YEAR(date) = ${target_year} AND MONTH(date) = ${target_month}\n    order by date;`\n\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
