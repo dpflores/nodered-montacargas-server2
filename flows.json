@@ -6275,7 +6275,7 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 100,
+        "x": 160,
         "y": 1100,
         "wires": [
             [
@@ -6295,7 +6295,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 310,
+        "x": 350,
         "y": 1100,
         "wires": [
             [
@@ -6330,7 +6330,7 @@
         "z": "cdb670b9eaa04bce",
         "mydb": "20aa6fa811d70d43",
         "name": "",
-        "x": 500,
+        "x": 520,
         "y": 1100,
         "wires": [
             [
@@ -6350,7 +6350,7 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1240,
+        "x": 1200,
         "y": 1100,
         "wires": []
     },
