@@ -6409,5 +6409,84 @@
                 "efee544db92c5f4c"
             ]
         ]
+    },
+    {
+        "id": "c6a55c23d481d0e3",
+        "type": "function",
+        "z": "cdb670b9eaa04bce",
+        "name": "Set monthly data",
+        "func": "const target_month = msg.payload + 1;\n\nmsg.topic = `SELECT * FROM local_data \n    WHERE YEAR(date) = YEAR(CURDATE()) AND MONTH(data) = ${target_month}\n    order by date;`\n\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 370,
+        "y": 1240,
+        "wires": [
+            [
+                "51aae526d19e36e9"
+            ]
+        ]
+    },
+    {
+        "id": "f0a1a51df2d6d99b",
+        "type": "inject",
+        "z": "cdb670b9eaa04bce",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "0",
+        "payloadType": "num",
+        "x": 170,
+        "y": 1240,
+        "wires": [
+            [
+                "c6a55c23d481d0e3"
+            ]
+        ]
+    },
+    {
+        "id": "51aae526d19e36e9",
+        "type": "mysql",
+        "z": "cdb670b9eaa04bce",
+        "mydb": "20aa6fa811d70d43",
+        "name": "",
+        "x": 580,
+        "y": 1240,
+        "wires": [
+            [
+                "236f50b73dd83825"
+            ]
+        ]
+    },
+    {
+        "id": "236f50b73dd83825",
+        "type": "debug",
+        "z": "cdb670b9eaa04bce",
+        "name": "debug 56",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 760,
+        "y": 1240,
+        "wires": []
     }
 ]
