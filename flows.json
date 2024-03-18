@@ -6507,7 +6507,7 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1220,
+        "x": 1280,
         "y": 1320,
         "wires": []
     },
@@ -6543,7 +6543,8 @@
         "y": 1320,
         "wires": [
             [
-                "63dda7d61147383f"
+                "63dda7d61147383f",
+                "6ae5fe0a317ba035"
             ]
         ]
     },
@@ -6565,6 +6566,18 @@
             [
                 "c9451bec65da855c"
             ]
+        ]
+    },
+    {
+        "id": "6ae5fe0a317ba035",
+        "type": "mysql",
+        "z": "cdb670b9eaa04bce",
+        "mydb": "20aa6fa811d70d43",
+        "name": "",
+        "x": 1240,
+        "y": 1360,
+        "wires": [
+            []
         ]
     }
 ]
