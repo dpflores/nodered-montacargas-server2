@@ -5979,7 +5979,6 @@
         "y": 460,
         "wires": [
             [
-                "250ebbb2940caaa1",
                 "aa270bc241377d09"
             ]
         ]
@@ -6143,7 +6142,7 @@
                 "t": "set",
                 "p": "peso_efectivo_promedio",
                 "pt": "global",
-                "to": "payload",
+                "to": "payload.promedioPeso",
                 "tot": "msg"
             }
         ],
