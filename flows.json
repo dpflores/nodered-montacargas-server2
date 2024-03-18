@@ -6422,7 +6422,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 370,
+        "x": 330,
         "y": 1320,
         "wires": [
             [
@@ -6452,7 +6452,7 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 170,
+        "x": 130,
         "y": 1320,
         "wires": [
             [
@@ -6466,12 +6466,11 @@
         "z": "cdb670b9eaa04bce",
         "mydb": "20aa6fa811d70d43",
         "name": "",
-        "x": 560,
+        "x": 520,
         "y": 1320,
         "wires": [
             [
-                "311c7e7e3db05496",
-                "349141522be5b44b"
+                "311c7e7e3db05496"
             ]
         ]
     },
@@ -6480,18 +6479,18 @@
         "type": "function",
         "z": "cdb670b9eaa04bce",
         "name": "function 54",
-        "func": "var array_in = msg.payload.map((row) => JSON.parse(row.data));\nconst data_out = cumulatedStates(array_in);\nmsg.payload = data_out;\nreturn msg;\n\n\n\n\nfunction cumulatedStates(arr) {\n  // declara un array con 6 arrays dentro, uno para cada estado, con valores iniciales de 0\n  let horasPorEstado = new Array(6).fill(0);\n  // let horasEfectivas = new Array(12).fill(0);\n  let resultado = [];\n  let rindex = 0;\n\n  // Declaramos el primer valor de resultado\n  resultado[rindex] = {\n    fInit: new Date(arr[0].timestamp),\n    fEnd: new Date(arr[0].timestamp),\n    state: arr[0].state,\n    hours: 0,\n    month: new Date(arr[0].timestamp).getMonth(),\n  };\n  rindex++;\n\n  for (let i = 1; i < arr.length; i++) {\n    if (arr[i].state !== arr[i - 1].state) {\n      // Cada que hay un cambio declaramos el nuevo item\n      resultado[rindex] = {\n        fInit: new Date(arr[i].timestamp),\n        fEnd: new Date(arr[i].timestamp),\n        state: arr[i].state,\n        hours: 0,\n        month: new Date(arr[i].timestamp).getMonth(),\n      };\n\n      // Y con ello actualizamos el item anterior\n      resultado[rindex - 1].fEnd = new Date(arr[i].timestamp);\n      resultado[rindex - 1].hours =\n        (resultado[rindex - 1].fEnd.getTime() -\n          resultado[rindex - 1].fInit.getTime()) /\n        (60 * 60 * 1000);\n\n      // Actualizamos las horas acumuladas\n      if (resultado[rindex - 1].state !== -1) {\n        horasPorEstado[resultado[rindex - 1].state] +=\n          resultado[rindex - 1].hours;\n      }\n\n      // console.log(horasPorMes);\n      rindex++;\n    }\n  }\n\n  return horasPorEstado;\n}",
+        "func": "var array_in = msg.payload.map((row) => JSON.parse(row.data));\nconst data_out = cumulatedStates(array_in);\nmsg.total_hours = data_out;\nreturn msg;\n\n\n\n\nfunction cumulatedStates(arr) {\n  // declara un array con 6 arrays dentro, uno para cada estado, con valores iniciales de 0\n  let horasPorEstado = new Array(6).fill(0);\n  // let horasEfectivas = new Array(12).fill(0);\n  let resultado = [];\n  let rindex = 0;\n\n  // Declaramos el primer valor de resultado\n  resultado[rindex] = {\n    fInit: new Date(arr[0].timestamp),\n    fEnd: new Date(arr[0].timestamp),\n    state: arr[0].state,\n    hours: 0,\n    month: new Date(arr[0].timestamp).getMonth(),\n  };\n  rindex++;\n\n  for (let i = 1; i < arr.length; i++) {\n    if (arr[i].state !== arr[i - 1].state) {\n      // Cada que hay un cambio declaramos el nuevo item\n      resultado[rindex] = {\n        fInit: new Date(arr[i].timestamp),\n        fEnd: new Date(arr[i].timestamp),\n        state: arr[i].state,\n        hours: 0,\n        month: new Date(arr[i].timestamp).getMonth(),\n      };\n\n      // Y con ello actualizamos el item anterior\n      resultado[rindex - 1].fEnd = new Date(arr[i].timestamp);\n      resultado[rindex - 1].hours =\n        (resultado[rindex - 1].fEnd.getTime() -\n          resultado[rindex - 1].fInit.getTime()) /\n        (60 * 60 * 1000);\n\n      // Actualizamos las horas acumuladas\n      if (resultado[rindex - 1].state !== -1) {\n        horasPorEstado[resultado[rindex - 1].state] +=\n          resultado[rindex - 1].hours;\n      }\n\n      // console.log(horasPorMes);\n      rindex++;\n    }\n  }\n\n  return horasPorEstado;\n}",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 790,
+        "x": 710,
         "y": 1320,
         "wires": [
             [
-                "63dda7d61147383f"
+                "349141522be5b44b"
             ]
         ]
     },
@@ -6507,29 +6506,9 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1020,
+        "x": 1220,
         "y": 1320,
         "wires": []
-    },
-    {
-        "id": "349141522be5b44b",
-        "type": "function",
-        "z": "cdb670b9eaa04bce",
-        "name": "function 55",
-        "func": "var array_in = msg.payload.map((row) => JSON.parse(row.data));\nconst data_out = cumulatedEfective(array_in);\nmsg.payload = data_out;\nreturn msg;\n\n\n\nfunction cumulatedEfective(arr) {\n  // declara un array con 7 arrays dentro, uno para cada estado, con valores iniciales de 0\n  // el 7 es para efectivo\n\n  var resultArray = new Array(2).fill(0);\n\n  var efectiveHours = 0;\n  var averageLoad = 0;\n  var loadIndex = 1;\n\n  let resultado = [];\n  let rindex = 0;\n\n  if (arr[0].carga >= 2 && arr[0].state >= 3) {\n    arr[0][\"efecstate\"] = 1;\n    averageLoad = averageLoad + (arr[0].carga - averageLoad) / loadIndex;\n    loadIndex++;\n  } else {\n    arr[0][\"efecstate\"] = -1;\n  }\n  // Declaramos el primer valor de resultado\n  resultado[rindex] = {\n    fInit: new Date(arr[0].timestamp),\n    fEnd: new Date(arr[0].timestamp),\n    efecstate: arr[0][\"efecstate\"],\n    hours: 0,\n    month: new Date(arr[0].timestamp).getMonth(),\n  };\n  rindex++;\n\n  for (let i = 1; i < arr.length; i++) {\n    if (arr[i].carga >= 2 && arr[i].state >= 3) {\n      arr[i][\"efecstate\"] = 1;\n      averageLoad = averageLoad + (arr[i].carga - averageLoad) / loadIndex;\n      loadIndex++;\n\n    } else {\n      arr[i][\"efecstate\"] = -1;\n    }\n\n    if (arr[i].efecstate !== arr[i - 1].efecstate) {\n      // Cada que hay un cambio declaramos el nuevo item\n      resultado[rindex] = {\n        fInit: new Date(arr[i].timestamp),\n        fEnd: new Date(arr[i].timestamp),\n        efecstate: arr[i][\"efecstate\"],\n        hours: 0,\n        month: new Date(arr[i].timestamp).getMonth(),\n      };\n\n      // Y con ello actualizamos el item anterior\n      resultado[rindex - 1].fEnd = new Date(arr[i].timestamp);\n      resultado[rindex - 1].hours =\n        (resultado[rindex - 1].fEnd.getTime() -\n          resultado[rindex - 1].fInit.getTime()) /\n        (60 * 60 * 1000);\n\n      // Actualizamos las horas acumuladas\n      if (resultado[rindex - 1].efecstate !== -1) {\n        efectiveHours += resultado[rindex - 1].hours;\n      }\n\n      // console.log(horasPorMes);\n      rindex++;\n    }\n  }\n\n  // EL total solo son los 6 primeros estados, el 7 es efectivo,\n  // el efectivo es una composición de otros estados\n  resultArray[0] = efectiveHours;\n  resultArray[1] = averageLoad;\n\n  return resultArray;\n}\n",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 790,
-        "y": 1420,
-        "wires": [
-            [
-                "9d912b1f5062b20f"
-            ]
-        ]
     },
     {
         "id": "9d912b1f5062b20f",
@@ -6546,5 +6525,45 @@
         "x": 1020,
         "y": 1420,
         "wires": []
+    },
+    {
+        "id": "c9451bec65da855c",
+        "type": "function",
+        "z": "cdb670b9eaa04bce",
+        "name": "function 56",
+        "func": "msg.topic = `INSERT INTO monthly_reports \n(month, year, total_hours, effective) \nVALUES (${msg.month}, ${msg.year}, ${msg.total_hours}, ${msg.effective})`\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1050,
+        "y": 1320,
+        "wires": [
+            [
+                "63dda7d61147383f"
+            ]
+        ]
+    },
+    {
+        "id": "349141522be5b44b",
+        "type": "function",
+        "z": "cdb670b9eaa04bce",
+        "name": "function 55",
+        "func": "var array_in = msg.payload.map((row) => JSON.parse(row.data));\nconst data_out = cumulatedEfective(array_in);\nmsg.effective = data_out;\nreturn msg;\n\n\n\nfunction cumulatedEfective(arr) {\n  // declara un array con 7 arrays dentro, uno para cada estado, con valores iniciales de 0\n  // el 7 es para efectivo\n\n  var resultArray = new Array(2).fill(0);\n\n  var efectiveHours = 0;\n  var averageLoad = 0;\n  var loadIndex = 1;\n\n  let resultado = [];\n  let rindex = 0;\n\n  if (arr[0].carga >= 2 && arr[0].state >= 3) {\n    arr[0][\"efecstate\"] = 1;\n    averageLoad = averageLoad + (arr[0].carga - averageLoad) / loadIndex;\n    loadIndex++;\n  } else {\n    arr[0][\"efecstate\"] = -1;\n  }\n  // Declaramos el primer valor de resultado\n  resultado[rindex] = {\n    fInit: new Date(arr[0].timestamp),\n    fEnd: new Date(arr[0].timestamp),\n    efecstate: arr[0][\"efecstate\"],\n    hours: 0,\n    month: new Date(arr[0].timestamp).getMonth(),\n  };\n  rindex++;\n\n  for (let i = 1; i < arr.length; i++) {\n    if (arr[i].carga >= 2 && arr[i].state >= 3) {\n      arr[i][\"efecstate\"] = 1;\n      averageLoad = averageLoad + (arr[i].carga - averageLoad) / loadIndex;\n      loadIndex++;\n\n    } else {\n      arr[i][\"efecstate\"] = -1;\n    }\n\n    if (arr[i].efecstate !== arr[i - 1].efecstate) {\n      // Cada que hay un cambio declaramos el nuevo item\n      resultado[rindex] = {\n        fInit: new Date(arr[i].timestamp),\n        fEnd: new Date(arr[i].timestamp),\n        efecstate: arr[i][\"efecstate\"],\n        hours: 0,\n        month: new Date(arr[i].timestamp).getMonth(),\n      };\n\n      // Y con ello actualizamos el item anterior\n      resultado[rindex - 1].fEnd = new Date(arr[i].timestamp);\n      resultado[rindex - 1].hours =\n        (resultado[rindex - 1].fEnd.getTime() -\n          resultado[rindex - 1].fInit.getTime()) /\n        (60 * 60 * 1000);\n\n      // Actualizamos las horas acumuladas\n      if (resultado[rindex - 1].efecstate !== -1) {\n        efectiveHours += resultado[rindex - 1].hours;\n      }\n\n      // console.log(horasPorMes);\n      rindex++;\n    }\n  }\n\n  // EL total solo son los 6 primeros estados, el 7 es efectivo,\n  // el efectivo es una composición de otros estados\n  resultArray[0] = efectiveHours;\n  resultArray[1] = averageLoad;\n\n  return resultArray;\n}\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 870,
+        "y": 1320,
+        "wires": [
+            [
+                "c9451bec65da855c"
+            ]
+        ]
     }
 ]
