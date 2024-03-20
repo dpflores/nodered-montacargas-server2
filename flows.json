@@ -5355,7 +5355,7 @@
             }
         ],
         "repeat": "",
-        "crontab": "00 05 * * *",
+        "crontab": "00 00 * * *",
         "once": true,
         "onceDelay": "1",
         "topic": "",
