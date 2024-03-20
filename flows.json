@@ -5370,70 +5370,6 @@
         ]
     },
     {
-        "id": "449f225fe3430426",
-        "type": "http request",
-        "z": "cdb670b9eaa04bce",
-        "name": "/api/charts/stacked",
-        "method": "GET",
-        "ret": "txt",
-        "paytoqs": "ignore",
-        "url": "127.0.0.1:9000/api/charts/stacked",
-        "tls": "",
-        "persist": false,
-        "proxy": "",
-        "insecureHTTPParser": false,
-        "authType": "",
-        "senderr": false,
-        "headers": [],
-        "x": 470,
-        "y": 80,
-        "wires": [
-            [
-                "22fec0336a458a37"
-            ]
-        ]
-    },
-    {
-        "id": "72994b36940ff9c9",
-        "type": "debug",
-        "z": "cdb670b9eaa04bce",
-        "name": "debug 42",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1080,
-        "y": 20,
-        "wires": []
-    },
-    {
-        "id": "cfaba645255d4a58",
-        "type": "http request",
-        "z": "cdb670b9eaa04bce",
-        "name": "/api/charts/cfrequency",
-        "method": "GET",
-        "ret": "txt",
-        "paytoqs": "ignore",
-        "url": "127.0.0.1:9000/api/charts/cfrequency",
-        "tls": "",
-        "persist": false,
-        "proxy": "",
-        "insecureHTTPParser": false,
-        "authType": "",
-        "senderr": false,
-        "headers": [],
-        "x": 480,
-        "y": 160,
-        "wires": [
-            [
-                "b3bbd3f857d2aeb4"
-            ]
-        ]
-    },
-    {
         "id": "9a80a53da22ad545",
         "type": "http request",
         "z": "cdb670b9eaa04bce",
@@ -5449,8 +5385,8 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 490,
-        "y": 220,
+        "x": 510,
+        "y": 240,
         "wires": [
             [
                 "5d9c37c2864ff8fc"
@@ -5473,8 +5409,8 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 490,
-        "y": 280,
+        "x": 510,
+        "y": 300,
         "wires": [
             [
                 "8a92930241a726ea"
@@ -5497,43 +5433,11 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 490,
-        "y": 340,
+        "x": 510,
+        "y": 360,
         "wires": [
             [
                 "32c4851de94c52fe"
-            ]
-        ]
-    },
-    {
-        "id": "22fec0336a458a37",
-        "type": "json",
-        "z": "cdb670b9eaa04bce",
-        "name": "",
-        "property": "payload",
-        "action": "",
-        "pretty": false,
-        "x": 690,
-        "y": 80,
-        "wires": [
-            [
-                "1ae3dfa797da7387"
-            ]
-        ]
-    },
-    {
-        "id": "b3bbd3f857d2aeb4",
-        "type": "json",
-        "z": "cdb670b9eaa04bce",
-        "name": "",
-        "property": "payload",
-        "action": "",
-        "pretty": false,
-        "x": 690,
-        "y": 160,
-        "wires": [
-            [
-                "6e5290eca12b8ee6"
             ]
         ]
     },
@@ -5549,8 +5453,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1020,
-        "y": 220,
+        "x": 1040,
+        "y": 240,
         "wires": []
     },
     {
@@ -5561,8 +5465,8 @@
         "property": "payload",
         "action": "",
         "pretty": false,
-        "x": 690,
-        "y": 220,
+        "x": 710,
+        "y": 240,
         "wires": [
             [
                 "51c98b911d8bb6e9"
@@ -5581,8 +5485,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1020,
-        "y": 280,
+        "x": 1040,
+        "y": 300,
         "wires": []
     },
     {
@@ -5593,8 +5497,8 @@
         "property": "payload",
         "action": "",
         "pretty": false,
-        "x": 690,
-        "y": 280,
+        "x": 710,
+        "y": 300,
         "wires": [
             [
                 "49c8a83f4f3c3541"
@@ -5613,8 +5517,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1020,
-        "y": 340,
+        "x": 1040,
+        "y": 360,
         "wires": []
     },
     {
@@ -5625,12 +5529,11 @@
         "property": "payload",
         "action": "",
         "pretty": false,
-        "x": 690,
-        "y": 340,
+        "x": 710,
+        "y": 360,
         "wires": [
             [
-                "46db0b4b61ee8e37",
-                "c5103231c1757ca5"
+                "46db0b4b61ee8e37"
             ]
         ]
     },
@@ -5650,124 +5553,14 @@
         "y": 220,
         "wires": [
             [
-                "449f225fe3430426",
-                "cfaba645255d4a58",
                 "9a80a53da22ad545",
                 "506bfe4f037d70b3",
                 "9abade606111b3ef",
                 "1d74a1a3352a3419",
-                "9176a79f0a4ab6f7"
+                "9176a79f0a4ab6f7",
+                "c179eaeb3e3b0a56"
             ]
         ]
-    },
-    {
-        "id": "1ae3dfa797da7387",
-        "type": "function",
-        "z": "cdb670b9eaa04bce",
-        "name": "function 37",
-        "func": "const target_month = msg.target_month;\n\n// Recordar \n// 0 - Apagado\n// 1 - Inoperativo\n// 2 - Espera sin carga\n// 3 - Espera con carga\n// 4 - Traslado sin carga\n// 5 - Traslado con carga\n// 6 - Efectivo\n\n\nfunction calcularPorcentajePorMes(payload, target_month) {\n    const { array1, array2, array3, array4, array5, array6 } = payload;\n    const arrays = [array1, array2, array3, array4, array5, array6];\n\n    const index = target_month; // El índice del mes objetivo es target_month - 1\n    const horasMes = arrays.map(array => array[index]).reduce((a, b) => a + b, 0);\n    const totalHoras = arrays.reduce((total, array) => total + array[index], 0);\n\n    const porcentajes = arrays.map(array => {\n        const horasEstado = array[index];\n        return Math.round((horasEstado / totalHoras) * 10000) / 100; // Redondear a dos decimales\n    });\n\n    return porcentajes;\n}\n\nconst porcentajes = calcularPorcentajePorMes(msg.payload.payload, target_month);\n\nconst { array1, array2, array3, array4, array5, array6 }  = msg.payload.payload;\n\nconst horasMantenimiento = array2[target_month].toFixed(2);\n\nmsg.payload = {\"porcentajes\": porcentajes,\n\"horas_mantenimiento\": horasMantenimiento};\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 850,
-        "y": 80,
-        "wires": [
-            [
-                "72994b36940ff9c9",
-                "af9498c01658f132",
-                "03ea35142d79b4b0"
-            ]
-        ]
-    },
-    {
-        "id": "af9498c01658f132",
-        "type": "change",
-        "z": "cdb670b9eaa04bce",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "detalle_mensual",
-                "pt": "global",
-                "to": "payload.porcentajes",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 1100,
-        "y": 60,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "6e5290eca12b8ee6",
-        "type": "function",
-        "z": "cdb670b9eaa04bce",
-        "name": "function 38",
-        "func": "const target_month = msg.target_month;\n\n// Recordar \n// Array1 es frecuencia de uso\n// Array2 es frecuencia efectiva de uso\n// Array3 es porcentaje efectivo\n\nconst { array1, array2, array3 } = msg.payload.payload;\n\n// Obteniendo los valores correspondientes al mes objetivo y redondeándolos a dos decimales\nconst valor1 = array1[target_month].toFixed(2);\nconst valor2 = array2[target_month].toFixed(2);\nconst valor3 = array3[target_month].toFixed(2);\n\n// Construyendo el array con los valores redondeados\nmsg.payload = [valor1, valor2, valor3];\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 850,
-        "y": 160,
-        "wires": [
-            [
-                "380f7414ba3c8461",
-                "fea86b142a191ca2"
-            ]
-        ]
-    },
-    {
-        "id": "380f7414ba3c8461",
-        "type": "change",
-        "z": "cdb670b9eaa04bce",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "frecuencia_uso",
-                "pt": "global",
-                "to": "payload",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 1090,
-        "y": 160,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "fea86b142a191ca2",
-        "type": "debug",
-        "z": "cdb670b9eaa04bce",
-        "name": "debug 47",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1040,
-        "y": 120,
-        "wires": []
     },
     {
         "id": "51c98b911d8bb6e9",
@@ -5781,8 +5574,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 850,
-        "y": 220,
+        "x": 870,
+        "y": 240,
         "wires": [
             [
                 "e67cf3cda18eae7f",
@@ -5802,8 +5595,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 850,
-        "y": 280,
+        "x": 870,
+        "y": 300,
         "wires": [
             [
                 "da6e9ff8b9bfa23c",
@@ -5823,8 +5616,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 850,
-        "y": 340,
+        "x": 870,
+        "y": 360,
         "wires": [
             [
                 "4a511b01b6f888eb",
@@ -5852,7 +5645,7 @@
         "to": "",
         "reg": false,
         "x": 1070,
-        "y": 240,
+        "y": 260,
         "wires": [
             []
         ]
@@ -5876,8 +5669,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1040,
-        "y": 300,
+        "x": 1060,
+        "y": 320,
         "wires": [
             []
         ]
@@ -5901,68 +5694,11 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1040,
+        "x": 1060,
         "y": 380,
         "wires": [
             []
         ]
-    },
-    {
-        "id": "c5103231c1757ca5",
-        "type": "debug",
-        "z": "cdb670b9eaa04bce",
-        "name": "debug 48",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 840,
-        "y": 400,
-        "wires": []
-    },
-    {
-        "id": "03ea35142d79b4b0",
-        "type": "change",
-        "z": "cdb670b9eaa04bce",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "horas_mantenimiento",
-                "pt": "global",
-                "to": "payload.horas_mantenimiento",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 1110,
-        "y": 100,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "aa270bc241377d09",
-        "type": "debug",
-        "z": "cdb670b9eaa04bce",
-        "name": "debug 50",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1180,
-        "y": 460,
-        "wires": []
     },
     {
         "id": "1d74a1a3352a3419",
@@ -5976,8 +5712,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 410,
-        "y": 500,
+        "x": 490,
+        "y": 60,
         "wires": [
             [
                 "727a0301dadc8008"
@@ -5990,8 +5726,8 @@
         "z": "cdb670b9eaa04bce",
         "mydb": "20aa6fa811d70d43",
         "name": "",
-        "x": 580,
-        "y": 500,
+        "x": 660,
+        "y": 60,
         "wires": [
             [
                 "b80a8ec90af4badd",
@@ -6011,12 +5747,11 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 770,
-        "y": 520,
+        "x": 850,
+        "y": 80,
         "wires": [
             [
-                "9eda7539189880eb",
-                "8aacd10bf1ae8865"
+                "9eda7539189880eb"
             ]
         ]
     },
@@ -6032,8 +5767,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 390,
-        "y": 640,
+        "x": 470,
+        "y": 560,
         "wires": [
             [
                 "578f1e0f3ad2632b"
@@ -6046,8 +5781,8 @@
         "z": "cdb670b9eaa04bce",
         "mydb": "20aa6fa811d70d43",
         "name": "",
-        "x": 560,
-        "y": 640,
+        "x": 640,
+        "y": 560,
         "wires": [
             [
                 "d3124c7c2eb3f514"
@@ -6073,8 +5808,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1060,
-        "y": 640,
+        "x": 1140,
+        "y": 560,
         "wires": [
             []
         ]
@@ -6091,8 +5826,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 770,
-        "y": 640,
+        "x": 850,
+        "y": 560,
         "wires": [
             [
                 "aafe3d57c3a43045",
@@ -6112,8 +5847,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1040,
-        "y": 680,
+        "x": 1120,
+        "y": 600,
         "wires": []
     },
     {
@@ -6307,8 +6042,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1000,
-        "y": 480,
+        "x": 1080,
+        "y": 40,
         "wires": [
             []
         ]
@@ -6332,8 +6067,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 990,
-        "y": 520,
+        "x": 1070,
+        "y": 80,
         "wires": [
             []
         ]
@@ -6343,15 +6078,15 @@
         "type": "function",
         "z": "cdb670b9eaa04bce",
         "name": "function 42",
-        "func": "msg.topic = `SELECT * FROM monthly_reports ORDER BY id DESC LIMIT 3;\n`;\nreturn msg;",
+        "func": "msg.topic = `SELECT * FROM monthly_reports ORDER BY id DESC LIMIT 3;\n`;\nmsg.topic = `\nSELECT * FROM monthly_reports\nWHERE (year = ${msg.target_year} AND month = ${msg.target_month})\n   OR (year = ${msg.target_year} AND \n       month = ${msg.target_month} - 1 AND month != 1)\n   OR (year = ${msg.target_year} - 1 AND month = 12 AND ${msg.target_month} = 1);\n`;\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 450,
-        "y": 800,
+        "x": 490,
+        "y": 140,
         "wires": [
             [
                 "8ebd75ef3b6a08fc"
@@ -6364,8 +6099,8 @@
         "z": "cdb670b9eaa04bce",
         "mydb": "20aa6fa811d70d43",
         "name": "",
-        "x": 640,
-        "y": 800,
+        "x": 680,
+        "y": 140,
         "wires": [
             []
         ]
@@ -6382,8 +6117,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1160,
-        "y": 800,
+        "x": 1200,
+        "y": 180,
         "wires": []
     },
     {
@@ -6398,8 +6133,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 830,
-        "y": 800,
+        "x": 870,
+        "y": 140,
         "wires": [
             [
                 "fb48c2116edf34ba",
@@ -6426,8 +6161,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1110,
-        "y": 840,
+        "x": 1090,
+        "y": 140,
         "wires": [
             []
         ]
@@ -6444,46 +6179,13 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 770,
-        "y": 480,
+        "x": 850,
+        "y": 40,
         "wires": [
             [
-                "fad6a5b1e0bc300c",
-                "2bbcbbddc6cca32a"
+                "fad6a5b1e0bc300c"
             ]
         ]
-    },
-    {
-        "id": "2bbcbbddc6cca32a",
-        "type": "debug",
-        "z": "cdb670b9eaa04bce",
-        "name": "debug 59",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 960,
-        "y": 440,
-        "wires": []
-    },
-    {
-        "id": "8aacd10bf1ae8865",
-        "type": "debug",
-        "z": "cdb670b9eaa04bce",
-        "name": "debug 60",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 940,
-        "y": 560,
-        "wires": []
     },
     {
         "id": "e2cf5149a01ae5d6",
