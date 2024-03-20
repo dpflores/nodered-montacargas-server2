@@ -5863,7 +5863,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 270,
+        "x": 370,
         "y": 1280,
         "wires": [
             [
@@ -5889,7 +5889,7 @@
             }
         ],
         "repeat": "",
-        "crontab": "",
+        "crontab": "00 00 * * *",
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
@@ -5907,7 +5907,7 @@
         "z": "cdb670b9eaa04bce",
         "mydb": "20aa6fa811d70d43",
         "name": "",
-        "x": 460,
+        "x": 560,
         "y": 1280,
         "wires": [
             [
@@ -5928,7 +5928,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 650,
+        "x": 750,
         "y": 1280,
         "wires": [
             [
@@ -5949,7 +5949,7 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1220,
+        "x": 1320,
         "y": 1280,
         "wires": []
     },
@@ -5966,7 +5966,7 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 860,
+        "x": 960,
         "y": 1360,
         "wires": []
     },
@@ -5982,7 +5982,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 990,
+        "x": 1090,
         "y": 1280,
         "wires": [
             [
@@ -6003,7 +6003,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 810,
+        "x": 910,
         "y": 1280,
         "wires": [
             [
@@ -6017,7 +6017,7 @@
         "z": "cdb670b9eaa04bce",
         "mydb": "20aa6fa811d70d43",
         "name": "",
-        "x": 1180,
+        "x": 1280,
         "y": 1320,
         "wires": [
             []
@@ -6202,7 +6202,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 650,
+        "x": 750,
         "y": 1360,
         "wires": [
             [
@@ -6225,5 +6225,54 @@
         "x": 860,
         "y": 180,
         "wires": []
+    },
+    {
+        "id": "d39fb277184eb661",
+        "type": "inject",
+        "z": "cdb670b9eaa04bce",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "00 00 * * *",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 110,
+        "y": 1360,
+        "wires": [
+            [
+                "2d6b5a84b58ea483"
+            ]
+        ]
+    },
+    {
+        "id": "2d6b5a84b58ea483",
+        "type": "function",
+        "z": "cdb670b9eaa04bce",
+        "name": "function 59",
+        "func": "const current_timestamp = new Date(msg.payload);\n\nmsg.month = current_timestamp.getMonth();\nmsg.year = current_timestamp.getFullYear();\n\n// msg.month = 0; //Enero\n// msg.year = 2024;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 270,
+        "y": 1360,
+        "wires": [
+            [
+                "c6a55c23d481d0e3"
+            ]
+        ]
     }
 ]
