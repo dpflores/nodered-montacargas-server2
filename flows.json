@@ -6280,7 +6280,7 @@
         "type": "function",
         "z": "cdb670b9eaa04bce",
         "name": "function 60",
-        "func": "const current_timestamp = new Date(msg.payload);\nmsg.payload = current_timestamp.getDay();\nreturn msg;\nmsg.month = current_timestamp.getMonth();\nmsg.year = current_timestamp.getFullYear();\n\n// msg.month = 0; //Enero\n// msg.year = 2024;\n\nreturn msg;",
+        "func": "const current_timestamp = new Date(msg.payload);\nmsg.payload = current_timestamp.getDate();\nreturn msg;\nmsg.month = current_timestamp.getMonth();\nmsg.year = current_timestamp.getFullYear();\n\n// msg.month = 0; //Enero\n// msg.year = 2024;\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
