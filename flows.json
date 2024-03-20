@@ -5875,7 +5875,7 @@
         "id": "f0a1a51df2d6d99b",
         "type": "inject",
         "z": "cdb670b9eaa04bce",
-        "name": "",
+        "name": "Seleccionar mes manual",
         "props": [
             {
                 "p": "month",
@@ -5889,12 +5889,12 @@
             }
         ],
         "repeat": "",
-        "crontab": "00 00 * * *",
+        "crontab": "",
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 110,
-        "y": 1280,
+        "x": 190,
+        "y": 1480,
         "wires": [
             [
                 "c6a55c23d481d0e3"
@@ -6230,7 +6230,7 @@
         "id": "d39fb277184eb661",
         "type": "inject",
         "z": "cdb670b9eaa04bce",
-        "name": "",
+        "name": "Automatic ",
         "props": [
             {
                 "p": "payload"
@@ -6248,7 +6248,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 110,
-        "y": 1360,
+        "y": 1180,
         "wires": [
             [
                 "2d6b5a84b58ea483"
@@ -6268,7 +6268,7 @@
         "finalize": "",
         "libs": [],
         "x": 270,
-        "y": 1360,
+        "y": 1180,
         "wires": [
             [
                 "c6a55c23d481d0e3"
