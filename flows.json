@@ -5270,17 +5270,17 @@
             }
         ],
         "repeat": "",
-        "crontab": "",
+        "crontab": "00 05 * * *",
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 320,
+        "x": 150,
         "y": 960,
         "wires": [
             [
-                "1bb67d940ff22a63"
+                "984ade5fe4e2f151"
             ]
         ]
     },
@@ -5334,8 +5334,8 @@
                 "module": "pdfmake"
             }
         ],
-        "x": 620,
-        "y": 960,
+        "x": 580,
+        "y": 900,
         "wires": [
             []
         ]
@@ -6274,5 +6274,41 @@
                 "c6a55c23d481d0e3"
             ]
         ]
+    },
+    {
+        "id": "984ade5fe4e2f151",
+        "type": "function",
+        "z": "cdb670b9eaa04bce",
+        "name": "function 60",
+        "func": "const current_timestamp = new Date(msg.payload);\nmsg.payload = current_timestamp.getDay();\nreturn msg;\nmsg.month = current_timestamp.getMonth();\nmsg.year = current_timestamp.getFullYear();\n\n// msg.month = 0; //Enero\n// msg.year = 2024;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 330,
+        "y": 960,
+        "wires": [
+            [
+                "016bca9ee2669b2a"
+            ]
+        ]
+    },
+    {
+        "id": "016bca9ee2669b2a",
+        "type": "debug",
+        "z": "cdb670b9eaa04bce",
+        "name": "debug 60",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 520,
+        "y": 960,
+        "wires": []
     }
 ]
