@@ -5251,7 +5251,7 @@
         "tls": false,
         "name": "delpiero22.flores@gmail.com",
         "dname": "",
-        "x": 980,
+        "x": 1160,
         "y": 960,
         "wires": []
     },
@@ -5305,8 +5305,8 @@
                 "module": "pdfmake"
             }
         ],
-        "x": 630,
-        "y": 1060,
+        "x": 870,
+        "y": 960,
         "wires": [
             [
                 "e9168390b1d67fab"
@@ -5334,8 +5334,8 @@
                 "module": "pdfmake"
             }
         ],
-        "x": 580,
-        "y": 900,
+        "x": 680,
+        "y": 820,
         "wires": [
             []
         ]
@@ -6279,36 +6279,69 @@
         "id": "984ade5fe4e2f151",
         "type": "function",
         "z": "cdb670b9eaa04bce",
-        "name": "function 60",
-        "func": "const current_timestamp = new Date(msg.payload);\nmsg.payload = current_timestamp.getDate();\nreturn msg;\nmsg.month = current_timestamp.getMonth();\nmsg.year = current_timestamp.getFullYear();\n\n// msg.month = 0; //Enero\n// msg.year = 2024;\n\nreturn msg;",
+        "name": "Generación de reporte Mensual Automatica",
+        "func": "const current_timestamp = new Date(msg.payload);\n\nif (current_timestamp.getDate()=== 1){\n    msg.month = current_timestamp.getMonth();\n    msg.year = current_timestamp.getFullYear();\n    return msg;\n}\n\n\n// msg.month = 0; //Enero\n// msg.year = 2024;\n\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 330,
+        "x": 470,
         "y": 960,
         "wires": [
             [
-                "016bca9ee2669b2a"
+                "1bb67d940ff22a63"
             ]
         ]
     },
     {
-        "id": "016bca9ee2669b2a",
-        "type": "debug",
+        "id": "7a8c30d9e4d55ddc",
+        "type": "function",
         "z": "cdb670b9eaa04bce",
-        "name": "debug 60",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 520,
-        "y": 960,
-        "wires": []
+        "name": "Test",
+        "func": "const current_timestamp = new Date(msg.payload);\n\n\nmsg.month = current_timestamp.getMonth();\nmsg.year = current_timestamp.getFullYear();\nreturn msg;\n\n\n// msg.month = 0; //Enero\n// msg.year = 2024;\n\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 550,
+        "y": 1040,
+        "wires": [
+            [
+                "1bb67d940ff22a63"
+            ]
+        ]
+    },
+    {
+        "id": "ccf72045d2f27584",
+        "type": "inject",
+        "z": "cdb670b9eaa04bce",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 400,
+        "y": 1040,
+        "wires": [
+            [
+                "7a8c30d9e4d55ddc"
+            ]
+        ]
     }
 ]
