@@ -6078,7 +6078,7 @@
         "type": "function",
         "z": "cdb670b9eaa04bce",
         "name": "function 42",
-        "func": "msg.topic = `SELECT * FROM monthly_reports ORDER BY id DESC LIMIT 3;\n`;\nmsg.topic = `\nSELECT * FROM monthly_reports\nWHERE (year = ${msg.target_year} AND month = ${msg.target_month})\n   OR (year = ${msg.target_year} AND \n       month = ${msg.target_month} - 1 AND month != 0)\n   OR (year = ${msg.target_year} - 1 AND month = 11 AND ${msg.target_month} = 0);\n`;\nreturn msg;",
+        "func": "msg.topic = `SELECT * FROM monthly_reports ORDER BY id DESC LIMIT 3;\n`;\nmsg.topic = `\n    SELECT * \n    FROM monthly_reports\n    WHERE (year = ${msg.target_year} AND month = ${msg.target_month})\n    OR (year = ${msg.target_year - (msg.target_month === 0 ? 1 : 0)} AND month = ${msg.target_month === 0 ? 11 : msg.target_month - 1});\n`;\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
