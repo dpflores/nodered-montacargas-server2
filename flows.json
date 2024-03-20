@@ -5361,7 +5361,7 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 70,
+        "x": 90,
         "y": 220,
         "wires": [
             [
@@ -5549,7 +5549,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 260,
+        "x": 280,
         "y": 220,
         "wires": [
             [
@@ -6078,7 +6078,7 @@
         "type": "function",
         "z": "cdb670b9eaa04bce",
         "name": "function 42",
-        "func": "msg.topic = `SELECT * FROM monthly_reports ORDER BY id DESC LIMIT 3;\n`;\nmsg.topic = `\nSELECT * FROM monthly_reports\nWHERE (year = ${msg.target_year} AND month = ${msg.target_month})\n   OR (year = ${msg.target_year} AND \n       month = ${msg.target_month} - 1 AND month != 1)\n   OR (year = ${msg.target_year} - 1 AND month = 12 AND ${msg.target_month} = 1);\n`;\nreturn msg;",
+        "func": "msg.topic = `SELECT * FROM monthly_reports ORDER BY id DESC LIMIT 3;\n`;\nmsg.topic = `\nSELECT * FROM monthly_reports\nWHERE (year = ${msg.target_year} AND month = ${msg.target_month})\n   OR (year = ${msg.target_year} AND \n       month = ${msg.target_month} - 1 AND month != 0)\n   OR (year = ${msg.target_year} - 1 AND month = 11 AND ${msg.target_month} = 0);\n`;\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
