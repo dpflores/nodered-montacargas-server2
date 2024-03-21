@@ -6511,8 +6511,7 @@
         "y": 200,
         "wires": [
             [
-                "c015262ee9447bc7",
-                "e5ce18c786b31035"
+                "c015262ee9447bc7"
             ]
         ]
     },
@@ -6572,7 +6571,8 @@
         "y": 340,
         "wires": [
             [
-                "91644b17ac7dcedd"
+                "91644b17ac7dcedd",
+                "e5ce18c786b31035"
             ]
         ]
     },
@@ -6622,8 +6622,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 470,
-        "y": 540,
+        "x": 530,
+        "y": 420,
         "wires": [
             [
                 "53761a8b08adce19"
@@ -6636,8 +6636,8 @@
         "z": "5f31af6f840fa2a0",
         "mydb": "20aa6fa811d70d43",
         "name": "",
-        "x": 640,
-        "y": 540,
+        "x": 700,
+        "y": 420,
         "wires": [
             [
                 "8e440f1ab177c2f2"
@@ -6663,8 +6663,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1060,
-        "y": 540,
+        "x": 1120,
+        "y": 420,
         "wires": [
             []
         ]
@@ -6674,15 +6674,15 @@
         "type": "function",
         "z": "5f31af6f840fa2a0",
         "name": "function 66",
-        "func": "const data_in = msg.payload;\nvar data_out = [];\n\nconst alertTypes = [\n  \"Batería baja\",\n  \"Mantenimiento - Inicio\",\n  \"Mantenimiento - Fin\",\n  \"Mantenimiento preventivo 1\",\n  \"Mantenimiento preventivo 2\",\n  \"Mantenimiento preventivo 3\",\n];\n\nfor (var i = 0; i < data_in.length; i ++){\n  data_out[i]= {\n    \"fecha\": convertISOToReadableDate(data_in[i].date),\n    \"hora\": convertISOToReadableHour(data_in[i].date),\n    \"tipo\": alertTypes[data_in[i].alert_type],\n    \"comentarios\": data_in[i].comments\n  }\n}\n\nmsg.payload = data_out;\n\nreturn msg;\n\n\nfunction convertISOToReadableDate(timestamp) {\n  const date = new Date(timestamp);\n  const year = date.getFullYear();\n  let month = date.getMonth() + 1;\n  let day = date.getDate();\n\n  if (month < 10) {\n    month = \"0\" + month;\n  }\n\n  if (day < 10) {\n    day = \"0\" + day;\n  }\n  const dateStr = `${day}/${month}/${year}`;\n\n  return `${dateStr}`;\n}\nfunction convertISOToReadableHour(timestamp) {\n  const date = new Date(timestamp);\n\n  let hour = date.getHours();\n  let minutes = date.getMinutes();\n\n  if (hour < 10) {\n    hour = \"0\" + hour;\n  }\n\n  if (minutes < 10) {\n    minutes = \"0\" + minutes;\n  }\n  const timeStr = `${hour}:${minutes}`;\n\n  return `${timeStr}`;\n}",
+        "func": "const data_in = msg.payload;\nvar data_out = [];\n\nconst alertTypes = [\n  \"Batería baja\",\n  \"Mantenimiento - Inicio\",\n  \"Mantenimiento - Fin\",\n  \"Mantenimiento preventivo 1\",\n  \"Mantenimiento preventivo 2\",\n  \"Mantenimiento preventivo 3\",\n];\n\nfor (var i = 0; i < data_in.length; i ++){\n  data_out[i]= {\n    \"fecha\": convertISOToReadableDate(data_in[i].date),\n    \"hora\": convertISOToReadableHour(data_in[i].date),\n    \"tipo\": alertTypes[data_in[i].alert_type],\n    \"comentarios\": data_in[i].comments\n  }\n}\n\nmsg.alerts = data_out;\n\nreturn msg;\n\n\nfunction convertISOToReadableDate(timestamp) {\n  const date = new Date(timestamp);\n  const year = date.getFullYear();\n  let month = date.getMonth() + 1;\n  let day = date.getDate();\n\n  if (month < 10) {\n    month = \"0\" + month;\n  }\n\n  if (day < 10) {\n    day = \"0\" + day;\n  }\n  const dateStr = `${day}/${month}/${year}`;\n\n  return `${dateStr}`;\n}\nfunction convertISOToReadableHour(timestamp) {\n  const date = new Date(timestamp);\n\n  let hour = date.getHours();\n  let minutes = date.getMinutes();\n\n  if (hour < 10) {\n    hour = \"0\" + hour;\n  }\n\n  if (minutes < 10) {\n    minutes = \"0\" + minutes;\n  }\n  const timeStr = `${hour}:${minutes}`;\n\n  return `${timeStr}`;\n}",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 850,
-        "y": 540,
+        "x": 910,
+        "y": 420,
         "wires": [
             [
                 "e63eac73c2a2a2ef",
@@ -6702,8 +6702,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1040,
-        "y": 580,
+        "x": 1100,
+        "y": 460,
         "wires": []
     },
     {
