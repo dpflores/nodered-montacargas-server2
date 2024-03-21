@@ -5802,7 +5802,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1140,
+        "x": 1060,
         "y": 560,
         "wires": [
             []
@@ -5841,7 +5841,7 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1120,
+        "x": 1040,
         "y": 600,
         "wires": []
     },
