@@ -6439,7 +6439,7 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 510,
+        "x": 570,
         "y": 340,
         "wires": [
             [
@@ -6480,22 +6480,6 @@
         ]
     },
     {
-        "id": "468b4ed9c2b2d4e6",
-        "type": "debug",
-        "z": "5f31af6f840fa2a0",
-        "name": "debug 62",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1040,
-        "y": 380,
-        "wires": []
-    },
-    {
         "id": "8bdf4762e32bcc41",
         "type": "json",
         "z": "5f31af6f840fa2a0",
@@ -6503,7 +6487,7 @@
         "property": "payload",
         "action": "",
         "pretty": false,
-        "x": 710,
+        "x": 770,
         "y": 340,
         "wires": [
             [
@@ -6527,7 +6511,6 @@
         "y": 200,
         "wires": [
             [
-                "44d635e00de608a7",
                 "c015262ee9447bc7",
                 "e5ce18c786b31035"
             ]
@@ -6569,7 +6552,7 @@
         "y": 280,
         "wires": [
             [
-                "91644b17ac7dcedd"
+                "44d635e00de608a7"
             ]
         ]
     },
@@ -6578,45 +6561,19 @@
         "type": "function",
         "z": "5f31af6f840fa2a0",
         "name": "function 62",
-        "func": "const target_month = msg.target_month;\n\n\nconst {array1, array2} = msg.payload.payload;\n\n// Obteniendo los valores correspondientes al mes objetivo y redondeándolos a dos decimales\nconst detenciones_correctivas = array1[target_month].toFixed(2);\nconst detenciones_preventivas = array2[target_month].toFixed(2);\n\n\n// Construyendo el array con los valores redondeados\nmsg.payload = [detenciones_correctivas, detenciones_preventivas];\n\nreturn msg;",
+        "func": "const target_month = msg.target_month;\n\n\nconst {array1, array2} = msg.payload.payload;\n\n// Obteniendo los valores correspondientes al mes objetivo y redondeándolos a dos decimales\nconst detenciones_correctivas = array1[target_month].toFixed(2);\nconst detenciones_preventivas = array2[target_month].toFixed(2);\n\n\n// Construyendo el array con los valores redondeados\nmsg.detenciones = [detenciones_correctivas, detenciones_preventivas];\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 870,
+        "x": 930,
         "y": 340,
         "wires": [
             [
-                "468b4ed9c2b2d4e6",
-                "68225610d87549c9"
+                "91644b17ac7dcedd"
             ]
-        ]
-    },
-    {
-        "id": "68225610d87549c9",
-        "type": "change",
-        "z": "5f31af6f840fa2a0",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "detenciones",
-                "pt": "global",
-                "to": "payload",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 1060,
-        "y": 420,
-        "wires": [
-            []
         ]
     },
     {
@@ -6836,8 +6793,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1080,
-        "y": 280,
+        "x": 1100,
+        "y": 340,
         "wires": []
     }
 ]
