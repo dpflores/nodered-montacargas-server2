@@ -6361,7 +6361,7 @@
             }
         ],
         "repeat": "",
-        "crontab": "00 00 * * *",
+        "crontab": "00 05 * * *",
         "once": true,
         "onceDelay": "1",
         "topic": "",
