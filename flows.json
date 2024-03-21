@@ -40,6 +40,14 @@
         "env": []
     },
     {
+        "id": "5f31af6f840fa2a0",
+        "type": "tab",
+        "label": "REPORTS",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "63965d808ff1bb6e",
         "type": "subflow",
         "name": "system status ",
@@ -6337,5 +6345,645 @@
                 "7a8c30d9e4d55ddc"
             ]
         ]
+    },
+    {
+        "id": "e68e163b873a31d0",
+        "type": "inject",
+        "z": "5f31af6f840fa2a0",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "00 00 * * *",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 90,
+        "y": 200,
+        "wires": [
+            [
+                "8feae1ce83dcc969"
+            ]
+        ]
+    },
+    {
+        "id": "d1ad399c7c2f5c99",
+        "type": "http request",
+        "z": "5f31af6f840fa2a0",
+        "name": "/api/charts/disponibilidad",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "127.0.0.1:9000/api/charts/disponibilidad",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 510,
+        "y": 220,
+        "wires": [
+            [
+                "d9d882c1322dd223"
+            ]
+        ]
+    },
+    {
+        "id": "b906a092d040f025",
+        "type": "http request",
+        "z": "5f31af6f840fa2a0",
+        "name": "/api/charts/confiabilidad",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "127.0.0.1:9000/api/charts/confiabilidad",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 510,
+        "y": 280,
+        "wires": [
+            [
+                "572f506d61b17ec6"
+            ]
+        ]
+    },
+    {
+        "id": "44d635e00de608a7",
+        "type": "http request",
+        "z": "5f31af6f840fa2a0",
+        "name": "/api/charts/detenciones",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "127.0.0.1:9000/api/charts/detenciones",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 510,
+        "y": 340,
+        "wires": [
+            [
+                "8bdf4762e32bcc41"
+            ]
+        ]
+    },
+    {
+        "id": "9c807034b07b9630",
+        "type": "debug",
+        "z": "5f31af6f840fa2a0",
+        "name": "debug 60",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1040,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "d9d882c1322dd223",
+        "type": "json",
+        "z": "5f31af6f840fa2a0",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 710,
+        "y": 220,
+        "wires": [
+            [
+                "704b90328ecbb827"
+            ]
+        ]
+    },
+    {
+        "id": "3d8eee39d4781691",
+        "type": "debug",
+        "z": "5f31af6f840fa2a0",
+        "name": "debug 61",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1040,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "572f506d61b17ec6",
+        "type": "json",
+        "z": "5f31af6f840fa2a0",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 710,
+        "y": 280,
+        "wires": [
+            [
+                "9c27043a0d89a834"
+            ]
+        ]
+    },
+    {
+        "id": "468b4ed9c2b2d4e6",
+        "type": "debug",
+        "z": "5f31af6f840fa2a0",
+        "name": "debug 62",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1040,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "8bdf4762e32bcc41",
+        "type": "json",
+        "z": "5f31af6f840fa2a0",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 710,
+        "y": 340,
+        "wires": [
+            [
+                "51cc669fa5d2d3c7"
+            ]
+        ]
+    },
+    {
+        "id": "8feae1ce83dcc969",
+        "type": "function",
+        "z": "5f31af6f840fa2a0",
+        "name": "Get month and Year",
+        "func": "const current_date = new Date(msg.payload);\nconst current_month = current_date.getMonth();\nconst target_year = current_date.getFullYear();\n// const target_month = current_month>0? current_month-1:11;\nconst target_month = 2;\nmsg.target_month=target_month;\nmsg.target_year = target_year;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 280,
+        "y": 200,
+        "wires": [
+            [
+                "d1ad399c7c2f5c99",
+                "b906a092d040f025",
+                "44d635e00de608a7",
+                "c015262ee9447bc7",
+                "e5ce18c786b31035",
+                "620b3778e0fea3de"
+            ]
+        ]
+    },
+    {
+        "id": "704b90328ecbb827",
+        "type": "function",
+        "z": "5f31af6f840fa2a0",
+        "name": "function 60",
+        "func": "const target_month = msg.target_month;\n\n\nconst {array1} = msg.payload.payload;\n\n// Obteniendo los valores correspondientes al mes objetivo y redondeándolos a dos decimales\nconst disponibilidad = array1[target_month].toFixed(2);\n\n\n// Construyendo el array con los valores redondeados\nmsg.payload = disponibilidad;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 870,
+        "y": 220,
+        "wires": [
+            [
+                "9c807034b07b9630",
+                "f28190ad74692ff1"
+            ]
+        ]
+    },
+    {
+        "id": "9c27043a0d89a834",
+        "type": "function",
+        "z": "5f31af6f840fa2a0",
+        "name": "function 61",
+        "func": "const target_month = msg.target_month;\n\n\nconst {array1} = msg.payload.payload;\n\n// Obteniendo los valores correspondientes al mes objetivo y redondeándolos a dos decimales\nconst confiabilidad = array1[target_month].toFixed(2);\n\n\n// Construyendo el array con los valores redondeados\nmsg.payload = confiabilidad;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 870,
+        "y": 280,
+        "wires": [
+            [
+                "3d8eee39d4781691",
+                "25898f2c2a96020f"
+            ]
+        ]
+    },
+    {
+        "id": "51cc669fa5d2d3c7",
+        "type": "function",
+        "z": "5f31af6f840fa2a0",
+        "name": "function 62",
+        "func": "const target_month = msg.target_month;\n\n\nconst {array1, array2} = msg.payload.payload;\n\n// Obteniendo los valores correspondientes al mes objetivo y redondeándolos a dos decimales\nconst detenciones_correctivas = array1[target_month].toFixed(2);\nconst detenciones_preventivas = array2[target_month].toFixed(2);\n\n\n// Construyendo el array con los valores redondeados\nmsg.payload = [detenciones_correctivas, detenciones_preventivas];\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 870,
+        "y": 340,
+        "wires": [
+            [
+                "468b4ed9c2b2d4e6",
+                "68225610d87549c9"
+            ]
+        ]
+    },
+    {
+        "id": "f28190ad74692ff1",
+        "type": "change",
+        "z": "5f31af6f840fa2a0",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "disponibilidad",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1090,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "25898f2c2a96020f",
+        "type": "change",
+        "z": "5f31af6f840fa2a0",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "confiabilidad",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1080,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "68225610d87549c9",
+        "type": "change",
+        "z": "5f31af6f840fa2a0",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "detenciones",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1060,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c015262ee9447bc7",
+        "type": "function",
+        "z": "5f31af6f840fa2a0",
+        "name": "function 63",
+        "func": "msg.topic = `SELECT * FROM monthly_reports\n WHERE year = ${msg.target_year} \n AND month=${msg.target_month};`;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 490,
+        "y": 40,
+        "wires": [
+            [
+                "cf5fe8db9018ac97"
+            ]
+        ]
+    },
+    {
+        "id": "cf5fe8db9018ac97",
+        "type": "mysql",
+        "z": "5f31af6f840fa2a0",
+        "mydb": "20aa6fa811d70d43",
+        "name": "",
+        "x": 660,
+        "y": 40,
+        "wires": [
+            [
+                "4bb385a5a7709624"
+            ]
+        ]
+    },
+    {
+        "id": "e5ce18c786b31035",
+        "type": "function",
+        "z": "5f31af6f840fa2a0",
+        "name": "function 65",
+        "func": "msg.topic = `SELECT * FROM alerts \nWHERE YEAR(date) = ${msg.target_year}\nAND MONTH(date) = ${msg.target_month+1}\nORDER BY date DESC\n`;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 470,
+        "y": 540,
+        "wires": [
+            [
+                "53761a8b08adce19"
+            ]
+        ]
+    },
+    {
+        "id": "53761a8b08adce19",
+        "type": "mysql",
+        "z": "5f31af6f840fa2a0",
+        "mydb": "20aa6fa811d70d43",
+        "name": "",
+        "x": 640,
+        "y": 540,
+        "wires": [
+            [
+                "8e440f1ab177c2f2"
+            ]
+        ]
+    },
+    {
+        "id": "e63eac73c2a2a2ef",
+        "type": "change",
+        "z": "5f31af6f840fa2a0",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "alerts",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1060,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8e440f1ab177c2f2",
+        "type": "function",
+        "z": "5f31af6f840fa2a0",
+        "name": "function 66",
+        "func": "const data_in = msg.payload;\nvar data_out = [];\n\nconst alertTypes = [\n  \"Batería baja\",\n  \"Mantenimiento - Inicio\",\n  \"Mantenimiento - Fin\",\n  \"Mantenimiento preventivo 1\",\n  \"Mantenimiento preventivo 2\",\n  \"Mantenimiento preventivo 3\",\n];\n\nfor (var i = 0; i < data_in.length; i ++){\n  data_out[i]= {\n    \"fecha\": convertISOToReadableDate(data_in[i].date),\n    \"hora\": convertISOToReadableHour(data_in[i].date),\n    \"tipo\": alertTypes[data_in[i].alert_type],\n    \"comentarios\": data_in[i].comments\n  }\n}\n\nmsg.payload = data_out;\n\nreturn msg;\n\n\nfunction convertISOToReadableDate(timestamp) {\n  const date = new Date(timestamp);\n  const year = date.getFullYear();\n  let month = date.getMonth() + 1;\n  let day = date.getDate();\n\n  if (month < 10) {\n    month = \"0\" + month;\n  }\n\n  if (day < 10) {\n    day = \"0\" + day;\n  }\n  const dateStr = `${day}/${month}/${year}`;\n\n  return `${dateStr}`;\n}\nfunction convertISOToReadableHour(timestamp) {\n  const date = new Date(timestamp);\n\n  let hour = date.getHours();\n  let minutes = date.getMinutes();\n\n  if (hour < 10) {\n    hour = \"0\" + hour;\n  }\n\n  if (minutes < 10) {\n    minutes = \"0\" + minutes;\n  }\n  const timeStr = `${hour}:${minutes}`;\n\n  return `${timeStr}`;\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 850,
+        "y": 540,
+        "wires": [
+            [
+                "e63eac73c2a2a2ef",
+                "9580ffdf0f81ffc1"
+            ]
+        ]
+    },
+    {
+        "id": "9580ffdf0f81ffc1",
+        "type": "debug",
+        "z": "5f31af6f840fa2a0",
+        "name": "debug 63",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1040,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "620b3778e0fea3de",
+        "type": "function",
+        "z": "5f31af6f840fa2a0",
+        "name": "function 67",
+        "func": "msg.topic = `SELECT * FROM monthly_reports ORDER BY id DESC LIMIT 3;\n`;\nmsg.topic = `\n    SELECT * \n    FROM monthly_reports\n    WHERE (year = ${msg.target_year} AND month = ${msg.target_month})\n    OR (year = ${msg.target_year - (msg.target_month === 0 ? 1 : 0)} AND month = ${msg.target_month === 0 ? 11 : msg.target_month - 1});\n`;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 490,
+        "y": 120,
+        "wires": [
+            [
+                "7c77ee7bb8ae386c"
+            ]
+        ]
+    },
+    {
+        "id": "7c77ee7bb8ae386c",
+        "type": "mysql",
+        "z": "5f31af6f840fa2a0",
+        "mydb": "20aa6fa811d70d43",
+        "name": "",
+        "x": 680,
+        "y": 120,
+        "wires": [
+            [
+                "44dd103a35a16a22",
+                "45e1e451c328750e"
+            ]
+        ]
+    },
+    {
+        "id": "bd3207b19bedf01b",
+        "type": "debug",
+        "z": "5f31af6f840fa2a0",
+        "name": "debug 64",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1200,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "45e1e451c328750e",
+        "type": "function",
+        "z": "5f31af6f840fa2a0",
+        "name": "function 68",
+        "func": "const current_month_hours = JSON.parse(msg.payload[1].effective);\nconst prev_month_hours = JSON.parse(msg.payload[0].effective);\n\n\n\nconst use_change = 100*(current_month_hours.horasUso - prev_month_hours.horasUso)/prev_month_hours.horasUso;\n\nconst efective_change = 100*(current_month_hours.horasEfectivas - prev_month_hours.horasEfectivas)/prev_month_hours.horasEfectivas;\n\nmsg.payload = [\n    use_change.toFixed(2), efective_change.toFixed(2)\n]\n\nreturn msg;\n\n\n\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 870,
+        "y": 120,
+        "wires": [
+            [
+                "bd3207b19bedf01b",
+                "9adaaff7f7e9364f"
+            ]
+        ]
+    },
+    {
+        "id": "9adaaff7f7e9364f",
+        "type": "change",
+        "z": "5f31af6f840fa2a0",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "cambios",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1090,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "44dd103a35a16a22",
+        "type": "debug",
+        "z": "5f31af6f840fa2a0",
+        "name": "debug 65",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 860,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "4bb385a5a7709624",
+        "type": "function",
+        "z": "5f31af6f840fa2a0",
+        "name": "function 69",
+        "func": "msg.total_hours = JSON.parse(msg.payload[0].total_hours);\nmsg.effective = JSON.parse(msg.payload[0].effective);\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 850,
+        "y": 40,
+        "wires": [
+            [
+                "91644b17ac7dcedd"
+            ]
+        ]
+    },
+    {
+        "id": "91644b17ac7dcedd",
+        "type": "debug",
+        "z": "5f31af6f840fa2a0",
+        "name": "debug 66",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1020,
+        "y": 40,
+        "wires": []
     }
 ]
