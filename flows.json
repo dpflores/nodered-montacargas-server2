@@ -6356,8 +6356,9 @@
                 "p": "payload"
             },
             {
-                "p": "topic",
-                "vt": "str"
+                "p": "timestamp",
+                "v": "",
+                "vt": "date"
             }
         ],
         "repeat": "",
@@ -6367,8 +6368,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 90,
-        "y": 200,
+        "x": 130,
+        "y": 280,
         "wires": [
             [
                 "8feae1ce83dcc969"
@@ -6391,8 +6392,8 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 550,
-        "y": 220,
+        "x": 590,
+        "y": 300,
         "wires": [
             [
                 "d9d882c1322dd223"
@@ -6415,8 +6416,8 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 590,
-        "y": 280,
+        "x": 630,
+        "y": 360,
         "wires": [
             [
                 "572f506d61b17ec6"
@@ -6439,8 +6440,8 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 570,
-        "y": 340,
+        "x": 610,
+        "y": 420,
         "wires": [
             [
                 "8bdf4762e32bcc41"
@@ -6455,8 +6456,8 @@
         "property": "payload",
         "action": "",
         "pretty": false,
-        "x": 750,
-        "y": 220,
+        "x": 790,
+        "y": 300,
         "wires": [
             [
                 "704b90328ecbb827"
@@ -6471,8 +6472,8 @@
         "property": "payload",
         "action": "",
         "pretty": false,
-        "x": 790,
-        "y": 280,
+        "x": 830,
+        "y": 360,
         "wires": [
             [
                 "9c27043a0d89a834"
@@ -6487,8 +6488,8 @@
         "property": "payload",
         "action": "",
         "pretty": false,
-        "x": 770,
-        "y": 340,
+        "x": 810,
+        "y": 420,
         "wires": [
             [
                 "51cc669fa5d2d3c7"
@@ -6507,8 +6508,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 280,
-        "y": 200,
+        "x": 320,
+        "y": 280,
         "wires": [
             [
                 "c015262ee9447bc7"
@@ -6527,8 +6528,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 890,
-        "y": 220,
+        "x": 930,
+        "y": 300,
         "wires": [
             [
                 "b906a092d040f025"
@@ -6547,8 +6548,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 930,
-        "y": 280,
+        "x": 970,
+        "y": 360,
         "wires": [
             [
                 "44d635e00de608a7"
@@ -6567,8 +6568,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 930,
-        "y": 340,
+        "x": 970,
+        "y": 420,
         "wires": [
             [
                 "e5ce18c786b31035"
@@ -6587,8 +6588,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 490,
-        "y": 40,
+        "x": 530,
+        "y": 120,
         "wires": [
             [
                 "cf5fe8db9018ac97"
@@ -6601,8 +6602,8 @@
         "z": "5f31af6f840fa2a0",
         "mydb": "20aa6fa811d70d43",
         "name": "",
-        "x": 660,
-        "y": 40,
+        "x": 700,
+        "y": 120,
         "wires": [
             [
                 "4bb385a5a7709624"
@@ -6621,8 +6622,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 530,
-        "y": 420,
+        "x": 570,
+        "y": 500,
         "wires": [
             [
                 "53761a8b08adce19"
@@ -6635,8 +6636,8 @@
         "z": "5f31af6f840fa2a0",
         "mydb": "20aa6fa811d70d43",
         "name": "",
-        "x": 700,
-        "y": 420,
+        "x": 740,
+        "y": 500,
         "wires": [
             [
                 "8e440f1ab177c2f2"
@@ -6655,11 +6656,12 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 910,
-        "y": 420,
+        "x": 950,
+        "y": 500,
         "wires": [
             [
-                "91644b17ac7dcedd"
+                "91644b17ac7dcedd",
+                "376c9b8d4ff45edb"
             ]
         ]
     },
@@ -6675,8 +6677,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 490,
-        "y": 120,
+        "x": 530,
+        "y": 200,
         "wires": [
             [
                 "7c77ee7bb8ae386c"
@@ -6689,8 +6691,8 @@
         "z": "5f31af6f840fa2a0",
         "mydb": "20aa6fa811d70d43",
         "name": "",
-        "x": 680,
-        "y": 120,
+        "x": 720,
+        "y": 200,
         "wires": [
             [
                 "45e1e451c328750e"
@@ -6709,8 +6711,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 870,
-        "y": 120,
+        "x": 910,
+        "y": 200,
         "wires": [
             [
                 "d1ad399c7c2f5c99"
@@ -6729,8 +6731,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 850,
-        "y": 40,
+        "x": 890,
+        "y": 120,
         "wires": [
             [
                 "620b3778e0fea3de"
@@ -6750,8 +6752,54 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1100,
-        "y": 420,
+        "x": 1140,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "376c9b8d4ff45edb",
+        "type": "function",
+        "z": "5f31af6f840fa2a0",
+        "name": "Reporte Mensual Komatsu (No Image)",
+        "func": "const hourmeter = global.get(\"hourmeter\");\n\nconst disponibilidad = global.get(\"disponibilidad\");\nconst confiabilidad = global.get(\"confiabilidad\");\nconst detenciones = global.get(\"detenciones\");\nconst horas_mantenimiento = global.get(\"horas_mantenimiento\");\nconst cambios = global.get(\"cambios\")\nconst peso_efectivo_promedio = global.get(\"peso_efectivo_promedio\")\nconst alerts = global.get(\"alerts\");\n\n\nconst total_hours = global.get(\"total_hours\");\nconst effective = global.get(\"effective\");\n\nconst month = [\n  \"Enero\",\n  \"Febrero\",\n  \"Marzo\",\n  \"Abril\",\n  \"Mayo\",\n  \"Junio\",\n  \"Julio\",\n  \"Agosto\",\n  \"Setiembre\",\n  \"Octubre\",\n  \"Noviembre\",\n  \"Diciembre\",\n]\nconst d = new Date()\nconst year = d.getFullYear()\nlet name_of_month = month[d.getMonth()]\nmsg.topic = \"Sample Email \" + name_of_month + \" \" + year\nmsg.filename = \"Reporte\" + name_of_month + \".pdf\"\nmsg.description =\n  `Attached is the 'PDF report' for ` +\n  name_of_month +\n  ` ` +\n  year +\n  `.\n  \n  Best,\n  Team Prescient\n  `\n\n\n\nvar fonts = {\n    Roboto: {\n        normal: \"Courier\",\n        bold: \"Courier-Bold\",\n        italics: \"Courier-Oblique\",\n        bolditalics: \"Courier-BoldOblique\",\n    },\n    Helvetica: {\n        normal: \"Helvetica\",\n        bold: \"Helvetica-Bold\",\n        italics: \"Helvetica-Oblique\",\n        bolditalics: \"Helvetica-BoldOblique\",\n    },\n    Times: {\n        normal: \"Times-Roman\",\n        bold: \"Times-Bold\",\n        italics: \"Times-Italic\",\n        bolditalics: \"Times-BoldItalic\",\n    },\n    Arial: {\n    normal: \"Helvetica\",\n    bold: \"Helvetica-Bold\",\n    italics: \"Helvetica-Oblique\",\n    bolditalics: \"Helvetica-BoldOblique\",\n},\n    Symbol: {\n        normal: \"Symbol\",\n    },\n    ZapfDingbats: {\n        normal: \"ZapfDingbats\",\n    },\n};\n\n\n\nconst { Base64Encode } = base64Encode\n\nasync function getPDFBase64Text(pdfDoc) {\n  return new Promise((resolve) => {\n    var base64String = \"\"\n    const stream = pdfDoc.pipe(new Base64Encode())\n    pdfDoc.end()\n\n    stream.on(\"data\", (chunk) => {\n      base64String += chunk\n    })\n\n    stream.on(\"end\", () => resolve(base64String))\n  })\n}\n\nlet printer = new pdfmake(fonts)\n\nconst hourmeter_string = `${hourmeter.hours}:${hourmeter.minutes<10?(\"0\"+hourmeter.minutes):hourmeter.minutes}`\n\n\n\n// Alertas del mes\nconst alertRows = [['Fecha', 'Hora', 'Tipo de alerta', 'Comentarios']];\nalerts.forEach(alert => {\n    alertRows.push([alert.fecha, alert.hora, alert.tipo, alert.comentarios]);\n});\n\n// playground requires you to assign document definition to a variable called dd\nvar dd = {\n\tcontent: [\n\t\t{ text: 'Reporte Mensual - Montacarga 4.0', style: 'header', alignment: 'center' },\n\t\t{ text: 'Fecha de reporte: 29/02/2024', alignment: 'right' },\n\t\t{ text: 'Datos del equipo', style: 'subheader' },\n\t\t{\n            style: 'tableExample',\n            table: {\n                widths: [100, '*'], // Ancho de las columnas\n                body: [\n                    ['Equipo:', 'Montacarga 4.5'],\n                    ['Marca:', 'TOYOTA 4.5 TN'],\n                    ['Modelo:', '02-7FG45 N/S'],\n                    ['Bastidor:', 'A7FGA50-51912'],\n                    ['Cod. Activo:', 'KM0061657'],\n                    ['Tonelaje:', '4.5'],\n                    ['Horómetro:', hourmeter_string] // No necesitas el \"\\n\\n\" aquí\n                ]\n\t\t\t\t\n            },\n\t\t\tlayout: 'noBorders'\n        },\n\t\t{ text: 'Resultados de operación', style: 'subheader' },\n\t\t{ text: 'Detalle de uso mensual', italic: true },\n\t\t{\n\t\t\tstyle: 'tableExample',\n\t\t\ttable: {\n\t\t\t\tbody: [\n\t\t\t\t\t['Proceso Administrativo (Apagado)', 'Inoperativo', 'Espera sin carga',\n\t\t\t\t\t\t'Traslado sin carga', 'Traslado con carga', 'Espera con carga'],\n\t\t\t\t\t[`${total_hours.apagadoP} %`, `${total_hours.inoperativoP} %`, `${total_hours.esperaP} %`, `${total_hours.trasladoP} %`, `${total_hours.trasladoCargaP} %`, `${total_hours.esperaCargaP} %`]\n\t\t\t\t]\n\t\t\t}\n\t\t},\n\t\t'Frecuencia de uso',\n\t\t{\n\t\t\tstyle: 'tableExample',\n\t\t\ttable: {\n\t\t\t\tbody: [\n\t\t\t\t\t['Frecuencia de uso', 'Frecuencia efectiva de uso', 'Porcentaje efectivo'],\n\t\t\t\t\t[`${effective.horasUsoP} %`, `${effective.horasEfectivasP} %`, `${effective.ratioP} %`]\n\t\t\t\t]\n\t\t\t}\n\t\t},\n\t\t'Analisis de cambio',\n\t\t{\n\t\t\tstyle: 'tableExample',\n\t\t\ttable: {\n\t\t\t\tbody: [\n\t\t\t\t\t['Peso promedio (efectivo)', 'Porcentaje de cambio en tiempo efectivo',\n\t\t\t\t\t\t'Porcentaje de cambio de tiempo de uso'],\n\t\t\t\t\t[`${effective.promedioPeso} Tn`, `${cambios[1]} %`, `${cambios[0]} %`]\n\t\t\t\t]\n\t\t\t}\n\t\t},\n\t\t'Mantenimiento',\n\t\t{\n\t\t\tstyle: 'tableExample',\n\t\t\ttable: {\n\t\t\t\tbody: [\n\t\t\t\t\t['Disponibilidad', 'Confiabilidad',\n\t\t\t\t\t\t'Hora de detenciones', '% Correctivo', '% Preventivo'],\n\t\t\t\t\t[`${disponibilidad} %`, `${confiabilidad}`, `${horas_mantenimiento} h`, `${detenciones[0]} %`, `${detenciones[1]} %`]\n\t\t\t\t]\n\t\t\t}\n\t\t},\n\t\t{ text: 'Alertas del mes', pageBreak: 'before'},\n\t\t{\n\t\t\tstyle: 'tableExample',\n\t\t\ttable: {\n\t\t\t\tbody: alertRows\n\t\t\t}\n\t\t},\n\n\t],\n\tstyles: {\n\t\theader: {\n\t\t\tfontSize: 18,\n\t\t\tbold: true,\n\t\t\tmargin: [0, 10, 0, 10],\n\n\t\t},\n\t\tsubheader: {\n\t\t\tfontSize: 16,\n\t\t\tbold: true,\n\t\t\tmargin: [0, 10, 0, 10]\n\t\t},\n\t\ttableExample: {\n\t\t\tmargin: [0, 10, 0, 10],\n\t\t\tfont: 'Arial' // Cambia la fuente a Arial para todas las tablas\n\t\t},\n\t\ttableHeader: {\n\t\t\tbold: true,\n\t\t\tfontSize: 13,\n\t\t\tcolor: 'black'\n\t\t}\n\t},\n\tdefaultStyle: {\n\t\tfont: 'Arial', // Cambia la fuente predeterminada a Arial para todo el documento\n\t\tlineHeight: 1.5, // Ajusta el espaciado entre líneas para todos los textos\n\t},\n};\n\n\n\n\nlet pdfDoc = printer.createPdfKitDocument(dd)\nconst base64Text = await getPDFBase64Text(pdfDoc)\nmsg.payload = Buffer.from(base64Text, \"base64\")\nreturn msg\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "base64Encode",
+                "module": "base64-stream"
+            },
+            {
+                "var": "pdfmake",
+                "module": "pdfmake"
+            }
+        ],
+        "x": 670,
+        "y": 640,
+        "wires": [
+            [
+                "e058976380746690"
+            ]
+        ]
+    },
+    {
+        "id": "e058976380746690",
+        "type": "e-mail",
+        "z": "5f31af6f840fa2a0",
+        "server": "smtp.office365.com",
+        "port": "587",
+        "authtype": "BASIC",
+        "saslformat": true,
+        "token": "oauth2Response.access_token",
+        "secure": false,
+        "tls": false,
+        "name": "delpiero22.flores@gmail.com",
+        "dname": "",
+        "x": 1020,
+        "y": 640,
         "wires": []
     }
 ]
