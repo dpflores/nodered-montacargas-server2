@@ -6865,26 +6865,9 @@
         "y": 120,
         "wires": [
             [
-                "44dd103a35a16a22",
                 "45e1e451c328750e"
             ]
         ]
-    },
-    {
-        "id": "bd3207b19bedf01b",
-        "type": "debug",
-        "z": "5f31af6f840fa2a0",
-        "name": "debug 64",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1200,
-        "y": 160,
-        "wires": []
     },
     {
         "id": "45e1e451c328750e",
@@ -6902,51 +6885,9 @@
         "y": 120,
         "wires": [
             [
-                "bd3207b19bedf01b",
-                "9adaaff7f7e9364f"
+                "91644b17ac7dcedd"
             ]
         ]
-    },
-    {
-        "id": "9adaaff7f7e9364f",
-        "type": "change",
-        "z": "5f31af6f840fa2a0",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "cambios",
-                "pt": "global",
-                "to": "payload",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 1090,
-        "y": 120,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "44dd103a35a16a22",
-        "type": "debug",
-        "z": "5f31af6f840fa2a0",
-        "name": "debug 65",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 860,
-        "y": 160,
-        "wires": []
     },
     {
         "id": "4bb385a5a7709624",
@@ -6964,7 +6905,6 @@
         "y": 40,
         "wires": [
             [
-                "91644b17ac7dcedd",
                 "620b3778e0fea3de"
             ]
         ]
@@ -6982,8 +6922,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1020,
-        "y": 40,
+        "x": 1080,
+        "y": 120,
         "wires": []
     }
 ]
