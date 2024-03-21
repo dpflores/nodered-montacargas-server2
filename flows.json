@@ -6415,7 +6415,7 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 510,
+        "x": 590,
         "y": 280,
         "wires": [
             [
@@ -6464,22 +6464,6 @@
         ]
     },
     {
-        "id": "3d8eee39d4781691",
-        "type": "debug",
-        "z": "5f31af6f840fa2a0",
-        "name": "debug 61",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1040,
-        "y": 300,
-        "wires": []
-    },
-    {
         "id": "572f506d61b17ec6",
         "type": "json",
         "z": "5f31af6f840fa2a0",
@@ -6487,7 +6471,7 @@
         "property": "payload",
         "action": "",
         "pretty": false,
-        "x": 710,
+        "x": 790,
         "y": 280,
         "wires": [
             [
@@ -6543,7 +6527,6 @@
         "y": 200,
         "wires": [
             [
-                "b906a092d040f025",
                 "44d635e00de608a7",
                 "c015262ee9447bc7",
                 "e5ce18c786b31035"
@@ -6566,7 +6549,7 @@
         "y": 220,
         "wires": [
             [
-                "91644b17ac7dcedd"
+                "b906a092d040f025"
             ]
         ]
     },
@@ -6575,19 +6558,18 @@
         "type": "function",
         "z": "5f31af6f840fa2a0",
         "name": "function 61",
-        "func": "const target_month = msg.target_month;\n\n\nconst {array1} = msg.payload.payload;\n\n// Obteniendo los valores correspondientes al mes objetivo y redondeándolos a dos decimales\nconst confiabilidad = array1[target_month].toFixed(2);\n\n\n// Construyendo el array con los valores redondeados\nmsg.payload = confiabilidad;\n\nreturn msg;",
+        "func": "const target_month = msg.target_month;\n\n\nconst {array1} = msg.payload.payload;\n\n// Obteniendo los valores correspondientes al mes objetivo y redondeándolos a dos decimales\nconst confiabilidad = array1[target_month].toFixed(2);\n\n\n// Construyendo el array con los valores redondeados\nmsg.confiabilidad = confiabilidad;\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 870,
+        "x": 930,
         "y": 280,
         "wires": [
             [
-                "3d8eee39d4781691",
-                "25898f2c2a96020f"
+                "91644b17ac7dcedd"
             ]
         ]
     },
@@ -6610,56 +6592,6 @@
                 "468b4ed9c2b2d4e6",
                 "68225610d87549c9"
             ]
-        ]
-    },
-    {
-        "id": "f28190ad74692ff1",
-        "type": "change",
-        "z": "5f31af6f840fa2a0",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "disponibilidad",
-                "pt": "global",
-                "to": "payload",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 1090,
-        "y": 260,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "25898f2c2a96020f",
-        "type": "change",
-        "z": "5f31af6f840fa2a0",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "confiabilidad",
-                "pt": "global",
-                "to": "payload",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 1080,
-        "y": 340,
-        "wires": [
-            []
         ]
     },
     {
@@ -6905,7 +6837,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 1080,
-        "y": 220,
+        "y": 280,
         "wires": []
     }
 ]
