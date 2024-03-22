@@ -6629,7 +6629,6 @@
         "wires": [
             [
                 "69f68133399bdc37",
-                "52e1b445694859b3",
                 "9ddcc498d6723a35"
             ]
         ]
@@ -6926,7 +6925,27 @@
         "rules": [
             {
                 "t": "delete",
-                "p": "payload",
+                "p": "statusCode",
+                "pt": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "responseUrl",
+                "pt": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "retry",
+                "pt": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "headers",
+                "pt": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "redirectList",
                 "pt": "msg"
             }
         ],
@@ -6935,10 +6954,12 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1130,
-        "y": 480,
+        "x": 1140,
+        "y": 500,
         "wires": [
-            []
+            [
+                "52e1b445694859b3"
+            ]
         ]
     }
 ]
