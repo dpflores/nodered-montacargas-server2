@@ -6946,7 +6946,7 @@
         "type": "function",
         "z": "5f31af6f840fa2a0",
         "name": "function 71",
-        "func": "msg.to = [\"delpiero22.flores@gmail.com\", \"delpiero.flores@acmecia.com\"];\nmsg.topic = \"Reporte \" \nmsg.from = \"Montacarga 4.0 <notify_krcp_4.0@kmmp.com.pe>\"\nmsg.filename = \"Reporte.pdf\"\nmsg.description =\n  `Se adjunta el reporte `;\n\nreturn msg;",
+        "func": "msg.to = [\"delpiero22.flores@gmail.com\", \"delpiero.flores@acmecia.com\"];\nmsg.topic = \"Reporte \" \nmsg.from = \"Montacarga 4.0 <notify_krcp_4.0@kmmp.com.pe>\"\nmsg.filename = \"Reporte.pdf\"\nmsg.description =\n  `Se adjunta el reporte `;\nmsg.payload = msg.payload;\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
