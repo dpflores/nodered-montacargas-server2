@@ -6840,5 +6840,81 @@
         "x": 1120,
         "y": 580,
         "wires": []
+    },
+    {
+        "id": "3d49dd613c49b67c",
+        "type": "function",
+        "z": "5f31af6f840fa2a0",
+        "name": "Reporte Mensual Komatsu (No Image)",
+        "func": "\nmsg.topic = \"Reporte \";\nmsg.from = \"Montacarga 4.0 <notify_krcp_4.0@kmmp.com.pe>\"\nmsg.filename = \"Reporte\";\nmsg.description =\n  `Se adjunta el reporte`;\n\n\n\n\nmsg.payload = \"Test\";\nmsg.to = \"delpiero22.flores@gmail.com\";\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "base64Encode",
+                "module": "base64-stream"
+            },
+            {
+                "var": "pdfmake",
+                "module": "pdfmake"
+            }
+        ],
+        "x": 690,
+        "y": 840,
+        "wires": [
+            [
+                "e926060c3f302dd2"
+            ]
+        ]
+    },
+    {
+        "id": "e926060c3f302dd2",
+        "type": "e-mail",
+        "z": "5f31af6f840fa2a0",
+        "server": "smtp.office365.com",
+        "port": "587",
+        "authtype": "BASIC",
+        "saslformat": true,
+        "token": "oauth2Response.access_token",
+        "secure": false,
+        "tls": false,
+        "name": "",
+        "dname": "",
+        "x": 970,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "63178ff3c720553b",
+        "type": "inject",
+        "z": "5f31af6f840fa2a0",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "timestamp",
+                "v": "",
+                "vt": "date"
+            }
+        ],
+        "repeat": "",
+        "crontab": "00 05 * * *",
+        "once": false,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 430,
+        "y": 840,
+        "wires": [
+            [
+                "3d49dd613c49b67c"
+            ]
+        ]
     }
 ]
