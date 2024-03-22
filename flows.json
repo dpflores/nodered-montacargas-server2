@@ -6662,8 +6662,7 @@
         "y": 200,
         "wires": [
             [
-                "45e1e451c328750e",
-                "cdf9889226726733"
+                "45e1e451c328750e"
             ]
         ]
     },
@@ -6672,7 +6671,7 @@
         "type": "function",
         "z": "5f31af6f840fa2a0",
         "name": "function 68",
-        "func": "const current_month_hours = JSON.parse(msg.payload[1].effective);\nconst prev_month_hours = JSON.parse(msg.payload[0].effective);\n\n\n\nconst use_change = 100*(current_month_hours.horasUso - prev_month_hours.horasUso)/prev_month_hours.horasUso;\n\nconst efective_change = 100*(current_month_hours.horasEfectivas - prev_month_hours.horasEfectivas)/prev_month_hours.horasEfectivas;\n\nmsg.cambios = [\n    use_change.toFixed(2), efective_change.toFixed(2)\n]\n\nreturn msg;\n\n\n\n",
+        "func": "\nif (msg.payload.length === 2){\nconst current_month_hours = JSON.parse(msg.payload[1].effective);\nconst prev_month_hours = JSON.parse(msg.payload[0].effective);\n\n\n\nconst use_change = 100*(current_month_hours.horasUso - prev_month_hours.horasUso)/prev_month_hours.horasUso;\n\nconst efective_change = 100*(current_month_hours.horasEfectivas - prev_month_hours.horasEfectivas)/prev_month_hours.horasEfectivas;\n\nmsg.cambios = [\n    use_change.toFixed(2), efective_change.toFixed(2)\n]\n\nreturn msg;\n\n}\n\nelse {\n    msg.cambios = [\n    \"-\", \"-\"\n]\n\nreturn msg;\n}\n\n\n\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -6888,21 +6887,5 @@
                 "52e1b445694859b3"
             ]
         ]
-    },
-    {
-        "id": "cdf9889226726733",
-        "type": "debug",
-        "z": "5f31af6f840fa2a0",
-        "name": "debug 68",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 980,
-        "y": 160,
-        "wires": []
     }
 ]
