@@ -6792,7 +6792,7 @@
         "type": "function",
         "z": "5f31af6f840fa2a0",
         "name": "getting mails",
-        "func": "const emails = msg.payload.map((item) => item.email);\nmsg.emails = emails;\nreturn msg;",
+        "func": "const emails = msg.payload.map((item) => item.email);\nmsg.to = emails;\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
