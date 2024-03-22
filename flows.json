@@ -6323,7 +6323,7 @@
         ],
         "repeat": "",
         "crontab": "00 05 * * *",
-        "once": true,
+        "once": false,
         "onceDelay": "1",
         "topic": "",
         "payload": "",
