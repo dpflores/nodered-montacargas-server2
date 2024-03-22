@@ -6718,9 +6718,9 @@
         "token": "oauth2Response.access_token",
         "secure": false,
         "tls": false,
-        "name": "",
+        "name": "delpiero22.flores@gmail.com",
         "dname": "",
-        "x": 950,
+        "x": 1020,
         "y": 640,
         "wires": []
     },
