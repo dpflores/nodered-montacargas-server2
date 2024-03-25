@@ -159,7 +159,9 @@
             "78cd71d4d4914aab"
         ],
         "x": 414,
-        "y": 459
+        "y": 459,
+        "w": 862,
+        "h": 142
     },
     {
         "id": "1b5ad41c50a916b7",
@@ -175,7 +177,9 @@
             "1ad32e19c0123f3c"
         ],
         "x": 174,
-        "y": 679
+        "y": 679,
+        "w": 572,
+        "h": 82
     },
     {
         "id": "5c2896b2dfe6eae8",
@@ -191,7 +195,9 @@
             "8d0255f41c13f305"
         ],
         "x": 234,
-        "y": 3499
+        "y": 3499,
+        "w": 592,
+        "h": 82
     },
     {
         "id": "11676a117d696ad7",
@@ -207,7 +213,9 @@
             "d96db93b8fdafded"
         ],
         "x": 834,
-        "y": 699
+        "y": 699,
+        "w": 572,
+        "h": 82
     },
     {
         "id": "20aa6fa811d70d43",
@@ -6907,6 +6915,55 @@
         "wires": [
             [
                 "c015262ee9447bc7"
+            ]
+        ]
+    },
+    {
+        "id": "683bcd5c6eddec8c",
+        "type": "function",
+        "z": "5f31af6f840fa2a0",
+        "name": "Date to timestamp",
+        "func": "\n// Indique la fecha\nconst year = 2024;\nconst month = 1; // (Enero 1 to Diciembre 12)\nconst day = 1;\nconst hours = 5; // \nconst minutes = 0;\n\nconst timestamp = obtenerTimestampLima(year, month, day, hours, minutes);\n\nmsg.payload = timestamp;\nmsg.timestamp = timestamp;\n\nreturn msg;\n\n\n\n\n\nfunction obtenerTimestampLima(year, month, day, hours, minutes) {\n  // Crear un objeto Date con la fecha y hora proporcionadas en la zona horaria de Lima, Perú (UTC-5)\n  const fechaHoraLima = new Date(year, month - 1, day, hours, minutes);\n\n  // Obtener el timestamp en milisegundos\n  const timestampMilisegundos = fechaHoraLima.getTime();\n\n  return timestampMilisegundos;\n}\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 250,
+        "y": 300,
+        "wires": [
+            [
+                "639b1406fc176909"
+            ]
+        ]
+    },
+    {
+        "id": "d759e90e9bc8b315",
+        "type": "inject",
+        "z": "5f31af6f840fa2a0",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 80,
+        "y": 300,
+        "wires": [
+            [
+                "683bcd5c6eddec8c"
             ]
         ]
     }
