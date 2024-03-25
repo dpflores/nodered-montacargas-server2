@@ -6814,10 +6814,9 @@
         "type": "http response",
         "z": "5f31af6f840fa2a0",
         "name": "",
-        "statusCode": "400",
+        "statusCode": "204",
         "headers": {
-            "content-type": "application/json",
-            "body": ""
+            "content-type": "application/json"
         },
         "x": 1360,
         "y": 760,
