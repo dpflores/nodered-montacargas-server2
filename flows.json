@@ -6758,6 +6758,7 @@
         "id": "44a954cf34ef839a",
         "type": "catch",
         "z": "5f31af6f840fa2a0",
+        "d": true,
         "name": "",
         "scope": [
             "a51245e4e1873541"
