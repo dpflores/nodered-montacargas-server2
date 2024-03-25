@@ -6764,12 +6764,12 @@
             "a51245e4e1873541"
         ],
         "uncaught": false,
-        "x": 1070,
+        "x": 1030,
         "y": 760,
         "wires": [
             [
-                "95ea8b647c211cb4",
-                "fa1e26d703b49b40"
+                "fa1e26d703b49b40",
+                "0fedcd0171da87b8"
             ]
         ]
     },
@@ -6782,7 +6782,7 @@
         "headers": {
             "content-type": "application/json"
         },
-        "x": 1220,
+        "x": 1360,
         "y": 760,
         "wires": []
     },
@@ -6801,5 +6801,25 @@
         "x": 1200,
         "y": 820,
         "wires": []
+    },
+    {
+        "id": "0fedcd0171da87b8",
+        "type": "function",
+        "z": "5f31af6f840fa2a0",
+        "name": "function 81",
+        "func": "msg.payload = {Error: \"No hay data disponible\"}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1190,
+        "y": 760,
+        "wires": [
+            [
+                "95ea8b647c211cb4"
+            ]
+        ]
     }
 ]
