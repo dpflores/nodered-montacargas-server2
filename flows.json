@@ -6814,7 +6814,7 @@
         "type": "http response",
         "z": "5f31af6f840fa2a0",
         "name": "",
-        "statusCode": "404",
+        "statusCode": "400",
         "headers": {
             "content-type": "application/json",
             "body": ""
