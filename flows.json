@@ -6794,7 +6794,7 @@
         "type": "function",
         "z": "5f31af6f840fa2a0",
         "name": "function 81",
-        "func": "msg.payload = {Error: \"No hay data disponible\"}\nreturn msg;",
+        "func": "msg.payload = {Error: \"No hay data disponible\"};\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -6804,7 +6804,22 @@
         "x": 1190,
         "y": 760,
         "wires": [
-            []
+            [
+                "95ea8b647c211cb4"
+            ]
         ]
+    },
+    {
+        "id": "95ea8b647c211cb4",
+        "type": "http response",
+        "z": "5f31af6f840fa2a0",
+        "name": "",
+        "statusCode": "204",
+        "headers": {
+            "content-type": "application/json"
+        },
+        "x": 1360,
+        "y": 760,
+        "wires": []
     }
 ]
