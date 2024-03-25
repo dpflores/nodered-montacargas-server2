@@ -6107,15 +6107,17 @@
         "id": "e68e163b873a31d0",
         "type": "inject",
         "z": "5f31af6f840fa2a0",
-        "name": "",
+        "name": "manual",
         "props": [
             {
-                "p": "payload"
+                "p": "target_year",
+                "v": "2024",
+                "vt": "num"
             },
             {
-                "p": "timestamp",
-                "v": "",
-                "vt": "date"
+                "p": "target_month",
+                "v": "2",
+                "vt": "num"
             }
         ],
         "repeat": "",
@@ -6123,13 +6125,11 @@
         "once": false,
         "onceDelay": "1",
         "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 100,
-        "y": 280,
+        "x": 270,
+        "y": 120,
         "wires": [
             [
-                "8feae1ce83dcc969"
+                "c015262ee9447bc7"
             ]
         ]
     },
@@ -6250,26 +6250,6 @@
         "wires": [
             [
                 "51cc669fa5d2d3c7"
-            ]
-        ]
-    },
-    {
-        "id": "8feae1ce83dcc969",
-        "type": "function",
-        "z": "5f31af6f840fa2a0",
-        "name": "Get month and Year",
-        "func": "const current_date = new Date(msg.payload);\nconst current_month = current_date.getMonth();\nconst target_year = current_date.getFullYear();\n// const target_month = current_month>0? current_month-1:11;\nconst target_month = 2;\nmsg.target_month=target_month;\nmsg.target_year = target_year;\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 320,
-        "y": 280,
-        "wires": [
-            [
-                "c015262ee9447bc7"
             ]
         ]
     },
@@ -6884,7 +6864,7 @@
         "id": "bc7b2054bc4f3791",
         "type": "inject",
         "z": "5f31af6f840fa2a0",
-        "name": "",
+        "name": "auto",
         "props": [
             {
                 "p": "payload"
@@ -6902,8 +6882,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 110,
-        "y": 360,
+        "x": 150,
+        "y": 200,
         "wires": [
             [
                 "639b1406fc176909"
@@ -6922,28 +6902,12 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 270,
-        "y": 360,
+        "x": 310,
+        "y": 200,
         "wires": [
             [
-                "4b3828d2ce532ca8"
+                "c015262ee9447bc7"
             ]
         ]
-    },
-    {
-        "id": "4b3828d2ce532ca8",
-        "type": "debug",
-        "z": "5f31af6f840fa2a0",
-        "name": "debug 68",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 440,
-        "y": 440,
-        "wires": []
     }
 ]
