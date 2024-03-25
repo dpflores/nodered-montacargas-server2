@@ -6174,7 +6174,7 @@
         "field": "html",
         "fieldType": "msg",
         "format": "handlebars",
-        "syntax": "mustache",
+        "syntax": "plain",
         "template": "<head>\n    <style>\n        {{name_of_month}}\n        {{year}}\n    </style>\n</head>\n\n\n<body>\n    <p>Hi, and welcome to Tekos Flow,</p>\n\n </body>",
         "x": 1030,
         "y": 660,
