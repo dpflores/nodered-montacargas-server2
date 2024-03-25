@@ -6814,9 +6814,10 @@
         "type": "http response",
         "z": "5f31af6f840fa2a0",
         "name": "",
-        "statusCode": "204",
+        "statusCode": "404",
         "headers": {
-            "content-type": "application/json"
+            "content-type": "application/json",
+            "body": ""
         },
         "x": 1360,
         "y": 760,
