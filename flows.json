@@ -6756,23 +6756,6 @@
         "wires": []
     },
     {
-        "id": "3d829e75b385e5e2",
-        "type": "debug",
-        "z": "5f31af6f840fa2a0",
-        "name": "debug 73",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1280,
-        "y": 780,
-        "wires": []
-    },
-    {
         "id": "5d980db5dc99faef",
         "type": "catch",
         "z": "5f31af6f840fa2a0",
@@ -6785,8 +6768,21 @@
         "y": 760,
         "wires": [
             [
-                "3d829e75b385e5e2"
+                "95ea8b647c211cb4"
             ]
         ]
+    },
+    {
+        "id": "95ea8b647c211cb4",
+        "type": "http response",
+        "z": "5f31af6f840fa2a0",
+        "name": "",
+        "statusCode": "204",
+        "headers": {
+            "content-type": "application/json"
+        },
+        "x": 1220,
+        "y": 760,
+        "wires": []
     }
 ]
