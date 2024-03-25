@@ -6756,24 +6756,6 @@
         "wires": []
     },
     {
-        "id": "44a954cf34ef839a",
-        "type": "catch",
-        "z": "5f31af6f840fa2a0",
-        "d": true,
-        "name": "",
-        "scope": [
-            "a51245e4e1873541"
-        ],
-        "uncaught": false,
-        "x": 1070,
-        "y": 820,
-        "wires": [
-            [
-                "76616ec859d3d898"
-            ]
-        ]
-    },
-    {
         "id": "3d829e75b385e5e2",
         "type": "debug",
         "z": "5f31af6f840fa2a0",
