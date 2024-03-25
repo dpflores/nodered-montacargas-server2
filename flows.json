@@ -6750,26 +6750,9 @@
         "y": 760,
         "wires": [
             [
-                "fa1e26d703b49b40",
                 "0fedcd0171da87b8"
             ]
         ]
-    },
-    {
-        "id": "fa1e26d703b49b40",
-        "type": "debug",
-        "z": "5f31af6f840fa2a0",
-        "name": "debug 73",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1200,
-        "y": 820,
-        "wires": []
     },
     {
         "id": "0fedcd0171da87b8",
