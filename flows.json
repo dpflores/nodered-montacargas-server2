@@ -6030,7 +6030,7 @@
         "type": "function",
         "z": "5f31af6f840fa2a0",
         "name": "Inicio de mes",
-        "func": "const current_timestamp = new Date(msg.payload);\n\nif (current_timestamp.getDate() === 1) {\n    msg.target_month = current_timestamp.getMonth()-1;\n    msg.target_year = current_timestamp.getFullYear();\n    return msg;\n}\n",
+        "func": "const current_timestamp = new Date(msg.payload);\n\nif (current_timestamp.getDate() === 1) {\n    if (current_timestamp.getMonth()==11){\n        msg.target_month = 0;\n        msg.target_year = current_timestamp.getFullYear()-1;\n        return msg;\n    }\n    msg.target_month = current_timestamp.getMonth()-1;\n    msg.target_year = current_timestamp.getFullYear();\n    return msg;\n}\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
