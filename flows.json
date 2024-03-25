@@ -6017,8 +6017,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 150,
-        "y": 200,
+        "x": 90,
+        "y": 160,
         "wires": [
             [
                 "639b1406fc176909"
@@ -6030,14 +6030,14 @@
         "type": "function",
         "z": "5f31af6f840fa2a0",
         "name": "mes y año deseados",
-        "func": "const current_timestamp = new Date(msg.payload);\n\nif (current_timestamp.getDate() === 1) {\n    if (current_timestamp.getMonth()===11){\n        msg.target_month = 0;\n        msg.target_year = current_timestamp.getFullYear()-1;\n        return msg;\n    }\n    msg.target_month = current_timestamp.getMonth()-1;\n    msg.target_year = current_timestamp.getFullYear();\n    return msg;\n}\n",
+        "func": "const current_timestamp = new Date(msg.payload);\n\nif (current_timestamp.getDate() === 1) {\n\n    if (current_timestamp.getMonth()===0){\n        msg.target_month = 11;\n        msg.target_year = current_timestamp.getFullYear()-1;\n        return msg;\n    }\n\n    msg.target_month = current_timestamp.getMonth()-1;\n    msg.target_year = current_timestamp.getFullYear();\n    return msg;\n}\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 340,
+        "x": 260,
         "y": 200,
         "wires": [
             [
