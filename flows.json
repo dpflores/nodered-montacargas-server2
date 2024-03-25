@@ -6659,7 +6659,7 @@
         "z": "5f31af6f840fa2a0",
         "name": "",
         "url": "downloadreport",
-        "method": "get",
+        "method": "post",
         "upload": false,
         "swaggerDoc": "",
         "x": 120,
