@@ -6474,23 +6474,6 @@
         ]
     },
     {
-        "id": "f9264bc417dc5e0a",
-        "type": "e-mail",
-        "z": "5f31af6f840fa2a0",
-        "server": "smtp.office365.com",
-        "port": "587",
-        "authtype": "BASIC",
-        "saslformat": true,
-        "token": "oauth2Response.access_token",
-        "secure": false,
-        "tls": false,
-        "name": "",
-        "dname": "",
-        "x": 1170,
-        "y": 1320,
-        "wires": []
-    },
-    {
         "id": "b976c1dd4da1c5d8",
         "type": "function",
         "z": "5f31af6f840fa2a0",
@@ -6514,9 +6497,7 @@
         "x": 820,
         "y": 1320,
         "wires": [
-            [
-                "2c3067498291232c"
-            ]
+            []
         ]
     },
     {
@@ -6671,25 +6652,6 @@
         "x": 460,
         "y": 900,
         "wires": []
-    },
-    {
-        "id": "2c3067498291232c",
-        "type": "template",
-        "z": "5f31af6f840fa2a0",
-        "name": "html",
-        "field": "description",
-        "fieldType": "msg",
-        "format": "html",
-        "syntax": "mustache",
-        "template": "\n<body>\n    <p>Hi, and welcome to Tekos Flow,</p>\n\n </body>",
-        "output": "str",
-        "x": 1030,
-        "y": 1320,
-        "wires": [
-            [
-                "f9264bc417dc5e0a"
-            ]
-        ]
     },
     {
         "id": "9b1c385577a60942",
