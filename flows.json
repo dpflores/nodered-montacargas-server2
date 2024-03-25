@@ -159,9 +159,7 @@
             "78cd71d4d4914aab"
         ],
         "x": 414,
-        "y": 459,
-        "w": 862,
-        "h": 142
+        "y": 459
     },
     {
         "id": "1b5ad41c50a916b7",
@@ -177,9 +175,7 @@
             "1ad32e19c0123f3c"
         ],
         "x": 174,
-        "y": 679,
-        "w": 572,
-        "h": 82
+        "y": 679
     },
     {
         "id": "5c2896b2dfe6eae8",
@@ -195,9 +191,7 @@
             "8d0255f41c13f305"
         ],
         "x": 234,
-        "y": 3499,
-        "w": 592,
-        "h": 82
+        "y": 3499
     },
     {
         "id": "11676a117d696ad7",
@@ -213,9 +207,7 @@
             "d96db93b8fdafded"
         ],
         "x": 834,
-        "y": 699,
-        "w": 572,
-        "h": 82
+        "y": 699
     },
     {
         "id": "20aa6fa811d70d43",
@@ -6127,13 +6119,13 @@
             }
         ],
         "repeat": "",
-        "crontab": "00 05 * * *",
+        "crontab": "",
         "once": false,
         "onceDelay": "1",
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 130,
+        "x": 100,
         "y": 280,
         "wires": [
             [
@@ -6887,5 +6879,71 @@
                 "c6a55c23d481d0e3"
             ]
         ]
+    },
+    {
+        "id": "bc7b2054bc4f3791",
+        "type": "inject",
+        "z": "5f31af6f840fa2a0",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "timestamp",
+                "v": "",
+                "vt": "date"
+            }
+        ],
+        "repeat": "",
+        "crontab": "00 05 * * *",
+        "once": false,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 110,
+        "y": 360,
+        "wires": [
+            [
+                "639b1406fc176909"
+            ]
+        ]
+    },
+    {
+        "id": "639b1406fc176909",
+        "type": "function",
+        "z": "5f31af6f840fa2a0",
+        "name": "Get month and Year",
+        "func": "const current_timestamp = new Date(msg.payload);\n\nif (current_timestamp.getDate() === 1) {\n    msg.target_month = current_timestamp.getMonth();\n    msg.target_year = current_timestamp.getFullYear();\n    return msg;\n}\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 360,
+        "wires": [
+            [
+                "4b3828d2ce532ca8"
+            ]
+        ]
+    },
+    {
+        "id": "4b3828d2ce532ca8",
+        "type": "debug",
+        "z": "5f31af6f840fa2a0",
+        "name": "debug 68",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 440,
+        "y": 440,
+        "wires": []
     }
 ]
