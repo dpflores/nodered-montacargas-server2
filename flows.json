@@ -6171,7 +6171,7 @@
         "type": "template",
         "z": "5f31af6f840fa2a0",
         "name": "html",
-        "field": "description",
+        "field": "html",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
