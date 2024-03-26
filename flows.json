@@ -6773,7 +6773,7 @@
         "type": "function",
         "z": "5f31af6f840fa2a0",
         "name": "function 82",
-        "func": "msg.topic = \"Reporte Montacarga 4.0\";\nmsg.from = \"Montacarga 4.0 <notify_krcp_4.0@kmmp.com.pe>\"\nmsg.filename = \"Reporte.pdf\"\nmsg.html = `\nEstimados y estimadas,<br>\nSe adjunta reporte del mes de Marzo 2024.<br>\nSaludos,<br>\n<strong>Montacarga 4.0</strong><br>\n<strong>Komatsu-Mitsui Maquinarias Perú S.A.</strong><br><br>\n`;\n\nreturn msg;\n",
+        "func": "msg.topic = \"Reporte Montacarga 4.0\";\nmsg.from = \"Montacarga 4.0 <notify_krcp_4.0@kmmp.com.pe>\"\nmsg.filename = \"Reporte.pdf\"\nmsg.html = `\nEstimados y estimadas,<br>\nSe adjunta reporte del mes de Marzo 2024.<br>\nSaludos,<br>\n<strong>Montacarga 4.0</strong><br>\n<strong>Komatsu-Mitsui Maquinarias Perú S.A.</strong><br><br>\n`;\nmsg.to = \"delpiero22.flores@gmail.com\"\n\nreturn msg;\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
