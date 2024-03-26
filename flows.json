@@ -2507,7 +2507,7 @@
         "id": "a8f32d6eee3e5c59",
         "type": "function",
         "z": "4d53ee97ad0311a6",
-        "name": "Get last data and set status 0",
+        "name": "Get last data and set status 0 (apagado) o 1 (inoperativo)",
         "func": "var data_json = global.get(\"live_data\");\n\ndata_json[\"timestamp\"] = msg.timestamp;\n\nif (Number(data_json.data.mantto)>0){\n    data_json[\"data\"][\"status\"] = 1;\n} else {\n    data_json[\"data\"][\"status\"] = 0;\n}\n\ndata_json[\"data\"][\"general_status\"] = 0;\n\n\nmsg.timestamp = msg.timestamp;\nmsg.payload = data_json;\nreturn msg;\n",
         "outputs": 1,
         "timeout": 0,
@@ -2515,7 +2515,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 980,
+        "x": 1070,
         "y": 1260,
         "wires": [
             [
