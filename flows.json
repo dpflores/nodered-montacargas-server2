@@ -4217,7 +4217,7 @@
         "y": 520,
         "wires": [
             [
-                "121b31cb9fe38fcc"
+                "a6707979cdddf800"
             ]
         ]
     },
@@ -4226,7 +4226,7 @@
         "type": "subflow:f168446540142aa7",
         "z": "3b4e3447579da6e6",
         "name": "",
-        "x": 1020,
+        "x": 1220,
         "y": 520,
         "wires": []
     },
@@ -4376,7 +4376,7 @@
         "y": 820,
         "wires": [
             [
-                "1d31bd657e626544"
+                "3a6d0f26057371b5"
             ]
         ]
     },
@@ -4385,7 +4385,7 @@
         "type": "subflow:f168446540142aa7",
         "z": "3b4e3447579da6e6",
         "name": "",
-        "x": 1000,
+        "x": 1220,
         "y": 820,
         "wires": []
     },
@@ -4536,7 +4536,7 @@
         "y": 1180,
         "wires": [
             [
-                "316054441e47488e"
+                "063e7974420606fd"
             ]
         ]
     },
@@ -4545,7 +4545,7 @@
         "type": "subflow:f168446540142aa7",
         "z": "3b4e3447579da6e6",
         "name": "",
-        "x": 1020,
+        "x": 1220,
         "y": 1180,
         "wires": []
     },
@@ -4820,11 +4820,11 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 940,
+        "x": 840,
         "y": 1560,
         "wires": [
             [
-                "857eab071334da6a"
+                "ec3c5acfeb566945"
             ]
         ]
     },
@@ -4833,7 +4833,7 @@
         "type": "subflow:f168446540142aa7",
         "z": "3b4e3447579da6e6",
         "name": "",
-        "x": 1170,
+        "x": 1300,
         "y": 1560,
         "wires": []
     },
@@ -5104,7 +5104,7 @@
         "y": 1840,
         "wires": [
             [
-                "d894aeb38a061151"
+                "83310a0fce3e9962"
             ]
         ]
     },
@@ -5113,7 +5113,7 @@
         "type": "subflow:f168446540142aa7",
         "z": "3b4e3447579da6e6",
         "name": "",
-        "x": 960,
+        "x": 1160,
         "y": 1840,
         "wires": []
     },
@@ -5243,7 +5243,7 @@
         "type": "function",
         "z": "3b4e3447579da6e6",
         "name": "contenido de alerta",
-        "func": "\nmsg.alert = `Estimados/Estimadas,\nSe presenta la alerta Batería Baja en el equipo montacarga 4.5 Tn Cod. Activo KM0061657.\n\nSaludos\nMontacarga 4.0\n\nKomatsu-Mitsui Maquinarias Perú S.A.\n\n`;\nreturn msg;",
+        "func": "\nmsg.alert = `Estimados/Estimadas,\n\nSe presenta la alerta Batería Baja en el equipo montacarga 4.5 Tn Cod. Activo KM0061657.\n\nSaludos\nMontacarga 4.0\nKomatsu-Mitsui Maquinarias Perú S.A.\n\n`;\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -5255,6 +5255,106 @@
         "wires": [
             [
                 "27e54f15b04931d6"
+            ]
+        ]
+    },
+    {
+        "id": "a6707979cdddf800",
+        "type": "function",
+        "z": "3b4e3447579da6e6",
+        "name": "contenido de alerta",
+        "func": "\nmsg.alert = `Estimados/Estimadas,\n\nSe presenta la alerta Mantenimiento Preventivo en el equipo montacarga 4.5 Tn Cod. Activo KM0061657.\n\nSaludos\nMontacarga 4.0\nKomatsu-Mitsui Maquinarias Perú S.A.\n\n`;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1030,
+        "y": 520,
+        "wires": [
+            [
+                "121b31cb9fe38fcc"
+            ]
+        ]
+    },
+    {
+        "id": "3a6d0f26057371b5",
+        "type": "function",
+        "z": "3b4e3447579da6e6",
+        "name": "contenido de alerta",
+        "func": "\nmsg.alert = `Estimados/Estimadas,\n\nSe presenta la alerta Mantenimiento Preventivo en el equipo montacarga 4.5 Tn Cod. Activo KM0061657.\n\nSaludos\nMontacarga 4.0\nKomatsu-Mitsui Maquinarias Perú S.A.\n\n`;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1010,
+        "y": 820,
+        "wires": [
+            [
+                "1d31bd657e626544"
+            ]
+        ]
+    },
+    {
+        "id": "063e7974420606fd",
+        "type": "function",
+        "z": "3b4e3447579da6e6",
+        "name": "contenido de alerta",
+        "func": "\nmsg.alert = `Estimados/Estimadas,\n\nSe presenta la alerta Mantenimiento Preventivo en el equipo montacarga 4.5 Tn Cod. Activo KM0061657.\n\nSaludos\nMontacarga 4.0\nKomatsu-Mitsui Maquinarias Perú S.A.\n\n`;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1010,
+        "y": 1180,
+        "wires": [
+            [
+                "316054441e47488e"
+            ]
+        ]
+    },
+    {
+        "id": "ec3c5acfeb566945",
+        "type": "function",
+        "z": "3b4e3447579da6e6",
+        "name": "contenido de alerta",
+        "func": "\nmsg.alert = `Estimados/Estimadas,\n\nSe presenta la alerta inicio de Mantenimiento en el equipo montacarga 4.5 Tn Cod. Activo KM0061657.\n\nSaludos\nMontacarga 4.0\nKomatsu-Mitsui Maquinarias Perú S.A.\n\n`;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1070,
+        "y": 1560,
+        "wires": [
+            [
+                "857eab071334da6a"
+            ]
+        ]
+    },
+    {
+        "id": "83310a0fce3e9962",
+        "type": "function",
+        "z": "3b4e3447579da6e6",
+        "name": "contenido de alerta",
+        "func": "\nmsg.alert = `Estimados/Estimadas,\n\nSe presenta la alerta fin de Mantenimiento en el equipo montacarga 4.5 Tn Cod. Activo KM0061657.\n\nSaludos\nMontacarga 4.0\nKomatsu-Mitsui Maquinarias Perú S.A.\n\n`;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 950,
+        "y": 1840,
+        "wires": [
+            [
+                "d894aeb38a061151"
             ]
         ]
     },
