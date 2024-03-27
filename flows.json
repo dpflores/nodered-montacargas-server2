@@ -187,7 +187,9 @@
             "8d0255f41c13f305"
         ],
         "x": 234,
-        "y": 3499
+        "y": 3499,
+        "w": 592,
+        "h": 82
     },
     {
         "id": "11676a117d696ad7",
@@ -3845,7 +3847,7 @@
         "y": 280,
         "wires": [
             [
-                "27e54f15b04931d6"
+                "06c2a28d094a12aa"
             ]
         ]
     },
@@ -3854,7 +3856,7 @@
         "type": "subflow:f168446540142aa7",
         "z": "3b4e3447579da6e6",
         "name": "",
-        "x": 1020,
+        "x": 1220,
         "y": 280,
         "wires": []
     },
@@ -5233,6 +5235,26 @@
         "wires": [
             [
                 "cff33b459d38937d"
+            ]
+        ]
+    },
+    {
+        "id": "06c2a28d094a12aa",
+        "type": "function",
+        "z": "3b4e3447579da6e6",
+        "name": "contenido de alerta",
+        "func": "\nmsg.alert = `Estimados/Estimadas,\nSe presenta la alerta Batería Baja en el equipo montacarga 4.5 Tn Cod. Activo KM0061657.\n\nSaludos\nMontacarga 4.0\n\nKomatsu-Mitsui Maquinarias Perú S.A.\n\n`;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1030,
+        "y": 280,
+        "wires": [
+            [
+                "27e54f15b04931d6"
             ]
         ]
     },
