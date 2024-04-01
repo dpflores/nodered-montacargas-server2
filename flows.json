@@ -151,9 +151,7 @@
             "78cd71d4d4914aab"
         ],
         "x": 414,
-        "y": 459,
-        "w": 862,
-        "h": 142
+        "y": 459
     },
     {
         "id": "1b5ad41c50a916b7",
@@ -169,9 +167,7 @@
             "1ad32e19c0123f3c"
         ],
         "x": 174,
-        "y": 679,
-        "w": 572,
-        "h": 82
+        "y": 679
     },
     {
         "id": "5c2896b2dfe6eae8",
@@ -205,9 +201,7 @@
             "d96db93b8fdafded"
         ],
         "x": 834,
-        "y": 699,
-        "w": 572,
-        "h": 82
+        "y": 699
     },
     {
         "id": "20aa6fa811d70d43",
@@ -629,7 +623,7 @@
         "type": "function",
         "z": "f168446540142aa7",
         "name": "function 6",
-        "func": "msg.topic = \"SELECT `email` FROM `users` WHERE `rol`='client';\"\nreturn msg;",
+        "func": "msg.topic = \"SELECT `email` FROM `users` WHERE `rol`='client' AND `alerts`=1;\"\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -5071,7 +5065,7 @@
         "type": "function",
         "z": "5f31af6f840fa2a0",
         "name": "function 70",
-        "func": "msg.topic = \"SELECT `email` FROM `users` WHERE `rol`='client';\"\nreturn msg;",
+        "func": "msg.topic = \"SELECT `email` FROM `users` WHERE `rol`='client' AND `reports`=1;\"\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -5898,7 +5892,7 @@
         "type": "function",
         "z": "5f31af6f840fa2a0",
         "name": "function 80",
-        "func": "msg.topic = \"SELECT `email` FROM `users` WHERE `rol`='client';\"\nreturn msg;",
+        "func": "msg.topic = \"SELECT `email` FROM `users` WHERE `rol`='client' AND `reports`=1;\"\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
