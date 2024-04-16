@@ -151,9 +151,7 @@
             "78cd71d4d4914aab"
         ],
         "x": 414,
-        "y": 459,
-        "w": 862,
-        "h": 142
+        "y": 459
     },
     {
         "id": "1b5ad41c50a916b7",
@@ -169,9 +167,7 @@
             "1ad32e19c0123f3c"
         ],
         "x": 174,
-        "y": 679,
-        "w": 572,
-        "h": 82
+        "y": 679
     },
     {
         "id": "5c2896b2dfe6eae8",
@@ -205,9 +201,7 @@
             "d96db93b8fdafded"
         ],
         "x": 834,
-        "y": 699,
-        "w": 572,
-        "h": 82
+        "y": 699
     },
     {
         "id": "20aa6fa811d70d43",
@@ -3171,7 +3165,7 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "{\"gateway_key\":\"A13CF8\",\"timestamp\":1709735858816,\"data\":{\"gps\":{\"pos_valid\":1,\"latitude\":-12.0482761,\"longitude\":-77.1011795,\"altitude\":63.382,\"haccuracy\":3.9,\"speed\":0.664,\"course\":118.68},\"mantto\":\"0\",\"running\":\"1\",\"hourmeter\":0,\"battery\":{\"voltage\":11638},\"pressure\":{\"current\":6199},\"load\":0.32827600000000023,\"status\":0,\"general_status\":0}}",
+        "payload": "{\"gateway_key\":\"A13CF8\",\"timestamp\":1709735858816,\"data\":{\"gps\":{\"pos_valid\":1,\"latitude\":-12.0482761,\"longitude\":-77.1011795,\"altitude\":63.382,\"haccuracy\":3.9,\"speed\":0.664,\"course\":118.68},\"mantto\":\"0\",\"running\":\"1\",\"hourmeter\":0,\"battery\":{\"voltage\":0},\"pressure\":{\"current\":6199},\"load\":0.32827600000000023,\"status\":0,\"general_status\":0}}",
         "payloadType": "json",
         "x": 190,
         "y": 420,
