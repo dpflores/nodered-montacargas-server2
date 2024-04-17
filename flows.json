@@ -5353,55 +5353,6 @@
         ]
     },
     {
-        "id": "d39fb277184eb661",
-        "type": "inject",
-        "z": "5f31af6f840fa2a0",
-        "name": "Automatic ",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "00 00 * * *",
-        "once": true,
-        "onceDelay": "0.5",
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 130,
-        "y": 1520,
-        "wires": [
-            [
-                "2d6b5a84b58ea483"
-            ]
-        ]
-    },
-    {
-        "id": "2d6b5a84b58ea483",
-        "type": "function",
-        "z": "5f31af6f840fa2a0",
-        "name": "function 59",
-        "func": "const current_timestamp = new Date(msg.payload);\n\nmsg.target_month = current_timestamp.getMonth();\nmsg.target_year = current_timestamp.getFullYear();\n\n// msg.month = 0; //Enero\n// msg.year = 2024;\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 290,
-        "y": 1520,
-        "wires": [
-            [
-                "c6a55c23d481d0e3"
-            ]
-        ]
-    },
-    {
         "id": "bc7b2054bc4f3791",
         "type": "inject",
         "z": "5f31af6f840fa2a0",
