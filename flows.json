@@ -5302,7 +5302,7 @@
         "type": "function",
         "z": "5f31af6f840fa2a0",
         "name": "function 56",
-        "func": "msg.topic = `INSERT INTO monthly_reports \n(month, year, total_hours, effective) \nVALUES (${msg.month}, ${msg.year}, '${msg.total_hours}', '${msg.effective}')\nON DUPLICATE KEY UPDATE \n  total_hours = VALUES(total_hours),\n  effective = VALUES(effective);`\nreturn msg;",
+        "func": "msg.topic = `INSERT INTO monthly_reports \n(month, year, total_hours, effective) \nVALUES (${msg.target_month}, ${msg.target_year}, '${msg.total_hours}', '${msg.effective}')\nON DUPLICATE KEY UPDATE \n  total_hours = VALUES(total_hours),\n  effective = VALUES(effective);`\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
