@@ -151,9 +151,7 @@
             "78cd71d4d4914aab"
         ],
         "x": 414,
-        "y": 459,
-        "w": 862,
-        "h": 142
+        "y": 459
     },
     {
         "id": "1b5ad41c50a916b7",
@@ -169,9 +167,7 @@
             "1ad32e19c0123f3c"
         ],
         "x": 174,
-        "y": 679,
-        "w": 572,
-        "h": 82
+        "y": 679
     },
     {
         "id": "5c2896b2dfe6eae8",
@@ -187,9 +183,7 @@
             "8d0255f41c13f305"
         ],
         "x": 194,
-        "y": 2259,
-        "w": 592,
-        "h": 82
+        "y": 2259
     },
     {
         "id": "11676a117d696ad7",
@@ -205,9 +199,7 @@
             "d96db93b8fdafded"
         ],
         "x": 834,
-        "y": 699,
-        "w": 572,
-        "h": 82
+        "y": 699
     },
     {
         "id": "20aa6fa811d70d43",
@@ -5209,7 +5201,7 @@
         "type": "function",
         "z": "5f31af6f840fa2a0",
         "name": "Set monthly data",
-        "func": "const target_month = msg.month + 1;\nconst target_year = msg.year;\n\nmsg.topic = `SELECT * FROM local_data \n    WHERE YEAR(date) = ${target_year} AND MONTH(date) = ${target_month}\n    order by date;`\n\n\nreturn msg;",
+        "func": "const target_month = msg.target_month + 1;\nconst target_year = msg.target_year;\n\nmsg.topic = `SELECT * FROM local_data \n    WHERE YEAR(date) = ${target_year} AND MONTH(date) = ${target_month}\n    order by date;`\n\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -5231,12 +5223,12 @@
         "name": "Seleccionar mes manual",
         "props": [
             {
-                "p": "month",
+                "p": "target_month",
                 "v": "2",
                 "vt": "num"
             },
             {
-                "p": "year",
+                "p": "target_year",
                 "v": "2024",
                 "vt": "num"
             }
