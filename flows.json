@@ -5386,7 +5386,7 @@
         "type": "function",
         "z": "5f31af6f840fa2a0",
         "name": "function 59",
-        "func": "const current_timestamp = new Date(msg.payload);\n\nmsg.month = current_timestamp.getMonth();\nmsg.year = current_timestamp.getFullYear();\n\n// msg.month = 0; //Enero\n// msg.year = 2024;\n\nreturn msg;",
+        "func": "const current_timestamp = new Date(msg.payload);\n\nmsg.target_month = current_timestamp.getMonth();\nmsg.target_year = current_timestamp.getFullYear();\n\n// msg.month = 0; //Enero\n// msg.year = 2024;\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
