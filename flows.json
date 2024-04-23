@@ -6330,63 +6330,60 @@
         ]
     },
     {
-        "id": "8291cef35bf26de3",
-        "type": "http request",
+        "id": "57103eed91631bac",
+        "type": "function",
         "z": "5f31af6f840fa2a0",
-        "name": "/api/charts/detenciones",
-        "method": "GET",
-        "ret": "txt",
-        "paytoqs": "ignore",
-        "url": "127.0.0.1:9000/api/charts/stacked",
-        "tls": "",
-        "persist": false,
-        "proxy": "",
-        "insecureHTTPParser": false,
-        "authType": "",
-        "senderr": false,
-        "headers": [],
-        "x": 310,
-        "y": 1160,
-        "wires": [
-            [
-                "54e2afb4d85a1e04"
-            ]
-        ]
-    },
-    {
-        "id": "54e2afb4d85a1e04",
-        "type": "json",
-        "z": "5f31af6f840fa2a0",
-        "name": "",
-        "property": "payload",
-        "action": "",
-        "pretty": false,
-        "x": 510,
-        "y": 1160,
-        "wires": [
-            [
-                "cd7e1be565190f1f"
-            ]
-        ]
-    },
-    {
-        "id": "cd7e1be565190f1f",
-        "type": "debug",
-        "z": "5f31af6f840fa2a0",
-        "name": "debug 73",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 660,
+        "name": "function 83",
+        "func": "const data_in = msg.payload;\nvar data_out = [];\n\n\nfor (var i = 0; i < data_in.length; i++) {\n    data_out[i] = data_in[i];\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 490,
         "y": 1140,
-        "wires": []
+        "wires": [
+            []
+        ]
     },
     {
-        "id": "f6a5f1cd7662ec76",
+        "id": "6bf544ff137bac82",
+        "type": "function",
+        "z": "5f31af6f840fa2a0",
+        "name": "function 84",
+        "func": "msg.topic = `SELECT * FROM monthly_reports \nWHERE YEAR(date) = ${msg.target_year}\nORDER BY date DESC\n`;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 110,
+        "y": 1140,
+        "wires": [
+            [
+                "8e992a3982f363dc"
+            ]
+        ]
+    },
+    {
+        "id": "8e992a3982f363dc",
+        "type": "mysql",
+        "z": "5f31af6f840fa2a0",
+        "mydb": "20aa6fa811d70d43",
+        "name": "",
+        "x": 280,
+        "y": 1140,
+        "wires": [
+            [
+                "57103eed91631bac",
+                "a008a39e135bb223"
+            ]
+        ]
+    },
+    {
+        "id": "e46d99beb3a65412",
         "type": "inject",
         "z": "5f31af6f840fa2a0",
         "name": "",
@@ -6406,12 +6403,28 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 100,
-        "y": 1180,
+        "x": 60,
+        "y": 1300,
         "wires": [
             [
-                "8291cef35bf26de3"
+                "6bf544ff137bac82"
             ]
         ]
+    },
+    {
+        "id": "a008a39e135bb223",
+        "type": "debug",
+        "z": "5f31af6f840fa2a0",
+        "name": "debug 73",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 380,
+        "y": 1200,
+        "wires": []
     }
 ]
