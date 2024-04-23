@@ -4842,8 +4842,8 @@
         "tls": false,
         "name": "",
         "dname": "",
-        "x": 1370,
-        "y": 740,
+        "x": 1410,
+        "y": 660,
         "wires": []
     },
     {
@@ -4962,7 +4962,7 @@
         "senderr": false,
         "headers": [],
         "x": 810,
-        "y": 1140,
+        "y": 960,
         "wires": [
             [
                 "3d1bb8ecfc6efac4"
@@ -4986,7 +4986,7 @@
         "senderr": false,
         "headers": [],
         "x": 850,
-        "y": 1200,
+        "y": 1020,
         "wires": [
             [
                 "51290378b2673fc8"
@@ -5010,7 +5010,7 @@
         "senderr": false,
         "headers": [],
         "x": 830,
-        "y": 1260,
+        "y": 1080,
         "wires": [
             [
                 "3639f05b10139059"
@@ -5026,7 +5026,7 @@
         "action": "",
         "pretty": false,
         "x": 1010,
-        "y": 1140,
+        "y": 960,
         "wires": [
             [
                 "2bc366225fe491ef"
@@ -5042,7 +5042,7 @@
         "action": "",
         "pretty": false,
         "x": 1050,
-        "y": 1200,
+        "y": 1020,
         "wires": [
             [
                 "1f96efc206e87508"
@@ -5058,7 +5058,7 @@
         "action": "",
         "pretty": false,
         "x": 1030,
-        "y": 1260,
+        "y": 1080,
         "wires": [
             [
                 "823ccdf83a6a2fb4"
@@ -5078,7 +5078,7 @@
         "finalize": "",
         "libs": [],
         "x": 1150,
-        "y": 1140,
+        "y": 960,
         "wires": [
             [
                 "23b592591dbb2aac"
@@ -5098,7 +5098,7 @@
         "finalize": "",
         "libs": [],
         "x": 1190,
-        "y": 1200,
+        "y": 1020,
         "wires": [
             [
                 "fc44c1bc7f3d027f"
@@ -5118,7 +5118,7 @@
         "finalize": "",
         "libs": [],
         "x": 1190,
-        "y": 1260,
+        "y": 1080,
         "wires": [
             [
                 "6bf544ff137bac82"
@@ -5138,7 +5138,7 @@
         "finalize": "",
         "libs": [],
         "x": 750,
-        "y": 960,
+        "y": 780,
         "wires": [
             [
                 "04dc5820ccddda42"
@@ -5152,7 +5152,7 @@
         "mydb": "20aa6fa811d70d43",
         "name": "",
         "x": 920,
-        "y": 960,
+        "y": 780,
         "wires": [
             [
                 "a51245e4e1873541"
@@ -5172,7 +5172,7 @@
         "finalize": "",
         "libs": [],
         "x": 770,
-        "y": 1420,
+        "y": 1240,
         "wires": [
             [
                 "2e57508faeef4b32"
@@ -5186,7 +5186,7 @@
         "mydb": "20aa6fa811d70d43",
         "name": "",
         "x": 940,
-        "y": 1420,
+        "y": 1240,
         "wires": [
             [
                 "07600c904badcbf0"
@@ -5206,7 +5206,7 @@
         "finalize": "",
         "libs": [],
         "x": 1110,
-        "y": 1420,
+        "y": 1240,
         "wires": [
             [
                 "0cddb73d28958a23"
@@ -5226,7 +5226,7 @@
         "finalize": "",
         "libs": [],
         "x": 750,
-        "y": 1040,
+        "y": 860,
         "wires": [
             [
                 "62607aab52d03147"
@@ -5240,7 +5240,7 @@
         "mydb": "20aa6fa811d70d43",
         "name": "",
         "x": 940,
-        "y": 1040,
+        "y": 860,
         "wires": [
             [
                 "28635ce3c110ede4"
@@ -5260,7 +5260,7 @@
         "finalize": "",
         "libs": [],
         "x": 1130,
-        "y": 1040,
+        "y": 860,
         "wires": [
             [
                 "a2e0633c0f6e5ac5"
@@ -5280,7 +5280,7 @@
         "finalize": "",
         "libs": [],
         "x": 1110,
-        "y": 960,
+        "y": 780,
         "wires": [
             [
                 "ebbd3b86dfe26922"
@@ -5309,7 +5309,7 @@
             }
         ],
         "x": 1280,
-        "y": 1580,
+        "y": 1400,
         "wires": [
             [
                 "d8e74be623d31c71"
@@ -5329,7 +5329,7 @@
         "finalize": "",
         "libs": [],
         "x": 780,
-        "y": 1500,
+        "y": 1320,
         "wires": [
             [
                 "4f4dd18e101a0ff8"
@@ -5343,7 +5343,7 @@
         "mydb": "20aa6fa811d70d43",
         "name": "",
         "x": 960,
-        "y": 1500,
+        "y": 1320,
         "wires": [
             [
                 "30fd5e71a4e9809d"
@@ -5363,7 +5363,7 @@
         "finalize": "",
         "libs": [],
         "x": 1130,
-        "y": 1500,
+        "y": 1320,
         "wires": [
             [
                 "f12b49c97e2e8c1d"
@@ -5408,7 +5408,7 @@
         "to": "",
         "reg": false,
         "x": 1280,
-        "y": 1420,
+        "y": 1240,
         "wires": [
             [
                 "55a8a43caf3810de"
@@ -5428,7 +5428,7 @@
         "finalize": "",
         "libs": [],
         "x": 900,
-        "y": 1580,
+        "y": 1400,
         "wires": [
             [
                 "438c08744dd51bb4"
@@ -5445,7 +5445,7 @@
         "upload": false,
         "swaggerDoc": "",
         "x": 100,
-        "y": 1000,
+        "y": 820,
         "wires": [
             [
                 "485cde87bea96531",
@@ -5467,7 +5467,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 180,
-        "y": 1120,
+        "y": 940,
         "wires": []
     },
     {
@@ -5497,7 +5497,7 @@
         "to": "",
         "reg": false,
         "x": 320,
-        "y": 960,
+        "y": 780,
         "wires": [
             [
                 "b1769a163dda22cf"
@@ -5513,8 +5513,8 @@
         "headers": {
             "content-type": "application/json"
         },
-        "x": 1480,
-        "y": 1580,
+        "x": 1520,
+        "y": 1400,
         "wires": []
     },
     {
@@ -5526,8 +5526,8 @@
             "a51245e4e1873541"
         ],
         "uncaught": false,
-        "x": 1370,
-        "y": 960,
+        "x": 1450,
+        "y": 740,
         "wires": [
             [
                 "0fedcd0171da87b8"
@@ -5546,8 +5546,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1510,
-        "y": 960,
+        "x": 1610,
+        "y": 740,
         "wires": [
             [
                 "95ea8b647c211cb4"
@@ -5563,58 +5563,9 @@
         "headers": {
             "content-type": "application/json"
         },
-        "x": 1680,
-        "y": 960,
+        "x": 1780,
+        "y": 740,
         "wires": []
-    },
-    {
-        "id": "062b577c4cc860d3",
-        "type": "function",
-        "z": "5f31af6f840fa2a0",
-        "name": "function 82",
-        "func": "msg.topic = \"Reporte Montacarga 4.0\";\nmsg.from = \"Montacarga 4.0 <notify_krcp_4.0@kmmp.com.pe>\"\nmsg.filename = \"Reporte.pdf\"\nmsg.html = `\nEstimados y estimadas,<br>\nSe adjunta reporte del mes de Marzo 2024.<br>\nSaludos,<br>\n<strong>Montacarga 4.0</strong><br>\n<strong>Komatsu-Mitsui Maquinarias Perú S.A.</strong><br><br>\n`;\nmsg.to = \"delpiero22.flores@gmail.com\"\n\nreturn msg;\n",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1110,
-        "y": 800,
-        "wires": [
-            [
-                "e058976380746690"
-            ]
-        ]
-    },
-    {
-        "id": "e1cdb9e8cc639a23",
-        "type": "inject",
-        "z": "5f31af6f840fa2a0",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 940,
-        "y": 800,
-        "wires": [
-            [
-                "062b577c4cc860d3"
-            ]
-        ]
     },
     {
         "id": "f12b49c97e2e8c1d",
@@ -5629,7 +5580,7 @@
         "finalize": "",
         "libs": [],
         "x": 760,
-        "y": 1580,
+        "y": 1400,
         "wires": [
             [
                 "f8b5093d71315d9f"
@@ -5649,7 +5600,7 @@
         "finalize": "",
         "libs": [],
         "x": 1060,
-        "y": 1580,
+        "y": 1400,
         "wires": [
             [
                 "b976c1dd4da1c5d8"
@@ -5669,7 +5620,7 @@
         "finalize": "",
         "libs": [],
         "x": 1130,
-        "y": 1320,
+        "y": 1140,
         "wires": [
             [
                 "0f96920406e95b13"
@@ -5689,7 +5640,7 @@
         "finalize": "",
         "libs": [],
         "x": 770,
-        "y": 1320,
+        "y": 1140,
         "wires": [
             [
                 "8e992a3982f363dc"
@@ -5703,7 +5654,7 @@
         "mydb": "20aa6fa811d70d43",
         "name": "",
         "x": 960,
-        "y": 1320,
+        "y": 1140,
         "wires": [
             [
                 "57103eed91631bac"
@@ -5716,7 +5667,7 @@
         "z": "5f31af6f840fa2a0",
         "name": "",
         "x": 550,
-        "y": 960,
+        "y": 780,
         "wires": [
             [
                 "62567b7f2471377f"
@@ -5732,358 +5683,16 @@
         "y": 120,
         "wires": [
             [
-                "ae643b8148511bb2"
+                "18065dae06552927"
             ]
         ]
     },
     {
-        "id": "aeb129964ddcd3e0",
-        "type": "http request",
-        "z": "5f31af6f840fa2a0",
-        "name": "/api/charts/disponibilidad",
-        "method": "GET",
-        "ret": "txt",
-        "paytoqs": "ignore",
-        "url": "127.0.0.1:9000/api/charts/disponibilidad",
-        "tls": "",
-        "persist": false,
-        "proxy": "",
-        "insecureHTTPParser": false,
-        "authType": "",
-        "senderr": false,
-        "headers": [],
-        "x": 690,
-        "y": 300,
-        "wires": [
-            [
-                "82a4a57092348ac0"
-            ]
-        ]
-    },
-    {
-        "id": "b21f214576a57450",
-        "type": "http request",
-        "z": "5f31af6f840fa2a0",
-        "name": "/api/charts/confiabilidad",
-        "method": "GET",
-        "ret": "txt",
-        "paytoqs": "ignore",
-        "url": "127.0.0.1:9000/api/charts/confiabilidad",
-        "tls": "",
-        "persist": false,
-        "proxy": "",
-        "insecureHTTPParser": false,
-        "authType": "",
-        "senderr": false,
-        "headers": [],
-        "x": 730,
-        "y": 360,
-        "wires": [
-            [
-                "666f309de52701bf"
-            ]
-        ]
-    },
-    {
-        "id": "b1181ef8c37fc056",
-        "type": "http request",
-        "z": "5f31af6f840fa2a0",
-        "name": "/api/charts/detenciones",
-        "method": "GET",
-        "ret": "txt",
-        "paytoqs": "ignore",
-        "url": "127.0.0.1:9000/api/charts/detenciones",
-        "tls": "",
-        "persist": false,
-        "proxy": "",
-        "insecureHTTPParser": false,
-        "authType": "",
-        "senderr": false,
-        "headers": [],
-        "x": 710,
-        "y": 420,
-        "wires": [
-            [
-                "63e570e8e7879793"
-            ]
-        ]
-    },
-    {
-        "id": "82a4a57092348ac0",
-        "type": "json",
-        "z": "5f31af6f840fa2a0",
-        "name": "",
-        "property": "payload",
-        "action": "",
-        "pretty": false,
-        "x": 890,
-        "y": 300,
-        "wires": [
-            [
-                "e124abcb0d067c29"
-            ]
-        ]
-    },
-    {
-        "id": "666f309de52701bf",
-        "type": "json",
-        "z": "5f31af6f840fa2a0",
-        "name": "",
-        "property": "payload",
-        "action": "",
-        "pretty": false,
-        "x": 930,
-        "y": 360,
-        "wires": [
-            [
-                "1462b8797f344e7e"
-            ]
-        ]
-    },
-    {
-        "id": "63e570e8e7879793",
-        "type": "json",
-        "z": "5f31af6f840fa2a0",
-        "name": "",
-        "property": "payload",
-        "action": "",
-        "pretty": false,
-        "x": 910,
-        "y": 420,
-        "wires": [
-            [
-                "e287dad2b6aded80"
-            ]
-        ]
-    },
-    {
-        "id": "e124abcb0d067c29",
+        "id": "f0e74f930969dcae",
         "type": "function",
         "z": "5f31af6f840fa2a0",
-        "name": "function 88",
-        "func": "const target_month = msg.target_month;\n\n\nconst {array1} = msg.payload.payload;\n\n// Obteniendo los valores correspondientes al mes objetivo y redondeándolos a dos decimales\nconst disponibilidad = array1[target_month].toFixed(2);\n\n\n// Construyendo el array con los valores redondeados\nmsg.disponibilidad = disponibilidad;\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1030,
-        "y": 300,
-        "wires": [
-            [
-                "b21f214576a57450"
-            ]
-        ]
-    },
-    {
-        "id": "1462b8797f344e7e",
-        "type": "function",
-        "z": "5f31af6f840fa2a0",
-        "name": "function 89",
-        "func": "const target_month = msg.target_month;\n\n\nconst {array1} = msg.payload.payload;\n\n// Obteniendo los valores correspondientes al mes objetivo y redondeándolos a dos decimales\nconst confiabilidad = array1[target_month].toFixed(2);\n\n\n// Construyendo el array con los valores redondeados\nmsg.confiabilidad = confiabilidad;\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1070,
-        "y": 360,
-        "wires": [
-            [
-                "b1181ef8c37fc056"
-            ]
-        ]
-    },
-    {
-        "id": "e287dad2b6aded80",
-        "type": "function",
-        "z": "5f31af6f840fa2a0",
-        "name": "function 90",
-        "func": "const target_month = msg.target_month;\n\n\nconst {array1, array2} = msg.payload.payload;\n\n// Obteniendo los valores correspondientes al mes objetivo y redondeándolos a dos decimales\nconst detenciones_correctivas = array1[target_month].toFixed(2);\nconst detenciones_preventivas = array2[target_month].toFixed(2);\n\n\n// Construyendo el array con los valores redondeados\nmsg.detenciones = [detenciones_correctivas, detenciones_preventivas];\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1070,
-        "y": 420,
-        "wires": [
-            [
-                "107aa4425b9878c5"
-            ]
-        ]
-    },
-    {
-        "id": "ae643b8148511bb2",
-        "type": "function",
-        "z": "5f31af6f840fa2a0",
-        "name": "function 91",
-        "func": "msg.topic = `SELECT * FROM monthly_reports\n WHERE year = ${msg.target_year} \n AND month=${msg.target_month};`;\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 630,
-        "y": 120,
-        "wires": [
-            [
-                "9138aed132a50f87"
-            ]
-        ]
-    },
-    {
-        "id": "9138aed132a50f87",
-        "type": "mysql",
-        "z": "5f31af6f840fa2a0",
-        "mydb": "20aa6fa811d70d43",
-        "name": "",
-        "x": 800,
-        "y": 120,
-        "wires": [
-            [
-                "1158c721902733b5"
-            ]
-        ]
-    },
-    {
-        "id": "2bc863ffe3964912",
-        "type": "function",
-        "z": "5f31af6f840fa2a0",
-        "name": "function 92",
-        "func": "msg.topic = `SELECT * FROM alerts \nWHERE YEAR(date) = ${msg.target_year}\nAND MONTH(date) = ${msg.target_month+1}\nORDER BY date DESC\n`;\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 650,
-        "y": 580,
-        "wires": [
-            [
-                "104cb2acf8210ba9"
-            ]
-        ]
-    },
-    {
-        "id": "104cb2acf8210ba9",
-        "type": "mysql",
-        "z": "5f31af6f840fa2a0",
-        "mydb": "20aa6fa811d70d43",
-        "name": "",
-        "x": 820,
-        "y": 580,
-        "wires": [
-            [
-                "e546d181a88b5956"
-            ]
-        ]
-    },
-    {
-        "id": "e546d181a88b5956",
-        "type": "function",
-        "z": "5f31af6f840fa2a0",
-        "name": "function 93",
-        "func": "const data_in = msg.payload;\nvar data_out = [];\n\nconst alertTypes = [\n  \"Batería baja\",\n  \"Mantenimiento - Inicio\",\n  \"Mantenimiento - Fin\",\n  \"Mantenimiento preventivo 1\",\n  \"Mantenimiento preventivo 2\",\n  \"Mantenimiento preventivo 3\",\n];\n\nfor (var i = 0; i < data_in.length; i ++){\n  data_out[i]= {\n    \"fecha\": convertISOToReadableDate(data_in[i].date),\n    \"hora\": convertISOToReadableHour(data_in[i].date),\n    \"tipo\": alertTypes[data_in[i].alert_type],\n    \"comentarios\": data_in[i].comments\n  }\n}\n\nmsg.alerts = data_out;\n\nreturn msg;\n\n\nfunction convertISOToReadableDate(timestamp) {\n  const date = new Date(timestamp);\n  const year = date.getFullYear();\n  let month = date.getMonth() + 1;\n  let day = date.getDate();\n\n  if (month < 10) {\n    month = \"0\" + month;\n  }\n\n  if (day < 10) {\n    day = \"0\" + day;\n  }\n  const dateStr = `${day}/${month}/${year}`;\n\n  return `${dateStr}`;\n}\nfunction convertISOToReadableHour(timestamp) {\n  const date = new Date(timestamp);\n\n  let hour = date.getHours();\n  let minutes = date.getMinutes();\n\n  if (hour < 10) {\n    hour = \"0\" + hour;\n  }\n\n  if (minutes < 10) {\n    minutes = \"0\" + minutes;\n  }\n  const timeStr = `${hour}:${minutes}`;\n\n  return `${timeStr}`;\n}",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 990,
-        "y": 580,
-        "wires": [
-            [
-                "01c5dcf0e65f561a"
-            ]
-        ]
-    },
-    {
-        "id": "7179b7ca4acf8a28",
-        "type": "function",
-        "z": "5f31af6f840fa2a0",
-        "name": "function 94",
-        "func": "msg.topic = `SELECT * FROM monthly_reports ORDER BY id DESC LIMIT 3;\n`;\nmsg.topic = `\n    SELECT * \n    FROM monthly_reports\n    WHERE (year = ${msg.target_year} AND month = ${msg.target_month})\n    OR (year = ${msg.target_year - (msg.target_month === 0 ? 1 : 0)} AND month = ${msg.target_month === 0 ? 11 : msg.target_month - 1});\n`;\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 630,
-        "y": 200,
-        "wires": [
-            [
-                "9403a9c0afc79048"
-            ]
-        ]
-    },
-    {
-        "id": "9403a9c0afc79048",
-        "type": "mysql",
-        "z": "5f31af6f840fa2a0",
-        "mydb": "20aa6fa811d70d43",
-        "name": "",
-        "x": 820,
-        "y": 200,
-        "wires": [
-            [
-                "86140b47c0e1894e"
-            ]
-        ]
-    },
-    {
-        "id": "86140b47c0e1894e",
-        "type": "function",
-        "z": "5f31af6f840fa2a0",
-        "name": "function 95",
-        "func": "\nif (msg.payload.length === 2){\nconst current_month_hours = JSON.parse(msg.payload[1].effective);\nconst prev_month_hours = JSON.parse(msg.payload[0].effective);\n\n\n\nconst use_change = 100*(current_month_hours.horasUso - prev_month_hours.horasUso)/prev_month_hours.horasUso;\n\nconst efective_change = 100*(current_month_hours.horasEfectivas - prev_month_hours.horasEfectivas)/prev_month_hours.horasEfectivas;\n\nmsg.cambios = [\n    use_change.toFixed(2), efective_change.toFixed(2)\n]\n\nreturn msg;\n\n}\n\nelse {\n    msg.cambios = [\n    \"-\", \"-\"\n]\n\nreturn msg;\n}\n\n\n\n",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1010,
-        "y": 200,
-        "wires": [
-            [
-                "aeb129964ddcd3e0"
-            ]
-        ]
-    },
-    {
-        "id": "1158c721902733b5",
-        "type": "function",
-        "z": "5f31af6f840fa2a0",
-        "name": "function 96",
-        "func": "msg.total_hours = JSON.parse(msg.payload[0].total_hours);\nmsg.effective = JSON.parse(msg.payload[0].effective);\n\nreturn msg;\n",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 990,
-        "y": 120,
-        "wires": [
-            [
-                "7179b7ca4acf8a28"
-            ]
-        ]
-    },
-    {
-        "id": "840df3425d2caf19",
-        "type": "function",
-        "z": "5f31af6f840fa2a0",
-        "name": "Reporte Mensual Komatsu",
-        "func": "const hourmeter = global.get(\"hourmeter\");\n\nconst disponibilidad = msg.disponibilidad;\nconst confiabilidad = msg.confiabilidad;\nconst detenciones = msg.detenciones;\nconst cambios = msg.cambios;\nconst alerts = msg.alerts;\nconst historic = msg.historic;\n\n\nconst total_hours = msg.total_hours;\nconst effective = msg.effective;\n\nconst month = [\n  \"Enero\",\n  \"Febrero\",\n  \"Marzo\",\n  \"Abril\",\n  \"Mayo\",\n  \"Junio\",\n  \"Julio\",\n  \"Agosto\",\n  \"Setiembre\",\n  \"Octubre\",\n  \"Noviembre\",\n  \"Diciembre\",\n]\n\nconst current_date = new Date();\n// Obtiene el día, mes y año\nconst cday = current_date.getDate().toString().padStart(2, '0');\nconst cmonth = (current_date.getMonth() + 1).toString().padStart(2, '0'); // Los meses comienzan desde 0\nconst cyear = current_date.getFullYear();\n\n// Concatena los valores en el formato deseado\nconst formatted_cdate = `${cday}/${cmonth}/${cyear}`;\n\nconst year = msg.target_year\n\nconst name_of_month = month[msg.target_month];\n\nmsg.name_of_month = name_of_month;\nmsg.year = year;\n\n\n\nvar fonts = {\n    Roboto: {\n        normal: \"Courier\",\n        bold: \"Courier-Bold\",\n        italics: \"Courier-Oblique\",\n        bolditalics: \"Courier-BoldOblique\",\n    },\n    Helvetica: {\n        normal: \"Helvetica\",\n        bold: \"Helvetica-Bold\",\n        italics: \"Helvetica-Oblique\",\n        bolditalics: \"Helvetica-BoldOblique\",\n    },\n    Times: {\n        normal: \"Times-Roman\",\n        bold: \"Times-Bold\",\n        italics: \"Times-Italic\",\n        bolditalics: \"Times-BoldItalic\",\n    },\n    Arial: {\n    normal: \"Helvetica\",\n    bold: \"Helvetica-Bold\",\n    italics: \"Helvetica-Oblique\",\n    bolditalics: \"Helvetica-BoldOblique\",\n},\n    Symbol: {\n        normal: \"Symbol\",\n    },\n    ZapfDingbats: {\n        normal: \"ZapfDingbats\",\n    },\n};\n\n\n\nconst { Base64Encode } = base64Encode\n\nasync function getPDFBase64Text(pdfDoc) {\n\treturn new Promise((resolve) => {\n\t\tvar base64String = \"\"\n\t\tconst stream = pdfDoc.pipe(new Base64Encode())\n\t\tpdfDoc.end()\n\n\t\tstream.on(\"data\", (chunk) => {\n\t\t\tbase64String += chunk\n\t\t})\n\n\t\tstream.on(\"end\", () => resolve(base64String))\n\t})\n}\n\nlet printer = new pdfmake(fonts)\n\nconst hourmeter_string = `${hourmeter.hours}:${hourmeter.minutes<10?(\"0\"+hourmeter.minutes):hourmeter.minutes}`\n\n\n\n// Alertas del mes\nconst alertRows = [['Fecha', 'Hora', 'Tipo de alerta', 'Comentarios']];\nalerts.forEach(alert => {\n    alertRows.push([alert.fecha, alert.hora, alert.tipo, alert.comentarios]);\n});\n\n// Historico\nconst historicRows = [['Mes', 'Proceso Admin. (Apagado)', 'Inoperativo', 'Espera sin carga', 'Traslado sin carga', 'Traslado con carga', 'Espera con carga']];\nhistoric.forEach((row,index) => {\n    historicRows.push([month[index], `${row.apagadoP} %`, `${row.inoperativoP} %`, `${row.esperaP} %`, `${row.trasladoP} %`, `${row.trasladoCargaP} %`, `${row.esperaCargaP} %`]);\n});\n\n\n// playground requires you to assign document definition to a variable called dd\nvar dd = {\n\tcontent: [\n\t\t{\n            style: 'tableExample',\n            table: {\n                widths: [300, 200], // Ancho de las columnas\n                body: [\n\t\t\t\t\t[msg.image1, msg.image2],\n                ]\n\t\t\t\t\n            },\n\t\t\tlayout: 'noBorders'\n        },\n\t\n\t\t{ text: `Reporte ${name_of_month} ${year} - Montacarga 4.0`, style: 'header', alignment: 'center' },\n\t\t{ text: `Fecha de reporte: ${formatted_cdate}`, alignment: 'right' },\n\t\t{ text: 'Datos del equipo', style: 'subheader' },\n\t\t{\n            style: 'tableExample',\n            table: {\n                widths: [100, '*'], // Ancho de las columnas\n                body: [\n                    ['Equipo:', 'Montacarga 4.5'],\n                    ['Marca:', 'TOYOTA 4.5 TN'],\n                    ['Modelo:', '02-7FG45 N/S'],\n                    ['Bastidor:', 'A7FGA50-51912'],\n                    ['Cod. Activo:', 'KM0061657'],\n                    ['Capacidad de carga:', '4.5 Tn'],\n                    ['Horómetro:', hourmeter_string] // No necesitas el \"\\n\\n\" aquí\n                ]\n\t\t\t\t\n            },\n\t\t\tlayout: 'noBorders'\n        },\n\t\t{ text: 'Resultados de operación', style: 'subheader' },\n\t\t\n\t\t'Frecuencia de uso',\n\t\t{\n\t\t\tstyle: 'tableExample',\n\t\t\ttable: {\n\t\t\t\tbody: [\n\t\t\t\t\t['Disponibilidad del equipo (hrs.)', 'Uso del equipo (hrs.)'],\n\t\t\t\t\t[`${(effective.horasTotales*disponibilidad/100).toFixed(2)}`, `${effective.horasUso}`]\n\t\t\t\t]\n\t\t\t}\n\t\t},\n\t\t{\n\t\t\tstyle: 'tableExample',\n\t\t\ttable: {\n\t\t\t\tbody: [\n\t\t\t\t\t['Frecuencia de uso [1]', 'Frecuencia efectiva de uso [2]', 'Porcentaje efectivo [3]'],\n\t\t\t\t\t[`${effective.horasUsoP} %`, `${effective.horasEfectivasP} %`, `${effective.ratioP} %`]\n\t\t\t\t]\n\t\t\t}\n\t\t},\n\t\t{ text: 'Detalle de uso mensual', italic: true },\n\t\n\t\tmsg.image3,\n\t\t\n\t\t{\n\t\t\tstyle: 'tableExample',\n\t\t\ttable: {\n\t\t\t\twidths: [65,65,65,85,85,85],\n\t\t\t\tbody: [\n\t\t\t\t\t['Proceso Admini. (Apagado)', 'Inoperativo', 'Espera sin carga',\n\t\t\t\t\t\t'Traslado sin carga', 'Traslado con carga', 'Espera con carga'],\n\t\t\t\t\t[`${total_hours.apagadoP} %`, `${total_hours.inoperativoP} %`, `${total_hours.esperaP} %`, `${total_hours.trasladoP} %`, `${total_hours.trasladoCargaP} %`, `${total_hours.esperaCargaP} %`]\n\t\t\t\t]\n\t\t\t}\n\t\t},\n\t\t\n\t\t{ text: 'Análisis de cambio', pageBreak: 'before'},\n\t\t{\n\t\t\tstyle: 'tableExample',\n\t\t\ttable: {\n\t\t\t\tbody: [\n\t\t\t\t\t['Peso promedio (efectivo)', 'Var % Frecuencia de uso [4]',\n\t\t\t\t\t\t'Var % Frecuencia de uso efectivo [5]'],\n\t\t\t\t\t[`${effective.promedioPeso} Tn`, `${cambios[0]} %`, `${cambios[1]} %`]\n\t\t\t\t]\n\t\t\t}\n\t\t},\n\t\t'Mantenimiento',\n\t\t{\n\t\t\tstyle: 'tableExample',\n\t\t\ttable: {\n\t\t\t\tbody: [\n\t\t\t\t\t['Disponibilidad', 'Confiabilidad',\n\t\t\t\t\t\t'Hora de detenciones', '% Correctivo [6]', '% Preventivo [7]'],\n\t\t\t\t\t[`${disponibilidad} %`, `${confiabilidad}`, `${total_hours.inoperativo} h`, `${detenciones[0]} %`, `${detenciones[1]} %`]\n\t\t\t\t]\n\t\t\t}\n\t\t},\n\t\t// { text: 'Alertas del mes', pageBreak: 'before'},\n\t\t'Alertas del mes',\n\t\t{\n\t\t\tstyle: 'tableExample',\n\t\t\ttable: {\n\t\t\t\tbody: alertRows\n\t\t\t}\n\t\t},\n\t\t'Histórico',\n\t\t{\n\t\t\tstyle: 'tableExample',\n\t\t\ttable: {\n\t\t\t\tbody: historicRows\n\t\t\t}\n\t\t},\n\t\t'Leyenda',\n\t\t{\n\t\t\ttext: [`[1] Uso del equipo sobre disponibilidad mensual\\n`,\n\t\t\t\t`[2] Porcentaje de cargas superior a 2 Tn\\n`,\n\t\t\t\t`[3] Frecuencia efectiva de uso/Frecuencia de uso\\n`,\n\t\t\t\t`[4] Comparación respecto al mes anterior donde se considera todas las cargas.\\n`,\n\t\t\t\t`[5] Comparación respecto al mes anterior donde se considera cargas mayores a 2 Tn.\\n`,\n\t\t\t\t`[6] Porcentaje de las horas de intervención en paradas no planificadas\\n`,\n\t\t\t\t`[7] Porcentaje de las horas de intervención en paradas planificadas\\n`],\n\t\t\tfontSize: 10,\n\n\n\t\t}\n\t],\n\tstyles: {\n\t\theader: {\n\t\t\tfontSize: 18,\n\t\t\tbold: true,\n\t\t\tmargin: [0, 10, 0, 10],\n\n\t\t},\n\t\tsubheader: {\n\t\t\tfontSize: 16,\n\t\t\tbold: true,\n\t\t\tmargin: [0, 10, 0, 10]\n\t\t},\n\t\ttableExample: {\n\t\t\tmargin: [0, 10, 0, 10],\n\t\t\tfont: 'Arial' // Cambia la fuente a Arial para todas las tablas\n\t\t},\n\t\ttableHeader: {\n\t\t\tbold: true,\n\t\t\tfontSize: 13,\n\t\t\tcolor: 'black'\n\t\t}\n\t},\n\tdefaultStyle: {\n\t\tfont: 'Arial', // Cambia la fuente predeterminada a Arial para todo el documento\n\t\tlineHeight: 1.5, // Ajusta el espaciado entre líneas para todos los textos\n\t},\n};\n\nlet pdfDoc = printer.createPdfKitDocument(dd);\nconst base64Text = await getPDFBase64Text(pdfDoc);\nconst filename = \"Reporte\"+name_of_month+year+\".pdf\";\n\nmsg.payload = {\n\t\"data\": base64Text,\n\t\"filename\": filename\n\t}\nreturn msg;\n",
+        "name": "Reporte Mensual Komatsu (Correo)",
+        "func": "const hourmeter = global.get(\"hourmeter\");\n\nconst disponibilidad = msg.disponibilidad;\nconst confiabilidad = msg.confiabilidad;\nconst detenciones = msg.detenciones;\nconst cambios = msg.cambios;\nconst alerts = msg.alerts;\n\n\nconst total_hours = msg.total_hours;\nconst effective = msg.effective;\n\nconst month = [\n  \"Enero\",\n  \"Febrero\",\n  \"Marzo\",\n  \"Abril\",\n  \"Mayo\",\n  \"Junio\",\n  \"Julio\",\n  \"Agosto\",\n  \"Setiembre\",\n  \"Octubre\",\n  \"Noviembre\",\n  \"Diciembre\",\n]\n\nconst current_date = new Date();\n// Obtiene el día, mes y año\nconst cday = current_date.getDate().toString().padStart(2, '0');\nconst cmonth = (current_date.getMonth() + 1).toString().padStart(2, '0'); // Los meses comienzan desde 0\nconst cyear = current_date.getFullYear();\n\n// Concatena los valores en el formato deseado\nconst formatted_cdate = `${cday}/${cmonth}/${cyear}`;\n\nconst year = msg.target_year\n\nconst name_of_month = month[msg.target_month];\n\nmsg.name_of_month = name_of_month;\nmsg.year = year;\n\n\n\nvar fonts = {\n    Roboto: {\n        normal: \"Courier\",\n        bold: \"Courier-Bold\",\n        italics: \"Courier-Oblique\",\n        bolditalics: \"Courier-BoldOblique\",\n    },\n    Helvetica: {\n        normal: \"Helvetica\",\n        bold: \"Helvetica-Bold\",\n        italics: \"Helvetica-Oblique\",\n        bolditalics: \"Helvetica-BoldOblique\",\n    },\n    Times: {\n        normal: \"Times-Roman\",\n        bold: \"Times-Bold\",\n        italics: \"Times-Italic\",\n        bolditalics: \"Times-BoldItalic\",\n    },\n    Arial: {\n    normal: \"Helvetica\",\n    bold: \"Helvetica-Bold\",\n    italics: \"Helvetica-Oblique\",\n    bolditalics: \"Helvetica-BoldOblique\",\n},\n    Symbol: {\n        normal: \"Symbol\",\n    },\n    ZapfDingbats: {\n        normal: \"ZapfDingbats\",\n    },\n};\n\n\n\nconst { Base64Encode } = base64Encode\n\nasync function getPDFBase64Text(pdfDoc) {\n\treturn new Promise((resolve) => {\n\t\tvar base64String = \"\"\n\t\tconst stream = pdfDoc.pipe(new Base64Encode())\n\t\tpdfDoc.end()\n\n\t\tstream.on(\"data\", (chunk) => {\n\t\t\tbase64String += chunk\n\t\t})\n\n\t\tstream.on(\"end\", () => resolve(base64String))\n\t})\n}\n\nlet printer = new pdfmake(fonts)\n\nconst hourmeter_string = `${hourmeter.hours}:${hourmeter.minutes<10?(\"0\"+hourmeter.minutes):hourmeter.minutes}`\n\n\n\n// Alertas del mes\nconst alertRows = [['Fecha', 'Hora', 'Tipo de alerta', 'Comentarios']];\nalerts.forEach(alert => {\n    alertRows.push([alert.fecha, alert.hora, alert.tipo, alert.comentarios]);\n});\n\n// playground requires you to assign document definition to a variable called dd\nvar dd = {\n\tcontent: [\n\t\tmsg.image,\n\t\t{ text: `Reporte ${name_of_month} ${year} - Montacarga 4.0`, style: 'header', alignment: 'center' },\n\t\t{ text: `Fecha de reporte: ${formatted_cdate}`, alignment: 'right' },\n\t\t{ text: 'Datos del equipo', style: 'subheader' },\n\t\t{\n            style: 'tableExample',\n            table: {\n                widths: [100, '*'], // Ancho de las columnas\n                body: [\n                    ['Equipo:', 'Montacarga 4.5'],\n                    ['Marca:', 'TOYOTA 4.5 TN'],\n                    ['Modelo:', '02-7FG45 N/S'],\n                    ['Bastidor:', 'A7FGA50-51912'],\n                    ['Cod. Activo:', 'KM0061657'],\n                    ['Tonelaje:', '4.5'],\n                    ['Horómetro:', hourmeter_string] // No necesitas el \"\\n\\n\" aquí\n                ]\n\t\t\t\t\n            },\n\t\t\tlayout: 'noBorders'\n        },\n\t\t{ text: 'Resultados de operación', style: 'subheader' },\n\t\t{ text: 'Detalle de uso mensual', italic: true },\n\t\t{\n\t\t\tstyle: 'tableExample',\n\t\t\ttable: {\n\t\t\t\tbody: [\n\t\t\t\t\t['Proceso Administrativo (Apagado)', 'Inoperativo', 'Espera sin carga',\n\t\t\t\t\t\t'Traslado sin carga', 'Traslado con carga', 'Espera con carga'],\n\t\t\t\t\t[`${total_hours.apagadoP} %`, `${total_hours.inoperativoP} %`, `${total_hours.esperaP} %`, `${total_hours.trasladoP} %`, `${total_hours.trasladoCargaP} %`, `${total_hours.esperaCargaP} %`]\n\t\t\t\t]\n\t\t\t}\n\t\t},\n\t\t'Frecuencia de uso',\n\t\t{\n\t\t\tstyle: 'tableExample',\n\t\t\ttable: {\n\t\t\t\tbody: [\n\t\t\t\t\t['Frecuencia de uso', 'Frecuencia efectiva de uso', 'Porcentaje efectivo'],\n\t\t\t\t\t[`${effective.horasUsoP} %`, `${effective.horasEfectivasP} %`, `${effective.ratioP} %`]\n\t\t\t\t]\n\t\t\t}\n\t\t},\n\t\t'Analisis de cambio',\n\t\t{\n\t\t\tstyle: 'tableExample',\n\t\t\ttable: {\n\t\t\t\tbody: [\n\t\t\t\t\t['Peso promedio (efectivo)', 'Porcentaje de cambio en tiempo efectivo',\n\t\t\t\t\t\t'Porcentaje de cambio de tiempo de uso'],\n\t\t\t\t\t[`${effective.promedioPeso} Tn`, `${cambios[1]} %`, `${cambios[0]} %`]\n\t\t\t\t]\n\t\t\t}\n\t\t},\n\t\t'Mantenimiento',\n\t\t{\n\t\t\tstyle: 'tableExample',\n\t\t\ttable: {\n\t\t\t\tbody: [\n\t\t\t\t\t['Disponibilidad', 'Confiabilidad',\n\t\t\t\t\t\t'Hora de detenciones', '% Correctivo', '% Preventivo'],\n\t\t\t\t\t[`${disponibilidad} %`, `${confiabilidad}`, `${total_hours.inoperativo} h`, `${detenciones[0]} %`, `${detenciones[1]} %`]\n\t\t\t\t]\n\t\t\t}\n\t\t},\n\t\t{ text: 'Alertas del mes', pageBreak: 'before'},\n\t\t{\n\t\t\tstyle: 'tableExample',\n\t\t\ttable: {\n\t\t\t\tbody: alertRows\n\t\t\t}\n\t\t},\n\n\t],\n\tstyles: {\n\t\theader: {\n\t\t\tfontSize: 18,\n\t\t\tbold: true,\n\t\t\tmargin: [0, 10, 0, 10],\n\n\t\t},\n\t\tsubheader: {\n\t\t\tfontSize: 16,\n\t\t\tbold: true,\n\t\t\tmargin: [0, 10, 0, 10]\n\t\t},\n\t\ttableExample: {\n\t\t\tmargin: [0, 10, 0, 10],\n\t\t\tfont: 'Arial' // Cambia la fuente a Arial para todas las tablas\n\t\t},\n\t\ttableHeader: {\n\t\t\tbold: true,\n\t\t\tfontSize: 13,\n\t\t\tcolor: 'black'\n\t\t}\n\t},\n\tdefaultStyle: {\n\t\tfont: 'Arial', // Cambia la fuente predeterminada a Arial para todo el documento\n\t\tlineHeight: 1.5, // Ajusta el espaciado entre líneas para todos los textos\n\t},\n};\n\nlet pdfDoc = printer.createPdfKitDocument(dd);\nconst base64Text = await getPDFBase64Text(pdfDoc);\nmsg.payload = Buffer.from(base64Text, \"base64\");\n\nmsg.topic = \"Reporte Montacarga 4.0 - \" + name_of_month + \" \" + year;\nmsg.from = \"Montacarga 4.0 <notify_krcp_4.0@kmmp.com.pe>\"\nmsg.filename = \"Reporte\"+name_of_month+year+\".pdf\"\nmsg.description =`Estimados y estimadas,\\n\nSe adjunta reporte del mes de Marzo 2024.\\n\nSaludos,\nMontacarga 4.0\nKomatsu-Mitsui Maquinarias Perú S.A.\\n\\n`;\n\nreturn msg;\n",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
@@ -6099,8 +5708,377 @@
                 "module": "pdfmake"
             }
         ],
-        "x": 1160,
-        "y": 740,
+        "x": 200,
+        "y": 560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b6ef65223b0643f8",
+        "type": "http request",
+        "z": "5f31af6f840fa2a0",
+        "name": "/api/charts/disponibilidad",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "127.0.0.1:9000/api/charts/disponibilidad",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 750,
+        "y": 260,
+        "wires": [
+            [
+                "304ad9b17633668c"
+            ]
+        ]
+    },
+    {
+        "id": "28aaf3b8738bfd03",
+        "type": "http request",
+        "z": "5f31af6f840fa2a0",
+        "name": "/api/charts/confiabilidad",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "127.0.0.1:9000/api/charts/confiabilidad",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 790,
+        "y": 320,
+        "wires": [
+            [
+                "be2f5e9ba782b732"
+            ]
+        ]
+    },
+    {
+        "id": "3dacb4c2f7b9a68b",
+        "type": "http request",
+        "z": "5f31af6f840fa2a0",
+        "name": "/api/charts/detenciones",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "127.0.0.1:9000/api/charts/detenciones",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 770,
+        "y": 380,
+        "wires": [
+            [
+                "66b6dbbb6edacfff"
+            ]
+        ]
+    },
+    {
+        "id": "304ad9b17633668c",
+        "type": "json",
+        "z": "5f31af6f840fa2a0",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 950,
+        "y": 260,
+        "wires": [
+            [
+                "2ee411547f388b46"
+            ]
+        ]
+    },
+    {
+        "id": "be2f5e9ba782b732",
+        "type": "json",
+        "z": "5f31af6f840fa2a0",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 990,
+        "y": 320,
+        "wires": [
+            [
+                "f618c48f4110a1a7"
+            ]
+        ]
+    },
+    {
+        "id": "66b6dbbb6edacfff",
+        "type": "json",
+        "z": "5f31af6f840fa2a0",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 970,
+        "y": 380,
+        "wires": [
+            [
+                "24037124d506d79f"
+            ]
+        ]
+    },
+    {
+        "id": "2ee411547f388b46",
+        "type": "function",
+        "z": "5f31af6f840fa2a0",
+        "name": "function 88",
+        "func": "const target_month = msg.target_month;\n\n\nconst {array1} = msg.payload.payload;\n\n// Obteniendo los valores correspondientes al mes objetivo y redondeándolos a dos decimales\nconst disponibilidad = array1[target_month].toFixed(2);\n\n\n// Construyendo el array con los valores redondeados\nmsg.disponibilidad = disponibilidad;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1090,
+        "y": 260,
+        "wires": [
+            [
+                "28aaf3b8738bfd03"
+            ]
+        ]
+    },
+    {
+        "id": "f618c48f4110a1a7",
+        "type": "function",
+        "z": "5f31af6f840fa2a0",
+        "name": "function 89",
+        "func": "const target_month = msg.target_month;\n\n\nconst {array1} = msg.payload.payload;\n\n// Obteniendo los valores correspondientes al mes objetivo y redondeándolos a dos decimales\nconst confiabilidad = array1[target_month].toFixed(2);\n\n\n// Construyendo el array con los valores redondeados\nmsg.confiabilidad = confiabilidad;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1130,
+        "y": 320,
+        "wires": [
+            [
+                "3dacb4c2f7b9a68b"
+            ]
+        ]
+    },
+    {
+        "id": "24037124d506d79f",
+        "type": "function",
+        "z": "5f31af6f840fa2a0",
+        "name": "function 90",
+        "func": "const target_month = msg.target_month;\n\n\nconst {array1, array2} = msg.payload.payload;\n\n// Obteniendo los valores correspondientes al mes objetivo y redondeándolos a dos decimales\nconst detenciones_correctivas = array1[target_month].toFixed(2);\nconst detenciones_preventivas = array2[target_month].toFixed(2);\n\n\n// Construyendo el array con los valores redondeados\nmsg.detenciones = [detenciones_correctivas, detenciones_preventivas];\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1130,
+        "y": 380,
+        "wires": [
+            [
+                "c1e68cec2346603c"
+            ]
+        ]
+    },
+    {
+        "id": "18065dae06552927",
+        "type": "function",
+        "z": "5f31af6f840fa2a0",
+        "name": "function 91",
+        "func": "msg.topic = `SELECT * FROM monthly_reports\n WHERE year = ${msg.target_year} \n AND month=${msg.target_month};`;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 690,
+        "y": 80,
+        "wires": [
+            [
+                "76f17bc5ab32910e"
+            ]
+        ]
+    },
+    {
+        "id": "76f17bc5ab32910e",
+        "type": "mysql",
+        "z": "5f31af6f840fa2a0",
+        "mydb": "20aa6fa811d70d43",
+        "name": "",
+        "x": 860,
+        "y": 80,
+        "wires": [
+            [
+                "a63a6147e94cc742"
+            ]
+        ]
+    },
+    {
+        "id": "1c818a194b54a9b9",
+        "type": "function",
+        "z": "5f31af6f840fa2a0",
+        "name": "function 92",
+        "func": "msg.topic = `SELECT * FROM alerts \nWHERE YEAR(date) = ${msg.target_year}\nAND MONTH(date) = ${msg.target_month+1}\nORDER BY date DESC\n`;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 710,
+        "y": 540,
+        "wires": [
+            [
+                "f4590789ba238e43"
+            ]
+        ]
+    },
+    {
+        "id": "f4590789ba238e43",
+        "type": "mysql",
+        "z": "5f31af6f840fa2a0",
+        "mydb": "20aa6fa811d70d43",
+        "name": "",
+        "x": 880,
+        "y": 540,
+        "wires": [
+            [
+                "7109cf105929633d"
+            ]
+        ]
+    },
+    {
+        "id": "7109cf105929633d",
+        "type": "function",
+        "z": "5f31af6f840fa2a0",
+        "name": "function 93",
+        "func": "const data_in = msg.payload;\nvar data_out = [];\n\nconst alertTypes = [\n  \"Batería baja\",\n  \"Mantenimiento - Inicio\",\n  \"Mantenimiento - Fin\",\n  \"Mantenimiento preventivo 1\",\n  \"Mantenimiento preventivo 2\",\n  \"Mantenimiento preventivo 3\",\n];\n\nfor (var i = 0; i < data_in.length; i ++){\n  data_out[i]= {\n    \"fecha\": convertISOToReadableDate(data_in[i].date),\n    \"hora\": convertISOToReadableHour(data_in[i].date),\n    \"tipo\": alertTypes[data_in[i].alert_type],\n    \"comentarios\": data_in[i].comments\n  }\n}\n\nmsg.alerts = data_out;\n\nreturn msg;\n\n\nfunction convertISOToReadableDate(timestamp) {\n  const date = new Date(timestamp);\n  const year = date.getFullYear();\n  let month = date.getMonth() + 1;\n  let day = date.getDate();\n\n  if (month < 10) {\n    month = \"0\" + month;\n  }\n\n  if (day < 10) {\n    day = \"0\" + day;\n  }\n  const dateStr = `${day}/${month}/${year}`;\n\n  return `${dateStr}`;\n}\nfunction convertISOToReadableHour(timestamp) {\n  const date = new Date(timestamp);\n\n  let hour = date.getHours();\n  let minutes = date.getMinutes();\n\n  if (hour < 10) {\n    hour = \"0\" + hour;\n  }\n\n  if (minutes < 10) {\n    minutes = \"0\" + minutes;\n  }\n  const timeStr = `${hour}:${minutes}`;\n\n  return `${timeStr}`;\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1050,
+        "y": 540,
+        "wires": [
+            [
+                "01ade2ef44c7f145"
+            ]
+        ]
+    },
+    {
+        "id": "2386a0cc82f10926",
+        "type": "function",
+        "z": "5f31af6f840fa2a0",
+        "name": "function 94",
+        "func": "msg.topic = `SELECT * FROM monthly_reports ORDER BY id DESC LIMIT 3;\n`;\nmsg.topic = `\n    SELECT * \n    FROM monthly_reports\n    WHERE (year = ${msg.target_year} AND month = ${msg.target_month})\n    OR (year = ${msg.target_year - (msg.target_month === 0 ? 1 : 0)} AND month = ${msg.target_month === 0 ? 11 : msg.target_month - 1});\n`;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 690,
+        "y": 160,
+        "wires": [
+            [
+                "6c9c4f0df9fce18d"
+            ]
+        ]
+    },
+    {
+        "id": "6c9c4f0df9fce18d",
+        "type": "mysql",
+        "z": "5f31af6f840fa2a0",
+        "mydb": "20aa6fa811d70d43",
+        "name": "",
+        "x": 880,
+        "y": 160,
+        "wires": [
+            [
+                "15bc7abea1553d47"
+            ]
+        ]
+    },
+    {
+        "id": "15bc7abea1553d47",
+        "type": "function",
+        "z": "5f31af6f840fa2a0",
+        "name": "function 95",
+        "func": "\nif (msg.payload.length === 2){\nconst current_month_hours = JSON.parse(msg.payload[1].effective);\nconst prev_month_hours = JSON.parse(msg.payload[0].effective);\n\n\n\nconst use_change = 100*(current_month_hours.horasUso - prev_month_hours.horasUso)/prev_month_hours.horasUso;\n\nconst efective_change = 100*(current_month_hours.horasEfectivas - prev_month_hours.horasEfectivas)/prev_month_hours.horasEfectivas;\n\nmsg.cambios = [\n    use_change.toFixed(2), efective_change.toFixed(2)\n]\n\nreturn msg;\n\n}\n\nelse {\n    msg.cambios = [\n    \"-\", \"-\"\n]\n\nreturn msg;\n}\n\n\n\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1070,
+        "y": 160,
+        "wires": [
+            [
+                "b6ef65223b0643f8"
+            ]
+        ]
+    },
+    {
+        "id": "a63a6147e94cc742",
+        "type": "function",
+        "z": "5f31af6f840fa2a0",
+        "name": "function 96",
+        "func": "msg.total_hours = JSON.parse(msg.payload[0].total_hours);\nmsg.effective = JSON.parse(msg.payload[0].effective);\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1050,
+        "y": 80,
+        "wires": [
+            [
+                "2386a0cc82f10926"
+            ]
+        ]
+    },
+    {
+        "id": "87b77f14ec9a0393",
+        "type": "function",
+        "z": "5f31af6f840fa2a0",
+        "name": "Reporte Mensual Komatsu",
+        "func": "const hourmeter = global.get(\"hourmeter\");\n\nconst disponibilidad = msg.disponibilidad;\nconst confiabilidad = msg.confiabilidad;\nconst detenciones = msg.detenciones;\nconst cambios = msg.cambios;\nconst alerts = msg.alerts;\nconst historic = msg.historic;\n\n\nconst total_hours = msg.total_hours;\nconst effective = msg.effective;\n\nconst month = [\n  \"Enero\",\n  \"Febrero\",\n  \"Marzo\",\n  \"Abril\",\n  \"Mayo\",\n  \"Junio\",\n  \"Julio\",\n  \"Agosto\",\n  \"Setiembre\",\n  \"Octubre\",\n  \"Noviembre\",\n  \"Diciembre\",\n]\n\nconst current_date = new Date();\n// Obtiene el día, mes y año\nconst cday = current_date.getDate().toString().padStart(2, '0');\nconst cmonth = (current_date.getMonth() + 1).toString().padStart(2, '0'); // Los meses comienzan desde 0\nconst cyear = current_date.getFullYear();\n\n// Concatena los valores en el formato deseado\nconst formatted_cdate = `${cday}/${cmonth}/${cyear}`;\n\nconst year = msg.target_year\n\nconst name_of_month = month[msg.target_month];\n\nmsg.name_of_month = name_of_month;\nmsg.year = year;\n\n\n\nvar fonts = {\n    Roboto: {\n        normal: \"Courier\",\n        bold: \"Courier-Bold\",\n        italics: \"Courier-Oblique\",\n        bolditalics: \"Courier-BoldOblique\",\n    },\n    Helvetica: {\n        normal: \"Helvetica\",\n        bold: \"Helvetica-Bold\",\n        italics: \"Helvetica-Oblique\",\n        bolditalics: \"Helvetica-BoldOblique\",\n    },\n    Times: {\n        normal: \"Times-Roman\",\n        bold: \"Times-Bold\",\n        italics: \"Times-Italic\",\n        bolditalics: \"Times-BoldItalic\",\n    },\n    Arial: {\n    normal: \"Helvetica\",\n    bold: \"Helvetica-Bold\",\n    italics: \"Helvetica-Oblique\",\n    bolditalics: \"Helvetica-BoldOblique\",\n},\n    Symbol: {\n        normal: \"Symbol\",\n    },\n    ZapfDingbats: {\n        normal: \"ZapfDingbats\",\n    },\n};\n\n\n\nconst { Base64Encode } = base64Encode\n\nasync function getPDFBase64Text(pdfDoc) {\n\treturn new Promise((resolve) => {\n\t\tvar base64String = \"\"\n\t\tconst stream = pdfDoc.pipe(new Base64Encode())\n\t\tpdfDoc.end()\n\n\t\tstream.on(\"data\", (chunk) => {\n\t\t\tbase64String += chunk\n\t\t})\n\n\t\tstream.on(\"end\", () => resolve(base64String))\n\t})\n}\n\nlet printer = new pdfmake(fonts)\n\nconst hourmeter_string = `${hourmeter.hours}:${hourmeter.minutes<10?(\"0\"+hourmeter.minutes):hourmeter.minutes}`\n\n\n\n// Alertas del mes\nconst alertRows = [['Fecha', 'Hora', 'Tipo de alerta', 'Comentarios']];\nalerts.forEach(alert => {\n    alertRows.push([alert.fecha, alert.hora, alert.tipo, alert.comentarios]);\n});\n\n// Historico\nconst historicRows = [['Mes', 'Proceso Admin. (Apagado)', 'Inoperativo', 'Espera sin carga', 'Traslado sin carga', 'Traslado con carga', 'Espera con carga']];\nhistoric.forEach((row,index) => {\n    historicRows.push([month[index], `${row.apagadoP} %`, `${row.inoperativoP} %`, `${row.esperaP} %`, `${row.trasladoP} %`, `${row.trasladoCargaP} %`, `${row.esperaCargaP} %`]);\n});\n\n\n// playground requires you to assign document definition to a variable called dd\nvar dd = {\n\tcontent: [\n\t\t{\n            style: 'tableExample',\n            table: {\n                widths: [300, 200], // Ancho de las columnas\n                body: [\n\t\t\t\t\t[msg.image1, msg.image2],\n                ]\n\t\t\t\t\n            },\n\t\t\tlayout: 'noBorders'\n        },\n\t\n\t\t{ text: `Reporte ${name_of_month} ${year} - Montacarga 4.0`, style: 'header', alignment: 'center' },\n\t\t{ text: `Fecha de reporte: ${formatted_cdate}`, alignment: 'right' },\n\t\t{ text: 'Datos del equipo', style: 'subheader' },\n\t\t{\n            style: 'tableExample',\n            table: {\n                widths: [100, '*'], // Ancho de las columnas\n                body: [\n                    ['Equipo:', 'Montacarga 4.5'],\n                    ['Marca:', 'TOYOTA 4.5 TN'],\n                    ['Modelo:', '02-7FG45 N/S'],\n                    ['Bastidor:', 'A7FGA50-51912'],\n                    ['Cod. Activo:', 'KM0061657'],\n                    ['Capacidad de carga:', '4.5 Tn'],\n                    ['Horómetro:', hourmeter_string] // No necesitas el \"\\n\\n\" aquí\n                ]\n\t\t\t\t\n            },\n\t\t\tlayout: 'noBorders'\n        },\n\t\t{ text: 'Resultados de operación', style: 'subheader' },\n\t\t\n\t\t'Frecuencia de uso',\n\t\t{\n\t\t\tstyle: 'tableExample',\n\t\t\ttable: {\n\t\t\t\tbody: [\n\t\t\t\t\t['Disponibilidad del equipo (hrs.)', 'Uso del equipo (hrs.)'],\n\t\t\t\t\t[`${(effective.horasTotales*disponibilidad/100).toFixed(2)}`, `${effective.horasUso}`]\n\t\t\t\t]\n\t\t\t}\n\t\t},\n\t\t{\n\t\t\tstyle: 'tableExample',\n\t\t\ttable: {\n\t\t\t\tbody: [\n\t\t\t\t\t['Frecuencia de uso [1]', 'Frecuencia efectiva de uso [2]', 'Porcentaje efectivo [3]'],\n\t\t\t\t\t[`${effective.horasUsoP} %`, `${effective.horasEfectivasP} %`, `${effective.ratioP} %`]\n\t\t\t\t]\n\t\t\t}\n\t\t},\n\t\t{ text: 'Detalle de uso mensual', italic: true },\n\t\n\t\tmsg.image3,\n\t\t\n\t\t{\n\t\t\tstyle: 'tableExample',\n\t\t\ttable: {\n\t\t\t\twidths: [65,65,65,85,85,85],\n\t\t\t\tbody: [\n\t\t\t\t\t['Proceso Admini. (Apagado)', 'Inoperativo', 'Espera sin carga',\n\t\t\t\t\t\t'Traslado sin carga', 'Traslado con carga', 'Espera con carga'],\n\t\t\t\t\t[`${total_hours.apagadoP} %`, `${total_hours.inoperativoP} %`, `${total_hours.esperaP} %`, `${total_hours.trasladoP} %`, `${total_hours.trasladoCargaP} %`, `${total_hours.esperaCargaP} %`]\n\t\t\t\t]\n\t\t\t}\n\t\t},\n\t\t\n\t\t{ text: 'Análisis de cambio', pageBreak: 'before'},\n\t\t{\n\t\t\tstyle: 'tableExample',\n\t\t\ttable: {\n\t\t\t\tbody: [\n\t\t\t\t\t['Peso promedio (efectivo)', 'Var % Frecuencia de uso [4]',\n\t\t\t\t\t\t'Var % Frecuencia de uso efectivo [5]'],\n\t\t\t\t\t[`${effective.promedioPeso} Tn`, `${cambios[0]} %`, `${cambios[1]} %`]\n\t\t\t\t]\n\t\t\t}\n\t\t},\n\t\t'Mantenimiento',\n\t\t{\n\t\t\tstyle: 'tableExample',\n\t\t\ttable: {\n\t\t\t\tbody: [\n\t\t\t\t\t['Disponibilidad', 'Confiabilidad',\n\t\t\t\t\t\t'Hora de detenciones', '% Correctivo [6]', '% Preventivo [7]'],\n\t\t\t\t\t[`${disponibilidad} %`, `${confiabilidad}`, `${total_hours.inoperativo} h`, `${detenciones[0]} %`, `${detenciones[1]} %`]\n\t\t\t\t]\n\t\t\t}\n\t\t},\n\t\t// { text: 'Alertas del mes', pageBreak: 'before'},\n\t\t'Alertas del mes',\n\t\t{\n\t\t\tstyle: 'tableExample',\n\t\t\ttable: {\n\t\t\t\tbody: alertRows\n\t\t\t}\n\t\t},\n\t\t'Histórico',\n\t\t{\n\t\t\tstyle: 'tableExample',\n\t\t\ttable: {\n\t\t\t\tbody: historicRows\n\t\t\t}\n\t\t},\n\t\t'Leyenda',\n\t\t{\n\t\t\ttext: [`[1] Uso del equipo sobre disponibilidad mensual\\n`,\n\t\t\t\t`[2] Porcentaje de cargas superior a 2 Tn\\n`,\n\t\t\t\t`[3] Frecuencia efectiva de uso/Frecuencia de uso\\n`,\n\t\t\t\t`[4] Comparación respecto al mes anterior donde se considera todas las cargas.\\n`,\n\t\t\t\t`[5] Comparación respecto al mes anterior donde se considera cargas mayores a 2 Tn.\\n`,\n\t\t\t\t`[6] Porcentaje de las horas de intervención en paradas no planificadas\\n`,\n\t\t\t\t`[7] Porcentaje de las horas de intervención en paradas planificadas\\n`],\n\t\t\tfontSize: 10,\n\n\n\t\t}\n\t],\n\tstyles: {\n\t\theader: {\n\t\t\tfontSize: 18,\n\t\t\tbold: true,\n\t\t\tmargin: [0, 10, 0, 10],\n\n\t\t},\n\t\tsubheader: {\n\t\t\tfontSize: 16,\n\t\t\tbold: true,\n\t\t\tmargin: [0, 10, 0, 10]\n\t\t},\n\t\ttableExample: {\n\t\t\tmargin: [0, 10, 0, 10],\n\t\t\tfont: 'Arial' // Cambia la fuente a Arial para todas las tablas\n\t\t},\n\t\ttableHeader: {\n\t\t\tbold: true,\n\t\t\tfontSize: 13,\n\t\t\tcolor: 'black'\n\t\t}\n\t},\n\tdefaultStyle: {\n\t\tfont: 'Arial', // Cambia la fuente predeterminada a Arial para todo el documento\n\t\tlineHeight: 1.5, // Ajusta el espaciado entre líneas para todos los textos\n\t},\n};\n\nlet pdfDoc = printer.createPdfKitDocument(dd);\nconst base64Text = await getPDFBase64Text(pdfDoc);\nconst filename = \"Reporte\"+name_of_month+year+\".pdf\";\n\n\n// Correo\nmsg.payload = Buffer.from(base64Text, \"base64\");\nmsg.topic = \"Reporte Montacarga 4.0 - \" + name_of_month + \" \" + year;\nmsg.from = \"Montacarga 4.0 <notify_krcp_4.0@kmmp.com.pe>\"\nmsg.filename = \"Reporte\" + name_of_month + year + \".pdf\"\nmsg.description = `Estimados y estimadas,\\n\nSe adjunta reporte del mes de ${name_of_month} ${year}.\\n\nSaludos,\nMontacarga 4.0\nKomatsu-Mitsui Maquinarias Perú S.A.\\n\\n`;\n\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "base64Encode",
+                "module": "base64-stream"
+            },
+            {
+                "var": "pdfmake",
+                "module": "pdfmake"
+            }
+        ],
+        "x": 1220,
+        "y": 700,
         "wires": [
             [
                 "e058976380746690"
@@ -6108,7 +6086,7 @@
         ]
     },
     {
-        "id": "c4b0493661d81c85",
+        "id": "4d738aa351dd2b01",
         "type": "function",
         "z": "5f31af6f840fa2a0",
         "name": "function 97",
@@ -6119,30 +6097,30 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 660,
-        "y": 660,
+        "x": 720,
+        "y": 620,
         "wires": [
             [
-                "d0dd83e97f8f9bfa"
+                "f20aa4b330e7ae8e"
             ]
         ]
     },
     {
-        "id": "d0dd83e97f8f9bfa",
+        "id": "f20aa4b330e7ae8e",
         "type": "mysql",
         "z": "5f31af6f840fa2a0",
         "mydb": "20aa6fa811d70d43",
         "name": "",
-        "x": 840,
-        "y": 660,
+        "x": 900,
+        "y": 620,
         "wires": [
             [
-                "117aa1a118345732"
+                "aeea3f693bb27965"
             ]
         ]
     },
     {
-        "id": "117aa1a118345732",
+        "id": "aeea3f693bb27965",
         "type": "function",
         "z": "5f31af6f840fa2a0",
         "name": "getting mails",
@@ -6153,16 +6131,16 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1010,
-        "y": 660,
+        "x": 1070,
+        "y": 620,
         "wires": [
             [
-                "f51d39ac14adbae1"
+                "878c7ec23c17ac06"
             ]
         ]
     },
     {
-        "id": "01c5dcf0e65f561a",
+        "id": "01ade2ef44c7f145",
         "type": "change",
         "z": "5f31af6f840fa2a0",
         "name": "",
@@ -6198,16 +6176,16 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1160,
-        "y": 580,
+        "x": 1220,
+        "y": 540,
         "wires": [
             [
-                "c4b0493661d81c85"
+                "4d738aa351dd2b01"
             ]
         ]
     },
     {
-        "id": "aad4b1d356676231",
+        "id": "26c8eccf29b67ab4",
         "type": "function",
         "z": "5f31af6f840fa2a0",
         "name": "image2",
@@ -6218,16 +6196,16 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 780,
-        "y": 740,
+        "x": 840,
+        "y": 700,
         "wires": [
             [
-                "6deb0b6c33fc61a2"
+                "c6cd5e0913aa68b4"
             ]
         ]
     },
     {
-        "id": "f51d39ac14adbae1",
+        "id": "878c7ec23c17ac06",
         "type": "function",
         "z": "5f31af6f840fa2a0",
         "name": "image1",
@@ -6238,16 +6216,16 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 640,
-        "y": 740,
+        "x": 700,
+        "y": 700,
         "wires": [
             [
-                "aad4b1d356676231"
+                "26c8eccf29b67ab4"
             ]
         ]
     },
     {
-        "id": "6deb0b6c33fc61a2",
+        "id": "c6cd5e0913aa68b4",
         "type": "function",
         "z": "5f31af6f840fa2a0",
         "name": "image 3",
@@ -6258,16 +6236,16 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 940,
-        "y": 740,
+        "x": 1000,
+        "y": 700,
         "wires": [
             [
-                "840df3425d2caf19"
+                "87b77f14ec9a0393"
             ]
         ]
     },
     {
-        "id": "f46bb07a6735e17b",
+        "id": "7d1480ed6ceb622f",
         "type": "function",
         "z": "5f31af6f840fa2a0",
         "name": "function 98",
@@ -6278,16 +6256,16 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1010,
-        "y": 480,
+        "x": 1070,
+        "y": 440,
         "wires": [
             [
-                "2bc863ffe3964912"
+                "1c818a194b54a9b9"
             ]
         ]
     },
     {
-        "id": "107aa4425b9878c5",
+        "id": "c1e68cec2346603c",
         "type": "function",
         "z": "5f31af6f840fa2a0",
         "name": "function 99",
@@ -6298,25 +6276,25 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 650,
-        "y": 480,
+        "x": 710,
+        "y": 440,
         "wires": [
             [
-                "8f2e185dc22d773b"
+                "2cbea452e17301ed"
             ]
         ]
     },
     {
-        "id": "8f2e185dc22d773b",
+        "id": "2cbea452e17301ed",
         "type": "mysql",
         "z": "5f31af6f840fa2a0",
         "mydb": "20aa6fa811d70d43",
         "name": "",
-        "x": 840,
-        "y": 480,
+        "x": 900,
+        "y": 440,
         "wires": [
             [
-                "f46bb07a6735e17b"
+                "7d1480ed6ceb622f"
             ]
         ]
     }
