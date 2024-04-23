@@ -6352,7 +6352,7 @@
         "type": "function",
         "z": "5f31af6f840fa2a0",
         "name": "function 84",
-        "func": "msg.topic = `SELECT * FROM monthly_reports \nWHERE 'year' = ${msg.target_year}\n`;\nreturn msg;",
+        "func": "msg.topic = `SELECT * FROM 'monthly_reports' \nWHERE 'year' = ${msg.target_year}\n`;\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
