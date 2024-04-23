@@ -4961,8 +4961,8 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 810,
-        "y": 960,
+        "x": 870,
+        "y": 1080,
         "wires": [
             [
                 "3d1bb8ecfc6efac4"
@@ -4985,8 +4985,8 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 850,
-        "y": 1020,
+        "x": 910,
+        "y": 1140,
         "wires": [
             [
                 "51290378b2673fc8"
@@ -5009,8 +5009,8 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 830,
-        "y": 1080,
+        "x": 890,
+        "y": 1200,
         "wires": [
             [
                 "3639f05b10139059"
@@ -5025,8 +5025,8 @@
         "property": "payload",
         "action": "",
         "pretty": false,
-        "x": 1010,
-        "y": 960,
+        "x": 1070,
+        "y": 1080,
         "wires": [
             [
                 "2bc366225fe491ef"
@@ -5041,8 +5041,8 @@
         "property": "payload",
         "action": "",
         "pretty": false,
-        "x": 1050,
-        "y": 1020,
+        "x": 1110,
+        "y": 1140,
         "wires": [
             [
                 "1f96efc206e87508"
@@ -5057,8 +5057,8 @@
         "property": "payload",
         "action": "",
         "pretty": false,
-        "x": 1030,
-        "y": 1080,
+        "x": 1090,
+        "y": 1200,
         "wires": [
             [
                 "823ccdf83a6a2fb4"
@@ -5077,8 +5077,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1150,
-        "y": 960,
+        "x": 1210,
+        "y": 1080,
         "wires": [
             [
                 "23b592591dbb2aac"
@@ -5097,8 +5097,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1190,
-        "y": 1020,
+        "x": 1250,
+        "y": 1140,
         "wires": [
             [
                 "fc44c1bc7f3d027f"
@@ -5117,8 +5117,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1190,
-        "y": 1080,
+        "x": 1250,
+        "y": 1200,
         "wires": [
             [
                 "6bf544ff137bac82"
@@ -5137,8 +5137,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 750,
-        "y": 780,
+        "x": 810,
+        "y": 900,
         "wires": [
             [
                 "04dc5820ccddda42"
@@ -5151,8 +5151,8 @@
         "z": "5f31af6f840fa2a0",
         "mydb": "20aa6fa811d70d43",
         "name": "",
-        "x": 920,
-        "y": 780,
+        "x": 980,
+        "y": 900,
         "wires": [
             [
                 "a51245e4e1873541"
@@ -5171,8 +5171,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 770,
-        "y": 1240,
+        "x": 830,
+        "y": 1360,
         "wires": [
             [
                 "2e57508faeef4b32"
@@ -5185,8 +5185,8 @@
         "z": "5f31af6f840fa2a0",
         "mydb": "20aa6fa811d70d43",
         "name": "",
-        "x": 940,
-        "y": 1240,
+        "x": 1000,
+        "y": 1360,
         "wires": [
             [
                 "07600c904badcbf0"
@@ -5205,8 +5205,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1110,
-        "y": 1240,
+        "x": 1170,
+        "y": 1360,
         "wires": [
             [
                 "0cddb73d28958a23"
@@ -5225,8 +5225,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 750,
-        "y": 860,
+        "x": 810,
+        "y": 980,
         "wires": [
             [
                 "62607aab52d03147"
@@ -5239,8 +5239,8 @@
         "z": "5f31af6f840fa2a0",
         "mydb": "20aa6fa811d70d43",
         "name": "",
-        "x": 940,
-        "y": 860,
+        "x": 1000,
+        "y": 980,
         "wires": [
             [
                 "28635ce3c110ede4"
@@ -5259,8 +5259,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1130,
-        "y": 860,
+        "x": 1190,
+        "y": 980,
         "wires": [
             [
                 "a2e0633c0f6e5ac5"
@@ -5279,8 +5279,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1110,
-        "y": 780,
+        "x": 1170,
+        "y": 900,
         "wires": [
             [
                 "ebbd3b86dfe26922"
@@ -5308,8 +5308,8 @@
                 "module": "pdfmake"
             }
         ],
-        "x": 1280,
-        "y": 1400,
+        "x": 1340,
+        "y": 1520,
         "wires": [
             [
                 "d8e74be623d31c71"
@@ -5328,8 +5328,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 780,
-        "y": 1320,
+        "x": 840,
+        "y": 1440,
         "wires": [
             [
                 "4f4dd18e101a0ff8"
@@ -5342,8 +5342,8 @@
         "z": "5f31af6f840fa2a0",
         "mydb": "20aa6fa811d70d43",
         "name": "",
-        "x": 960,
-        "y": 1320,
+        "x": 1020,
+        "y": 1440,
         "wires": [
             [
                 "30fd5e71a4e9809d"
@@ -5362,8 +5362,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1130,
-        "y": 1320,
+        "x": 1190,
+        "y": 1440,
         "wires": [
             [
                 "f12b49c97e2e8c1d"
@@ -5407,8 +5407,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1280,
-        "y": 1240,
+        "x": 1340,
+        "y": 1360,
         "wires": [
             [
                 "55a8a43caf3810de"
@@ -5427,8 +5427,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 900,
-        "y": 1400,
+        "x": 960,
+        "y": 1520,
         "wires": [
             [
                 "438c08744dd51bb4"
@@ -5444,8 +5444,8 @@
         "method": "post",
         "upload": false,
         "swaggerDoc": "",
-        "x": 100,
-        "y": 820,
+        "x": 160,
+        "y": 900,
         "wires": [
             [
                 "485cde87bea96531",
@@ -5466,7 +5466,7 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 180,
+        "x": 360,
         "y": 940,
         "wires": []
     },
@@ -5496,8 +5496,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 320,
-        "y": 780,
+        "x": 380,
+        "y": 900,
         "wires": [
             [
                 "b1769a163dda22cf"
@@ -5513,8 +5513,8 @@
         "headers": {
             "content-type": "application/json"
         },
-        "x": 1520,
-        "y": 1400,
+        "x": 1580,
+        "y": 1520,
         "wires": []
     },
     {
@@ -5526,8 +5526,8 @@
             "a51245e4e1873541"
         ],
         "uncaught": false,
-        "x": 1450,
-        "y": 740,
+        "x": 1350,
+        "y": 920,
         "wires": [
             [
                 "0fedcd0171da87b8"
@@ -5546,8 +5546,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1610,
-        "y": 740,
+        "x": 1510,
+        "y": 920,
         "wires": [
             [
                 "95ea8b647c211cb4"
@@ -5563,8 +5563,8 @@
         "headers": {
             "content-type": "application/json"
         },
-        "x": 1780,
-        "y": 740,
+        "x": 1680,
+        "y": 920,
         "wires": []
     },
     {
@@ -5579,8 +5579,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 760,
-        "y": 1400,
+        "x": 820,
+        "y": 1520,
         "wires": [
             [
                 "f8b5093d71315d9f"
@@ -5599,8 +5599,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1060,
-        "y": 1400,
+        "x": 1120,
+        "y": 1520,
         "wires": [
             [
                 "b976c1dd4da1c5d8"
@@ -5619,8 +5619,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1130,
-        "y": 1140,
+        "x": 1190,
+        "y": 1260,
         "wires": [
             [
                 "0f96920406e95b13"
@@ -5639,8 +5639,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 770,
-        "y": 1140,
+        "x": 830,
+        "y": 1260,
         "wires": [
             [
                 "8e992a3982f363dc"
@@ -5653,8 +5653,8 @@
         "z": "5f31af6f840fa2a0",
         "mydb": "20aa6fa811d70d43",
         "name": "",
-        "x": 960,
-        "y": 1140,
+        "x": 1020,
+        "y": 1260,
         "wires": [
             [
                 "57103eed91631bac"
@@ -5666,8 +5666,8 @@
         "type": "subflow:07fafbbf4a09d947",
         "z": "5f31af6f840fa2a0",
         "name": "",
-        "x": 550,
-        "y": 780,
+        "x": 610,
+        "y": 900,
         "wires": [
             [
                 "62567b7f2471377f"
@@ -5685,33 +5685,6 @@
             [
                 "18065dae06552927"
             ]
-        ]
-    },
-    {
-        "id": "f0e74f930969dcae",
-        "type": "function",
-        "z": "5f31af6f840fa2a0",
-        "name": "Reporte Mensual Komatsu (Correo)",
-        "func": "const hourmeter = global.get(\"hourmeter\");\n\nconst disponibilidad = msg.disponibilidad;\nconst confiabilidad = msg.confiabilidad;\nconst detenciones = msg.detenciones;\nconst cambios = msg.cambios;\nconst alerts = msg.alerts;\n\n\nconst total_hours = msg.total_hours;\nconst effective = msg.effective;\n\nconst month = [\n  \"Enero\",\n  \"Febrero\",\n  \"Marzo\",\n  \"Abril\",\n  \"Mayo\",\n  \"Junio\",\n  \"Julio\",\n  \"Agosto\",\n  \"Setiembre\",\n  \"Octubre\",\n  \"Noviembre\",\n  \"Diciembre\",\n]\n\nconst current_date = new Date();\n// Obtiene el día, mes y año\nconst cday = current_date.getDate().toString().padStart(2, '0');\nconst cmonth = (current_date.getMonth() + 1).toString().padStart(2, '0'); // Los meses comienzan desde 0\nconst cyear = current_date.getFullYear();\n\n// Concatena los valores en el formato deseado\nconst formatted_cdate = `${cday}/${cmonth}/${cyear}`;\n\nconst year = msg.target_year\n\nconst name_of_month = month[msg.target_month];\n\nmsg.name_of_month = name_of_month;\nmsg.year = year;\n\n\n\nvar fonts = {\n    Roboto: {\n        normal: \"Courier\",\n        bold: \"Courier-Bold\",\n        italics: \"Courier-Oblique\",\n        bolditalics: \"Courier-BoldOblique\",\n    },\n    Helvetica: {\n        normal: \"Helvetica\",\n        bold: \"Helvetica-Bold\",\n        italics: \"Helvetica-Oblique\",\n        bolditalics: \"Helvetica-BoldOblique\",\n    },\n    Times: {\n        normal: \"Times-Roman\",\n        bold: \"Times-Bold\",\n        italics: \"Times-Italic\",\n        bolditalics: \"Times-BoldItalic\",\n    },\n    Arial: {\n    normal: \"Helvetica\",\n    bold: \"Helvetica-Bold\",\n    italics: \"Helvetica-Oblique\",\n    bolditalics: \"Helvetica-BoldOblique\",\n},\n    Symbol: {\n        normal: \"Symbol\",\n    },\n    ZapfDingbats: {\n        normal: \"ZapfDingbats\",\n    },\n};\n\n\n\nconst { Base64Encode } = base64Encode\n\nasync function getPDFBase64Text(pdfDoc) {\n\treturn new Promise((resolve) => {\n\t\tvar base64String = \"\"\n\t\tconst stream = pdfDoc.pipe(new Base64Encode())\n\t\tpdfDoc.end()\n\n\t\tstream.on(\"data\", (chunk) => {\n\t\t\tbase64String += chunk\n\t\t})\n\n\t\tstream.on(\"end\", () => resolve(base64String))\n\t})\n}\n\nlet printer = new pdfmake(fonts)\n\nconst hourmeter_string = `${hourmeter.hours}:${hourmeter.minutes<10?(\"0\"+hourmeter.minutes):hourmeter.minutes}`\n\n\n\n// Alertas del mes\nconst alertRows = [['Fecha', 'Hora', 'Tipo de alerta', 'Comentarios']];\nalerts.forEach(alert => {\n    alertRows.push([alert.fecha, alert.hora, alert.tipo, alert.comentarios]);\n});\n\n// playground requires you to assign document definition to a variable called dd\nvar dd = {\n\tcontent: [\n\t\tmsg.image,\n\t\t{ text: `Reporte ${name_of_month} ${year} - Montacarga 4.0`, style: 'header', alignment: 'center' },\n\t\t{ text: `Fecha de reporte: ${formatted_cdate}`, alignment: 'right' },\n\t\t{ text: 'Datos del equipo', style: 'subheader' },\n\t\t{\n            style: 'tableExample',\n            table: {\n                widths: [100, '*'], // Ancho de las columnas\n                body: [\n                    ['Equipo:', 'Montacarga 4.5'],\n                    ['Marca:', 'TOYOTA 4.5 TN'],\n                    ['Modelo:', '02-7FG45 N/S'],\n                    ['Bastidor:', 'A7FGA50-51912'],\n                    ['Cod. Activo:', 'KM0061657'],\n                    ['Tonelaje:', '4.5'],\n                    ['Horómetro:', hourmeter_string] // No necesitas el \"\\n\\n\" aquí\n                ]\n\t\t\t\t\n            },\n\t\t\tlayout: 'noBorders'\n        },\n\t\t{ text: 'Resultados de operación', style: 'subheader' },\n\t\t{ text: 'Detalle de uso mensual', italic: true },\n\t\t{\n\t\t\tstyle: 'tableExample',\n\t\t\ttable: {\n\t\t\t\tbody: [\n\t\t\t\t\t['Proceso Administrativo (Apagado)', 'Inoperativo', 'Espera sin carga',\n\t\t\t\t\t\t'Traslado sin carga', 'Traslado con carga', 'Espera con carga'],\n\t\t\t\t\t[`${total_hours.apagadoP} %`, `${total_hours.inoperativoP} %`, `${total_hours.esperaP} %`, `${total_hours.trasladoP} %`, `${total_hours.trasladoCargaP} %`, `${total_hours.esperaCargaP} %`]\n\t\t\t\t]\n\t\t\t}\n\t\t},\n\t\t'Frecuencia de uso',\n\t\t{\n\t\t\tstyle: 'tableExample',\n\t\t\ttable: {\n\t\t\t\tbody: [\n\t\t\t\t\t['Frecuencia de uso', 'Frecuencia efectiva de uso', 'Porcentaje efectivo'],\n\t\t\t\t\t[`${effective.horasUsoP} %`, `${effective.horasEfectivasP} %`, `${effective.ratioP} %`]\n\t\t\t\t]\n\t\t\t}\n\t\t},\n\t\t'Analisis de cambio',\n\t\t{\n\t\t\tstyle: 'tableExample',\n\t\t\ttable: {\n\t\t\t\tbody: [\n\t\t\t\t\t['Peso promedio (efectivo)', 'Porcentaje de cambio en tiempo efectivo',\n\t\t\t\t\t\t'Porcentaje de cambio de tiempo de uso'],\n\t\t\t\t\t[`${effective.promedioPeso} Tn`, `${cambios[1]} %`, `${cambios[0]} %`]\n\t\t\t\t]\n\t\t\t}\n\t\t},\n\t\t'Mantenimiento',\n\t\t{\n\t\t\tstyle: 'tableExample',\n\t\t\ttable: {\n\t\t\t\tbody: [\n\t\t\t\t\t['Disponibilidad', 'Confiabilidad',\n\t\t\t\t\t\t'Hora de detenciones', '% Correctivo', '% Preventivo'],\n\t\t\t\t\t[`${disponibilidad} %`, `${confiabilidad}`, `${total_hours.inoperativo} h`, `${detenciones[0]} %`, `${detenciones[1]} %`]\n\t\t\t\t]\n\t\t\t}\n\t\t},\n\t\t{ text: 'Alertas del mes', pageBreak: 'before'},\n\t\t{\n\t\t\tstyle: 'tableExample',\n\t\t\ttable: {\n\t\t\t\tbody: alertRows\n\t\t\t}\n\t\t},\n\n\t],\n\tstyles: {\n\t\theader: {\n\t\t\tfontSize: 18,\n\t\t\tbold: true,\n\t\t\tmargin: [0, 10, 0, 10],\n\n\t\t},\n\t\tsubheader: {\n\t\t\tfontSize: 16,\n\t\t\tbold: true,\n\t\t\tmargin: [0, 10, 0, 10]\n\t\t},\n\t\ttableExample: {\n\t\t\tmargin: [0, 10, 0, 10],\n\t\t\tfont: 'Arial' // Cambia la fuente a Arial para todas las tablas\n\t\t},\n\t\ttableHeader: {\n\t\t\tbold: true,\n\t\t\tfontSize: 13,\n\t\t\tcolor: 'black'\n\t\t}\n\t},\n\tdefaultStyle: {\n\t\tfont: 'Arial', // Cambia la fuente predeterminada a Arial para todo el documento\n\t\tlineHeight: 1.5, // Ajusta el espaciado entre líneas para todos los textos\n\t},\n};\n\nlet pdfDoc = printer.createPdfKitDocument(dd);\nconst base64Text = await getPDFBase64Text(pdfDoc);\nmsg.payload = Buffer.from(base64Text, \"base64\");\n\nmsg.topic = \"Reporte Montacarga 4.0 - \" + name_of_month + \" \" + year;\nmsg.from = \"Montacarga 4.0 <notify_krcp_4.0@kmmp.com.pe>\"\nmsg.filename = \"Reporte\"+name_of_month+year+\".pdf\"\nmsg.description =`Estimados y estimadas,\\n\nSe adjunta reporte del mes de Marzo 2024.\\n\nSaludos,\nMontacarga 4.0\nKomatsu-Mitsui Maquinarias Perú S.A.\\n\\n`;\n\nreturn msg;\n",
-        "outputs": 1,
-        "timeout": "",
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [
-            {
-                "var": "base64Encode",
-                "module": "base64-stream"
-            },
-            {
-                "var": "pdfmake",
-                "module": "pdfmake"
-            }
-        ],
-        "x": 200,
-        "y": 560,
-        "wires": [
-            []
         ]
     },
     {
