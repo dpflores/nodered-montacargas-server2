@@ -133,6 +133,39 @@
         "color": "#DDAA99"
     },
     {
+        "id": "07fafbbf4a09d947",
+        "type": "subflow",
+        "name": "update report",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 200,
+                "y": 120,
+                "wires": [
+                    {
+                        "id": "d0eb99ab1eebcf7e"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 1400,
+                "y": 120,
+                "wires": [
+                    {
+                        "id": "94293faa57c022d1",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [],
+        "meta": {},
+        "color": "#DDAA99"
+    },
+    {
         "id": "a383835818b7681a",
         "type": "group",
         "z": "4d53ee97ad0311a6",
@@ -765,6 +798,112 @@
             [
                 "c166330932de9a38"
             ]
+        ]
+    },
+    {
+        "id": "d0eb99ab1eebcf7e",
+        "type": "function",
+        "z": "07fafbbf4a09d947",
+        "name": "Set monthly data",
+        "func": "const target_month = msg.target_month + 1;\nconst target_year = msg.target_year;\n\nmsg.topic = `SELECT * FROM local_data \n    WHERE YEAR(date) = ${target_year} AND MONTH(date) = ${target_month}\n    order by date;`\n\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 370,
+        "y": 120,
+        "wires": [
+            [
+                "26d00c88e99f1316"
+            ]
+        ]
+    },
+    {
+        "id": "26d00c88e99f1316",
+        "type": "mysql",
+        "z": "07fafbbf4a09d947",
+        "mydb": "20aa6fa811d70d43",
+        "name": "",
+        "x": 560,
+        "y": 120,
+        "wires": [
+            [
+                "6301af87ab334bef"
+            ]
+        ]
+    },
+    {
+        "id": "6301af87ab334bef",
+        "type": "function",
+        "z": "07fafbbf4a09d947",
+        "name": "function 85",
+        "func": "var array_in = msg.payload.map((row) => JSON.parse(row.data));\nconst data_out = cumulatedStates(array_in);\nmsg.total_hours = JSON.stringify(data_out);\nreturn msg;\n\n\n\n\nfunction cumulatedStates(arr) {\n  // declara un array con 6 arrays dentro, uno para cada estado, con valores iniciales de 0\n  let horasPorEstado = new Array(6).fill(0);\n  // let horasEfectivas = new Array(12).fill(0);\n  let resultado = [];\n  let rindex = 0;\n\n  // Declaramos el primer valor de resultado\n  resultado[rindex] = {\n    fInit: new Date(arr[0].timestamp),\n    fEnd: new Date(arr[0].timestamp),\n    state: arr[0].state,\n    hours: 0,\n    month: new Date(arr[0].timestamp).getMonth(),\n  };\n  rindex++;\n\n  for (let i = 1; i < arr.length; i++) {\n    if (arr[i].state !== arr[i - 1].state) {\n      // Cada que hay un cambio declaramos el nuevo item\n      resultado[rindex] = {\n        fInit: new Date(arr[i].timestamp),\n        fEnd: new Date(arr[i].timestamp),\n        state: arr[i].state,\n        hours: 0,\n        month: new Date(arr[i].timestamp).getMonth(),\n      };\n\n      // Y con ello actualizamos el item anterior\n      resultado[rindex - 1].fEnd = new Date(arr[i].timestamp);\n      resultado[rindex - 1].hours =\n        (resultado[rindex - 1].fEnd.getTime() -\n          resultado[rindex - 1].fInit.getTime()) /\n        (60 * 60 * 1000);\n\n      // Actualizamos las horas acumuladas\n      if (resultado[rindex - 1].state !== -1) {\n        horasPorEstado[resultado[rindex - 1].state] +=\n          resultado[rindex - 1].hours;\n      }\n\n      // console.log(horasPorMes);\n      rindex++;\n    }\n  }\n  horasPorEstado = horasPorEstado.map((x) => Math.round(x * 100) / 100);\n  // get the sum of all hours\n  let totalHours = horasPorEstado.reduce((a, b) => a + b, 0);\n  totalHours = Math.round(totalHours  * 100) / 100;\n\n  var horasPorEstadoPercentage = horasPorEstado.map((x)=> 100*x/totalHours);\n  horasPorEstadoPercentage = horasPorEstadoPercentage.map((x) => Math.round(x * 100) / 100);\n  var json_out = {\n    \"apagado\": horasPorEstado[0],\n    \"inoperativo\": horasPorEstado[1],\n    \"espera\": horasPorEstado[2],\n    \"esperaCarga\" : horasPorEstado[3],\n    \"traslado\": horasPorEstado[4],\n    \"trasladoCarga\": horasPorEstado[5],\n    \"horasTotales\": totalHours,\n    \"apagadoP\": horasPorEstadoPercentage[0],\n    \"inoperativoP\": horasPorEstadoPercentage[1],\n    \"esperaP\": horasPorEstadoPercentage[2],\n    \"esperaCargaP\": horasPorEstadoPercentage[3],\n    \"trasladoP\": horasPorEstadoPercentage[4],\n    \"trasladoCargaP\": horasPorEstadoPercentage[5],\n\n  }\n  return json_out;\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 730,
+        "y": 120,
+        "wires": [
+            [
+                "89df8889a725be9d"
+            ]
+        ]
+    },
+    {
+        "id": "8a63a9a134b72e40",
+        "type": "function",
+        "z": "07fafbbf4a09d947",
+        "name": "function 86",
+        "func": "msg.topic = `INSERT INTO monthly_reports \n(month, year, total_hours, effective) \nVALUES (${msg.target_month}, ${msg.target_year}, '${msg.total_hours}', '${msg.effective}')\nON DUPLICATE KEY UPDATE \n  total_hours = VALUES(total_hours),\n  effective = VALUES(effective);`\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1090,
+        "y": 120,
+        "wires": [
+            [
+                "94293faa57c022d1"
+            ]
+        ]
+    },
+    {
+        "id": "89df8889a725be9d",
+        "type": "function",
+        "z": "07fafbbf4a09d947",
+        "name": "function 87",
+        "func": "var array_in = msg.payload.map((row) => JSON.parse(row.data));\nvar data_out = cumulatedEfective(array_in);\n\nvar totalHours = JSON.parse(msg.total_hours);\nvar horasUso = totalHours.esperaCarga + totalHours.traslado + totalHours.trasladoCarga;\nhorasUso = Math.round(horasUso  * 100) / 100;\n\nvar json_out = {\n  \"horasUso\": horasUso,\n  \"horasEfectivas\": data_out[0],\n  \"promedioPeso\": data_out[1],\n  \"horasTotales\": totalHours.horasTotales,\n  \"horasUsoP\":Math.round(100*100* horasUso/totalHours.horasTotales)/100,\n  \"horasEfectivasP\": Math.round(100*100*data_out[0]/totalHours.horasTotales)/100,\n  \"ratioP\": Math.round(100*100*data_out[0]/horasUso)/100\n}\n\nmsg.effective = JSON.stringify(json_out);\nreturn msg;\n\n\n\nfunction cumulatedEfective(arr) {\n  // declara un array con 7 arrays dentro, uno para cada estado, con valores iniciales de 0\n  // el 7 es para efectivo\n\n  var resultArray = new Array(2).fill(0);\n\n  var efectiveHours = 0;\n  var averageLoad = 0;\n  var loadIndex = 1;\n\n  let resultado = [];\n  let rindex = 0;\n\n  if (arr[0].carga >= 2 && arr[0].state >= 3) {\n    arr[0][\"efecstate\"] = 1;\n    averageLoad = averageLoad + (arr[0].carga - averageLoad) / loadIndex;\n    loadIndex++;\n  } else {\n    arr[0][\"efecstate\"] = -1;\n  }\n  // Declaramos el primer valor de resultado\n  resultado[rindex] = {\n    fInit: new Date(arr[0].timestamp),\n    fEnd: new Date(arr[0].timestamp),\n    efecstate: arr[0][\"efecstate\"],\n    hours: 0,\n    month: new Date(arr[0].timestamp).getMonth(),\n  };\n  rindex++;\n\n  for (let i = 1; i < arr.length; i++) {\n    if (arr[i].carga >= 2 && arr[i].state >= 3) {\n      arr[i][\"efecstate\"] = 1;\n      averageLoad = averageLoad + (arr[i].carga - averageLoad) / loadIndex;\n      loadIndex++;\n\n    } else {\n      arr[i][\"efecstate\"] = -1;\n    }\n\n    if (arr[i].efecstate !== arr[i - 1].efecstate) {\n      // Cada que hay un cambio declaramos el nuevo item\n      resultado[rindex] = {\n        fInit: new Date(arr[i].timestamp),\n        fEnd: new Date(arr[i].timestamp),\n        efecstate: arr[i][\"efecstate\"],\n        hours: 0,\n        month: new Date(arr[i].timestamp).getMonth(),\n      };\n\n      // Y con ello actualizamos el item anterior\n      resultado[rindex - 1].fEnd = new Date(arr[i].timestamp);\n      resultado[rindex - 1].hours =\n        (resultado[rindex - 1].fEnd.getTime() -\n          resultado[rindex - 1].fInit.getTime()) /\n        (60 * 60 * 1000);\n\n      // Actualizamos las horas acumuladas\n      if (resultado[rindex - 1].efecstate !== -1) {\n        efectiveHours += resultado[rindex - 1].hours;\n      }\n\n      // console.log(horasPorMes);\n      rindex++;\n    }\n  }\n\n  // EL total solo son los 6 primeros estados, el 7 es efectivo,\n  // el efectivo es una composición de otros estados\n  resultArray[0] = efectiveHours.toFixed(2);\n  resultArray[1] = averageLoad.toFixed(2);\n\n  return resultArray;\n}\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 910,
+        "y": 120,
+        "wires": [
+            [
+                "8a63a9a134b72e40"
+            ]
+        ]
+    },
+    {
+        "id": "94293faa57c022d1",
+        "type": "mysql",
+        "z": "07fafbbf4a09d947",
+        "mydb": "20aa6fa811d70d43",
+        "name": "",
+        "x": 1280,
+        "y": 120,
+        "wires": [
+            []
         ]
     },
     {
@@ -5231,36 +5370,6 @@
         "wires": [
             [
                 "51aae526d19e36e9"
-            ]
-        ]
-    },
-    {
-        "id": "f0a1a51df2d6d99b",
-        "type": "inject",
-        "z": "5f31af6f840fa2a0",
-        "name": "Seleccionar mes manual",
-        "props": [
-            {
-                "p": "target_month",
-                "v": "2",
-                "vt": "num"
-            },
-            {
-                "p": "target_year",
-                "v": "2024",
-                "vt": "num"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "x": 230,
-        "y": 1660,
-        "wires": [
-            [
-                "c6a55c23d481d0e3"
             ]
         ]
     },
