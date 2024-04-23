@@ -6392,8 +6392,9 @@
                 "p": "payload"
             },
             {
-                "p": "topic",
-                "vt": "str"
+                "p": "target_year",
+                "v": "2024",
+                "vt": "num"
             }
         ],
         "repeat": "",
