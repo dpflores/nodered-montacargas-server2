@@ -6334,7 +6334,7 @@
         "type": "function",
         "z": "5f31af6f840fa2a0",
         "name": "function 83",
-        "func": "const data_in = msg.payload;\nvar data_out = [];\n\n\nfor (var i = 0; i < data_in.length; i++) {\n    data_out[i] = data_in[i];\n}\nreturn msg;",
+        "func": "const data_in = msg.payload;\nvar data_out = [];\n\n\nfor (var i = 0; i < data_in.length; i++) {\n    data_out[i] = JSON.parse(data_in[i].total_hours);\n}\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -6344,7 +6344,9 @@
         "x": 490,
         "y": 1140,
         "wires": [
-            []
+            [
+                "677b9c405ead3c0b"
+            ]
         ]
     },
     {
@@ -6426,6 +6428,22 @@
         "statusType": "auto",
         "x": 380,
         "y": 1200,
+        "wires": []
+    },
+    {
+        "id": "677b9c405ead3c0b",
+        "type": "debug",
+        "z": "5f31af6f840fa2a0",
+        "name": "debug 74",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 660,
+        "y": 1140,
         "wires": []
     }
 ]
