@@ -6334,7 +6334,7 @@
         "type": "function",
         "z": "5f31af6f840fa2a0",
         "name": "function 83",
-        "func": "const data_in = msg.payload;\nvar data_out = [];\n\n\nfor (var i = 0; i < data_in.length; i++) {\n    data_out[i] = JSON.parse(data_in[i].total_hours);\n}\nreturn msg;",
+        "func": "const data_in = msg.payload;\nvar data_out = [];\n\n\nfor (var i = 0; i < data_in.length; i++) {\n    data_out[i] = JSON.parse(data_in[i].total_hours);\n}\nmsg.payload = data_out;\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
